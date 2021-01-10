@@ -37,6 +37,11 @@
                         <th scope="col">Quantity</th>
                         <th scope="col">Sub Total</th>
                         <th scope="col">Delete</th>
+                        <th scope="col">Product</th>
+                        <th scope="col">Price</th>
+                        <th scope="col">Quantity</th>
+                        <th scope="col">Sub Total</th>
+                        <th scope="col">Delete</th>
                     </tr>
                 </thead>
                 <tbody>
