@@ -42,9 +42,9 @@
                                 </div>
                                 <div class="mb-3">
 
-                                    <label for="R__change" class="form-label">Change:</label><br>
+                                    <label for="R__change" class="form-label">Change:{{$table}}</label><br>
                                     <span id="R__change--number" class="form-text">
-                                        4000
+                                        {{$table}}
                                     </span>
 
                                 </div>

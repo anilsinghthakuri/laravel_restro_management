@@ -155,7 +155,10 @@ class Possale extends Component
     {
         $grandprice = $this->totalprice + $this->shipping - $this->discount;
         return $grandprice;
+        $this->emitTo('pos','grandprice',$this->table);
     }
+
+
 
     public function render()
     {

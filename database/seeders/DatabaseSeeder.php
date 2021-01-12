@@ -20,11 +20,25 @@ class DatabaseSeeder extends Seeder
             'category_name'=>'momo',
 
         ]);
+        DB::table('tables')->insert([
+            'table_name'=>'table1',
+
+        ]);
+        DB::table('tables')->insert([
+            'table_name'=>'table2',
+
+        ]);
 
         DB::table('products')->insert([
             'product_name'=>'chickenMOMO',
             'product_price' => 200,
             'product_image' => 'food1.jpg',
+            'category_id' => 1,
+        ]);
+        DB::table('products')->insert([
+            'product_name'=>'SteamMOMO',
+            'product_price' => 100,
+            'product_image' => 'food2.jpg',
             'category_id' => 1,
         ]);
     }
