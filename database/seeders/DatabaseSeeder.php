@@ -21,10 +21,29 @@ class DatabaseSeeder extends Seeder
 
         ]);
 
+        DB::table('tables')->insert([
+            'table_name'=>'table1',
+
+        ]);
+        DB::table('tables')->insert([
+            'table_name'=>'table2',
+
+        ]);
+        DB::table('tables')->insert([
+            'table_name'=>'table3',
+
+        ]);
+
         DB::table('products')->insert([
             'product_name'=>'chickenMOMO',
             'product_price' => 200,
             'product_image' => 'food1.jpg',
+            'category_id' => 1,
+        ]);
+        DB::table('products')->insert([
+            'product_name'=>'steemMOMO',
+            'product_price' => 100,
+            'product_image' => 'food2.jpg',
             'category_id' => 1,
         ]);
     }
