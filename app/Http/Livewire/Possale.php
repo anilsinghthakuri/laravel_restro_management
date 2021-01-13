@@ -16,7 +16,7 @@ class Possale extends Component
     public $shipping = 0;
     public $discount =0;
     public $grandprice = 0;
-    public $listeners = ['orderadd'];
+    public $listeners = ['orderadd','refreshaftersell'];
 
 
     public function mount()
@@ -35,6 +35,8 @@ class Possale extends Component
         $this->order  = Order::where('table_id',$this->table)->where('bill_status',0)->get();
         $this->totalprice = $this->totalamt();
         $this->grandprice = $this->grandpricecalc();
+
+
 
 
     }
@@ -154,7 +156,14 @@ class Possale extends Component
     public function grandpricecalc()
     {
         $grandprice = $this->totalprice + $this->shipping - $this->discount;
+        $this->emit('changecalc',$this->table,$grandprice);
+
         return $grandprice;
+    }
+
+    public function refreshaftersell()
+    {
+        $this->order  = Order::where('table_id',$this->table)->where('bill_status',0)->get();
     }
 
     public function render()
