@@ -2,6 +2,7 @@
 
 namespace App\Http\Livewire;
 
+use App\Http\Controllers\billprintcontroller;
 use App\Models\Bill;
 use App\Models\Order;
 use Livewire\Component;
@@ -41,14 +42,27 @@ class Pos extends Component
     }
     public function checkout($table)
     {
-        $bill = New Bill;
-        $bill->table_id = $this->table;
-        $bill->bill_total_amount = $this->grandprice;
-        $bill->save();
-        Order::where('table_id',$table)->where('bill_status',0)->update(['bill_status' => 1]);
+        if ($this->grandprice == null) {
 
-        session()->flash('message', 'bill generated');
-        $this->emit('refreshaftersell');
+        }
+        else{
+            $orderdata = [];
+            $bill = New Bill;
+            $bill->table_id = $this->table;
+            $bill->bill_total_amount = $this->grandprice;
+            $bill->save();
+            // Order::where('table_id',$table)->where('bill_status',0)->update(['bill_status' => 1]);
+
+            // $this->emit('billdata',$orderdata);
+
+            // $this->emit('refreshaftersell');
+            // dd($table);
+            return redirect()->route('bill.print', [
+                $table,
+
+                ]);
+        }
+
     }
 
     public function render()
