@@ -18,3 +18,4 @@ Route::get('/', function () {
 });
 
 Route::view('/pos', 'pos');
+Route::view('/categories', 'add__categories');

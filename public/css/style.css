@@ -111,13 +111,13 @@ select.form-select {
     margin-bottom: 0;
 }
 
-.table{
+.table-part{
     width: 100%;
     table-layout: fixed;
     border-collapse: collapse;
 }
 
-.table tbody{
+.table-part tbody{
   display:block;
   width: 100%;
   overflow: auto;
@@ -125,18 +125,18 @@ select.form-select {
   font-size: 14px;
 }
 
-.table thead tr {
+.table-part thead tr {
    display: block;
 }
 
 
-.table th, .table td {
+.table-part th, .table-part td {
   text-align: left;
   width: 200px;
 }
 
 
-.table>tbody {
+.table-part>tbody {
     border: 1px solid #e9ecef;
 }
 td {
@@ -170,6 +170,7 @@ td.total__price {
 td.btn__cancel {
     padding-left: 10px;
 }
+
 section.footer__part {
     position: absolute;
     left: 0;

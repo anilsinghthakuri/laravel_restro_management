@@ -1,0 +1,43 @@
+.sidebar-menu{
+    height: 100vh;
+    overflow: scroll;
+}
+.navbar-item{
+    position: relative;
+}
+section.add__categories {
+    background: #c7c2c2;
+}
+li{
+    list-style-type: none;
+}
+a.link-page{
+    text-decoration: none;
+    padding: 5px 10px;
+    display: inline-block;
+    width: 100%;
+    padding-left: 30px;
+}
+a.link-page:hover{
+    background-color: rgb(97 95 95);
+}
+ul.dropdown-part{
+    padding: 0px;
+}
+img.img__product {
+    width: 70px;
+    height: 50px;
+    object-fit: cover;
+}
+td.image-categories {
+    width: 87px;
+}
+td.action-table {
+    width: 100px;
+}
+a.text-light.toggle-class {
+    display: grid;
+}
+.hide-show{
+    display: none;
+}
