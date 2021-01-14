@@ -42,11 +42,27 @@ class Possale extends Component
     }
     public function orderadd($id)
     {
-        // dd($id);
+
         if ($this->table == 0) {
             session()->flash('message', 'Choose table to add product!');
         }
         else{
+            $check = [];
+            $checkproduct = Order::where('product_id',$id)->where('bill_status',0)->where('table_id',$this->table)->get();
+            foreach ($checkproduct as $key => $value) {
+                $check[] = $checkproduct[$key]['product_id'];
+            }
+
+            if (in_array($id,$check)) {
+                // dd('xa producd');
+                foreach ($checkproduct as $key => $value) {
+                    $id_order = $checkproduct[$key]['order_id'];
+                    $this->inc($id_order);
+                }
+
+
+            }
+            else{
             $order = new Order;
             $order->table_id = $this->table;
             $order->product_id = $id;
@@ -63,6 +79,8 @@ class Possale extends Component
 
 
             $this->order  = Order::where('table_id',$this->table)->where('bill_status',0)->get();
+            }
+
         }
 
     }
@@ -91,6 +109,7 @@ class Possale extends Component
 
         $this->totalprice = $this->totalamt();
         $this->grandprice = $this->grandpricecalc();
+        $this->emit('quant',$quant);
 
 
         $this->order  = Order::where('table_id',$this->table)->where('bill_status',0)->get();

@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\billprintcontroller;
+use App\Http\Controllers\LoginController;
 use App\Http\Controllers\UserController;
 use App\Models\Order;
 use Illuminate\Support\Facades\Route;
@@ -20,10 +21,21 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::view('/pos', 'pos');
+Route::get('/login',[LoginController::class,'index']);
+Route::post('/login',[LoginController::class,'authenticate']);
+
 Route::get('billprint/{id}',[billprintcontroller::class,'index'])->name('bill.print');
 
-// userrout
 
-Route::get('/adduser',[UserController::class,'index']);
-Route::post('/adduser',[UserController::class,'adduser'])->name('user.add');
+
+
+
+Route::middleware(['auth'])->group(function () {
+    Route::view('/pos', 'pos');
+
+
+    // userrout
+    Route::get('/adduser',[UserController::class,'index']);
+    Route::post('/adduser',[UserController::class,'adduser'])->name('user.add');
+
+});

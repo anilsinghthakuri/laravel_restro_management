@@ -38,6 +38,7 @@
                     <div class="card-detail text-center">
                         <h5 class="card-title"> {{$products->product_name}}</h5>
                         <p class="card-text">RS:{{$products->product_price}}</p>
+                        <p class="card-text">{{$products->order->order_quantity}}</p>
                     </div>
                 </div>
             </div>
