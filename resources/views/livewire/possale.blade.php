@@ -40,6 +40,13 @@
                     </tr>
                 </thead>
                 <tbody>
+                    <div>
+                        @if (session()->has('message'))
+                            <div class="alert alert-danger">
+                                {{ session('message') }}
+                            </div>
+                        @endif
+                    </div>
                     @foreach ($order as $orders)
                     <tr>
                         <th class="head" scope="row">1</th>
@@ -107,3 +114,5 @@
         </div>
     </div>
 </div>
+
+
