@@ -11,6 +11,8 @@
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
         <link rel="stylesheet" href="css/categories.css">
         <link rel="stylesheet" href="css/style.css">
+        <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css'><link rel="stylesheet" href="./style.css">
+
 
     </head>
     <body>
@@ -22,98 +24,47 @@
 
                         <div class="col-md-3 px-0">
 
-                            <div class="sidebar-menu bg-dark text-light">
+                            <nav class="side-menu" id="scrool-bar">
 
-                                <nav class="navbar-item ">
+                                <h1 class="side-bar-title"><ul>  <li class="d-flex-div"><span><ion-icon name="speedometer-outline"></ion-icon></span> <a class="page-title" href='#message'> Dashbord</a></li></ul></h1>
+                                <ul>
 
-                                    <ul class="list-group border-1">
+                                    <li class='sub-menu '> <a href='#message'><span><ion-icon name="briefcase-outline"></ion-icon></span>  Add Product</a></li>
+                                    <li class='sub-menu '> <a href='#settings'> <span><ion-icon name="briefcase-outline"></ion-icon></span>    Settings<div class='fa fa-caret-down right'></div></a>
+                                        <ul class="hide">
+                                            <li><a href='#settings'> <span><i class="fa fa-circle-o" aria-hidden="true"></i> </span> Account</a></li>
+                                            <li><a href='#settings'> <span><i class="fa fa-circle-o" aria-hidden="true"></i> </span> Profile</a></li>
+                                            <li><a href='#settings'> <span><i class="fa fa-circle-o" aria-hidden="true"></i> </span> Secruity &amp; Privacy</a></li>
+                                            <li><a href='#settings'> <span><i class="fa fa-circle-o" aria-hidden="true"></i> </span> Password</a></li>
+                                            <li><a href='#settings'> <span><i class="fa fa-circle-o" aria-hidden="true"></i> </span> Notification</a></li>
+                                        </ul>
+                                    </li>
+                                    <li class='sub-menu '>  <a href='#message'><span><ion-icon name="briefcase-outline"></ion-icon></span>  Help<div class='fa fa-caret-down right'></div></a>
+                                        <ul>
+                                            <li><a href='#settings'> <span><i class="fa fa-circle-o" aria-hidden="true"></i> </span> FAQ's</a></li>
+                                            <li><a href='#settings'> <span><i class="fa fa-circle-o" aria-hidden="true"></i> </span> Submit a Ticket</a></li>
+                                            <li><a href='#settings'> <span><i class="fa fa-circle-o" aria-hidden="true"></i> </span> Network Status</a></li>
+                                        </ul>
+                                    </li>
+                                    <li class='sub-menu '> <a href='#message'><span><ion-icon name="briefcase-outline"></ion-icon></span>  Messages</a></li>
+                                    <li class='sub-menu '> <a href='#message'><span><ion-icon name="briefcase-outline"></ion-icon></span>  Messages</a></li>
+                                    <li class='sub-menu '> <a href='#message'><span><ion-icon name="briefcase-outline"></ion-icon></span>  Messages</a></li>
+                                    <li class='sub-menu '> <a href='#message'><span><ion-icon name="briefcase-outline"></ion-icon></span>  Messages</a></li>
+                                    <li class='sub-menu '> <a href='#message'><span><ion-icon name="briefcase-outline"></ion-icon></span>  Messages</a></li>
+                                    <li class='sub-menu '> <a href='#message'><span><ion-icon name="briefcase-outline"></ion-icon></span>  Messages</a></li>
+                                    <li class='sub-menu '> <a href='#message'><span><ion-icon name="briefcase-outline"></ion-icon></span>  Messages</a></li>
+
+                                    <li class='sub-menu '> <a href='#message'><span><ion-icon name="briefcase-outline"></ion-icon></span>  Messages</a></li>
+                                    <li class='sub-menu '> <a href='#message'><span><ion-icon name="briefcase-outline"></ion-icon></span>  Messages</a></li>
+                                    <li class='sub-menu '> <a href='#message'><span><ion-icon name="briefcase-outline"></ion-icon></span>  Messages</a></li>
+                                    <li class='sub-menu '> <a href='#message'><span><ion-icon name="briefcase-outline"></ion-icon></span>  Messages</a></li>
+                                    <li class='sub-menu '> <a href='#message'><span><ion-icon name="briefcase-outline"></ion-icon></span>  Messages</a></li>
+                                    <li class='sub-menu '> <a href='#message'><span><ion-icon name="briefcase-outline"></ion-icon></span>  Messages</a></li>
+                                    <li class='sub-menu '> <a href='#message'><span><ion-icon name="briefcase-outline"></ion-icon></span>  Messages</a></li>
 
 
-                                        <li class=" border-bottom text-light ">
-                                            <div class="d-flex bd-highlight">
-                                                <div class="p-2 bd-highlight"><ion-icon name="options-outline"></ion-icon></div>
-                                                <div class="p-2 bd-highlight"><a class="text-light"  href="#">Dashbord</a></div>
-
-                                            </div>
-                                        </li>
-                                        <li class=" border-bottom ">
-                                            <a class="text-light toggle-class"  href="#">
-                                                <div class="d-flex bd-highlight  ">
-                                                    <div class="p-2 bd-highlight"><ion-icon name="options-outline"></ion-icon></div>
-                                                    <div class="p-2 bd-highlight">Product</div>
-                                                    <div class="ms-auto p-2 bd-highlight"><ion-icon name="chevron-down-outline"></ion-icon></div>
-                                                </div>
-                                            </a>
-
-                                            <div class="ps-2 hide-show">
-                                                <ul class="dropdown-part text-light" >
-                                                <li><a class="link-page text-light" href="#">Action</a></li>
-                                                <li><a class="link-page text-light" href="#">Another action</a></li>
-                                                <li><a class="link-page text-light" href="#">Something else here</a></li>
-                                                </ul>
-                                            </div>
-
-                                        </li>
-                                        <li class=" border-bottom ">
-                                            <div class="d-flex bd-highlight">
-                                                <div class="p-2 bd-highlight"><ion-icon name="options-outline"></ion-icon></div>
-                                                <div class="p-2 bd-highlight"><a class="text-light"  href="#">Purches</a></div>
-                                                <div class="ms-auto p-2 bd-highlight"><ion-icon name="chevron-down-outline"></ion-icon></div>
-                                            </div>
-                                            <div class="ps-2">
-                                                <ul class="dropdown-part text-light" >
-                                                <li><a class="link-page text-light" href="#">Action</a></li>
-                                                <li><a class="link-page text-light" href="#">Another action</a></li>
-                                                <li><a class="link-page text-light" href="#">Something else here</a></li>
-                                                </ul>
-                                            </div>
-                                        </li>
-                                        <li class=" border-bottom ">
-                                            <div class="d-flex bd-highlight">
-                                                <div class="p-2 bd-highlight"><ion-icon name="options-outline"></ion-icon></div>
-                                                <div class="p-2 bd-highlight"><a class="text-light"  href="#">Sale</a></div>
-                                                <div class="ms-auto p-2 bd-highlight"><ion-icon name="chevron-down-outline"></ion-icon></div>
-                                            </div>
-                                            <div class="ps-2">
-                                                <ul class="dropdown-part text-light" >
-                                                <li><a class="link-page text-light" href="#">Action</a></li>
-                                                <li><a class="link-page text-light" href="#">Another action</a></li>
-                                                <li><a class="link-page text-light" href="#">Something else here</a></li>
-                                                </ul>
-                                            </div>
-                                        </li>
-                                        <li class=" border-bottom ">
-                                            <div class="d-flex bd-highlight">
-                                                <div class="p-2 bd-highlight"><ion-icon name="options-outline"></ion-icon></div>
-                                                <div class="p-2 bd-highlight"><a class="text-light" href="#">Expance</a></div>
-                                                <div class="ms-auto p-2 bd-highlight"><ion-icon name="chevron-down-outline"></ion-icon></div>
-                                            </div>
-                                            <div class="ps-2">
-                                                <ul class="dropdown-part text-light" >
-                                                <li><a class="link-page text-light" href="#">Action</a></li>
-                                                <li><a class="link-page text-light" href="#">Another action</a></li>
-                                                <li><a class="link-page text-light" href="#">Something else here</a></li>
-                                                </ul>
-                                            </div>
-                                        </li>
-                                        <li class=" border-bottom ">
-                                            <div class="d-flex bd-highlight">
-                                                <div class="p-2 bd-highlight"><ion-icon name="options-outline"></ion-icon></div>
-                                                <div class="p-2 bd-highlight"><a class="text-light"  href="#">Expance</a></div>
-                                                <div class="ms-auto p-2 bd-highlight"><ion-icon name="chevron-down-outline"></ion-icon></div>
-                                            </div>
-                                            <div class="ps-2">
-                                                <ul class="dropdown-part" >
-                                                    <li><a class="link-page text-light" href="#">Action</a></li>
-                                                    <li><a class="link-page text-light" href="#">Another action</a></li>
-                                                    <li><a class="link-page text-light" href="#">Something else here</a></li>
-                                                </ul>
-                                            </div>
-                                        </li>
-
-                                    </ul>
-                                </nav>
-                            </div>
+                                </ul>
+                            </nav>
 
                         </div>
 
@@ -124,7 +75,7 @@
                                     <div class="top-part">
                                         <div class="d-flex bd-highlight">
                                             <div class="p-2 flex-grow-1 bd-highlight menu__part"><img src="img/menu.png" alt="menu"></div>
-                                            <button onclick="myFunction()">Try it</button>
+
                                             <div class="p-2 bd-highlight login__part"><img class="login__img" src="img/user.png" alt="menu">Login</div>
                                             </div>
                                     </div>
@@ -169,7 +120,10 @@
 
                                                             </div>
                                                             <div class="col-sm-6">
-                                                                <div class="input-group mb-3">
+                                                                <div>
+                                                                    <label for="name" class="form-label"> Images *</label>
+                                                                </div>
+                                                                <div class="input-group  ">
                                                                     <input type="file" class="form-control" id="inputGroupFile02">
                                                                     <label class="input-group-text" for="inputGroupFile02"></label>
                                                                 </div>
@@ -300,9 +254,14 @@
                 </div>
             </section>
 
-        <script src="js/script.js"></script>
+
+            <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js'></script>
+
+            <script src="js/script.js"></script>
+
         <script src="https://unpkg.com/ionicons@5.2.3/dist/ionicons.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js" integrity="sha384-q2kxQ16AaE6UbzuKqyBE9/u/KzioAlnx2maXQHiDX9d4/zp8Ok3f+M7DPm+Ib6IU" crossorigin="anonymous"></script>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.min.js" integrity="sha384-pQQkAEnwaBkjpqZ8RU1fF1AKtTcHJwFl3pblpTlHXybJjHpMYo79HY3hIi4NKxyj" crossorigin="anonymous"></script>
+        <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js'></script>
     </body>
 </html>
