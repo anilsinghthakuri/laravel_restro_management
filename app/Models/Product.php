@@ -10,4 +10,8 @@ class Product extends Model
     use HasFactory;
     protected $table = 'products';
     protected $primaryKey = 'product_id';
+    public function order()
+    {
+        return $this->hasOne(Order::class,'order_id','product_id');
+    }
 }
