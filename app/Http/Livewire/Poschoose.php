@@ -9,7 +9,6 @@ class Poschoose extends Component
 {
 
     public $product = [];
-    public $quant= 0;
     public $listeners = ['quant'];
 
 
@@ -17,12 +16,7 @@ class Poschoose extends Component
     {
         $this->product = Product::all();
     }
-    public function quant($quant)
-    {
-        $this->product = Product::all();
 
-
-    }
 
     public function addproduct($id)
     {

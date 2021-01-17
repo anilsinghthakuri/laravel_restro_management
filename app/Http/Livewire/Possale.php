@@ -37,8 +37,6 @@ class Possale extends Component
         $this->grandprice = $this->grandpricecalc();
 
 
-
-
     }
     public function orderadd($id)
     {
@@ -109,7 +107,6 @@ class Possale extends Component
 
         $this->totalprice = $this->totalamt();
         $this->grandprice = $this->grandpricecalc();
-        $this->emit('quant',$quant);
 
 
         $this->order  = Order::where('table_id',$this->table)->where('bill_status',0)->get();
