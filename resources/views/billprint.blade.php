@@ -12,9 +12,7 @@
     <div class="bill__section">
         <div class="bill__section__inner">
             <div class="bill__title text-center mb-2"><span>Anil Store</span></div>
-            <div class="bill__title  text-center mb-2"><span>"Sarala"</span></div>
-            <div class="bill__title  text-center mb-2"><span>Via G.Stampa, 4  </span></div>
-            <div class="bill__title  text-center mb-2"><span>20123 -minland</span></div>
+            <div class="bill__title  text-center mb-2"><span>Dhangadhi -9 Kailali  </span></div>
             <div class="bill__title  text-center mb-2"><span>Tel. 12334567</span></div>
             <div class="bill__middle__contain">
                 <div class="d-flex justify-content-evenly">
@@ -103,14 +101,19 @@
                     </tbody>
                 </table>
             </div>
-            <div class="bill__footer__contain">
-                <div class="d-flex justify-content-evenly mb-3">
-                    <div class="p-2 bd-highlight"></div>
-                    <div class="p-2 bd-highlight">Total</div>
-                    <div class="p-2 bd-highlight">1011</div>
-                    <div class="p-2 bd-highlight"></div>
-                  </div>
+            <div class="bill__footer__contain mb-2">
+
+                <div class="d-flex bd-highlight mb-3">
+                    <div class="me-auto p-2 bd-highlight total__sum"></div>
+
+                    <div class="p-2 bd-highlight "></div>
+                    <div class="p-2 bd-highlight total__sum">Total</div>
+                    <div class="p-2 bd-highlight "></div>
+                    <div class="p-2 bd-highlight total__sum">1011</div>
+                </div>
             </div>
+            <div class="bill__title text-center mb-2"><span>Thank You</span></div>
+            <div class="bill__title  text-center mb-2"><span>Visit again  </span></div>
         </div>
 
     </div>

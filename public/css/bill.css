@@ -19,13 +19,20 @@
     padding: 30px;
 }
 .bill__middle__contain {
-    border-top: 2px solid #c1c1c1;
-    border-bottom: 2px solid #c1c1c1;
+    border-top: dotted;
+    border-bottom: dotted;
+    border-color: #4c4b4b;
 }
 .bill__middle__inner{
-    border-bottom: 2px solid #c1c1c1;
+    border-bottom: dotted;
+    border-color: #4c4b4b;
 }
 .menu__item {
-    border-bottom: 2px solid #c1c1c1;
+    border-bottom: dotted;
+    border-color: #4c4b4b;
+}
+.total__sum {
+    font-size: 30px;
+    font-weight: 600;
 }
 

@@ -30,6 +30,7 @@ Route::post('/login',[LoginController::class,'authenticate']);
 
 Route::view('/categories', 'add__categories');
 Route::view('/product', 'add__product');
+Route::view('/product__list', 'product__list');
 
 
 
