@@ -16,7 +16,7 @@ class Possale extends Component
     public $shipping = 0;
     public $discount =0;
     public $grandprice = 0;
-    public $listeners = ['orderadd'];
+    public $listeners = ['orderadd','refreshaftersell'];
 
 
     public function mount()
@@ -37,26 +37,34 @@ class Possale extends Component
         $this->grandprice = $this->grandpricecalc();
 
 
+
+
     }
     public function orderadd($id)
     {
         // dd($id);
-        $order = new Order;
-        $order->table_id = $this->table;
-        $order->product_id = $id;
-        $product = Product::Find($id);
+        if ($this->table == 0) {
+            session()->flash('message', 'Choose table to add product!');
+        }
+        else{
+            $order = new Order;
+            $order->table_id = $this->table;
+            $order->product_id = $id;
+            $product = Product::Find($id);
 
-        $price = $product['product_price'];
+            $price = $product['product_price'];
 
-        $order->order_quantity = 1;
-        $order->order_subprice = $price;
-        $order->save();
+            $order->order_quantity = 1;
+            $order->order_subprice = $price;
+            $order->save();
 
-        $this->totalprice = $this->totalprice + $price;
-        $this->grandprice = $this->grandpricecalc();
+            $this->totalprice = $this->totalprice + $price;
+            $this->grandprice = $this->grandpricecalc();
 
 
-        $this->order  = Order::where('table_id',$this->table)->where('bill_status',0)->get();
+            $this->order  = Order::where('table_id',$this->table)->where('bill_status',0)->get();
+        }
+
     }
 
     public function inc($order_id)
@@ -154,7 +162,14 @@ class Possale extends Component
     public function grandpricecalc()
     {
         $grandprice = $this->totalprice + $this->shipping - $this->discount;
+        $this->emit('changecalc',$this->table,$grandprice);
+
         return $grandprice;
+    }
+
+    public function refreshaftersell()
+    {
+        $this->order  = Order::where('table_id',$this->table)->where('bill_status',0)->get();
     }
 
     public function render()

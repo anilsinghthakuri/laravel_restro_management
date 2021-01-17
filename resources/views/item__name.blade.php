@@ -1,3 +1,4 @@
+{{-- <h1>hello</h1> --}}
 <div class="item__right">
     <div class="row row__margin">
         <div class="col-sm-4"><select class="form-select" aria-label="Default select example">
@@ -32,6 +33,11 @@
                 <thead>
                     <tr>
                         <th class="head" scope="col">#</th>
+                        <th scope="col">Product</th>
+                        <th scope="col">Price</th>
+                        <th scope="col">Quantity</th>
+                        <th scope="col">Sub Total</th>
+                        <th scope="col">Delete</th>
                         <th scope="col">Product</th>
                         <th scope="col">Price</th>
                         <th scope="col">Quantity</th>
@@ -97,7 +103,7 @@
 
               </div>
         </div>
-
+{{-- this is new feature --}}
     </div> <!--extra featur  -->
     <div class="row">
         <div class="col-sm-12">
