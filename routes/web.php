@@ -21,8 +21,15 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+
 Route::get('/login',[LoginController::class,'index']);
 Route::post('/login',[LoginController::class,'authenticate']);
+
+
+
+Route::view('/categories', 'add__categories');
+Route::view('/product', 'add__product');
+
 
 Route::get('billprint/{id}',[billprintcontroller::class,'index'])->name('bill.print');
 
@@ -39,3 +46,4 @@ Route::middleware(['auth'])->group(function () {
     Route::post('/adduser',[UserController::class,'adduser'])->name('user.add');
 
 });
+
