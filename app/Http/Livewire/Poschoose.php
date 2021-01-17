@@ -9,10 +9,19 @@ class Poschoose extends Component
 {
 
     public $product = [];
+    public $quant= 0;
+    public $listeners = ['quant'];
+
 
     public function mount()
     {
         $this->product = Product::all();
+    }
+    public function quant($quant)
+    {
+        $this->product = Product::all();
+
+
     }
 
     public function addproduct($id)

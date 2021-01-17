@@ -1,6 +1,8 @@
 <?php
 
 use App\Http\Controllers\billprintcontroller;
+use App\Http\Controllers\LoginController;
+use App\Http\Controllers\UserController;
 use App\Models\Order;
 use Illuminate\Support\Facades\Route;
 
@@ -19,33 +21,29 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::view('/pos', 'pos');
+
+Route::get('/login',[LoginController::class,'index']);
+Route::post('/login',[LoginController::class,'authenticate']);
+
+
 
 Route::view('/categories', 'add__categories');
 Route::view('/product', 'add__product');
 
-Route::get('/billprint/{$table}',[billprintcontroller::class,'index'])->name('bill.print');
-Route::get('billprint/{id}', function ($table) {
-    $total = [];
-    $orderdata = Order::where('table_id',$table)->where('bill_status',0)->with('product')->get();
-    foreach ($orderdata as $key => $value) {
-        $total[] = $orderdata[$key]['order_subprice'];
-    }
 
-    if($total == null){
-
-    }
-    else{
-        $total_price = array_sum($total);
-        Order::where('table_id',$table)->where('bill_status',0)->update(['bill_status' => 1]);
+Route::get('billprint/{id}',[billprintcontroller::class,'index'])->name('bill.print');
 
 
-        return view('billprint',[
-            'orderdata'=>$orderdata,
-            'grandprice'=>$total_price,
-        ]);
-    }
 
+
+
+Route::middleware(['auth'])->group(function () {
+    Route::view('/pos', 'pos');
+
+
+    // userrout
+    Route::get('/adduser',[UserController::class,'index']);
+    Route::post('/adduser',[UserController::class,'adduser'])->name('user.add');
 
 });
 

@@ -9,13 +9,24 @@ class billprintcontroller extends Controller
 {
     public function index($table)
     {
-        // $orderdata = Order::where('table_id',$table)->where('bill_status',0)->get();
-        // Order::where('table_id',$table)->where('bill_status',0)->update(['bill_status' => 1]);
+        $total = [];
+    $orderdata = Order::where('table_id',$table)->where('bill_status',0)->with('product')->get();
+    foreach ($orderdata as $key => $value) {
+        $total[] = $orderdata[$key]['order_subprice'];
+    }
+
+    if($total == null){
+
+    }
+    else{
+        $total_price = array_sum($total);
+        Order::where('table_id',$table)->where('bill_status',0)->update(['bill_status' => 1]);
 
 
-        // return view('billprint',[
-        //     'orderdata'=>$orderdata,
-        // ]);
-        return view('billprint');
+        return view('billprint',[
+            'orderdata'=>$orderdata,
+            'grandprice'=>$total_price,
+        ]);
+    }
     }
 }
