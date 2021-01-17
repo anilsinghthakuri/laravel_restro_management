@@ -20,6 +20,10 @@ Route::get('/', function () {
 });
 
 Route::view('/pos', 'pos');
+
+Route::view('/categories', 'add__categories');
+Route::view('/product', 'add__product');
+
 Route::get('/billprint/{$table}',[billprintcontroller::class,'index'])->name('bill.print');
 Route::get('billprint/{id}', function ($table) {
     $total = [];
@@ -44,3 +48,4 @@ Route::get('billprint/{id}', function ($table) {
 
 
 });
+
