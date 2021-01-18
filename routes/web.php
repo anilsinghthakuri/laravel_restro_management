@@ -3,6 +3,7 @@
 use App\Http\Controllers\billprintcontroller;
 use App\Http\Controllers\categorycontroller;
 use App\Http\Controllers\companydatacontroller;
+use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\productcontroller;
 use App\Http\Controllers\TableController;
@@ -62,7 +63,7 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/companyprofile',[companydatacontroller::class,'index']);
     Route::post('/companyprofile',[setupcontroller::class,'update_setup'])->name('setup.update');
 
-
+    Route::get('/dashboard',[DashboardController::class,'index']);
 
     // route for add user
     Route::get('/adduser',[UserController::class,'index']);
