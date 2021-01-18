@@ -11,7 +11,7 @@
 
         <li class='sub-menu '> <a href='/dashboard'><span>
                     <ion-icon name="briefcase-outline"></ion-icon>
-                </span>Dashbord</a></li>
+                </span>Dashboard</a></li>
         <li class='sub-menu '> <a href='#'> <span>
                     <ion-icon name="briefcase-outline"></ion-icon>
                 </span>Table<div class='fa fa-caret-down right'></div></a>
@@ -69,9 +69,8 @@
         <li class='sub-menu '> <a href='#message'><span>
                     <ion-icon name="briefcase-outline"></ion-icon>
                 </span> Update</a></li>
-
-
-
-
+        <li class='sub-menu '> <a href='/logout'><span>
+                    <ion-icon name="briefcase-outline"></ion-icon>
+                </span>Logout</a></li>
     </ul>
 </nav>
