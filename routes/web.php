@@ -18,6 +18,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+Route::view('/table', 'table');
 
 
 Route::get('/',[LoginController::class,'index']);
