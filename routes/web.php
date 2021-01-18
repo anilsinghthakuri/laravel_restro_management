@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\billprintcontroller;
 use App\Http\Controllers\categorycontroller;
+use App\Http\Controllers\companydatacontroller;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\productcontroller;
 use App\Http\Controllers\TableController;
@@ -20,7 +21,6 @@ use Illuminate\Support\Facades\Route;
 */
 // for test route
 
-Route::view('companyprofile', 'companyprofile');
 
 
 
@@ -57,6 +57,12 @@ Route::middleware(['auth'])->group(function () {
 
     // route for dashboard
     Route::view('/dashboard', 'dashboard');
+
+    // route for company profile
+    Route::get('/companyprofile',[companydatacontroller::class,'index']);
+    Route::post('/companyprofile',[setupcontroller::class,'update_setup'])->name('setup.update');
+
+
 
     // route for add user
     Route::get('/adduser',[UserController::class,'index']);

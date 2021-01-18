@@ -51,5 +51,12 @@ class DatabaseSeeder extends Seeder
             'email' => 'anilsingh@dotsoftech.com',
             'password' => '$2y$10$sWwb7nxxcYu/SeX1h.RMU.F1rX8jUdz5tlhMDqqR4.UAz.tCGj3.K',
         ]);
+        DB::table('companydatas')->insert([
+            'company_name'=>'Dotsoftech',
+            'company_address' => 'Dhangadhi kailali',
+            'company_number' => '9868706545',
+            'company_logo'=>'logo.png',
+            'company_currency'=>'RS'
+        ]);
     }
 }
