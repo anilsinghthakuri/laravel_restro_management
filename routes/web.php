@@ -55,7 +55,8 @@ Route::middleware(['auth'])->group(function () {
     Route::post('/table',[TableController::class,'tableadd']);
     Route::get('/table-delete/{id}',[TableController::class,'tabledelete']);
 
-
+    // route for dashboard
+    Route::view('/dashboard', 'dashboard');
 
     // route for add user
     Route::get('/adduser',[UserController::class,'index']);
