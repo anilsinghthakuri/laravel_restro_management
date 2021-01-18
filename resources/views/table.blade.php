@@ -5,14 +5,16 @@
 <div class="col-md-9 mt-3">
     <div class="row">
         <div class="col-md-12">
-            <h2 class="add__table__title mb-3 mt-3">Add Tables</h2>
+            <h2 class="add__table__title mb-4 mt-4">Add Tables</h2>
         </div>
 
+       <div>
         @if (session()->has('message'))
-            <div class="alert alert-success">
-                {{ session('message') }}
-            </div>
-        @endif
+        <div class="alert alert-success">
+            {{ session('message') }}
+        </div>
+    @endif
+       </div>
 
     </div>
     <div class="row">
@@ -33,11 +35,12 @@
     <div class="row mt-5">
         <div class="col-md-12">
             <div class="table__list__part ">
-                <table class="table">
+                <table class="table table-responsive">
                     <thead>
                         <tr>
                             <th scope="col">#</th>
                             <th scope="col">Table Name</th>
+                            <th scope="col">Action</th>
 
                         </tr>
                     </thead>
@@ -47,9 +50,11 @@
                         <tr>
                             <th scope="row">{{$item->table_id}}</th>
                             <td>{{$item->table_name}}</td>
+                            <td> <a href="/table-delete/{{$item->table_id}}"><button type="button" class="btn btn-danger"><i class="fa fa-trash-o" aria-hidden="true"></i></button></a>  </td>
 
                         </tr>
                         @endforeach
+
 
                     </tbody>
                 </table>

@@ -30,6 +30,6 @@ class TableController extends Controller
     public function tabledelete($id)
     {
         Table::where('table_id',$id)->delete();
-        return redirect('/product')->with('message', 'Table deleted');
+        return redirect('/table')->with('message', 'Table deleted');
     }
 }

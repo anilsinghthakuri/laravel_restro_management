@@ -53,7 +53,7 @@ Route::middleware(['auth'])->group(function () {
     // route for table
     Route::get('/table',[TableController::class,'index']);
     Route::post('/table',[TableController::class,'tableadd']);
-    Route::post('/table-delete/{id}',[TableController::class,'tabledelete']);
+    Route::get('/table-delete/{id}',[TableController::class,'tabledelete']);
 
 
 
