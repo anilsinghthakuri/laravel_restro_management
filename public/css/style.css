@@ -232,6 +232,10 @@ img.card-img-top {
 .table__list__part{
     background-color: #fff;
     padding: 20px;
+
+}
+.add__table__list {
+    width: 50%;
 }
 
 
