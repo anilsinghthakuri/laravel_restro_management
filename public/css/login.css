@@ -7,15 +7,18 @@
     position: relative;
 
 }
-.login__contain{
+
+.login__contain {
     position: absolute;
-    top: 50%; left: 50%;
-    transform: translate(-50%,-50%);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     width: 30%;
     margin: 0 auto;
     border: 1px solid #e9ecef;
     padding: 30px;
 }
+
 h2.login__title {
     align-items: center;
     width: 100%;
@@ -25,6 +28,7 @@ h2.login__title {
     color: #3d3c3e;
     margin: 0px;
 }
+
 img.logo__img {
     width: 90px;
     border-radius: 50%;
@@ -32,10 +36,11 @@ img.logo__img {
     object-fit: cover;
     border: 1px solid #ced4da;
 }
-.images{
-align-items: center;
-text-align: center;
-width: 100%;
+
+.images {
+    align-items: center;
+    text-align: center;
+    width: 100%;
 }
 
 .add__user__section{
