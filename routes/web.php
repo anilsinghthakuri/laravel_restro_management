@@ -17,14 +17,21 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
+// for test route
 
 Route::view('/table', 'table');
+Route::view('companyprofile', 'companyprofile');
 
 
+
+// route for login
+Route::get('/login',[LoginController::class,'index']);
 Route::get('/',[LoginController::class,'index']);
 Route::get('/login',[LoginController::class,'index']);
 Route::post('/login',[LoginController::class,'authenticate']);
 
+
+// route for auth for user
 
 Route::middleware(['auth'])->group(function () {
 
