@@ -35,11 +35,11 @@ Route::view('/product__list', 'product__list');
 
 
 Route::get('billprint/{id}',[billprintcontroller::class,'index'])->name('bill.print');
+Route::view('/pos', 'pos');
 
 
 
 Route::middleware(['auth'])->group(function () {
-    Route::view('/pos', 'pos');
 
 
     // userrout
