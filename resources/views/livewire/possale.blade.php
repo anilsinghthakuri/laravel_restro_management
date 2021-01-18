@@ -17,7 +17,6 @@
             @foreach ($tableid as $table)
             <option value={{$loop->iteration}}>Table NO:{{$loop->iteration}}</option>
             @endforeach
-            <option value='delivery'>delivery</option>
           </select></div>
     </div>
     <div class="row row__margin">
@@ -50,7 +49,7 @@
                     </div>
                     @foreach ($order as $orders)
                     <tr>
-                        <th class="head" scope="row">1</th>
+                        <th class="head" scope="row">{{$loop->iteration}}</th>
                         <td>{{$orders->product->product_name}}</td>
                         <td class="price" >{{$orders->product->product_price}}</td>
                         <td class="math__add__minus"><div class="add__minus"><button class="minus" wire:click = 'dec({{$orders->order_id}})'>-</button>{{$orders->order_quantity}}<button class="add" wire:click = 'inc({{$orders->order_id}})'>+</button></div></td>

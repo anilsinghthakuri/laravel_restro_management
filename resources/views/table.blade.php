@@ -48,7 +48,7 @@
 
                         @foreach ($tablename as $item)
                         <tr>
-                            <th scope="row">{{$item->table_id}}</th>
+                            <th scope="row">{{$loop->iteration}}</th>
                             <td>{{$item->table_name}}</td>
                             <td> <a href="/table-delete/{{$item->table_id}}"><button type="button" class="btn btn-danger"><i class="fa fa-trash-o" aria-hidden="true"></i></button></a>  </td>
 
