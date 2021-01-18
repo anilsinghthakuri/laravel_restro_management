@@ -20,28 +20,16 @@ use Illuminate\Support\Facades\Route;
 
 Route::view('/table', 'table');
 
-<<<<<<< HEAD
-// Route::view('/product', 'add__product');
-// Route::view('/product__list', 'product__list');
-
-
-
-Route::get('billprint/{id}',[billprintcontroller::class,'index'])->name('bill.print');
-Route::view('/pos', 'pos');
-=======
->>>>>>> 4f94d09bf960c5676de04e13fc2d0116d973769c
 
 Route::get('/',[LoginController::class,'index']);
+Route::get('/login',[LoginController::class,'index']);
 Route::post('/login',[LoginController::class,'authenticate']);
 
 
 Route::middleware(['auth'])->group(function () {
-<<<<<<< HEAD
-=======
 
     // route to sall product
     Route::view('/pos', 'pos');
->>>>>>> 4f94d09bf960c5676de04e13fc2d0116d973769c
 
     // Route to add and delete category livewire done here
     Route::get('/categories',[categorycontroller::class,'index']);
