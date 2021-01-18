@@ -3,10 +3,12 @@
         <div class="col-md-12">
             <div class="top-part">
                 <div class="d-flex bd-highlight">
-                    <div class="p-2 flex-grow-1 bd-highlight menu__part"><a href="/dashboard"><img src="img/menu.png" alt="menu"></a></div>
+                    <div class="p-2 flex-grow-1 bd-highlight menu__part"><a href="/dashboard"><img src="img/menu.png"
+                                alt="menu"></a></div>
                     <!--<div class="p-2 bd-highlight help__part"><img src="img/help.svg" alt="menu">Help</div>-->
-                    <div class="p-2 bd-highlight login__part"><img class="login__img" src="img/user.png" alt="menu">{{Auth::user()->name}}</div>
-                  </div>
+                    <div class="p-2 bd-highlight login__part"><img class="login__img" src="img/user.png"
+                            alt="menu">{{Auth::user()->name}}</div>
+                </div>
             </div>
         </div>
 
@@ -27,10 +29,10 @@
     </div>
     <div class="all__product">
 
-        <div class="row row-cols-5">
+        <div class="row row-cols-5" value="PLAY"  onclick="play()">
             @foreach ($product as $products)
-            <div class="col px-0" wire:click = 'addproduct({{$products->product_id}})'>
-                <div class="item__items item__height item__hover" >
+            <div class="col px-0" wire:click='addproduct({{$products->product_id}})'>
+                <div class="item__items item__height item__hover">
                     <div class="image__inner">
                         <img src="img/{{$products->product_image}}" class="card-img-top" alt="...">
                     </div>
@@ -50,16 +52,15 @@
         <div class="d-flex flex-row-reverse">
             <nav aria-label="Page ">
                 <ul class="pagination">
-                  <li class="page-item"><a class="page-link" href="#">Previous</a></li>
-                  <li class="page-item"><a class="page-link" href="#">1</a></li>
-                  <li class="page-item"><a class="page-link" href="#">2</a></li>
-                  <li class="page-item"><a class="page-link" href="#">3</a></li>
-                  <li class="page-item"><a class="page-link" href="#">Next</a></li>
+                    <li class="page-item"><a class="page-link" href="#">Previous</a></li>
+                    <li class="page-item"><a class="page-link" href="#">1</a></li>
+                    <li class="page-item"><a class="page-link" href="#">2</a></li>
+                    <li class="page-item"><a class="page-link" href="#">3</a></li>
+                    <li class="page-item"><a class="page-link" href="#">Next</a></li>
                 </ul>
-              </nav>
+            </nav>
         </div>
 
     </div>
 
 </div>
-

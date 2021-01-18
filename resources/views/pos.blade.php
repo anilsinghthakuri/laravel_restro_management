@@ -14,7 +14,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
 </head>
 <body>
-
+    <audio id="audio" src="beep/beep-07.mp3" ></audio>
     <section class="section__billing">
         <div class="container-fluid">
             <div class="col-md-12">
@@ -39,6 +39,12 @@
     <section class="footer__part">
         @livewire('pos')
     </section>
+    <script>
+        function play(){
+             var audio = document.getElementById("audio");
+             audio.play();
+                       }
+         </script>
     @livewireScripts
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
 </body>

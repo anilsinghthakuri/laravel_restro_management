@@ -52,9 +52,9 @@
                         <th class="head" scope="row">{{$loop->iteration}}</th>
                         <td>{{$orders->product->product_name}}</td>
                         <td class="price" >{{$orders->product->product_price}}</td>
-                        <td class="math__add__minus"><div class="add__minus"><button class="minus" wire:click = 'dec({{$orders->order_id}})'>-</button>{{$orders->order_quantity}}<button class="add" wire:click = 'inc({{$orders->order_id}})'>+</button></div></td>
+                        <td class="math__add__minus"><div class="add__minus"><button class="minus" value="PLAY"  onclick="play()" wire:click = 'dec({{$orders->order_id}})'>-</button>{{$orders->order_quantity}}<button class="add" value="PLAY"  onclick="play()" wire:click = 'inc({{$orders->order_id}})'>+</button></div></td>
                         <td class="total__price">{{$orders->order_subprice}}</td>
-                        <td class="btn__cancel"><button class="cancel"  wire:click = 'deleteorder({{$orders->order_id}})' >x</button></td>
+                        <td class="btn__cancel"><button class="cancel" value="PLAY"  onclick="play()"  wire:click = 'deleteorder({{$orders->order_id}})' >x</button></td>
                     </tr>
                     @endforeach
                 </tbody>
