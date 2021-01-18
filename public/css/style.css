@@ -242,4 +242,18 @@ img.card-img-top {
     background: white;
     padding: 30px;
 }
-
+i.fa-icon {
+    font-size: 40px;
+    color: #66d203;
+}
+h5.card-title.title--bill {
+    font-size: 16px;
+}
+.text-bill {
+    font-size: 20px;
+}
+span.form-text {
+    display: block;
+    font-size: 22px;
+    color: #20295b;
+}

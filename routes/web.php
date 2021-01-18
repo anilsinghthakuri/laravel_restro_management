@@ -21,12 +21,13 @@ use Illuminate\Support\Facades\Route;
 // for test route
 
 Route::view('companyprofile', 'companyprofile');
+Route::view('/dashboard', 'dashboard');
 
 
 
 // route for login
 Route::get('/login',[LoginController::class,'index']);
-Route::get('/',[LoginController::class,'index']);
+Route::get('/',[LoginController::class,'index'])->name('login');
 Route::get('/login',[LoginController::class,'index']);
 Route::post('/login',[LoginController::class,'authenticate']);
 
@@ -56,7 +57,6 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/table-delete/{id}',[TableController::class,'tabledelete']);
 
     // route for dashboard
-    Route::view('/dashboard', 'dashboard');
 
     // route for add user
     Route::get('/adduser',[UserController::class,'index']);

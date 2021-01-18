@@ -46,7 +46,7 @@
 
                                         <label for="R__amount" class="form-label">Total Amount *</label>
                                         <span  class="form-text">
-                                            {{$grandprice}}
+                                            RS: {{$grandprice}}
                                         </span>
 
                                     </div>
@@ -54,7 +54,7 @@
 
                                         <label for="R__change" class="form-label">Change:</label><br>
                                         <span id="R__change--number" class="form-text">
-                                            {{$changeamount}}
+                                            RS: {{$changeamount}}
                                         </span>
 
                                     </div>

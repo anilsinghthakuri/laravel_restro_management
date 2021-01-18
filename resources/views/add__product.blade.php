@@ -56,34 +56,47 @@
 
                 <label for="exampleInputEmail1" class="form-label">Product Name</label>
 
-
-                <div class="input-group mb-3">
+                <!--<div class="input-group mb-3">
                     <label class="input-group-text" for="name">Name</label>
                     <input type="text" name="productname">
                     </select>
+                </div>-->
+
+                <div class="input-group mb-3">
+                    <span class="input-group-text"  for="name" id="basic-addon1"><i class="fa fa-pencil" aria-hidden="true"></i></span>
+                    <input type="text" class="form-control" name="productname" id="" placeholder="Name" aria-label="Username" aria-describedby="basic-addon1">
                 </div>
+
             </div>
             <div class="col-md-4">
 
                 <label for="exampleInputEmail1" class="form-label">Product Price</label>
 
 
-                <div class="input-group mb-3">
+                <!--<div class="input-group mb-3">
                     <label class="input-group-text" for="productprice">Price</label>
                     <input type="number" name="productprice" id="">
                     </select>
+                </div>-->
+
+                <div class="input-group mb-3">
+                    <span class="input-group-text"  for="productprice" id="basic-addon1"><i class="fa fa-pencil" aria-hidden="true"></i></span>
+                    <input type="number" class="form-control" name="productprice" id="" placeholder="Price" aria-label="Username" aria-describedby="basic-addon1">
                 </div>
+
             </div>
             <div class="col-md-4">
 
-                <label for="exampleInputEmail1" class="form-label">Product Image</label>
 
 
-                <div class="input-group mb-3">
-                    <label class="input-group-text" for="file">Image</label>
-                    <input type="file" name="file">
+
+                <div class=" mb-3">
+                    <label for="formFile" class="form-label">Images</label>
+                    <input class="form-control" type="file" name="file">
                     </select>
                 </div>
+
+
             </div>
 
         </div>
