@@ -18,7 +18,7 @@ class CreateCompanydatasTable extends Migration
             $table->string('company_name');
             $table->string('company_address');
             $table->string('company_number');
-            $table->string('comapny_logo');
+            $table->string('company_logo');
             $table->string('company_currency');
             $table->timestamps();
         });
