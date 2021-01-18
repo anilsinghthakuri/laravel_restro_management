@@ -95,190 +95,65 @@
 
                                     </div>
                                 </div>
-                                <form class="add__product__form" action="#">
+                                @if (session()->has('status'))
+                            <div class="alert alert-success">
+                                {{ session('status') }}
+                                </div>
+                                @endif
+                                <form class="add__product__form" action="/product" method="POST" enctype="multipart/form-data">
                                     <div class="row  mt-3">
+                                        @csrf
                                         <div class="col-md-4">
 
-                                                <label for="exampleInputEmail1" class="form-label">Product Type</label>
-
+                                                <label for="exampleInputEmail1" class="form-label">Category Name</label>
 
                                             <div class="input-group mb-3">
                                                 <label class="input-group-text" for="inputGroupSelect01">type</label>
-                                                <select class="form-select" id="inputGroupSelect01">
+                                                <select class="form-select" name="category_id" id="inputGroupSelect01">
                                                 <option selected>Choose...</option>
-                                                <option value="1">One</option>
-                                                <option value="2">Two</option>
-                                                <option value="3">Three</option>
+                                                    @foreach ($categorylist as $item)
+                                                    <option value={{$item->category_id}}>{{$item->category_name}}</option>
+                                                    @endforeach
+
                                                 </select>
                                             </div>
                                         </div>
                                         <div class="col-md-4">
 
-                                                <label for="exampleInputEmail1" class="form-label">Product Type</label>
+                                                <label for="exampleInputEmail1" class="form-label">Product Name</label>
+
 
                                             <div class="input-group mb-3">
-                                                <label class="input-group-text" for="inputGroupSelect01">type</label>
-                                                <select class="form-select" id="inputGroupSelect01">
-                                                <option selected>Choose...</option>
-                                                <option value="1">One</option>
-                                                <option value="2">Two</option>
-                                                <option value="3">Three</option>
+                                                <label class="input-group-text" for="name">Name</label>
+                                                <input type="text" name="productname" >
                                                 </select>
                                             </div>
                                         </div>
                                         <div class="col-md-4">
 
-                                                <label for="exampleInputEmail1" class="form-label">Product Type</label>
+                                                <label for="exampleInputEmail1" class="form-label">Product Price</label>
 
 
                                             <div class="input-group mb-3">
-                                                <label class="input-group-text" for="inputGroupSelect01">type</label>
-                                                <select class="form-select" id="inputGroupSelect01">
-                                                <option selected>Choose...</option>
-                                                <option value="1">One</option>
-                                                <option value="2">Two</option>
-                                                <option value="3">Three</option>
+                                                <label class="input-group-text" for="productprice">Price</label>
+                                                <input type="number" name="productprice" id="" >
                                                 </select>
                                             </div>
                                         </div>
                                         <div class="col-md-4">
 
-                                                <label for="exampleInputEmail1" class="form-label">Product Type</label>
+                                            <label for="exampleInputEmail1" class="form-label">Product Image</label>
 
 
                                             <div class="input-group mb-3">
-                                                <label class="input-group-text" for="inputGroupSelect01">type</label>
-                                                <select class="form-select" id="inputGroupSelect01">
-                                                <option selected>Choose...</option>
-                                                <option value="1">One</option>
-                                                <option value="2">Two</option>
-                                                <option value="3">Three</option>
-                                                </select>
-                                            </div>
-                                        </div>
-                                        <div class="col-md-4">
-
-                                            <label for="exampleInputEmail1" class="form-label">Product Type</label>
-
-
-                                            <div class="input-group mb-3">
-                                                <label class="input-group-text" for="inputGroupSelect01">type</label>
-                                                <select class="form-select" id="inputGroupSelect01">
-                                                <option selected>Choose...</option>
-                                                <option value="1">One</option>
-                                                <option value="2">Two</option>
-                                                <option value="3">Three</option>
-                                                </select>
-                                            </div>
-                                        </div>
-                                        <div class="col-md-4">
-
-                                            <label for="exampleInputEmail1" class="form-label">Product Type</label>
-
-
-                                            <div class="input-group mb-3">
-                                                <label class="input-group-text" for="inputGroupSelect01">type</label>
-                                                <select class="form-select" id="inputGroupSelect01">
-                                                <option selected>Choose...</option>
-                                                <option value="1">One</option>
-                                                <option value="2">Two</option>
-                                                <option value="3">Three</option>
-                                                </select>
-                                            </div>
-                                        </div>
-                                        <div class="col-md-4">
-
-                                            <label for="exampleInputEmail1" class="form-label">Product Type</label>
-
-
-                                            <div class="input-group mb-3">
-                                                <label class="input-group-text" for="inputGroupSelect01">type</label>
-                                                <select class="form-select" id="inputGroupSelect01">
-                                                <option selected>Choose...</option>
-                                                <option value="1">One</option>
-                                                <option value="2">Two</option>
-                                                <option value="3">Three</option>
-                                                </select>
-                                            </div>
-                                        </div>
-                                        <div class="col-md-4">
-
-                                            <label for="exampleInputEmail1" class="form-label">Product Type</label>
-
-
-                                            <div class="input-group mb-3">
-                                                <label class="input-group-text" for="inputGroupSelect01">type</label>
-                                                <select class="form-select" id="inputGroupSelect01">
-                                                <option selected>Choose...</option>
-                                                <option value="1">One</option>
-                                                <option value="2">Two</option>
-                                                <option value="3">Three</option>
-                                                </select>
-                                            </div>
-                                        </div>
-                                        <div class="col-md-4">
-
-                                            <label for="exampleInputEmail1" class="form-label">Product Type</label>
-
-
-                                            <div class="input-group mb-3">
-                                                <label class="input-group-text" for="inputGroupSelect01">type</label>
-                                                <select class="form-select" id="inputGroupSelect01">
-                                                <option selected>Choose...</option>
-                                                <option value="1">One</option>
-                                                <option value="2">Two</option>
-                                                <option value="3">Three</option>
-                                                </select>
-                                            </div>
-                                        </div>
-                                        <div class="col-md-4">
-
-                                            <label for="exampleInputEmail1" class="form-label">Product Type</label>
-
-
-                                            <div class="input-group mb-3">
-                                                <label class="input-group-text" for="inputGroupSelect01">type</label>
-                                                <select class="form-select" id="inputGroupSelect01">
-                                                <option selected>Choose...</option>
-                                                <option value="1">One</option>
-                                                <option value="2">Two</option>
-                                                <option value="3">Three</option>
-                                                </select>
-                                            </div>
-                                        </div>
-                                        <div class="col-md-4">
-
-                                            <label for="exampleInputEmail1" class="form-label">Product Type</label>
-
-
-                                            <div class="input-group mb-3">
-                                                <label class="input-group-text" for="inputGroupSelect01">type</label>
-                                                <select class="form-select" id="inputGroupSelect01">
-                                                <option selected>Choose...</option>
-                                                <option value="1">One</option>
-                                                <option value="2">Two</option>
-                                                <option value="3">Three</option>
-                                                </select>
-                                            </div>
-                                        </div>
-                                        <div class="col-md-4">
-
-                                            <label for="exampleInputEmail1" class="form-label">Product Type</label>
-
-
-                                            <div class="input-group mb-3">
-                                                <label class="input-group-text" for="inputGroupSelect01">type</label>
-                                                <select class="form-select" id="inputGroupSelect01">
-                                                <option selected>Choose...</option>
-                                                <option value="1">One</option>
-                                                <option value="2">Two</option>
-                                                <option value="3">Three</option>
+                                                <label class="input-group-text" for="file">Image</label>
+                                                <input type="file" name="file">
                                                 </select>
                                             </div>
                                         </div>
 
                                     </div>
-                                    <button type="submit" class="btn btn-primary">Submit</button>
+                                    <button type="submit" class="btn btn-primary" >Submit</button>
                                 </form>
                                 <div class="row pagination__right pagination__add_product">
                                     <div class="d-flex flex-row-reverse">
@@ -299,6 +174,7 @@
                         </div>
                     </div>
                 </div>
+
             </section>
 
 

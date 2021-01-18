@@ -17,6 +17,7 @@
             @foreach ($tableid as $table)
             <option value={{$loop->iteration}}>Table NO:{{$loop->iteration}}</option>
             @endforeach
+            <option value='delivery'>delivery</option>
           </select></div>
     </div>
     <div class="row row__margin">

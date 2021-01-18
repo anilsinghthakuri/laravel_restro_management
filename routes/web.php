@@ -1,7 +1,9 @@
 <?php
 
 use App\Http\Controllers\billprintcontroller;
+use App\Http\Controllers\categorycontroller;
 use App\Http\Controllers\LoginController;
+use App\Http\Controllers\productcontroller;
 use App\Http\Controllers\UserController;
 use App\Models\Order;
 use Illuminate\Support\Facades\Route;
@@ -26,9 +28,6 @@ Route::get('/login',[LoginController::class,'index'])->name('login');
 Route::post('/login',[LoginController::class,'authenticate']);
 
 
-Route::view('/categories', 'add__categories');
-Route::view('/product', 'add__product');
-
 
 
 Route::get('billprint/{id}',[billprintcontroller::class,'index'])->name('bill.print');
@@ -37,6 +36,13 @@ Route::get('billprint/{id}',[billprintcontroller::class,'index'])->name('bill.pr
 
 Route::middleware(['auth'])->group(function () {
     Route::view('/pos', 'pos');
+
+    Route::get('/categories',[categorycontroller::class,'index']);
+
+
+    Route::get('/product', [productcontroller::class,'index']);
+    Route::post('/product', [productcontroller::class,'addproduct']);
+
 
 
     // userrout
