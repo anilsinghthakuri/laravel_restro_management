@@ -34,7 +34,7 @@ class Addcategory extends Component
             'category_image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
         ]);
 
-        $validatedData['category_image'] = $this->category_image->store('public');
+        $validatedData['category_image'] = $this->category_image->store('photo','public');
 
         Category::create($validatedData);
         $this->category = $this->show_category();
