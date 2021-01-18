@@ -238,4 +238,8 @@ img.card-img-top {
     width: 50%;
 }
 
+.company__profile {
+    background: white;
+    padding: 30px;
+}
 

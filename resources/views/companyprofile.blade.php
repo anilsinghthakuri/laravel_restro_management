@@ -4,24 +4,61 @@
 
 
 <div class="col-md-9 mt-3">
-<form action="">
-    <label for="companyname">Company Name</label>
-    <input type="text" name="companyname" id="">
+    <div class="row">
+        <div class="col-md-12">
+            <h2 class="add__table__title mb-4 mt-4">Company Profile</h2>
+        </div>
 
-    <label for="companyaddress">Address</label>
-    <input type="text" name="companyaddress" id="">
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <div class="company__profile">
 
-    <label for="companyNumber">Company Number</label>
-    <input type="text" name="companyNumber" id="">
+                <form action="">
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <div class="input-group mb-3">
+                                <span class="input-group-text" id="basic-addon1"><i class="fa fa-pencil" aria-hidden="true"></i></span>
+                                <input type="text" class="form-control"  name="companyname" id="" placeholder="Company Name" aria-label="Username" aria-describedby="basic-addon1">
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="input-group mb-3">
+                                <span class="input-group-text" id="basic-addon1"><i class="fa fa-pencil" aria-hidden="true"></i></span>
+                                <input type="text" class="form-control" name="companyaddress" id="" placeholder="Company Address" aria-label="Username" aria-describedby="basic-addon1">
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="input-group mb-3">
+                                <span class="input-group-text" id="basic-addon1"><i class="fa fa-pencil" aria-hidden="true"></i></span>
+                                <input type="number" class="form-control" name="companyNumber" id="" placeholder="Company Number" aria-label="Username" aria-describedby="basic-addon1">
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="input-group mb-3">
+                                <input type="file" class="form-control" id="inputGroupFile02">
+                                <label class="input-group-text" name="comapnyimage" id="" for="inputGroupFile02">Upload</label>
+                              </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="input-group mb-3">
+                                <span class="input-group-text" id="basic-addon1"><i class="fa fa-pencil" aria-hidden="true"></i></span>
+                                <input type="text" class="form-control" name="companycurrency" id="" placeholder="Currency" aria-label="Username" aria-describedby="basic-addon1">
+                              </div>
+                        </div>
 
-    <label for="comapnyimage">Company Logo</label>
-    <input type="file" name="comapnyimage" id="">
+                    </div>
 
-    <label for="companyname">Currency</label>
-    <input type="text" name="companyname" id="">
 
-    <button type="submit" class="btn btn-primary">submit</button>
-</form>
+                    <button type="submit" class="btn btn-primary">submit</button>
+
+                </form>
+
+            </div>
+        </div>
+
+    </div>
+
 </div>
 
 @endsection
