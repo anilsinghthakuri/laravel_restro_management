@@ -15,6 +15,7 @@ class companydatacontroller extends Controller
             'companyinfo'=>$companyinfo,
         ]);
     }
+
     public function update_company(Request $request)
     {
         $id = $request->company_id;

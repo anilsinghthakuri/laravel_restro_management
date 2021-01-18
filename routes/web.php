@@ -61,7 +61,7 @@ Route::middleware(['auth'])->group(function () {
 
     // route for company profile
     Route::get('/companyprofile',[companydatacontroller::class,'index']);
-    Route::post('/companyprofile',[setupcontroller::class,'update_setup'])->name('setup.update');
+    Route::post('/companyprofile',[companydatacontroller::class,'update_company'])->name('company.update');
 
     Route::get('/dashboard',[DashboardController::class,'index']);
 

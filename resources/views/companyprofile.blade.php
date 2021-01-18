@@ -14,7 +14,7 @@
         <div class="col-md-12">
             <div class="company__profile">
 
-                <form action="/company" method="POST" enctype="multipart/form-data">
+                <form action="/companyprofile" method="POST" enctype="multipart/form-data">
                     @csrf
                     <input type="hidden" name="company_id" value="{{$companyinfo->company_id}}">
                     <div class="row">
