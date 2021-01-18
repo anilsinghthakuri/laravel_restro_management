@@ -197,7 +197,7 @@
                                     <tr>
                                         <th scope="row">{{$item->category_id}}</th>
                                         <td class="image-categories"><img class="img__product"
-                                                src="asset(storage/{{$item->category_image}})" class="img-fluid" alt="..."></td>
+                                                src="{{ url('storage/app/'.$item->category_image) }}" class="img-fluid" alt="..."></td>
 
                                         <td>{{$item->category_name}}</td>
                                         <td class="action-table">

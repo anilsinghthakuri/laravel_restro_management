@@ -16,6 +16,14 @@ class productcontroller extends Controller
         ]);
     }
 
+    public function showproduct()
+    {
+        $product = $this->productlist();
+        return view('product__list',[
+            'productlist'=>$product,
+        ]);
+    }
+
     public function addproduct(Request $request)
     {
         if (isset($request->productname) && isset($request->file)&& isset($request->category_id)) {
@@ -43,9 +51,20 @@ class productcontroller extends Controller
         }
     }
 
+    public function deleteproduct($id)
+    {
+        Product::where('product_id',$id)->delete();
+        return redirect('/product')->with('status', 'product deleted');
+    }
+
     public function categorylist()
     {
         $category = Category::all();
         return $category;
+    }
+    public function productlist()
+    {
+        $product = Product::all();
+        return $product;
     }
 }

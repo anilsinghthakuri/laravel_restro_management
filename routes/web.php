@@ -31,8 +31,8 @@ Route::post('/login',[LoginController::class,'authenticate']);
 
 
 
-Route::view('/product', 'add__product');
-Route::view('/product__list', 'product__list');
+// Route::view('/product', 'add__product');
+// Route::view('/product__list', 'product__list');
 
 
 
@@ -45,9 +45,10 @@ Route::middleware(['auth'])->group(function () {
 
     Route::get('/categories',[categorycontroller::class,'index']);
 
-
-    Route::get('/product', [productcontroller::class,'index']);
+    Route::get('/product', [productcontroller::class,'showproduct']);
+    Route::get('/add-product', [productcontroller::class,'index']);
     Route::post('/product', [productcontroller::class,'addproduct']);
+    Route::get('/product-delete/{id}', [productcontroller::class,'deleteproduct'])->name('product.delete');
 
 
 

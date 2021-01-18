@@ -86,9 +86,9 @@
                                     <div class="col-md-12 pt-2">
                                         <div class="add__categories_bottom">
                                             <!-- Button trigger modal -->
-                                                <button type="button" class="btn btn-primary" >
-                                                Add Product
-                                                </button>
+                                                <a href="/product"><button type="button" class="btn btn-primary" >
+                                                    Product List
+                                                    </button></a>
 
 
                                         </div>

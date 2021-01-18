@@ -86,9 +86,9 @@
                                 <div class="col-md-12 pt-2">
                                     <div class="add__categories_bottom">
                                         <!-- Button trigger modal -->
-                                        <button type="button" class="btn btn-primary">
-                                        Product List
-                                        </button>
+                                        <a href="/add-product"><button type="button"  class="btn btn-primary">
+                                            Add Product
+                                            </button></a>
 
 
                                     </div>
@@ -98,6 +98,16 @@
                             <div class="row  mt-3">
                                 <div class="col-md-12">
                                     <div class="categories-tables">
+                                        <div class="col-sm-4">
+                                            @if (session('status'))
+                                            <div class="alert alert-danger">
+                                                {{ session('status') }}
+                                                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                                    <span aria-hidden="true">&times;</span>
+                                                </button>
+                                            </div>
+                                            @endif
+                                        </div>
 
                                         <table class="table table-bordered bg-light table-responsiv">
 
@@ -107,73 +117,32 @@
                                                 <th scope="col">Image</th>
                                                 <th scope="col">Name</th>
                                                 <th scope="col">Code</th>
-                                                <th scope="col">Brand</th>
-                                                <th scope="col">Categori</th>
-                                                <th scope="col">Quality</th>
-                                                <th scope="col">Unit</th>
+                                                <th scope="col">Category Id</th>
                                                 <th scope="col">Price</th>
                                                 <th scope="col">Action</th>
                                                 </tr>
                                             </thead>
 
                                             <tbody>
+                                                @foreach ($productlist as $item)
                                                 <tr>
-                                                <th scope="row">1</th>
-                                                <td class="image-categories"><img class="img__product" src="img/food2.jpg" class="img-fluid" alt="..."></td>
+                                                    <th scope="row">1</th>
+                                                    <td class="image-categories"><img class="img__product" src="img/{{$item->product_image}}" class="img-fluid" alt="..."></td>
 
-                                                <td>Bikash</td>
-                                                <td>8888</td>
-                                                <td>Biki</td>
-                                                <td>Male</td>
-                                                <td>241</td>
-                                                <td>Past</td>
-                                                <td>100K</td>
-                                                <td class="action-table">
-                                                    <div class="d-flex">
-                                                        <button type="button" class="btn btn-success "><i class="fa fa-pencil-square-o" aria-hidden="true"></i>
-                                                        </button> <button type="button" class="btn btn-danger "><i class="fa fa-trash-o" aria-hidden="true"></i></button>
-                                                    </div>
+                                                    <td>{{$item->product_name}}</td>
+                                                    <td>{{$item->category_id}}</td>
+                                                    <td>{{$item->category_id}}</td>
+                                                    <td>{{$item->product_price}}</td>
+                                                    <td class="action-table">
+                                                        <div class="d-flex">
+                                                            {{-- <button type="button" class="btn btn-success "><i class="fa fa-pencil-square-o" aria-hidden="true"></i> --}}
+                                                            <a href="/product-delete/{{$item->product_id}}"></button> <button type="button" class="btn btn-danger "><i class="fa fa-trash-o" aria-hidden="true"></i></button></a>
+                                                        </div>
 
-                                                </td>
-                                                </tr>
-                                                <tr>
-                                                <th scope="row">1</th>
-                                                <td class="image-categories"><img class="img__product" src="img/food2.jpg" class="img-fluid" alt="..."></td>
+                                                    </td>
+                                                    </tr>
+                                                @endforeach
 
-                                                <td>Bikash</td>
-                                                <td>8888</td>
-                                                <td>Biki</td>
-                                                <td>Male</td>
-                                                <td>241</td>
-                                                <td>Past</td>
-                                                <td>100K</td>
-                                                <td class="action-table">
-                                                    <div class="d-flex">
-                                                        <button type="button" class="btn btn-success "><i class="fa fa-pencil-square-o" aria-hidden="true"></i>
-                                                        </button> <button type="button" class="btn btn-danger "><i class="fa fa-trash-o" aria-hidden="true"></i></button>
-                                                    </div>
-
-                                                </td>
-                                                </tr>
-                                                <tr>
-                                                <th scope="row">1</th>
-                                                <td class="image-categories"><img class="img__product" src="img/food2.jpg" class="img-fluid" alt="..."></td>
-
-                                                <td>Bikash</td>
-                                                <td>8888</td>
-                                                <td>Biki</td>
-                                                <td>Male</td>
-                                                <td>241</td>
-                                                <td>Past</td>
-                                                <td>100K</td>
-                                                <td class="action-table">
-                                                    <div class="d-flex">
-                                                        <button type="button" class="btn btn-success "><i class="fa fa-pencil-square-o" aria-hidden="true"></i>
-                                                        </button> <button type="button" class="btn btn-danger "><i class="fa fa-trash-o" aria-hidden="true"></i></button>
-                                                    </div>
-
-                                                </td>
-                                                </tr>
                                             </tbody>
                                             </table>
                                     </div>
