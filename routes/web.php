@@ -22,11 +22,17 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
-
+Route::get('/bill', function () {
+    return view('billprint');
+});
 
 Route::get('/login',[LoginController::class,'index'])->name('login');
 Route::post('/login',[LoginController::class,'authenticate']);
 
+
+
+Route::view('/product', 'add__product');
+Route::view('/product__list', 'product__list');
 
 
 
