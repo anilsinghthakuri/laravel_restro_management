@@ -24,13 +24,13 @@
 
                     <div class="input-group mb-3">
                         <span class="input-group-text" id="basic-addon1">@</span>
-                        <input type="text" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1">
+                        <input type="email" class="form-control" placeholder="Email" name="email" aria-label="Username" aria-describedby="basic-addon1">
                     </div>
 
 
                     <div class="input-group mb-3">
                         <span class="input-group-text" id="basic-addon1">**</span>
-                        <input type="password" class="form-control" placeholder="Password"  aria-describedby="basic-addon1">
+                        <input type="password" class="form-control" placeholder="Password"  name="password" aria-describedby="basic-addon1">
                     </div>
 
                     <button type="submit" value="Login" class="btn btn-primary">Submit</button>
