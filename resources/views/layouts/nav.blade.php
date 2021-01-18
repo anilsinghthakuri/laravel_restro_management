@@ -14,6 +14,14 @@
                 </span>Dashbord</a></li>
         <li class='sub-menu '> <a href='#settings'> <span>
                     <ion-icon name="briefcase-outline"></ion-icon>
+                </span>Table<div class='fa fa-caret-down right'></div></a>
+            <ul class="hide">
+                <li><a href='/table'> <span><i class="fa fa-circle-o" aria-hidden="true"></i>
+                        </span> Add Table</a></li>
+            </ul>
+        </li>
+        <li class='sub-menu '> <a href='#settings'> <span>
+                    <ion-icon name="briefcase-outline"></ion-icon>
                 </span>Product<div class='fa fa-caret-down right'></div></a>
             <ul class="hide">
                 <li><a href='/pos'> <span><i class="fa fa-circle-o" aria-hidden="true"></i>
@@ -44,7 +52,7 @@
             <ul>
                 <li><a href='#settings'> <span><i class="fa fa-circle-o" aria-hidden="true"></i>
                         </span>User List</a></li>
-                <li><a href='#settings'> <span><i class="fa fa-circle-o" aria-hidden="true"></i>
+                <li><a href='/adduser'> <span><i class="fa fa-circle-o" aria-hidden="true"></i>
                         </span>Add User</a></li>
             </ul>
         </li>
