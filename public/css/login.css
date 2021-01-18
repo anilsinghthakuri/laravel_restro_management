@@ -37,3 +37,8 @@ align-items: center;
 text-align: center;
 width: 100%;
 }
+.add__user__section{
+    border: 1px solid #ced4da;
+    background: white;
+    height: 500px;
+}
