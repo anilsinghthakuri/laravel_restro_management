@@ -1,6 +1,5 @@
 .sidebar-menu{
     height: 100vh;
-    overflow: scroll;
 }
 .navbar-item{
     position: relative;
@@ -106,7 +105,6 @@ nav ul li ul li a:hover {
 }
 nav.side-menu {
     height: 100vh;
-    overflow: scroll;
     background: #2f2f2e;
 }
 h1.side-bar-title {
