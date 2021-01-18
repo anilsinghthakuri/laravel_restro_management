@@ -8,14 +8,23 @@
             <h2 class="add__table__title mb-4 mt-4">Add Tables</h2>
         </div>
 
+       <div>
+        @if (session()->has('message'))
+        <div class="alert alert-success">
+            {{ session('message') }}
+        </div>
+    @endif
+       </div>
+
     </div>
     <div class="row">
         <div class="col-md-12">
             <div class="add__table__list">
-                <form action="">
+                <form action="/table" method="POST">
+                    @csrf
                     <div class="input-group">
                         <span class="input-group-text" id="basic-addon1">Add</span>
-                        <input type="text" class="form-control" placeholder="Table name" aria-label="Username"
+                        <input type="text" class="form-control" placeholder="Table name" name="tablename" aria-label="Username"
                             aria-describedby="basic-addon1">
                         <button type="submit" class="btn btn-primary">Submit</button>
                     </div>
@@ -36,24 +45,17 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <th scope="row">1</th>
-                            <td>Mark</td>
 
-                            <td> <button type="button" class="btn btn-danger"><i class="fa fa-trash-o" aria-hidden="true"></i></button> </td>
-
-                        </tr>
+                        @foreach ($tablename as $item)
                         <tr>
-                            <th scope="row">2</th>
-                            <td>Jacob</td>
-                            <td> <button type="button" class="btn btn-danger"><i class="fa fa-trash-o" aria-hidden="true"></i></button> </td>
+                            <th scope="row">{{$item->table_id}}</th>
+                            <td>{{$item->table_name}}</td>
+                            <td> <a href="/table-delete/{{$item->table_id}}"><button type="button" class="btn btn-danger"><i class="fa fa-trash-o" aria-hidden="true"></i></button></a>  </td>
 
                         </tr>
-                        <tr>
-                            <th scope="row">3</th>
-                            <td>@twitter</td>
-                            <td> <button type="button" class="btn btn-danger"><i class="fa fa-trash-o" aria-hidden="true"></i></button> </td>
-                        </tr>
+                        @endforeach
+
+
                     </tbody>
                 </table>
             </div>
