@@ -21,8 +21,8 @@ class CreateOrdersTable extends Migration
             $table->integer('order_quantity');
             $table->integer('order_subprice');
 
-            $table->foreign('product_id')->references('product_id')->on('products');
-            $table->foreign('table_id')->references('table_id')->on('tables');
+            $table->foreign('product_id')->references('product_id')->on('products')->onDelete('cascade');;
+            $table->foreign('table_id')->references('table_id')->on('tables')->onDelete('cascade');;
             $table->timestamps();
         });
     }

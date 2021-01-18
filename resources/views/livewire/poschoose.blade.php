@@ -5,7 +5,7 @@
                 <div class="d-flex bd-highlight">
                     <div class="p-2 flex-grow-1 bd-highlight menu__part"><a href="/dashboard"><img src="img/menu.png" alt="menu"></a></div>
                     <!--<div class="p-2 bd-highlight help__part"><img src="img/help.svg" alt="menu">Help</div>-->
-                    <div class="p-2 bd-highlight login__part"><img class="login__img" src="img/user.png" alt="menu">Login</div>
+                    <div class="p-2 bd-highlight login__part"><img class="login__img" src="img/user.png" alt="menu">{{Auth::user()->name}}</div>
                   </div>
             </div>
         </div>

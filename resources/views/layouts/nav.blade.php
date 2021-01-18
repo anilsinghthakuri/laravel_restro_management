@@ -36,7 +36,7 @@
         </li>
         <li class='sub-menu '> <a href='#'><span>
                     <ion-icon name="briefcase-outline"></ion-icon>
-                </span>Report<div class='fa fa-caret-down right'></div></a>
+                </span>Reports<div class='fa fa-caret-down right'></div></a>
             <ul>
                 <li><a href='#settings'> <span><i class="fa fa-circle-o" aria-hidden="true"></i>
                         </span>Todays Sell</a></li>

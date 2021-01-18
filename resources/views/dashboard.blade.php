@@ -4,7 +4,7 @@
 <div class="col-md-9 mt-3">
     <div class="row">
         <div class="col-md-12">
-            <h2 class="add__table__title mb-4 mt-4">Welcome Admin</h2>
+            <h2 class="add__table__title mb-4 mt-4">Welcome {{Auth::user()->name}}</h2>
         </div>
 
     </div>
@@ -20,7 +20,7 @@
 
                     </div>
                     <div class="card-footer text-muted text-bill">
-                        44,000
+                        RS: {{$total_revenue}}
                     </div>
                 </div>
             </div>
@@ -36,7 +36,7 @@
 
                     </div>
                     <div class="card-footer text-muted text-bill">
-                        20,000
+                        RS: {{$salereturn}}
                     </div>
                 </div>
             </div>
@@ -52,7 +52,7 @@
 
                     </div>
                     <div class="card-footer text-muted text-bill">
-                        20,000
+                        RS: {{$purchesreturn}}
                     </div>
                 </div>
             </div>
@@ -68,7 +68,7 @@
 
                     </div>
                     <div class="card-footer text-muted text-bill">
-                       40,000
+                        RS: {{$total_revenue}}
                     </div>
                 </div>
             </div>

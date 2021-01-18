@@ -3,6 +3,7 @@
 namespace App\Http\Livewire;
 
 use App\Models\Product;
+use Illuminate\Support\Facades\Auth;
 use Livewire\Component;
 
 class Poschoose extends Component
@@ -10,6 +11,7 @@ class Poschoose extends Component
 
     public $product = [];
     public $listeners = ['quant'];
+
 
 
     public function mount()
