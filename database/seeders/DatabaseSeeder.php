@@ -46,5 +46,10 @@ class DatabaseSeeder extends Seeder
             'product_image' => 'food2.jpg',
             'category_id' => 1,
         ]);
+        DB::table('users')->insert([
+            'name'=>'anil',
+            'email' => 'anilsingh@dotsoftech.com',
+            'password' => '$2y$10$sWwb7nxxcYu/SeX1h.RMU.F1rX8jUdz5tlhMDqqR4.UAz.tCGj3.K',
+        ]);
     }
 }
