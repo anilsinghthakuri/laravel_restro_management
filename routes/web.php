@@ -22,6 +22,7 @@ Route::view('/table', 'table');
 
 
 Route::get('/',[LoginController::class,'index']);
+Route::get('/login',[LoginController::class,'index']);
 Route::post('/login',[LoginController::class,'authenticate']);
 
 
