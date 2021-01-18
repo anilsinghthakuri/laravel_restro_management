@@ -4,6 +4,7 @@ use App\Http\Controllers\billprintcontroller;
 use App\Http\Controllers\categorycontroller;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\productcontroller;
+use App\Http\Controllers\TableController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
@@ -19,7 +20,6 @@ use Illuminate\Support\Facades\Route;
 */
 // for test route
 
-Route::view('/table', 'table');
 Route::view('companyprofile', 'companyprofile');
 
 
@@ -49,6 +49,12 @@ Route::middleware(['auth'])->group(function () {
 
     // route for show total biil and generate bill
     Route::get('billprint/{id}',[billprintcontroller::class,'index'])->name('bill.print');
+
+    // route for table
+    Route::get('/table',[TableController::class,'index']);
+    Route::post('/table',[TableController::class,'tableadd']);
+    Route::post('/table-delete/{id}',[TableController::class,'tabledelete']);
+
 
 
     // route for add user

@@ -8,14 +8,21 @@
             <h2 class="add__table__title mb-3 mt-3">Add Tables</h2>
         </div>
 
+        @if (session()->has('message'))
+            <div class="alert alert-success">
+                {{ session('message') }}
+            </div>
+        @endif
+
     </div>
     <div class="row">
         <div class="col-md-12">
             <div class="add__table__list">
-                <form action="">
+                <form action="/table" method="POST">
+                    @csrf
                     <div class="input-group">
                         <span class="input-group-text" id="basic-addon1">Add</span>
-                        <input type="text" class="form-control" placeholder="Table name" aria-label="Username"
+                        <input type="text" class="form-control" placeholder="Table name" name="tablename" aria-label="Username"
                             aria-describedby="basic-addon1">
                         <button type="submit" class="btn btn-primary">Submit</button>
                     </div>
@@ -35,20 +42,15 @@
                         </tr>
                     </thead>
                     <tbody>
+
+                        @foreach ($tablename as $item)
                         <tr>
-                            <th scope="row">1</th>
-                            <td>Mark</td>
+                            <th scope="row">{{$item->table_id}}</th>
+                            <td>{{$item->table_name}}</td>
 
                         </tr>
-                        <tr>
-                            <th scope="row">2</th>
-                            <td>Jacob</td>
+                        @endforeach
 
-                        </tr>
-                        <tr>
-                            <th scope="row">3</th>
-                            <td>@twitter</td>
-                        </tr>
                     </tbody>
                 </table>
             </div>
