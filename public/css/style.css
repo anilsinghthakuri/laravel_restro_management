@@ -260,3 +260,7 @@ span.form-text {
 span.pos__div {
     padding: 0px;
 }
+div#nav-tabContent {
+    height: 250px;
+    overflow: scroll;
+}
