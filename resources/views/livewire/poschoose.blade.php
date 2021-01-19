@@ -31,7 +31,8 @@
     <div class="row">
 
         <div class="col-sm-4">
-            <div class="btn__full_width"><button type="button" class="btn btn-success btn-md" >Category</button></div>
+
+            <div class="btn__full_width"><button onclick="openNav()" type="button" class="btn btn-success btn-md"> <span >Category</span></button></div>
 
         </div>
         <div class="col-sm-4">
@@ -78,4 +79,49 @@
 
     </div>
 
+    <!--sidebar show -->
+    <div id="categories__part" class="side__show ">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <div class="p-3">
+            <h4 class="text-light bg-primary px-5 py-3  ">Categories</h4>
+
+            <div class="all__product ">
+
+                <div class="row row-cols-5" value="PLAY"  onclick="play()">
+                    @foreach ($product as $products)
+                    <div class="col px-0" wire:click='addproduct({{$products->product_id}})'>
+                        <div class="item__items item__height item__hover">
+                            <div class="image__inner">
+                                <img src="img/{{$products->product_image}}" class="card-img-top" alt="...">
+                            </div>
+
+                            <div class="card-detail text-center">
+                                <h5 class="card-title"> {{$products->product_name}}</h5>
+                                <p class="card-text">RS:{{$products->product_price}}</p>
+                            </div>
+                        </div>
+                    </div>
+                    @endforeach
+                </div>
+
+
+            </div>
+
+        </div>
+
+
+    </div>
+
 </div>
+<script>
+     function openNav() {
+      document.getElementById("categories__part").style.width = "700px";
+      document.getElementById("main").style.marginLeft = "250px";
+      }
+
+  /* Set the width of the side navigation to 0 and the left margin of the page content to 0 */
+  function closeNav() {
+      document.getElementById("categories__part").style.width = "0";
+      document.getElementById("main").style.marginLeft = "0";
+      }
+</script>
