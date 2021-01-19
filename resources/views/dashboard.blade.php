@@ -16,7 +16,7 @@
                         <i class="fa fa-tasks fa-icon" aria-hidden="true"></i>
                     </div>
                     <div class="card-body">
-                        <h5 class="card-title title--bill">Total Reveneu</h5>
+                        <h5 class="card-title title--bill">Total Revenue</h5>
 
                     </div>
                     <div class="card-footer text-muted text-bill">
@@ -32,11 +32,11 @@
                       <i class="fa fa-recycle fa-icon" aria-hidden="true"></i>
                     </div>
                     <div class="card-body">
-                        <h5 class="card-title title--bill">Sale Return</h5>
+                        <h5 class="card-title title--bill">Week Revenue</h5>
 
                     </div>
                     <div class="card-footer text-muted text-bill">
-                        RS: {{$salereturn}}
+                        RS: {{$week_revenue}}
                     </div>
                 </div>
             </div>
@@ -48,11 +48,11 @@
                         <i class="fa fa-recycle fa-icon" aria-hidden="true"></i>
                     </div>
                     <div class="card-body">
-                        <h5 class="card-title title--bill">Purches Return</h5>
+                        <h5 class="card-title title--bill">Today Revenue</h5>
 
                     </div>
                     <div class="card-footer text-muted text-bill">
-                        RS: {{$purchesreturn}}
+                        RS: {{$today_revenue}}
                     </div>
                 </div>
             </div>
