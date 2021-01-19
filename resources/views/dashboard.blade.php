@@ -81,9 +81,9 @@
         <div class="col-sm-12">
             <nav class="mb-3">
                 <div class="nav nav-tabs" id="nav-tab" role="tablist">
-                    <a class="nav-link active" id="nav-home-tab" data-bs-toggle="tab" href="#nav-home" role="tab" aria-controls="nav-home" aria-selected="true">Home</a>
-                    <a class="nav-link" id="nav-profile-tab" data-bs-toggle="tab" href="#nav-profile" role="tab" aria-controls="nav-profile" aria-selected="false">Profile</a>
-                    <a class="nav-link" id="nav-contact-tab" data-bs-toggle="tab" href="#nav-contact" role="tab" aria-controls="nav-contact" aria-selected="false">Contact</a>
+                    <a class="nav-link active" id="nav-home-tab" data-bs-toggle="tab" href="#nav-home" role="tab" aria-controls="nav-home" aria-selected="true">Today</a>
+                    <a class="nav-link" id="nav-profile-tab" data-bs-toggle="tab" href="#nav-profile" role="tab" aria-controls="nav-profile" aria-selected="false">Week</a>
+                    <a class="nav-link" id="nav-contact-tab" data-bs-toggle="tab" href="#nav-contact" role="tab" aria-controls="nav-contact" aria-selected="false">Total</a>
                 </div>
             </nav>
             <div class="tab-content" id="nav-tabContent">
@@ -99,67 +99,22 @@
                           </tr>
                         </thead>
                         <tbody class="table-light">
-                          <tr>
-                            <th scope="row">1</th>
-                            <td>Mark</td>
-                            <td>Otto</td>
-                            <td>@mdo</td>
-                            <td>100</td>
-                          </tr>
-                          <tr>
-                            <th scope="row">1</th>
-                            <td>Mark</td>
-                            <td>Otto</td>
-                            <td>@mdo</td>
-                            <td>100</td>
-                          </tr>
-                          <tr>
-                            <th scope="row">1</th>
-                            <td>Mark</td>
-                            <td>Otto</td>
-                            <td>@mdo</td>
-                            <td>100</td>
-                          </tr>
-                          <tr>
-                            <th scope="row">1</th>
-                            <td>Mark</td>
-                            <td>Otto</td>
-                            <td>@mdo</td>
-                            <td>100</td>
-                          </tr>
-                          <tr>
-                            <th scope="row">1</th>
-                            <td>Mark</td>
-                            <td>Otto</td>
-                            <td>@mdo</td>
-                            <td>100</td>
-                          </tr>
-                          <tr>
-                            <th scope="row">1</th>
-                            <td>Mark</td>
-                            <td>Otto</td>
-                            <td>@mdo</td>
-                            <td>100</td>
-                          </tr>
-                          <tr>
-                            <th scope="row">1</th>
-                            <td>Mark</td>
-                            <td>Otto</td>
-                            <td>@mdo</td>
-                            <td>100</td>
-                          </tr>
-                          <tr>
-                            <th scope="row">1</th>
-                            <td>Mark</td>
-                            <td>Otto</td>
-                            <td>@mdo</td>
-                            <td>100</td>
-                          </tr>
+                            @foreach ($today_order_list as $item)
+                            <tr>
+                                <th scope="row">{{$loop->iteration}}</th>
+                                <td>{{$item->product->product_name}}</td>
+                                <td>{{$item->table_id}}</td>
+                                <td>{{$item->order_quantity}}</td>
+                                <td>{{$item->order_subprice}}</td>
+                              </tr>
+                            @endforeach
+
+
                         </tbody>
                     </table>
                 </div>
                 <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
-                    <table class="table">
+                    <table class="table ">
                         <thead>
                           <tr>
                             <th scope="col">Order ID</th>
@@ -170,32 +125,22 @@
                           </tr>
                         </thead>
                         <tbody class="table-light">
-                          <tr>
-                            <th scope="row">1</th>
-                            <td>Mark</td>
-                            <td>Otto</td>
-                            <td>@mdo</td>
-                            <td>100</td>
-                          </tr>
-                          <tr>
-                            <th scope="row">1</th>
-                            <td>Mark</td>
-                            <td>Otto</td>
-                            <td>@mdo</td>
-                            <td>100</td>
-                          </tr>
-                          <tr>
-                            <th scope="row">1</th>
-                            <td>Mark</td>
-                            <td>Otto</td>
-                            <td>@mdo</td>
-                            <td>100</td>
-                          </tr>
+                            @foreach ($week_order_list as $item)
+                            <tr>
+                                <th scope="row">{{$loop->iteration}}</th>
+                                <td>{{$item->product->product_name}}</td>
+                                <td>{{$item->table_id}}</td>
+                                <td>{{$item->order_quantity}}</td>
+                                <td>{{$item->order_subprice}}</td>
+                              </tr>
+                            @endforeach
+
+
                         </tbody>
                     </table>
                 </div>
                 <div class="tab-pane fade" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab">
-                    <table >
+                    <table class="table ">
                         <thead>
                           <tr>
                             <th scope="col">Order ID</th>
@@ -206,27 +151,17 @@
                           </tr>
                         </thead>
                         <tbody class="table-light">
-                          <tr>
-                            <th scope="row">1</th>
-                            <td>Mark</td>
-                            <td>Otto</td>
-                            <td>@mdo</td>
-                            <td>100</td>
-                          </tr>
-                          <tr>
-                            <th scope="row">1</th>
-                            <td>Mark</td>
-                            <td>Otto</td>
-                            <td>@mdo</td>
-                            <td>100</td>
-                          </tr>
-                          <tr>
-                            <th scope="row">1</th>
-                            <td>Mark</td>
-                            <td>Otto</td>
-                            <td>@mdo</td>
-                            <td>100</td>
-                          </tr>
+                            @foreach ($total_order_list as $item)
+                            <tr>
+                                <th scope="row">{{$loop->iteration}}</th>
+                                <td>{{$item->product->product_name}}</td>
+                                <td>{{$item->table_id}}</td>
+                                <td>{{$item->order_quantity}}</td>
+                                <td>{{$item->order_subprice}}</td>
+                              </tr>
+                            @endforeach
+
+
                         </tbody>
                     </table>
                 </div>
