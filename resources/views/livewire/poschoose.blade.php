@@ -31,7 +31,7 @@
     <div class="row">
 
         <div class="col-sm-4">
-            <div class="btn__full_width"><button type="button" class="btn btn-success btn-md">Category</button></div>
+            <div class="btn__full_width"><button type="button" class="btn btn-success btn-md" >Category</button></div>
 
         </div>
         <div class="col-sm-4">
