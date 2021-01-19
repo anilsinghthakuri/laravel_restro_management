@@ -41,7 +41,7 @@ class productcontroller extends Controller
                 $file->category_id = $request->category_id;
                 $file->product_image = $originalFile;
                 $file->save();
-                return redirect('/product')->with('status', 'product upload!');
+                return redirect('/product')->with('message', 'product upload');
 
                 }
             }
@@ -54,7 +54,7 @@ class productcontroller extends Controller
     public function deleteproduct($id)
     {
         Product::where('product_id',$id)->delete();
-        return redirect('/product')->with('status', 'product deleted');
+        return redirect('/product')->with('message', 'product deleted');
     }
 
     public function categorylist()

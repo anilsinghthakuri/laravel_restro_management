@@ -32,16 +32,13 @@
     <div class="row  mt-3">
         <div class="col-md-12">
             <div class="categories-tables">
-                <div class="col-sm-4">
-                    @if (session('status'))
-                    <div class="alert alert-danger">
-                        {{ session('status') }}
-                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
+                <div>
+                    @if (session()->has('message'))
+                    <div class="alert alert-success">
+                        {{ session('message') }}
                     </div>
-                    @endif
-                </div>
+                @endif
+                   </div>
 
                 <table class="table table-bordered bg-light table-responsiv">
 

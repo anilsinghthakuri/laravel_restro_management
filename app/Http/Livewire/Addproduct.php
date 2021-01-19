@@ -46,7 +46,7 @@ class Addproduct extends Component
 
         Product::create($validatedData);
 
-        session()->flash('message', 'Product successfully Uploaded.');
+        session()->flash('status', 'Product  Uploaded');
     }
 
     public function render()
