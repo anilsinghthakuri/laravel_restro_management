@@ -151,6 +151,7 @@
                           </tr>
                         </thead>
                         <tbody class="table-light">
+
                             @foreach ($total_order_list as $item)
                             <tr>
                                 <th scope="row">{{$loop->iteration}}</th>
@@ -160,7 +161,6 @@
                                 <td>{{$item->order_subprice}}</td>
                               </tr>
                             @endforeach
-
 
                         </tbody>
                     </table>
