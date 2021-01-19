@@ -18,7 +18,7 @@ class CreateBillsTable extends Migration
             $table->unsignedBigInteger('table_id');
             $table->integer('bill_total_amount');
 
-            $table->foreign('table_id')->references('table_id')->on('tables');
+            $table->foreign('table_id')->references('table_id')->on('tables')->onDelete('cascade');;
             $table->timestamps();
         });
     }

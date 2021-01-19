@@ -60,13 +60,13 @@
                     <tbody>
                         @foreach ($productlist as $item)
                         <tr>
-                            <th scope="row">1</th>
+                            <th scope="row">{{$loop->iteration}}</th>
                             <td class="image-categories"><img class="img__product" src="img/{{$item->product_image}}"
                                     class="img-fluid" alt="...">
                             </td>
 
                             <td>{{$item->product_name}}</td>
-                            <td>{{$item->category_id}}</td>
+                            <td>{{$loop->iteration}}</td>
                             <td>{{$item->category_id}}</td>
                             <td>{{$item->product_price}}</td>
                             <td class="action-table">
