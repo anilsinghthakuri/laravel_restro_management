@@ -6,8 +6,19 @@
                     <div class="p-2 flex-grow-1 bd-highlight menu__part"><a href="/dashboard"><img src="img/menu.png"
                                 alt="menu"></a></div>
                     <!--<div class="p-2 bd-highlight help__part"><img src="img/help.svg" alt="menu">Help</div>-->
-                    <div class="p-2 bd-highlight login__part"><img class="login__img" src="img/user.png"
-                            alt="menu">{{Auth::user()->name}}</div>
+                    <div class="p-2 bd-highlight ">
+                        <div class="btn-group">
+                            <button type="button" class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                                <img class="login__img" src="img/user.png"
+                                alt="menu">  {{Auth::user()->name}}
+                            </button>
+                            <ul class="dropdown-menu">
+                              <li><a class="dropdown-item" href="#">Add User</a></li>
+                              <li><a class="dropdown-item" href="#">Log out</a></li>
+
+                            </ul>
+                          </div>
+                         </div>
                 </div>
             </div>
         </div>
