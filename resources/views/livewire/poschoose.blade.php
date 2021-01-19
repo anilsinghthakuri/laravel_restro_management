@@ -13,8 +13,8 @@
                                 alt="menu">  {{Auth::user()->name}}
                             </button>
                             <ul class="dropdown-menu">
-                              <li><a class="dropdown-item" href="#">Add User</a></li>
-                              <li><a class="dropdown-item" href="#">Log out</a></li>
+                              <li><a class="dropdown-item" href="/adduser">Add User</a></li>
+                              <li><a class="dropdown-item" href="/logout">Log out</a></li>
 
                             </ul>
                           </div>
