@@ -2,9 +2,16 @@
 
     <h1 class="side-bar-title">
         <ul>
-            <li class="d-flex-div"><span>
+            <li class="d-flex-div">
+                <span>
                     <ion-icon name="speedometer-outline"></ion-icon>
-                </span> <a class="page-title" href='/dashboard'> Dashbord</a></li>
+                </span>
+                <a class="page-title" href='/dashboard'> Dashbord </a>
+                <span>
+                    <a class="page-title" href='/pos'>   Pos</a>
+                </span>
+            </li>
+
         </ul>
     </h1>
     <ul>

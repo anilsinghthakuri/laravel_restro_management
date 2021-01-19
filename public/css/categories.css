@@ -65,7 +65,7 @@ nav ul li span {
 nav ul li a {
     display: block;
     background: #2f2f2e;
-    padding: 10px 0px;
+    padding: 10px 10px;
     color: #fff;
     text-decoration: none;
     -webkit-transition: 0.2s linear;
@@ -75,7 +75,6 @@ nav ul li a {
     transition: 0.2s linear;
     margin: 0px 0px;
     /* border-radius: 5px; */
-    width: 100%;
     border: 1px solid #737373;
 }
 nav ul li a:hover {
