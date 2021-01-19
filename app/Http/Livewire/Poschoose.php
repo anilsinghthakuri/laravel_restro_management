@@ -5,13 +5,14 @@ namespace App\Http\Livewire;
 use App\Models\Category;
 use App\Models\Product;
 use Livewire\Component;
+use Livewire\WithPagination;
 
 class Poschoose extends Component
 {
 
     public $product = [];
     public $listeners = ['quant'];
-
+    use WithPagination;
 
 
     public function mount()
@@ -32,6 +33,8 @@ class Poschoose extends Component
         $categorylist = Category::all();
         return $categorylist;
     }
+
+
     public function render()
     {
         return view('livewire.poschoose');
