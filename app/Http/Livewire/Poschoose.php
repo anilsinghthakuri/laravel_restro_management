@@ -2,8 +2,8 @@
 
 namespace App\Http\Livewire;
 
+use App\Models\Category;
 use App\Models\Product;
-use Illuminate\Support\Facades\Auth;
 use Livewire\Component;
 
 class Poschoose extends Component
@@ -27,6 +27,11 @@ class Poschoose extends Component
     }
 
 
+    public function categoryshow()
+    {
+        $categorylist = Category::all();
+        return $categorylist;
+    }
     public function render()
     {
         return view('livewire.poschoose');
