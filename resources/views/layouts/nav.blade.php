@@ -7,7 +7,7 @@
                     <ion-icon name="speedometer-outline"></ion-icon>
                 </span>
                 <a class="page-title" href='/dashboard'> Dashbord </a>
-                <span>
+                <span class="pos__div">
                     <a class="page-title" href='/pos'>   Pos</a>
                 </span>
             </li>

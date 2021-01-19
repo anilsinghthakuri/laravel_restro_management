@@ -257,3 +257,6 @@ span.form-text {
     font-size: 22px;
     color: #20295b;
 }
+span.pos__div {
+    padding: 0px;
+}
