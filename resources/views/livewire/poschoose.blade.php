@@ -36,10 +36,10 @@
 
         </div>
         <div class="col-sm-4">
-            <div class="btn__full_width"><button type="button" class="btn btn-info btn-md">Brand</button></div>
+            <div class="btn__full_width"><button type="button" wire:click = 'alcohol' class="btn btn-info btn-md">Alcohol</button></div>
         </div>
         <div class="col-sm-4">
-            <div class="btn__full_width"><button type="button" class="btn btn-danger btn-md">Featured</button></div>
+            <div class="btn__full_width"><button type="button" wire:click = 'allproduct' class="btn btn-danger btn-md">All Product</button></div>
         </div>
 
     </div>

@@ -48,6 +48,12 @@ class Poschoose extends Component
         $this->product = Product::where('category_id',$id)->get();
     }
 
+    public function allproduct()
+    {
+
+        $this->product = Product::all();
+    }
+
 
     public function render()
     {
