@@ -16,7 +16,7 @@
                         <i class="fa fa-tasks fa-icon" aria-hidden="true"></i>
                     </div>
                     <div class="card-body">
-                        <h5 class="card-title title--bill">Reveneu</h5>
+                        <h5 class="card-title title--bill">Total Reveneu</h5>
 
                     </div>
                     <div class="card-footer text-muted text-bill">
