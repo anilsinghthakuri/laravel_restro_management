@@ -54,6 +54,11 @@ class Poschoose extends Component
         $this->product = Product::all();
     }
 
+    public function alcohol()
+    {
+
+    }
+
 
     public function render()
     {
