@@ -25,6 +25,8 @@ class Poschoose extends Component
         // dd($id);
         $this->emitTo('possale','orderadd',$id);
     }
+
+
     public function render()
     {
         return view('livewire.poschoose');

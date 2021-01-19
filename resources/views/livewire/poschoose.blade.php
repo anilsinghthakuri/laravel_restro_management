@@ -31,8 +31,8 @@
     <div class="row">
 
         <div class="col-sm-4">
-            <div class="btn__full_width"><button onclick="openNav()" type="button" class="btn btn-success btn-md"> <span >Category</span></button></div>
 
+            <div class="btn__full_width"><button onclick="openNav()" type="button" class="btn btn-success btn-md"> <span >Category</span></button></div>
 
         </div>
         <div class="col-sm-4">
