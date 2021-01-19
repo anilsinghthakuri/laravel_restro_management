@@ -12,12 +12,20 @@ class Poschoose extends Component
 
     public $product = [];
     public $listeners = ['quant'];
+    public $categorylist  = [];
+    public $category  = 0;
+
     use WithPagination;
 
 
     public function mount()
     {
-        $this->product = Product::all();
+        if ($this->category == 0) {
+            $this->product = Product::all();
+            $this->categorylist = $this->categoryshow();
+        }
+
+
     }
 
 
@@ -32,6 +40,12 @@ class Poschoose extends Component
     {
         $categorylist = Category::all();
         return $categorylist;
+    }
+
+    public function choosecategory($id)
+    {
+        $this->category = $id;
+        $this->product = Product::where('category_id',$id)->get();
     }
 
 

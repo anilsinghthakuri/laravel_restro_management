@@ -84,21 +84,20 @@
     <div id="categories__part" class="side__show ">
         <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
         <div class="p-3">
-            <h4 class="text-light bg-primary px-5 py-3  ">Categories</h4>
+            <h4 class="text-light bg-primary px-5 py-3 ">Categories</h4>
 
             <div class="all__product ">
 
                 <div class="row row-cols-5" value="PLAY"  onclick="play()">
-                    @foreach ($product as $products)
-                    <div class="col px-0" wire:click='addproduct({{$products->product_id}})'>
+                    @foreach ($categorylist as $item)
+                    <div class="col px-0" wire:click='choosecategory({{$item->category_id}})'>
                         <div class="item__items item__height item__hover">
                             <div class="image__inner">
-                                <img src="img/{{$products->product_image}}" class="card-img-top" alt="...">
+                                <img src="storage/{{$item->category_image }}" class="card-img-top" alt="...">
                             </div>
 
                             <div class="card-detail text-center">
-                                <h5 class="card-title"> {{$products->product_name}}</h5>
-                                <p class="card-text">RS:{{$products->product_price}}</p>
+                                <h5 class="card-title"> {{$item->category_name}}</h5>
                             </div>
                         </div>
                     </div>
