@@ -68,6 +68,7 @@ Route::middleware(['auth'])->group(function () {
     // route for add user
     Route::get('/adduser',[UserController::class,'index']);
     Route::post('/adduser',[UserController::class,'adduser'])->name('user.add');
+    Route::get('/userlist',[UserController::class,'userlist'])->name('user.list');
 
     // route for logout
     Route::get('/logout',[LoginController::class,'logout']);

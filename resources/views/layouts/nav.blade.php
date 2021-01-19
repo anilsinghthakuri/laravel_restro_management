@@ -50,7 +50,7 @@
                     <ion-icon name="briefcase-outline"></ion-icon>
                 </span>User<div class='fa fa-caret-down right'></div></a>
             <ul>
-                <li><a href='#settings'> <span><i class="fa fa-circle-o" aria-hidden="true"></i>
+                <li><a href='/userlist'> <span><i class="fa fa-circle-o" aria-hidden="true"></i>
                         </span>User List</a></li>
                 <li><a href='/adduser'> <span><i class="fa fa-circle-o" aria-hidden="true"></i>
                         </span>Add User</a></li>

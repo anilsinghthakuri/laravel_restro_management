@@ -22,4 +22,15 @@ class UserController extends Controller
         $user->password = $hashedpassword;
         $user->save();
     }
+
+    public function userlist()
+    {   $userlist = $this->userlistfetch();
+        return view('userlist',[
+            'userlist'=>$userlist,
+        ]);
+    }
+    protected function userlistfetch(){
+        $userlist = User::all();
+        return $userlist;
+    }
 }
