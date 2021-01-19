@@ -26,13 +26,16 @@
                         </tr>
                     </thead>
                     <tbody>
+                        @foreach ($userlist as $item)
                         <tr>
-                            <th scope="row">1</th>
-                            <td>Bikash</td>
-                            <td>bikasbist1414@gmail.com</td>
-                            <td> <a href="#"><button type="button" class="btn btn-danger"><i class="fa fa-trash-o" aria-hidden="true"></i></button></a>  </td>
+                            <th scope="row">{{$loop->iteration}}</th>
+                            <td>{{$item->name}}</td>
+                            <td>{{$item->email}}</td>
+                            <td> <a href="/user-delete{{$item->id}}"><button type="button" class="btn btn-danger"><i class="fa fa-trash-o" aria-hidden="true"></i></button></a>  </td>
 
                         </tr>
+                        @endforeach
+
 
                     </tbody>
                 </table>

@@ -3,26 +3,21 @@
 @section('components')
 <div class="col-md-9 mt-3 ">
 
-    <div class="row">
-        <div class="col-md-12">
-            <div class="top-part">
-                <div class="d-flex bd-highlight">
-                    <div class="p-2 flex-grow-1 bd-highlight menu__part"><img src="img/menu.png" alt="menu"></div>
-
-                    <div class="p-2 bd-highlight login__part"><img class="login__img" src="img/user.png"
-                            alt="menu">Login</div>
-                </div>
-            </div>
+    <div>
+        @if (session()->has('message'))
+        <div class="alert alert-success">
+            {{ session('message') }}
         </div>
+        @endif
 
     </div>
     <div class="row ">
         <div class="col-md-12 pt-2">
             <div class="add__categories_bottom">
                 <!-- Button trigger modal -->
-                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                    Add User
-                </button>
+                <a href="/userlist"><button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                    User List
+                </button></a>
 
             </div>
 
@@ -33,7 +28,7 @@
             <div class="add__user__section">
                 <div class="login__contain">
                     <h4 class="add__user__title mb-3">you can add user here</h4>
-                    <form method="POST" action="/login" enctype="multipart/form-data">
+                    <form method="POST" action="/adduser" enctype="multipart/form-data">
                         @csrf
                         <div class="input-group mb-3">
                             <span class="input-group-text" id="basic-addon1">Text</span>
