@@ -15,9 +15,6 @@
 </div>
 
 
-
-
-
 <!-- cash modal  -->
 <div class="modal fade" id="cash_toggle" data-bs-keyboard="false" tabindex="-1" aria-labelledby="cash_toggleLabel"
     aria-hidden="true">
