@@ -29,15 +29,6 @@
                             </section>
                         </div>
 
-
-                        <section class="footer__part">
-
-                            @livewire('pos')
-
-                        </section>
-
-                        </div>
-
                     </div>
 
                     <div class="col-md-6">
