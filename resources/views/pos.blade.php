@@ -21,8 +21,14 @@
                 <div class="row">
 
                     <div class="col-md-6">
+                        <div class="item__right">
+                            @livewire('possale')
 
-                        @livewire('possale')
+                            <section class="footer__part">
+                                @livewire('pos')
+                            </section>
+                        </div>
+
 
                     </div>
 
