@@ -104,7 +104,7 @@
                         </form>
                     </div>
                 </div>
-
+                    {{-- this is footer --}}
 
                 <div class="modal-footer">
                     <button type="submit" wire:click = 'checkout({{$table}})' class="btn btn-primary">Check Out Bill</button>
