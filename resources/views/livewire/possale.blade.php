@@ -113,6 +113,9 @@
             </div>
         </div>
     </div>
+    <section class="footer__part">
+        @livewire('pos')
+    </section>
 </div>
 
 

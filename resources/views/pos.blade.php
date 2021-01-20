@@ -36,9 +36,7 @@
             </div>
         </div>
     </section>
-    <section class="footer__part">
-        @livewire('pos')
-    </section>
+
     <script>
         function play(){
              var audio = document.getElementById("audio");
