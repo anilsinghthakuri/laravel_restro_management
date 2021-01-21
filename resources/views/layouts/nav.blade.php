@@ -8,7 +8,7 @@
                 </span>
                 <a class="page-title" href='/dashboard'> Dashbord </a>
                 <span class="pos__div">
-                    <a class="page-title" href='/pos'>   Pos</a>
+                    <a class="page-title" href='/pos'> Pos</a>
                 </span>
             </li>
 
@@ -51,6 +51,8 @@
                         </span>Monthly Sale</a></li>
                 <li><a href='#settings'> <span><i class="fa fa-circle-o" aria-hidden="true"></i>
                         </span>Total Sale</a></li>
+                <li><a href='#settings'> <span><i class="fa fa-circle-o" aria-hidden="true"></i>
+                        </span>Sales Analysis</a></li>
             </ul>
         </li>
         <li class='sub-menu '> <a href='#message'><span>
