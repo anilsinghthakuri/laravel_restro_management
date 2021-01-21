@@ -100,7 +100,7 @@
         <div class="col-sm-4">
             <div class="d-flex bd-highlight  d-flex--part ">
                 <div class="mr-auto p-2 bd-highlight">Shipping</div>
-                <div class="p-2 bd-highlight">00.0</div>
+                <div class="p-2 bd-highlight"> 00.0  </div>
 
               </div>
         </div>
