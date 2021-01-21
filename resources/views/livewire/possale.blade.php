@@ -1,4 +1,4 @@
-<div class="item__right">
+<div >
     <div class="row row__margin">
         <div class="col-sm-4"><select class="form-select" aria-label="Default select example">
             <option selected>Category</option>
