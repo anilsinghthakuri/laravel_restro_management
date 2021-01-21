@@ -6,6 +6,9 @@ use App\Models\Bill;
 use App\Models\Order;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
+use Maatwebsite\Excel\Facades\Excel;
+use App\Exports\OrdersExport;
+
 
 class DashboardController extends Controller
 {
@@ -111,5 +114,15 @@ class DashboardController extends Controller
 
         return   $total_order_list;
 
+    }
+
+    public function export()
+    {
+        return Excel::download(new OrdersExport, 'orders.xlsx');
+    }
+    public function exportpdf()
+
+    {
+        return (new OrdersExport)->download('invoices.pdf', \Maatwebsite\Excel\Excel::MPDF);
     }
 }

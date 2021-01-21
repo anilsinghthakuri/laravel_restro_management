@@ -63,13 +63,17 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/companyprofile',[companydatacontroller::class,'index']);
     Route::post('/companyprofile',[companydatacontroller::class,'update_company'])->name('company.update');
 
+    // route for dashboard
     Route::get('/dashboard',[DashboardController::class,'index']);
+    Route::get('/export-orders',[DashboardController::class,'export']);
+    Route::get('/export-orders-pdf',[DashboardController::class,'exportpdf']);
 
     // route for add user
     Route::get('/adduser',[UserController::class,'index']);
     Route::post('/adduser',[UserController::class,'adduser'])->name('user.add');
     Route::get('/userlist',[UserController::class,'userlist'])->name('user.list');
     Route::get('/user-delete/{id}',[UserController::class,'userdelete'])->name('user.delete');
+
 
     // route for logout
     Route::get('/logout',[LoginController::class,'logout']);
