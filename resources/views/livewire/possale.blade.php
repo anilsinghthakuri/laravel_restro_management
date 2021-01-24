@@ -79,13 +79,13 @@
         <div class="col-sm-4">
             <div class="d-flex bd-highlight  d-flex--part  ">
                 <div class="mr-auto p-2 bd-highlight">Discount</div>
-                <div class="p-2 bd-highlight">0.00</div>
+                <div class="p-2 bd-highlight"><input type="number"  wire:model = 'discount'></div>
 
               </div>
         </div>
         <div class="col-sm-4">
             <div class="d-flex bd-highlight  d-flex--part ">
-                <div class="mr-auto p-2 bd-highlight">Coupon</div>
+                <div class="mr-auto p-2 bd-highlight" >Coupon</div>
                 <div class="p-2 bd-highlight">0.00</div>
 
               </div>
@@ -100,7 +100,7 @@
         <div class="col-sm-4">
             <div class="d-flex bd-highlight  d-flex--part ">
                 <div class="mr-auto p-2 bd-highlight">Shipping</div>
-                <div class="p-2 bd-highlight">0.00</div>
+                <div class="p-2 bd-highlight"> 00.0  </div>
 
               </div>
         </div>
