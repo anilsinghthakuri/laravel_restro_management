@@ -45,11 +45,11 @@
                     <ion-icon name="briefcase-outline"></ion-icon>
                 </span>Expense<div class='fa fa-caret-down right'></div></a>
             <ul class="hide">
-                <li><a href='#'> <span><i class="fa fa-circle-o" aria-hidden="true"></i>
+                <li><a href='/expense-category'> <span><i class="fa fa-circle-o" aria-hidden="true"></i>
                 </span>Expense Category</a></li>
-                <li><a href='#'> <span><i class="fa fa-circle-o" aria-hidden="true"></i>
+                <li><a href='/expense-add'> <span><i class="fa fa-circle-o" aria-hidden="true"></i>
                         </span>Add Expense</a></li>
-                <li><a href='#'> <span><i class="fa fa-circle-o" aria-hidden="true"></i>
+                <li><a href='/expense-list'> <span><i class="fa fa-circle-o" aria-hidden="true"></i>
                         </span>Expense List</a></li>
 
             </ul>

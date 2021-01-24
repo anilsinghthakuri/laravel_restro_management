@@ -49,6 +49,11 @@ Route::middleware(['auth'])->group(function () {
     Route::post('/product', [productcontroller::class,'addproduct']);
     Route::get('/product-delete/{id}', [productcontroller::class,'deleteproduct'])->name('product.delete');
 
+    // Route for expense
+    Route::view('/expense-category', 'add__expense_category');
+    Route::view('/expense-add', 'add_expense');
+    Route::view('/expense-list', 'expenselist');
+
     // route for show total biil and generate bill
     Route::get('billprint/{id}',[billprintcontroller::class,'index'])->name('bill.print');
 
