@@ -86,6 +86,10 @@
                     <a class="nav-link" id="nav-contact-tab" data-bs-toggle="tab" href="#nav-contact" role="tab" aria-controls="nav-contact" aria-selected="false">Total</a>
                 </div>
             </nav>
+            <div>
+                <a href="/export-orders"><button class="btn btn-primary">Excel</button></a>
+            </div>
+
             <div class="tab-content" id="nav-tabContent">
                 <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
                     <table class="table ">
