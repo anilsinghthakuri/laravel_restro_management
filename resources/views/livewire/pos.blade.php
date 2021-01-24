@@ -4,14 +4,14 @@
             <div class="row">
                 <div class="d-flex justify-content-center">
 
-                    <div class="btn__full_width p-2"><button type="button" class="btn btn-danger btn-lg">KHALTI</button>
+                    {{-- <div class="btn__full_width p-2"><button type="button" class="btn btn-danger btn-md">KHALTI</button>
                     </div>
-                    <div class="btn__full_width p-2"><button type="button" class="btn btn-success btn-lg">E-SEWA</button>
+                    <div class="btn__full_width p-2"><button type="button" class="btn btn-success btn-md">E-SEWA</button>
                     </div>
-                    <div class="btn__full_width p-2"><button type="button" class="btn btn-info btn-lg">MASTER CARD</button>
-                    </div>
-                    <div class="btn__full_width p-2"><button type="button" wire:click = "changecalc($table,$grandprice)" class="btn btn-primary btn-lg"
-                            data-bs-toggle="modal" data-bs-target="#cash_toggle">CASH</button></div>
+                    <div class="btn__full_width p-2"><button type="button" class="btn btn-info btn-md">MASTER CARD</button>
+                    </div>--}}
+                    <div class="btn__full_width p-2"><button type="button" wire:click = "changecalc($table,$grandprice)" class="btn btn-primary btn-md px-5 mb-3 P-class-btn"
+                            data-bs-toggle="modal" data-bs-target="#cash_toggle">Cash</button></div>
                 </div>
             </div>
         </div>

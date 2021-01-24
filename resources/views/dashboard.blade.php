@@ -4,7 +4,7 @@
 <div class="col-md-9 mt-3">
     <div class="row">
         <div class="col-md-12">
-            <h2 class="add__table__title mb-4 mt-4">Welcome {{Auth::user()->name}}</h2>
+            <h2 class="add__table__title mb-4 mt-4">Welcome : {{Auth::user()->name}}</h2>
         </div>
 
     </div>
@@ -77,7 +77,7 @@
 
     </div>
 
-    <div class="row mt-5">
+    <div class="row mt-2">
         <div class="col-sm-12">
             <nav class="mb-3">
                 <div class="nav nav-tabs" id="nav-tab" role="tablist">

@@ -3,26 +3,28 @@
         <div class="col-md-12">
             <div class="top-part">
                 <div class="d-flex bd-highlight">
-                    <div class="p-2 flex-grow-1 bd-highlight menu__part"><a href="/dashboard"><button type="button" class="btn btn-primary " >
-                        <img src="img/menu.png"
-                    alt="menu"> Dashbord
-                    </button></a>
+                    <div class="p-2 flex-grow-1 bd-highlight menu__part">
+                        <a href="/dashboard">
+                            <button type="button" class="btn btn-primary ">
+                                <img src="img/menu.png" alt="menu"> Dashbord
+                            </button>
+                        </a>
 
-                            </div>
+                    </div>
                     <!--<div class="p-2 bd-highlight help__part"><img src="img/help.svg" alt="menu">Help</div>-->
                     <div class="p-2 bd-highlight ">
                         <div class="btn-group">
-                            <button type="button" class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
-                                <img class="login__img" src="img/user.png"
-                                alt="menu">  {{Auth::user()->name}}
+                            <button type="button" class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown"
+                                aria-expanded="false">
+                                <img class="login__img" src="img/user.png" alt="menu"> {{Auth::user()->name}}
                             </button>
                             <ul class="dropdown-menu">
-                              <li><a class="dropdown-item" href="/adduser">Add User</a></li>
-                              <li><a class="dropdown-item" href="/logout">Log out</a></li>
+                                <li><a class="dropdown-item" href="/adduser">Add User</a></li>
+                                <li><a class="dropdown-item" href="/logout">Log out</a></li>
 
                             </ul>
-                          </div>
-                         </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -32,20 +34,23 @@
 
         <div class="col-sm-4">
 
-            <div class="btn__full_width"><button onclick="openNav()" type="button" class="btn btn-success btn-md"> <span >Category</span></button></div>
+            <div class="btn__full_width"><button onclick="openNav()" type="button" class="btn btn-success btn-md">
+                    <span>Category</span></button></div>
 
         </div>
         <div class="col-sm-4">
-            <div class="btn__full_width"><button type="button" wire:click = 'alcohol' class="btn btn-info btn-md text-light"> Alcohol</button></div>
+            <div class="btn__full_width"><button type="button" wire:click='alcohol'
+                    class="btn btn-info btn-md text-light"> Alcohol</button></div>
         </div>
         <div class="col-sm-4">
-            <div class="btn__full_width"><button type="button" wire:click = 'allproduct' class="btn btn-danger btn-md ">All Product</button></div>
+            <div class="btn__full_width"><button type="button" wire:click='allproduct'
+                    class="btn btn-danger btn-md ">All Product</button></div>
         </div>
 
     </div>
     <div class="all__product">
 
-        <div class="row row-cols-5" value="PLAY"  onclick="play()">
+        <div class="row row-cols-5" value="PLAY" onclick="play()">
             @foreach ($product as $products)
             <div class="col px-0" wire:click='addproduct({{$products->product_id}})'>
                 <div class="item__items item__height item__hover">
@@ -88,7 +93,7 @@
 
             <div class="all__product ">
 
-                <div class="row row-cols-5" value="PLAY"  onclick="play()">
+                <div class="row row-cols-5" value="PLAY" onclick="play()">
                     @foreach ($categorylist as $item)
                     <div class="col px-0" wire:click='choosecategory({{$item->category_id}})'>
                         <div class="item__items item__height item__hover">
@@ -114,14 +119,15 @@
 
 </div>
 <script>
-     function openNav() {
-      document.getElementById("categories__part").style.width = "700px";
-      document.getElementById("main").style.marginLeft = "250px";
-      }
+    function openNav() {
+        document.getElementById("categories__part").style.width = "700px";
+        document.getElementById("main").style.marginLeft = "250px";
+    }
 
-  /* Set the width of the side navigation to 0 and the left margin of the page content to 0 */
-  function closeNav() {
-      document.getElementById("categories__part").style.width = "0";
-      document.getElementById("main").style.marginLeft = "0";
-      }
+    /* Set the width of the side navigation to 0 and the left margin of the page content to 0 */
+    function closeNav() {
+        document.getElementById("categories__part").style.width = "0";
+        document.getElementById("main").style.marginLeft = "0";
+    }
+
 </script>
