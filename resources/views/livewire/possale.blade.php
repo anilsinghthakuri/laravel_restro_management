@@ -1,5 +1,5 @@
 <div>
-    <div class="row row__margin">
+    <div class="row">
         {{-- <div class="col-sm-4"><select class="form-select" aria-label="Default select example">
             <option selected>Category</option>
             <option value="1">One</option>
@@ -89,10 +89,11 @@
         </div>
         <div class="col-sm-4">
             <div class="d-flex bd-highlight  d-flex--part  ">
-                <div class="mr-auto p-2 bd-highlight">Discount</div>
-                <div class="p-2 bd-highlight"><input type="number"  wire:model = 'discount'></div>
-
-            </div>
+                <div class="input-group">
+                    <span class="input-group-text" id="basic-addon1">Discount <i class="fa fa-pencil" aria-hidden="true"></i></span>
+                    <input type="number" class="form-control" placeholder="Username" aria-label="Username" wire:model = 'discount' aria-describedby="basic-addon1">
+                  </div>
+              </div>
         </div>
         <div class="col-sm-4">
             <div class="d-flex bd-highlight  d-flex--part ">

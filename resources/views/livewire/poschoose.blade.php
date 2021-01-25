@@ -5,7 +5,7 @@
                 <div class="d-flex bd-highlight">
                     <div class="p-2 flex-grow-1 bd-highlight menu__part">
                         <a href="/dashboard">
-                            <button type="button" class="btn btn-primary ">
+                            <button type="button" class="btn btn-primary font-btn-part">
                                 <img src="img/menu.png" alt="menu"> Dashbord
                             </button>
                         </a>
@@ -14,7 +14,7 @@
                     <!--<div class="p-2 bd-highlight help__part"><img src="img/help.svg" alt="menu">Help</div>-->
                     <div class="p-2 bd-highlight ">
                         <div class="btn-group">
-                            <button type="button" class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown"
+                            <button type="button" class="btn btn-primary dropdown-toggle font-btn-part" data-bs-toggle="dropdown"
                                 aria-expanded="false">
                                 <img class="login__img" src="img/user.png" alt="menu"> {{Auth::user()->name}}
                             </button>
@@ -35,16 +35,16 @@
         <div class="col-sm-4">
 
             <div class="btn__full_width"><button onclick="openNav()" type="button" class="btn btn-success btn-md">
-                    <span>Category</span></button></div>
+                    <span class="span__categories">Category</span></button></div>
 
         </div>
         <div class="col-sm-4">
             <div class="btn__full_width"><button type="button" wire:click='alcohol'
-                    class="btn btn-info btn-md text-light"> Alcohol</button></div>
+                    class="btn btn-info btn-md text-light"><span class="span__categories">Alcohol</span></button> </button></div>
         </div>
         <div class="col-sm-4">
             <div class="btn__full_width"><button type="button" wire:click='allproduct'
-                    class="btn btn-danger btn-md ">All Product</button></div>
+                    class="btn btn-danger btn-md "><span class="span__categories">All Product</span></button></div>
         </div>
 
     </div>

@@ -1,7 +1,37 @@
 body{
     font-family: 'Nunito Sans', sans-serif;
     font-size: 14px;
+    color: #7d7d7d;
 
+}
+button.btn.btn-primary.font-btn-part {
+    font-size: 12px;
+    border-color: #17a2b8;
+    background: #17a2b8;
+}
+
+.btn-primary {
+    color: #fff;
+    border-color: #17a2b8;
+    background: #17a2b8;
+}
+.btn-danger {
+    border-color: #b33771;
+    background-color: #b33771;
+}
+span.span__categories {
+    font-size: 14px;
+}
+.btn-info {
+    background-color: #17a2b8;
+    border-color: #17a2b8;
+}
+.btn-success{
+    background-color: #7c5cc4;
+    border-color: #7c5cc4;
+}
+span#basic-addon1 {
+    color: #7d7d7d;
 }
 img.login__img {
     margin-right: 5px;
@@ -13,10 +43,17 @@ img {
 .all__product {
     margin: 10px;
 }
+/* new css change */
 h5.card-title {
-    font-size: 14px;
+    font-size: 12px;
     padding-top: 10px;
+    color: #868e96;
 }
+p.card-text {
+    color: #666;
+    font-size: 13px;
+}
+/* new css changes end */
 p.card-text {
     padding-bottom: 10px;
 }
@@ -122,7 +159,7 @@ select.form-select {
 }
 h2.add__table__title{
     font-size: 32px;
-    color: #3F51B5;
+    color: #7050b7;
     font-weight: 600;
     text-transform: uppercase;
 }
@@ -163,7 +200,10 @@ th{
 thead {
     font-size: 14px;
     color: #fff;
-    background: #3F51B5;
+    background: #7c5cc4;
+}
+.page-link {
+    color: #17a2b8;
 }
 th.head {
     width: 80px;
@@ -187,7 +227,7 @@ section.footer__part {
     position: absolute;
     bottom: 0;
     left: 0;
-    border-bottom: 5px solid #3f51b5;
+    border-bottom: 5px solid #7c5cc4;
 }
 .pagination__right {
     position: absolute;
@@ -195,9 +235,13 @@ section.footer__part {
     right: 20px;
     bottom: 60px;
 }
+.card-body {
+    flex: 1 1 auto;
+     padding: 0rem 0rem;
+}
 .top-part {
     background: white;
-    margin-bottom: 10px;
+    margin-bottom: 15px;
 }
 .login__part {
     background: #66d203;
@@ -240,7 +284,7 @@ img.card-img-top {
 .image__inner{
     overflow: hidden;
     width: 100%;
-    height: 85px;
+    height: 100px;
 }
 .table__list__part{
     background-color: #fff;
@@ -250,14 +294,29 @@ img.card-img-top {
 .add__table__list {
     width: 50%;
 }
+.total__chanrge h1 {
+    font-size: 28px;
+    color: #7c5cc4;
+    margin-bottom: 0;
+    font-weight: 600;
+}
+.P-class-btn {
+    padding: 14px 50px;
+    border: 3px solid #17a2b8;
+    text-transform: uppercase;
+}
 
 .company__profile {
     background: white;
     padding: 30px;
 }
 i.fa-icon {
-    font-size: 40px;
-    color: #66d203;
+    font-size: 26px;
+    color: #7050b7;
+}
+.nav-tabs .nav-link {
+
+    color: #7050b7;
 }
 h5.card-title.title--bill {
     font-size: 16px;

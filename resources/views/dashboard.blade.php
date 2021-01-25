@@ -84,11 +84,10 @@
                     <a class="nav-link active" id="nav-home-tab" data-bs-toggle="tab" href="#nav-home" role="tab" aria-controls="nav-home" aria-selected="true">Today</a>
                     <a class="nav-link" id="nav-profile-tab" data-bs-toggle="tab" href="#nav-profile" role="tab" aria-controls="nav-profile" aria-selected="false">Week</a>
                     <a class="nav-link" id="nav-contact-tab" data-bs-toggle="tab" href="#nav-contact" role="tab" aria-controls="nav-contact" aria-selected="false">Total</a>
+                    <a href="/export-orders"><button class="btn btn-primary mx-5 btn-sm">Excel report download</button></a>
                 </div>
             </nav>
-            <div>
-                <a href="/export-orders"><button class="btn btn-primary">Excel</button></a>
-            </div>
+
 
             <div class="tab-content" id="nav-tabContent">
                 <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
