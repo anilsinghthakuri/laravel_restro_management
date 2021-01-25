@@ -4,6 +4,7 @@ use App\Http\Controllers\billprintcontroller;
 use App\Http\Controllers\categorycontroller;
 use App\Http\Controllers\companydatacontroller;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\ExpenseController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\productcontroller;
 use App\Http\Controllers\TableController;
@@ -50,9 +51,13 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/product-delete/{id}', [productcontroller::class,'deleteproduct'])->name('product.delete');
 
     // Route for expense
-    Route::view('/expense-category', 'add__expense_category');
-    Route::view('/expense-add', 'add_expense');
-    Route::view('/expense-list', 'expenselist');
+    Route::get('/expense-list', [ExpenseController::class,'index']);
+    Route::get('/expense-category', [ExpenseController::class,'show_expense_category']);
+    Route::post('/expense-category', [ExpenseController::class,'add_expense_category']);
+    Route::get('/expense-add', [ExpenseController::class,'show_expense_add']);
+    Route::post('/expense-add', [ExpenseController::class,'add_expense_list']);
+
+
 
     // route for show total biil and generate bill
     Route::get('billprint/{id}',[billprintcontroller::class,'index'])->name('bill.print');
