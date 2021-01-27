@@ -331,10 +331,18 @@ span.form-text {
 }
 span.pos__div {
     padding: 0px;
+    width: 100%;
 }
 div#nav-tabContent {
     height: 250px;
     overflow: scroll;
+}
+.footer__part__absolute {
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    height: 240px;
+    padding: 15px;
 }
 
 /* The side navigation menu */

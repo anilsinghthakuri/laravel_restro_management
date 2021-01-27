@@ -13,20 +13,22 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 30%;
+    width: 33%;
     margin: 0 auto;
-    border: 1px solid #e9ecef;
+    border: 1px solid #c1c1c1;
     padding: 30px;
+    border-radius: 10px;
 }
-
+input.form-control.login__input {
+    line-height: 30px;
+}
 h2.login__title {
-    align-items: center;
     width: 100%;
-    text-align: center;
-    font-weight: 700;
+    font-weight: 600;
     font-size: 26px;
     color: #3d3c3e;
     margin: 0px;
+    margin-bottom: 10px;
 }
 
 img.logo__img {
@@ -47,4 +49,19 @@ img.logo__img {
     border: 1px solid #CED4DA;
     background: white;
     height: 500px;
+}
+button.btn.btn-primary.btn-primary-login {
+    background-color: #38d39f;
+    border-color: #38d39f;
+    height: 45px;
+    height: 54px;
+    padding-left: 30px;
+    padding-right: 30px;
+    width: 100%;
+}
+p.login__text {
+    color: #b3b3b3;
+    font-weight: 300;
+    margin-bottom: 0px;
+    font-size: 15px;
 }

@@ -72,59 +72,62 @@
         </div>
     </div>
     <!--table row end  -->
-    <div class="row">
-        <div class="col-sm-4">
-            <div class="d-flex bd-highlight  d-flex--part ">
-                <div class="mr-auto p-2 bd-highlight "> Items</div>
-                <div class="p-2 bd-highlight">12(20)</div>
+    <div class="footer__part__absolute">
+        <div class="row">
+            <div class="col-sm-4">
+                <div class="d-flex bd-highlight  d-flex--part ">
+                    <div class="mr-auto p-2 bd-highlight "> Items</div>
+                    <div class="p-2 bd-highlight">12(20)</div>
 
+                </div>
             </div>
-        </div>
-        <div class="col-sm-4">
-            <div class="d-flex bd-highlight  d-flex--part ">
-                <div class="mr-auto p-2 bd-highlight">Total</div>
-                <div class="p-2 bd-highlight">{{$totalprice}}</div>
+            <div class="col-sm-4">
+                <div class="d-flex bd-highlight  d-flex--part ">
+                    <div class="mr-auto p-2 bd-highlight">Total</div>
+                    <div class="p-2 bd-highlight">{{$totalprice}}</div>
 
+                </div>
             </div>
-        </div>
-        <div class="col-sm-4">
-            <div class="d-flex bd-highlight  d-flex--part  ">
-                <div class="input-group">
-                    <span class="input-group-text" id="basic-addon1">Discount <i class="fa fa-pencil" aria-hidden="true"></i></span>
-                    <input type="number" class="form-control" placeholder="Username" aria-label="Username" wire:model = 'discount' aria-describedby="basic-addon1">
+            <div class="col-sm-4">
+                <div class="d-flex bd-highlight  d-flex--part  ">
+                    <div class="input-group">
+                        <span class="input-group-text" id="basic-addon1">Discount <i class="fa fa-pencil" aria-hidden="true"></i></span>
+                        <input type="number" class="form-control" placeholder="Username" aria-label="Username" wire:model = 'discount' aria-describedby="basic-addon1">
+                      </div>
                   </div>
-              </div>
-        </div>
-        <div class="col-sm-4">
-            <div class="d-flex bd-highlight  d-flex--part ">
-                <div class="mr-auto p-2 bd-highlight" >Coupon</div>
-                <div class="p-2 bd-highlight">0.00</div>
+            </div>
+            <div class="col-sm-4">
+                <div class="d-flex bd-highlight  d-flex--part ">
+                    <div class="mr-auto p-2 bd-highlight" >Coupon</div>
+                    <div class="p-2 bd-highlight">0.00</div>
 
+                </div>
+            </div>
+            <div class="col-sm-4">
+                <div class="d-flex bd-highlight  d-flex--part ">
+                    <div class="mr-auto p-2 bd-highlight">Tax</div>
+                    <div class="p-2 bd-highlight">0.00</div>
+
+                </div>
+            </div>
+            <div class="col-sm-4">
+                <div class="d-flex bd-highlight  d-flex--part ">
+                    <div class="mr-auto p-2 bd-highlight">Shipping</div>
+                    <div class="p-2 bd-highlight"> 00.0  </div>
+
+                </div>
+            </div>
+
+        </div>
+        <!--extra featur  -->
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="total__chanrge">
+                    <h1>Grand Total {{$grandprice}}</h1>
+                </div>
             </div>
         </div>
-        <div class="col-sm-4">
-            <div class="d-flex bd-highlight  d-flex--part ">
-                <div class="mr-auto p-2 bd-highlight">Tax</div>
-                <div class="p-2 bd-highlight">0.00</div>
-
-            </div>
-        </div>
-        <div class="col-sm-4">
-            <div class="d-flex bd-highlight  d-flex--part ">
-                <div class="mr-auto p-2 bd-highlight">Shipping</div>
-                <div class="p-2 bd-highlight"> 00.0  </div>
-
-            </div>
-        </div>
-
     </div>
-    <!--extra featur  -->
-    <div class="row">
-        <div class="col-sm-12">
-            <div class="total__chanrge">
-                <h1>Grand Total {{$grandprice}}</h1>
-            </div>
-        </div>
-    </div>
+
 
 </div>
