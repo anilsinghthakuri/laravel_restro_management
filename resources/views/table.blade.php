@@ -20,15 +20,29 @@
     <div class="row">
         <div class="col-md-12">
             <div class="add__table__list">
+                @if ($table == Null)
                 <form action="/table" method="POST">
                     @csrf
                     <div class="input-group">
                         <span class="input-group-text" id="basic-addon1">Add</span>
-                        <input type="text" class="form-control" placeholder="Table name" name="tablename" aria-label="Username"
+                        <input type="text" class="form-control" required placeholder="Table name" name="tablename" aria-label="Username"
                             aria-describedby="basic-addon1">
                         <button type="submit" class="btn btn-primary">Submit</button>
                     </div>
                 </form>
+                @else
+                <form action="/table-update" method="POST">
+                    @csrf
+                    <div class="input-group">
+                        <input type="hidden" name="id" value="{{$table->table_id}}">
+                        <span class="input-group-text" id="basic-addon1">Add</span>
+                        <input type="text" class="form-control" required value="{{$table->table_name}}" name="tablename" aria-label="Username"
+                            aria-describedby="basic-addon1">
+                        <button type="submit" class="btn btn-primary">update</button>
+                    </div>
+                </form>
+                @endif
+
             </div>
         </div>
     </div>
@@ -50,7 +64,8 @@
                         <tr>
                             <th scope="row">{{$loop->iteration}}</th>
                             <td>{{$item->table_name}}</td>
-                            <td> <a href="/table-delete/{{$item->table_id}}"><button type="button" class="btn btn-danger"><i class="fa fa-trash-o" aria-hidden="true"></i></button></a>  </td>
+                            <td> <a href="/table-delete/{{$item->table_id}}"><button type="button" class="btn btn-danger"><i class="fa fa-trash-o" aria-hidden="true"></i></button></a>
+                             <a href="/table/{{$item->table_id}}"><button type="button" class="btn btn-primary"><i class="fa fa-trash-o" aria-hidden="true"></i></button></a>  </td>
 
                         </tr>
                         @endforeach

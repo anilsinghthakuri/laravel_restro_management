@@ -8,7 +8,7 @@ use Illuminate\Http\Request;
 
 class productcontroller extends Controller
 {
-    public function index()
+    public function product()
     {
         $category = $this->categorylist();
         return view('add__product',[
@@ -16,7 +16,7 @@ class productcontroller extends Controller
         ]);
     }
 
-    public function showproduct()
+    public function index()
     {
         $product = $this->productlist();
         return view('product__list',[
@@ -51,6 +51,49 @@ class productcontroller extends Controller
         }
     }
 
+    public function edit_product($id)
+    {
+        // dd($id);
+        $product  = Product::Find($id);
+        $categorylist = $this->categorylist();
+        return view('edit__product',[
+            'product'=>$product,
+            'categorylist'=>$categorylist,
+        ]);
+    }
+
+    public function update_product(Request $request)
+    {
+        // dd($id);
+        $id = $request->id;
+        // dd($id);
+        if ($request->hasFile('file')) {
+
+            $file = $request->file('file');
+            $destinationPath = 'img/';
+            $originalFile = $file->getClientOriginalName();
+            $file->move($destinationPath, $originalFile);
+            $product  = Product::Find($id);
+            $product->product_name = $request->productname;
+            $product->product_price = $request->productprice;
+            $product->category_id = $request->category_id;
+            $product->product_image = $originalFile;
+            $product->save();
+
+        return redirect('/product')->with('message', 'product updated');
+        }
+
+        else{
+            $product  = Product::Find($id);
+            $product->category_id = $request->category_id;
+            $product->product_name = $request->productname;
+            $product->product_price = $request->productprice;
+            $product->save();
+          return redirect('/product')->with('message', 'product updated');
+
+
+        }
+    }
     public function deleteproduct($id)
     {
         Product::where('product_id',$id)->delete();

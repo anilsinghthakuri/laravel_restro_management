@@ -68,7 +68,8 @@
                             <td>{{$item->product_price}}</td>
                             <td class="action-table">
                                 <div class="d-flex">
-                                    {{-- <button type="button" class="btn btn-success "><i class="fa fa-pencil-square-o" aria-hidden="true"></i> --}}
+                                   <a href="/product-edit/{{$item->product_id}}"><button type="button" class="btn btn-success "><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a>
+
                                     <a href="/product-delete/{{$item->product_id}}"></button>
                                         <button type="button" class="btn btn-danger "><i class="fa fa-trash-o"
                                                 aria-hidden="true"></i></button></a>
