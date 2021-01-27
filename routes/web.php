@@ -43,6 +43,11 @@ Route::middleware(['auth'])->group(function () {
 
     // Route to add and delete category livewire done here
     Route::get('/categories',[categorycontroller::class,'index']);
+    Route::post('/categories',[categorycontroller::class,'add_category']);
+    Route::get('/categories/{id}',[categorycontroller::class,'edit_product_category']);
+    Route::post('/categories-update',[categorycontroller::class,'update_product_category']);
+    Route::get('/categories-delete/{id}', [categorycontroller::class,'delete_category'])->name('category.delete');
+
 
     // Route for product add and delete and show
     Route::get('/product', [productcontroller::class,'index']);
