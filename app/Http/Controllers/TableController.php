@@ -9,10 +9,34 @@ class TableController extends Controller
 {
     public function index()
     {
-        $tablename = $this->tablelist();
-        return view('table',[
-            'tablename'=>$tablename,
-        ]);
+            $tablename = $this->tablelist();
+            $table = [];
+            return view('table',[
+                'tablename'=>$tablename,
+                'table'=>$table,
+            ]);
+    }
+
+    public function table_edit($id)
+    {
+            $table = Table::Find($id);
+            $tablename = $this->tablelist();
+            return view('table',[
+                'tablename'=>$tablename,
+                'table'=>$table,
+
+            ]);
+    }
+
+    public function table_update(Request $request)
+    {
+        $id = $request->id;
+        $table = Table::Find($id);
+        $table->table_name = $request->tablename;
+        $table->save();
+        return redirect('/table')->with('message', 'Table Updated');
+
+
     }
 
     public function tableadd(Request $request)

@@ -18,7 +18,7 @@
             <select wire:model='table' class="form-select form-select-lg mb-3" aria-label=".form-select-lg example">
                 <option selected>Choose Table</option>
                 @foreach ($tableid as $table)
-                <option value={{$loop->iteration}}>Table NO:{{$loop->iteration}}</option>
+                <option value="{{$table}}">Table NO:{{$loop->iteration}}</option>
                 @endforeach
             </select>
         </div>

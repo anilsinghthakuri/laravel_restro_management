@@ -43,11 +43,18 @@ Route::middleware(['auth'])->group(function () {
 
     // Route to add and delete category livewire done here
     Route::get('/categories',[categorycontroller::class,'index']);
+    Route::post('/categories',[categorycontroller::class,'add_category']);
+    Route::get('/categories/{id}',[categorycontroller::class,'edit_product_category']);
+    Route::post('/categories-update',[categorycontroller::class,'update_product_category']);
+    Route::get('/categories-delete/{id}', [categorycontroller::class,'delete_category'])->name('category.delete');
+
 
     // Route for product add and delete and show
-    Route::get('/product', [productcontroller::class,'showproduct']);
-    Route::get('/add-product', [productcontroller::class,'index']);
+    Route::get('/product', [productcontroller::class,'index']);
+    Route::get('/add-product', [productcontroller::class,'product']);
     Route::post('/product', [productcontroller::class,'addproduct']);
+    Route::get('/product-edit/{id}', [productcontroller::class,'edit_product']);
+    Route::post('/product-update', [productcontroller::class,'update_product']);
     Route::get('/product-delete/{id}', [productcontroller::class,'deleteproduct'])->name('product.delete');
 
     // Route for expense
@@ -64,7 +71,9 @@ Route::middleware(['auth'])->group(function () {
 
     // route for table
     Route::get('/table',[TableController::class,'index']);
+    Route::get('/table/{id}',[TableController::class,'table_edit']);
     Route::post('/table',[TableController::class,'tableadd']);
+    Route::post('/table-update',[TableController::class,'table_update']);
     Route::get('/table-delete/{id}',[TableController::class,'tabledelete']);
 
     // route for dashboard
