@@ -98,7 +98,7 @@
                     <div class="col px-0" wire:click='choosecategory({{$item->category_id}})'>
                         <div class="item__items item__height item__hover">
                             <div class="image__inner">
-                                <img src="storage/{{$item->category_image }}" class="card-img-top" alt="...">
+                                <img src="/img/{{$item->category_image }}" class="card-img-top" alt="...">
                             </div>
 
                             <div class="card-detail text-center">

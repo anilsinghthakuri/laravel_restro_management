@@ -13,6 +13,7 @@ class Pos extends Component
     public $changeamount = 0;
     public $grandprice;
     public $payingamount = 0;
+    public $shifting_table = 0;
 
     protected $listeners = ['changecalc'];
 
