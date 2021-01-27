@@ -159,7 +159,7 @@ select.form-select {
 }
 h2.add__table__title{
     font-size: 32px;
-    color: #7050b7;
+    color: #525965;
     font-weight: 600;
     text-transform: uppercase;
 }
@@ -200,7 +200,7 @@ th{
 thead {
     font-size: 14px;
     color: #fff;
-    background: #7c5cc4;
+    background: #525965;
 }
 .page-link {
     color: #17a2b8;
@@ -310,7 +310,7 @@ img.card-img-top {
 }
 i.fa-icon {
     font-size: 26px;
-    color: #7050b7;
+    color: #525965;
 }
 .nav-tabs .nav-link {
 
