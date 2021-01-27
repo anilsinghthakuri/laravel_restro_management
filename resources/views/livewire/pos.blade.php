@@ -10,7 +10,7 @@
                     </div>
                     <div class="btn__full_width p-2"><button type="button" class="btn btn-info btn-md">MASTER CARD</button>
                     </div>--}}
-                    <div class="btn__full_width"><button type="button" wire:click = "changecalc($table,$grandprice)" class="btn btn-primary btn-md px-5 mb-3 P-class-btn"
+                    <div class="btn__full_width"><button type="button" value="PLAY" onclick="play()" wire:click = "changecalc($table,$grandprice)" class="btn btn-primary btn-md px-5 mb-3 P-class-btn"
                             data-bs-toggle="modal" data-bs-target="#cash_toggle">Cash</button></div>
                 </div>
             </div>
