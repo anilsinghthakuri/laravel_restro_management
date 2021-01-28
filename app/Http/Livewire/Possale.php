@@ -170,10 +170,11 @@ class Possale extends Component
     public function tablenameid()
     {
         $tableid = [];
-        $table = Table::all();
-        foreach ($table as $key => $value) {
-            $tableid[] = $table[$key]['table_id'];
-        }
+        // $table = Table::all();
+        // foreach ($table as $key => $value) {
+        //     $tableid[] = $table[$key]['table_id'];
+        // }
+        $tableid = Table::all();
         return $tableid;
     }
     public function grandpricecalc()

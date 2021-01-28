@@ -17,9 +17,13 @@
 
             <select wire:model='table' class="form-select form-select-lg mb-3" aria-label=".form-select-lg example">
                 <option selected>Choose Table</option>
-                @foreach ($tableid as $table)
-                <option value="{{$table}}">Table NO:{{$loop->iteration}}</option>
-                @endforeach
+                {{-- @foreach ($tableid as $table)
+                <option value="{{$table}}">{{$table->table_name}}</option>
+                @endforeach --}}
+                @foreach ($tableid as $item)
+
+                    <option  value="{{$item->table_id}}">{{$item->table_name}}</option>
+                  @endforeach
             </select>
         </div>
     </div>
@@ -92,7 +96,7 @@
                 <div class="d-flex bd-highlight  d-flex--part  ">
                     <div class="input-group">
                         <span class="input-group-text" id="basic-addon1">Discount <i class="fa fa-pencil" aria-hidden="true"></i></span>
-                        <input type="number" class="form-control" placeholder="Username" aria-label="Username" wire:model = 'discount' aria-describedby="basic-addon1">
+                        <input type="number" class="form-control" placeholder="RS" aria-label="Username" wire:model = 'discount' aria-describedby="basic-addon1">
                       </div>
                   </div>
             </div>

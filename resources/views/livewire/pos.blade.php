@@ -5,9 +5,9 @@
                 <div class="d-flex justify-content-center">
 
                     {{-- <div class="btn__full_width p-2"><button type="button" class="btn btn-danger btn-md">KHALTI</button>
-                    </div>
-                    <div class="btn__full_width p-2"><button type="button" class="btn btn-success btn-md">E-SEWA</button>
                     </div> --}}
+                    <div class="btn__full_width p-2"><button type="button" class="btn btn-success btn-md">KOT</button>
+                    </div>
                     <div class="btn__full_width p-2"><button type="button" class="btn btn-info btn-md"  data-bs-toggle="modal" data-bs-target="#table_shift_toggle">Table Shift</button>
                     </div>
                     <div class="btn__full_width"><button type="button" value="PLAY" onclick="play()" wire:click = "changecalc($table,$grandprice)" class="btn btn-primary btn-md px-5 mb-3 P-class-btn"
@@ -138,11 +138,12 @@
                                  <div class="mb-3">
 
                                     <label for="Payed__by" class="form-label">Current Table</label>
-                                    <select class="form-select" aria-label="Default select example">
-                                        <option selected >Choose the Current Table</option>
-                                        <option  value="1">Table 1</option>
-                                        {{-- <option value="2">Gift Card</option>
-                                        <option value="3">credit Card</option> --}}
+                                    <select class="form-select"  aria-label="Default select example">
+                                        @foreach ($tablelist as $item)
+                                        @if ($item->table_id == $table)
+                                        <option selected value="{{$item->table_id}}">{{$item->table_name}}</option>
+                                        @endif
+                                @endforeach
                                     </select>
 
                                  </div>
@@ -150,9 +151,14 @@
                              <div class="col-md-6 ms-auto">
                                  <div class="mb-3">
                                     <label for="Payed__by" class="form-label">New Shifting Table</label>
-                                    <select class="form-select" aria-label="Default select example">
+                                    <select class="form-select" wire:model = 'shifting_table' aria-label="Default select example">
                                         <option  selected>Choose the Shifting Table</option>
-                                        <option  value="1">Table 1</option>
+                                        @foreach ($tablelist as $item)
+                                                @if ($item->table_id == $table)
+                                                        @continue
+                                                @endif
+                                            <option  value="{{$item->table_id}}">{{$item->table_name}}</option>
+                                        @endforeach
                                         {{-- <option value="2">Gift Card</option>
                                         <option value="3">credit Card</option> --}}
                                     </select>
@@ -176,7 +182,7 @@
                  {{-- this is footer --}}
 
              <div class="modal-footer">
-                 <button type="submit" wire:click = 'checkout({{$table}})' class="btn btn-primary">Change Table</button>
+                 <button type="submit" wire:click = 'table_change' class="btn btn-primary">Change Table</button>
              </div>
          </div>
      </div>
