@@ -12,10 +12,10 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
 
-        <link rel="stylesheet" href="css/sidebar.css">
-     <link rel="stylesheet" href="css/categories.css">
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/login.css">
+        <link rel="stylesheet" href="/css/sidebar.css">
+     <link rel="stylesheet" href="/css/categories.css">
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/login.css">
 
 
     @livewireStyles
@@ -46,7 +46,7 @@
 
     <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js'></script>
 
-    <script src="js/script.js"></script>
+    <script src="/js/script.js"></script>
     @livewireScripts
 
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"

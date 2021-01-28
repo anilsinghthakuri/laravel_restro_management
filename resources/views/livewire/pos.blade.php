@@ -11,7 +11,7 @@
                     <div class="btn__full_width mx-2"><button type="button" class="btn btn-info btn-md px-5 mb-3 P-class-btn"  data-bs-toggle="modal" data-bs-target="#table_shift_toggle">Table Shift</button>
                     </div>
                     <div class="btn__full_width"><button type="button" value="PLAY" onclick="play()" wire:click = "changecalc($table,$grandprice)" class="btn btn-danger btn-md px-5 mb-3 P-class-btn"
-                            data-bs-toggle="modal" data-bs-target="#cash_toggle">Cash</button></div>
+                            data-bs-toggle="modal" data-bs-target="#cash_toggle">Check Out</button></div>
                 </div>
             </div>
         </div>
@@ -67,9 +67,10 @@
                                     <div class="mb-3">
 
                                         <label for="Payed__by" class="form-label">Payed  By *</label>
-                                        <select class="form-select" aria-label="Default select example">
+                                        <select class="form-select" wire:model = 'payment'  aria-label="Default select example">
                                             <option >Choose the payment method</option>
                                             <option selected value="1">Cash</option>
+                                            <option selected value="2">Credit</option>
                                             {{-- <option value="2">Gift Card</option>
                                             <option value="3">credit Card</option> --}}
                                         </select>
@@ -77,6 +78,27 @@
                                     </div>
 
                                 </div>
+                                @if ($payment  == 2)
+                                    <div class="col-md-6 ">
+
+                                        <div class="mb-6">
+
+                                            <label for="Payed__by" class="form-label">Customer Select</label>
+                                            <select class="form-select"  aria-label="Default select example">
+                                                <option >Choose Customer</option>
+                                                @foreach ($customerlist as $item)
+                                                <option selected value={{$item->customer_id}}>{{$item->customer_username}}</option>
+                                                @endforeach
+
+                                            </select>
+
+                                        </div>
+
+                                    </div>
+
+
+                                @endif
+
                             </div>
                             <div class="row">
                                 <div class="col-md-12 ms-auto">
@@ -107,7 +129,7 @@
                     {{-- this is footer --}}
 
                 <div class="modal-footer">
-                    <button type="submit" wire:click = 'checkout({{$table}})' class="btn btn-primary">Check Out Bill</button>
+                    <button type="submit" wire:click = 'checkout({{$table}})' class="btn btn-primary">Check out Bill</button>
                 </div>
             </div>
         </div>
@@ -143,7 +165,7 @@
                                         @if ($item->table_id == $table)
                                         <option selected value="{{$item->table_id}}">{{$item->table_name}}</option>
                                         @endif
-                                @endforeach
+                                         @endforeach
                                     </select>
 
                                  </div>

@@ -4,6 +4,7 @@ namespace App\Http\Livewire;
 
 use App\Http\Controllers\billprintcontroller;
 use App\Models\Bill;
+use App\Models\Customer;
 use App\Models\Order;
 use App\Models\Table;
 use Livewire\Component;
@@ -17,6 +18,8 @@ class Pos extends Component
     public $payingamount = 0;
     public $shifting_table = 0;
     public $table_order = [];
+    public $customerlist =[];
+    public $payment = 0;
 
     protected $listeners = ['changecalc'];
 
@@ -25,6 +28,7 @@ class Pos extends Component
         $this->payingamount = 0;
         $this->tablelist = $this->table_list();
         $this->table_order = $this->table_order_data();
+        $this->customerlist = $this->customer_list();
     }
 
     public function updatedPayingamount()
@@ -76,6 +80,7 @@ class Pos extends Component
         $tablelist = Table::all();
         return $tablelist;
     }
+
     public function table_order_data()
     {
         $table_order = Order::where('table_id',$this->table)->where('bill_status',0)->get();
@@ -108,6 +113,12 @@ class Pos extends Component
 
         }
      }
+
+    public function customer_list()
+    {
+        $customerlist = Customer::all();
+        return $customerlist;
+    }
 
     public function render()
     {

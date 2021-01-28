@@ -65,6 +65,34 @@
                                 <li>
                                     <a href="/categories">Add & show categories List</a>
                                 </li>
+
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="sidebar-dropdown">
+                        <a href="#">
+                            <i class="fa fa-shopping-cart"></i>
+                            <span>Sale</span>
+
+                        </a>
+                        <div class="sidebar-submenu">
+                            <ul>
+                                <li>
+                                    <a href="#">Add Customer</a>
+                                </li>
+                                <li>
+                                    <a href="#">Total Sale</a>
+                                </li>
+                                <li>
+                                    <a href="#">Cash Sale</a>
+                                </li>
+                                <li>
+                                    <a href="#">Credit Sale</a>
+                                </li>
+
+                                <li>
+                                    <a href="#">Check & Remove Credit </a>
+                                </li>
                             </ul>
                         </div>
                     </li>
