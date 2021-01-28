@@ -20,6 +20,7 @@ class Pos extends Component
     public $table_order = [];
     public $customerlist =[];
     public $payment = 0;
+    public $customer = 0;
 
     protected $listeners = ['changecalc'];
 
@@ -56,11 +57,28 @@ class Pos extends Component
 
         }
         else{
-            $orderdata = [];
-            $bill = New Bill;
-            $bill->table_id = $this->table;
-            $bill->bill_total_amount = $this->grandprice;
-            $bill->save();
+
+
+                if ($this->payment == 1) {
+                    $orderdata = [];
+                    $bill = New Bill;
+                    $bill->table_id = $this->table;
+                    $bill->bill_total_amount = $this->grandprice;
+                    $bill->bill_payment_method = $this->payment;
+                    $bill->save();
+                }
+                else{
+                    $orderdata = [];
+                    $bill = New Bill;
+                    $bill->table_id = $this->table;
+                    $bill->bill_total_amount = $this->grandprice;
+                    $bill->bill_payment_method = $this->payment;
+                    $bill->customer_id = $this->customer;
+                    $bill->save();
+                }
+
+
+
             // Order::where('table_id',$table)->where('bill_status',0)->update(['bill_status' => 1]);
 
             // $this->emit('billdata',$orderdata);

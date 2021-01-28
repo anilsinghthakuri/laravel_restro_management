@@ -18,7 +18,7 @@ class CreateBillsTable extends Migration
             $table->unsignedBigInteger('table_id');
             $table->integer('bill_total_amount');
             $table->string('bill_payment_method');
-            $table->unsignedBigInteger('customer_id');
+            $table->unsignedBigInteger('customer_id')->nullable();
 
             $table->foreign('table_id')->references('table_id')->on('tables')->onDelete('cascade');
             $table->foreign('customer_id')->references('customer_id')->on('customers')->onDelete('cascade');

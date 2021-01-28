@@ -84,7 +84,7 @@
                                         <div class="mb-6">
 
                                             <label for="Payed__by" class="form-label">Customer Select</label>
-                                            <select class="form-select"  aria-label="Default select example">
+                                            <select class="form-select" wire:model = 'customer' aria-label="Default select example">
                                                 <option >Choose Customer</option>
                                                 @foreach ($customerlist as $item)
                                                 <option selected value={{$item->customer_id}}>{{$item->customer_username}}</option>
