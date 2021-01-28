@@ -30,7 +30,7 @@
                 <ul>
                     <li class="sidebar-dropdown">
                         <a href="#">
-                            <i class="fa fa-shopping-cart"></i>
+                            <i class="fa fa-table" aria-hidden="true"></i>
                             <span>Table</span>
 
                         </a>

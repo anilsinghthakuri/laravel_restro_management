@@ -32,15 +32,21 @@
     </div>
     <div class="row">
 
-        <div class="col-sm-4">
+        <div class="col-sm-12">
+            <div class="row row__margin">
+                <div class="col-sm-12"><form class="d-flex">
+                    <input class="form-control me-2" type="text" placeholder="Search food by name"  wire:model='search' aria-label="Search"  id="">
+                    <button class=" btn-search transition__btn" >Search</button>
+                  </form></div>
+            </div>
 
-            <div class="btn__full_width"><input type="text" placeholder="search food by name" wire:model='search' name="search" id=""></div>
+            {{-- <div class="btn__full_width"><input type="text" placeholder="search food by name" wire:model='search' name="search" id=""></div> --}}
 
         </div>
-        <div class="col-sm-4">
+        {{-- <div class="col-sm-4">
             <div class="btn__full_width"><button type="button" wire:click='alcohol'
                     class="btn btn-info btn-md text-light"><span class="span__categories">Alcohol</span></button> </button></div>
-        </div>
+        </div> --}}
 
     </div>
     <div class="row">
