@@ -86,13 +86,25 @@ class Pos extends Component
      {
         if ($this->table == 0) {
             session()->flash('message', 'Choose table to Change table!');
-
         }
         else{
             // dd($this->shifting_table);
-            Order::where('table_id',$this->table)->where('bill_status',0)->update(['table_id' => $this->shifting_table]);
-            session()->flash('message', 'Table Transfer Done');
-            $this->emit('refreshaftersell');
+            $check = [];
+            $checktable = Order::where('table_id',$this->shifting_table)->where('bill_status',0)->get();
+            // dd($checktable);
+            foreach ($checktable as $key => $value) {
+                $check[] = $checktable[$key]['table_id'];
+            }
+
+            if ( in_array($this->shifting_table,$check) ) {
+
+                session()->flash('message', 'Shifting table have already data!');
+             }
+             else{
+                Order::where('table_id',$this->table)->where('bill_status',0)->update(['table_id' => $this->shifting_table]);
+                $this->emit('refreshaftersell');
+                session()->flash('message', 'Table Transfer Done');
+             }
 
         }
      }
