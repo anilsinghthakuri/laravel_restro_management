@@ -118,6 +118,24 @@
                         </div>
                     </li>
 
+                    <li class="sidebar-dropdown">
+                        <a href="#">
+                            <i class="fa fa-briefcase" aria-hidden="true"></i>
+                            <span>Assets</span>
+
+                        </a>
+                        <div class="sidebar-submenu">
+                            <ul>
+                                <li>
+                                    <a href="/expense-add">Add Assets Type</a>
+                                </li>
+
+                                <li>
+                                    <a href="/expense-list">Assets List</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
 
                     <li class="sidebar-dropdown">
                         <a href="#">

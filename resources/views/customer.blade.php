@@ -96,6 +96,9 @@
                         <td>{{$item->customer_username}}</td>
                         <td>{{$item->customer_phone}}</td>
                         <td>{{$item->customer_address}}</td>
+                        @if ($item->customer_id == '1')
+                                 @continue
+                        @endif
                         <td>
                             <a href="/customer/{{$item->customer_id}}"><button type="button" class="btn btn-primary"><i
                                         class="fa fa-pencil-square-o" aria-hidden="true"></i></button></a>
