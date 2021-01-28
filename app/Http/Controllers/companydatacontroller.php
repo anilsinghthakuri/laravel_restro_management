@@ -19,14 +19,41 @@ class companydatacontroller extends Controller
     public function update_company(Request $request)
     {
         $id = $request->company_id;
-        $company = Companydata::find($id);
-        $company->company_name  = $request->companyname;
-        $company->company_address  = $request->companyaddress;
-        $company->company_number = $request->companynumber;
-        $company->company_logo = $request->companyimage;
-        $company->company_currency = $request->companycurrency;
-        $company->save();
-        return redirect()->back();
+        if (isset($request->companyimage)) {
+            if ($request->hasFile('companyimage')) {
+
+                $file = $request->file('companyimage');
+                $destinationPath = 'img/';
+                $originalFile = $file->getClientOriginalName();
+                $file->move($destinationPath, $originalFile);
+                $company = Companydata::find($id);
+                $company->company_name  = $request->companyname;
+                $company->company_address  = $request->companyaddress;
+                $company->company_number = $request->companynumber;
+                $company->company_logo = $originalFile;
+                $company->company_currency = $request->companycurrency;
+                $company->save();
+                return redirect()->back();
+
+            }
+        }
+        else{
+            $company = Companydata::find($id);
+            $company->company_name  = $request->companyname;
+            $company->company_address  = $request->companyaddress;
+            $company->company_number = $request->companynumber;
+            $company->company_currency = $request->companycurrency;
+            $company->save();
+            return redirect()->back();
+        }
+
+
+
+
+
+
+
+
     }
 
 
