@@ -31,6 +31,22 @@
                     <li class="sidebar-dropdown">
                         <a href="#">
                             <i class="fa fa-shopping-cart"></i>
+                            <span>Table</span>
+
+                        </a>
+                        <div class="sidebar-submenu">
+                            <ul>
+                                <li>
+                                    <a href="/table">Add Table
+                                    </a>
+                                </li>
+
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="sidebar-dropdown">
+                        <a href="#">
+                            <i class="fa fa-shopping-cart"></i>
                             <span>Product</span>
 
                         </a>
@@ -131,7 +147,7 @@
                         <div class="sidebar-submenu">
                             <ul>
                                 <li>
-                                    <a href="#settings">Company Profile
+                                    <a href="/companyprofile">Company Profile
                                     </a>
                                 </li>
                                 <li>
