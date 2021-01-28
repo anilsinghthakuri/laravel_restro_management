@@ -41,6 +41,8 @@
                         <button type="submit" class="btn btn-primary">update</button>
                     </div>
                 </form>
+                <a href="/table"><button class="btn btn-danger">Cancel</button></a>
+
                 @endif
 
             </div>
@@ -52,7 +54,7 @@
                 <table class="table table-responsive">
                     <thead>
                         <tr>
-                            <th scope="col">#</th>
+                            <th scope="col">S.N</th>
                             <th scope="col">Table Name</th>
                             <th scope="col">Action</th>
 
@@ -64,8 +66,11 @@
                         <tr>
                             <th scope="row">{{$loop->iteration}}</th>
                             <td>{{$item->table_name}}</td>
-                            <td> <a href="/table-delete/{{$item->table_id}}"><button type="button" class="btn btn-danger"><i class="fa fa-trash-o" aria-hidden="true"></i></button></a>
-                             <a href="/table/{{$item->table_id}}"><button type="button" class="btn btn-primary"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></button></a>  </td>
+                            <td>
+                                <a href="/table/{{$item->table_id}}"><button type="button" class="btn btn-primary"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></button></a>
+
+                                <a href="/table-delete/{{$item->table_id}}"><button type="button" class="btn btn-danger"><i class="fa fa-trash-o" aria-hidden="true"></i></button></a>
+                            </td>
 
                         </tr>
                         @endforeach

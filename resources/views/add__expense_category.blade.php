@@ -44,6 +44,8 @@
                         <button type="submit" class="btn btn-primary">Update</button>
                     </div>
                 </form>
+                <a href="/expense-category"><button class="btn btn-danger">Cancel</button></a>
+
                 @endif
             </div>
         </div>
@@ -67,8 +69,8 @@
                             <th scope="row">{{$loop->iteration }}</th>
                             <td>{{$item->expense_category_name}}</td>
                             <td>
-                                <a href="/expense-category/{{$item->expense_category_id}}"><button type="button" class="btn btn-primary"><i class="fa fa-trash-o"
-                                            aria-hidden="true"></i></button></a>
+                                <a href="/expense-category/{{$item->expense_category_id}}"><button type="button" class="btn btn-primary"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></button></a>
+
                                 <a href="/expense-category-delete/{{$item->expense_category_id}}"><button type="button" class="btn btn-danger"><i class="fa fa-trash-o"
                                             aria-hidden="true"></i></button></a>
                             </td>
