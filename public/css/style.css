@@ -1,21 +1,59 @@
 body{
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Nunito Sans', sans-serif;
     font-size: 14px;
+    color: #7d7d7d;
 
+}
+button.btn.btn-primary.font-btn-part {
+    font-size: 12px;
+    border-color: #17a2b8;
+    background: #17a2b8;
+}
+
+.btn-primary {
+    color: #fff;
+    border-color: #17a2b8;
+    background: #17a2b8;
+}
+.btn-danger {
+    border-color: #b33771;
+    background-color: #b33771;
+}
+span.span__categories {
+    font-size: 14px;
+}
+.btn-info {
+    background-color: #17a2b8;
+    border-color: #17a2b8;
+}
+.btn-success{
+    background-color: #7c5cc4;
+    border-color: #7c5cc4;
+}
+span#basic-addon1 {
+    color: #7d7d7d;
 }
 img.login__img {
     margin-right: 5px;
 }
+
 img {
     width: 15px;
 }
 .all__product {
     margin: 10px;
 }
+/* new css change */
 h5.card-title {
-    font-size: 14px;
+    font-size: 12px;
     padding-top: 10px;
+    color: #868e96;
 }
+p.card-text {
+    color: #666;
+    font-size: 13px;
+}
+/* new css changes end */
 p.card-text {
     padding-bottom: 10px;
 }
@@ -33,14 +71,16 @@ button{
     width: 100%;
 }
 section.section__billing {
-    padding: 10px 0px 0px;
+    padding: 0px 0px 0px 0px;
     background: #e9ecef;
     position: relative;
     height: 100VH;
 }
 .item__right {
-    background-color: #fff;
-    padding: 10px 10px;
+    background-color: #ffffff;
+    padding: 10px 10px 0px 10px;
+    height: 100vh;
+    position: relative;
 }
 .row__margin {
     padding: 0px 0px 10px;
@@ -66,18 +106,21 @@ button.btn-search:hover {
     background-color: #de4c1e;
 }
 button.add {
-    background: #66d203;
-    border: none;
     margin-left: 10px;
-    color: #fff;
-    border: 2px solid #66d203;
+    border: none;
+    background: #d6deff;
+    color: #846ec6;
+    border: 2px solid #d6deff;
+    font-size: 15px;
+    font-weight: 900;
 }
 button.minus {
-    border: none;
     margin-right: 10px;
-    background: #0dcaf0;
-    color: #fff;
-    border: 2px solid #0dcaf0;
+    background: #d6deff;
+    color: #846ec6;
+    border: 2px solid #d6deff;
+    font-size: 15px;
+    font-weight: 900;
 }
 button.cancel {
     background: #dc3545;
@@ -94,15 +137,13 @@ select.form-select {
 }
 
 .d-flex--part {
-    border: 1px solid #e9ecef;
-    border-bottom: 5px solid #e9ecef;
     margin-bottom: 2px;
 }
 .total__chanrge {
     background: #e9ecef;
     text-align: center;
-    padding: 10px;
-    border-bottom: 5px solid #dc3545;
+    padding: 10px 10px 10px 10px;
+
 }
 
 .total__chanrge h1 {
@@ -116,12 +157,18 @@ select.form-select {
     table-layout: fixed;
     border-collapse: collapse;
 }
+h2.add__table__title{
+    font-size: 32px;
+    color: #7c5cc4;
+    font-weight: 600;
+    text-transform: uppercase;
+}
 
 .table-part tbody{
   display:block;
   width: 100%;
   overflow: auto;
-  height: 215px;
+  height: 260px;
   font-size: 14px;
 }
 
@@ -153,7 +200,10 @@ th{
 thead {
     font-size: 14px;
     color: #fff;
-    background: #3F51B5;
+    background: #7c5cc4;
+}
+.page-link {
+    color: #17a2b8;
 }
 th.head {
     width: 80px;
@@ -172,11 +222,12 @@ td.btn__cancel {
 }
 
 section.footer__part {
-    position: absolute;
-    left: 0;
-    bottom: 0;
     width: 100%;
-    background: #3F51B5;
+    background: #ffffff;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    border-bottom: 5px solid #7c5cc4;
 }
 .pagination__right {
     position: absolute;
@@ -184,9 +235,13 @@ section.footer__part {
     right: 20px;
     bottom: 60px;
 }
+.card-body {
+    flex: 1 1 auto;
+     padding: 0rem 0rem;
+}
 .top-part {
     background: white;
-    margin-bottom: 10px;
+    margin-bottom: 15px;
 }
 .login__part {
     background: #66d203;
@@ -196,6 +251,8 @@ img.card-img-top {
     width: 100%;
     height: 100%;
     transition: transform .5s;
+    object-fit: cover;
+
 }
 .item__items{
     margin: 0;
@@ -227,15 +284,23 @@ img.card-img-top {
 .image__inner{
     overflow: hidden;
     width: 100%;
-    height: 85px;
+    height: 100px;
 }
 .table__list__part{
     background-color: #fff;
-    padding: 20px;
-
 }
 .add__table__list {
     width: 50%;
+}
+.total__chanrge h1 {
+    font-size: 28px;
+    color: #7c5cc4;
+    margin-bottom: 0;
+    font-weight: 600;
+}
+.P-class-btn {
+    padding: 14px 50px;
+    text-transform: uppercase;
 }
 
 .company__profile {
@@ -243,8 +308,12 @@ img.card-img-top {
     padding: 30px;
 }
 i.fa-icon {
-    font-size: 40px;
-    color: #66d203;
+    font-size: 26px;
+    color: #525965;
+}
+.nav-tabs .nav-link {
+
+    color: #7050b7;
 }
 h5.card-title.title--bill {
     font-size: 16px;
@@ -257,3 +326,62 @@ span.form-text {
     font-size: 22px;
     color: #20295b;
 }
+span.pos__div {
+    padding: 0px;
+    width: 100%;
+}
+div#nav-tabContent {
+    height: 250px;
+    overflow: scroll;
+}
+.footer__part__absolute {
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    height: 240px;
+    padding: 15px;
+}
+
+/* The side navigation menu */
+.side__show {
+    height: 545px; /* 100% Full-height */
+    width: 0; /* 0 width - change this with JavaScript */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Stay on top */
+    top: 0;
+    right: 0;
+    background-color: #fff; /* Black*/
+    overflow-x: hidden; /* Disable horizontal scroll */
+    padding-top: 60px; /* Place content 60px from the top */
+    transition: 0.3s; /* 0.5 second transition effect to slide in the side__show */
+    border: 1px solid rgb(168, 167, 167);
+}
+
+
+
+/* When you mouse over the navigation links, change their color */
+.side__show a:hover, .offcanvas a:focus{
+    color: #1a1919;
+}
+
+/* Position and style the close button (top right corner) */
+.side__show .closebtn {
+    position: absolute;
+    top: 0;
+    left: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+}
+
+/* Style page content - use this if you want to push the page content to the right when you open the side navigation */
+#main {
+    transition: margin-left .5s;
+    padding: 20px;
+}
+
+/* On smaller screens, where height is less than 450px, change the style of the side__show (less padding and a smaller font size) */
+@media screen and (max-height: 450px) {
+    .side__show {padding-top: 15px;}
+    .side__show a {font-size: 18px;}
+}
+

@@ -21,5 +21,23 @@ class UserController extends Controller
         $hashedpassword = Hash::make($request->password);
         $user->password = $hashedpassword;
         $user->save();
+        return redirect('/adduser')->with('message', 'User Added');
+    }
+
+    public function userlist()
+    {   $userlist = $this->userlistfetch();
+        return view('userlist',[
+            'userlist'=>$userlist,
+        ]);
+    }
+    protected function userlistfetch(){
+        $userlist = User::all();
+        return $userlist;
+    }
+
+    public function userdelete($id)
+    {
+        User::where('id',$id)->delete();
+        return redirect('/userlist')->with('message', 'User deleted');
     }
 }

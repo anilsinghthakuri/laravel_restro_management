@@ -16,25 +16,26 @@
                 <form method="POST" action="/login" enctype="multipart/form-data" >
                     @csrf
                     <div class="input-group mb-3">
-                        <h2 class="login__title">Welcome</h2>
+                        <h2 class="login__title">Sign In to POS</h2>
+                        <p class="login__text">The work, the thought and the organization you put into this app is incredible.</p>
                     </div>
-                    <div class="images mb-3">
+                    {{-- <div class="images mb-3">
                         <img class="logo__img" src="img/food3.jpg" class="img-thumbnail" alt="logo">
-                    </div>
+                    </div> --}}
 
 
                     <div class="input-group mb-3">
                         <span class="input-group-text" id="basic-addon1">@</span>
-                        <input type="email" class="form-control" placeholder="Email" name="email" aria-label="Username" aria-describedby="basic-addon1">
+                        <input type="email" class="form-control login__input" placeholder="Email" name="email" aria-label="Username" aria-describedby="basic-addon1">
                     </div>
 
 
                     <div class="input-group mb-3">
                         <span class="input-group-text" id="basic-addon1">**</span>
-                        <input type="password" class="form-control" placeholder="Password"  name="password" aria-describedby="basic-addon1">
+                        <input type="password" class="form-control login__input" placeholder="Password"  name="password" aria-describedby="basic-addon1">
                     </div>
 
-                    <button type="submit" value="Login" class="btn btn-primary">Submit</button>
+                    <button type="submit" value="Login" class="btn btn-primary btn-primary-login">Log In</button>
                 </form>
 
             </div>

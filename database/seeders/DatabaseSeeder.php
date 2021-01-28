@@ -18,6 +18,7 @@ class DatabaseSeeder extends Seeder
         // \App\Models\User::factory(10)->create();
         DB::table('categories')->insert([
             'category_name'=>'momo',
+            'category_image'=>'food1.jpg',
 
         ]);
 

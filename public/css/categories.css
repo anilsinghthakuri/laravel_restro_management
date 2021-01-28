@@ -5,7 +5,7 @@
     position: relative;
 }
 section.add__categories {
-    background: #c7c2c2;
+    background: #f1f1f1;
 }
 li{
     list-style-type: none;
@@ -61,11 +61,11 @@ nav ul {
 nav ul li span {
     padding: 0px 10px;
 }
-
+/*
 nav ul li a {
     display: block;
-    background: #2f2f2e;
-    padding: 10px 0px;
+    background: #7355b5;
+    padding: 10px 10px;
     color: #fff;
     text-decoration: none;
     -webkit-transition: 0.2s linear;
@@ -74,12 +74,11 @@ nav ul li a {
     -o-transition: 0.2s linear;
     transition: 0.2s linear;
     margin: 0px 0px;
-    /* border-radius: 5px; */
-    width: 100%;
-    border: 1px solid #737373;
+
+    border: 1px solid #c1c1c1;
 }
 nav ul li a:hover {
-    background: #6f6f6e;
+    background: #694dab;
     color: #f5f5f5;
 }
 nav ul li a .fa {
@@ -88,34 +87,34 @@ nav ul li a .fa {
 	margin-right: 5px;
 	float:right;
 }
-nav ul ul {
-    background: #2f2f2e;
+ nav ul ul {
+    background: #7c5cc4;
     padding: 15px 0px 15px 15px;
 }
 nav ul li ul li a {
-    background: #2f2f2e;
+    background: #7c5cc4;
     border-left: 4px solid transparent;
     padding: 10px 30px;
     margin: 0px 0px 5px 0px;
-    border: 1px solid #737373;
+    border: 1px solid #c1c1c1;
 }
 nav ul li ul li a:hover {
-	background: #6f6f6e;
-	border-left: 4px solid #3498db;
+    background: #694dab;
+    border-left: 4px solid #17a2b8;
 }
 nav.side-menu {
     height: 100vh;
-    background: #2f2f2e;
+    background: #7c5cc4;
 }
 h1.side-bar-title {
-    background: #191918;
+    background: #7c5cc4;
     margin: 0px;
     padding: 1px 0px;
     font-weight: 600;
     font-size: 30px;
     color: #fff;
-    border-bottom: 1px solid #737373;
-}
+    border-bottom: 1px solid #c1c1c1;
+} */
 #scrool-bar::-webkit-scrollbar-track {
     -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
     border-radius: 10px;
@@ -139,7 +138,7 @@ h1.side-bar-title {
 li.d-flex-div {
     display: flex;
     align-items: center;
-    background: #66d203;
+    background: #7050b7;
     margin-bottom: 5px;
 }
 li.sub-menu {

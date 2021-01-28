@@ -29,11 +29,14 @@
 
         </div>
     </div>
-    @if (session()->has('status'))
-    <div class="alert alert-success">
-        {{ session('status') }}
-    </div>
+    <div>
+        @if (session()->has('message'))
+        <div class="alert alert-success">
+            {{ session('message') }}
+        </div>
     @endif
+       </div>
+
     <form class="add__product__form" action="/product" method="POST" enctype="multipart/form-data">
         <div class="row  mt-3">
             @csrf
@@ -86,9 +89,6 @@
 
             </div>
             <div class="col-md-4">
-
-
-
 
                 <div class=" mb-3">
                     <label for="formFile" class="form-label">Images</label>
