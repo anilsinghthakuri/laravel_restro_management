@@ -34,7 +34,7 @@
 
         <div class="col-sm-4">
 
-            <div class="btn__full_width"><input type="text" wire:model='search' name="search" id=""></div>
+            <div class="btn__full_width"><input type="text" placeholder="search food by name" wire:model='search' name="search" id=""></div>
 
         </div>
         <div class="col-sm-4">
