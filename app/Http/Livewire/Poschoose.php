@@ -14,6 +14,7 @@ class Poschoose extends Component
     public $listeners = ['quant'];
     public $categorylist  = [];
     public $category  = 0;
+    public $search;
 
     use WithPagination;
 
@@ -47,6 +48,18 @@ class Poschoose extends Component
         $this->category = $id;
         $this->product = Product::where('category_id',$id)->get();
     }
+
+    public function updatedSearch()
+    {
+        // dd($this->search);
+        $searchterm = "%".$this->search."%";
+        $this->product = Product::where('product_name','Like',$searchterm)->get();
+    }
+    // public function search_product($name)
+    // {
+    //     $this->category = $id;
+    //     $this->product = Product::where('category_id',$id)->get();
+    // }
 
     public function allproduct()
     {

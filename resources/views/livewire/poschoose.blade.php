@@ -34,6 +34,19 @@
 
         <div class="col-sm-4">
 
+            <div class="btn__full_width"><input type="text" wire:model='search' name="search" id=""></div>
+
+        </div>
+        <div class="col-sm-4">
+            <div class="btn__full_width"><button type="button" wire:click='alcohol'
+                    class="btn btn-info btn-md text-light"><span class="span__categories">Alcohol</span></button> </button></div>
+        </div>
+
+    </div>
+    <div class="row">
+
+        <div class="col-sm-4">
+
             <div class="btn__full_width"><button onclick="openNav()" type="button" class="btn btn-success btn-md">
                     <span class="span__categories">Category</span></button></div>
 
