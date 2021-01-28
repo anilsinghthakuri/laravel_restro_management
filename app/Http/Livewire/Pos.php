@@ -4,6 +4,7 @@ namespace App\Http\Livewire;
 
 use App\Http\Controllers\billprintcontroller;
 use App\Models\Bill;
+use App\Models\Customer;
 use App\Models\Order;
 use App\Models\Table;
 use Livewire\Component;
@@ -17,6 +18,9 @@ class Pos extends Component
     public $payingamount = 0;
     public $shifting_table = 0;
     public $table_order = [];
+    public $customerlist =[];
+    public $payment = 0;
+    public $customer = 0;
 
     protected $listeners = ['changecalc'];
 
@@ -25,6 +29,7 @@ class Pos extends Component
         $this->payingamount = 0;
         $this->tablelist = $this->table_list();
         $this->table_order = $this->table_order_data();
+        $this->customerlist = $this->customer_list();
     }
 
     public function updatedPayingamount()
@@ -52,11 +57,28 @@ class Pos extends Component
 
         }
         else{
-            $orderdata = [];
-            $bill = New Bill;
-            $bill->table_id = $this->table;
-            $bill->bill_total_amount = $this->grandprice;
-            $bill->save();
+
+
+                if ($this->payment == 1) {
+                    $orderdata = [];
+                    $bill = New Bill;
+                    $bill->table_id = $this->table;
+                    $bill->bill_total_amount = $this->grandprice;
+                    $bill->bill_payment_method = $this->payment;
+                    $bill->save();
+                }
+                else{
+                    $orderdata = [];
+                    $bill = New Bill;
+                    $bill->table_id = $this->table;
+                    $bill->bill_total_amount = $this->grandprice;
+                    $bill->bill_payment_method = $this->payment;
+                    $bill->customer_id = $this->customer;
+                    $bill->save();
+                }
+
+
+
             // Order::where('table_id',$table)->where('bill_status',0)->update(['bill_status' => 1]);
 
             // $this->emit('billdata',$orderdata);
@@ -76,6 +98,7 @@ class Pos extends Component
         $tablelist = Table::all();
         return $tablelist;
     }
+
     public function table_order_data()
     {
         $table_order = Order::where('table_id',$this->table)->where('bill_status',0)->get();
@@ -86,16 +109,34 @@ class Pos extends Component
      {
         if ($this->table == 0) {
             session()->flash('message', 'Choose table to Change table!');
-
         }
         else{
             // dd($this->shifting_table);
-            Order::where('table_id',$this->table)->where('bill_status',0)->update(['table_id' => $this->shifting_table]);
-            session()->flash('message', 'Table Transfer Done');
-            $this->emit('refreshaftersell');
+            $check = [];
+            $checktable = Order::where('table_id',$this->shifting_table)->where('bill_status',0)->get();
+            // dd($checktable);
+            foreach ($checktable as $key => $value) {
+                $check[] = $checktable[$key]['table_id'];
+            }
+
+            if ( in_array($this->shifting_table,$check) ) {
+
+                session()->flash('message', 'Shifting table have already data!');
+             }
+             else{
+                Order::where('table_id',$this->table)->where('bill_status',0)->update(['table_id' => $this->shifting_table]);
+                $this->emit('refreshaftersell');
+                session()->flash('message', 'Table Transfer Done');
+             }
 
         }
      }
+
+    public function customer_list()
+    {
+        $customerlist = Customer::all();
+        return $customerlist;
+    }
 
     public function render()
     {

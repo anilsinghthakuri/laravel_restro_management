@@ -8,7 +8,7 @@ use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Maatwebsite\Excel\Facades\Excel;
 use App\Exports\OrdersExport;
-
+use App\Models\Companydata;
 
 class DashboardController extends Controller
 {
@@ -120,9 +120,15 @@ class DashboardController extends Controller
     {
         return Excel::download(new OrdersExport, 'orders.xlsx');
     }
-    public function exportpdf()
 
+    private function company_data()
     {
-        return (new OrdersExport)->download('invoices.pdf', \Maatwebsite\Excel\Excel::MPDF);
+        $companydata = Companydata::all();
+        return $companydata;
     }
+    // public function exportpdf()
+
+    // {
+    //     return (new OrdersExport)->download('invoices.pdf', \Maatwebsite\Excel\Excel::MPDF);
+    // }
 }

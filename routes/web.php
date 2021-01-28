@@ -3,6 +3,7 @@
 use App\Http\Controllers\billprintcontroller;
 use App\Http\Controllers\categorycontroller;
 use App\Http\Controllers\companydatacontroller;
+use App\Http\Controllers\CustomerController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\ExpenseController;
 use App\Http\Controllers\LoginController;
@@ -61,6 +62,9 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/expense-list', [ExpenseController::class,'index']);
     Route::get('/expense-category', [ExpenseController::class,'show_expense_category']);
     Route::post('/expense-category', [ExpenseController::class,'add_expense_category']);
+    Route::get('/expense-category/{id}',[ExpenseController::class,'edit_expense_category']);
+    Route::post('/expense-category-update',[ExpenseController::class,'update_expense_category']);
+    Route::get('/expense-category-delete/{id}',[ExpenseController::class,'delete_expense_category']);
     Route::get('/expense-add', [ExpenseController::class,'show_expense_add']);
     Route::post('/expense-add', [ExpenseController::class,'add_expense_list']);
 
@@ -93,6 +97,12 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/userlist',[UserController::class,'userlist'])->name('user.list');
     Route::get('/user-delete/{id}',[UserController::class,'userdelete'])->name('user.delete');
 
+    // route for add user
+    Route::get('/customer',[CustomerController::class,'index']);
+    Route::post('/customer',[CustomerController::class,'add_customer']);
+    Route::get('/customer/{id}',[CustomerController::class,'edit_customer']);
+    Route::post('/customer-update',[CustomerController::class,'update_customer']);
+    Route::get('/customer-delete/{id}',[CustomerController::class,'delete_customer']);
 
     // route for logout
     Route::get('/logout',[LoginController::class,'logout']);

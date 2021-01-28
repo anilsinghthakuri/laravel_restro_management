@@ -35,8 +35,8 @@
         <div class="col-sm-12">
             <div class="row row__margin">
                 <div class="col-sm-12"><form class="d-flex">
-                    <input class="form-control me-2" type="text" placeholder="Search food by name"  wire:model='search' aria-label="Search" name="search" id="">
-                    <button class=" btn-search transition__btn" type="submit">Search</button>
+                    <input class="form-control me-2" type="text" placeholder="Search food by name"  wire:model='search' aria-label="Search"  id="">
+                    <button class=" btn-search transition__btn" >Search</button>
                   </form></div>
             </div>
 
