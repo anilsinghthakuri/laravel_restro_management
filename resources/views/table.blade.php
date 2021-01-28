@@ -65,7 +65,7 @@
                             <th scope="row">{{$loop->iteration}}</th>
                             <td>{{$item->table_name}}</td>
                             <td> <a href="/table-delete/{{$item->table_id}}"><button type="button" class="btn btn-danger"><i class="fa fa-trash-o" aria-hidden="true"></i></button></a>
-                             <a href="/table/{{$item->table_id}}"><button type="button" class="btn btn-primary"><i class="fa fa-trash-o" aria-hidden="true"></i></button></a>  </td>
+                             <a href="/table/{{$item->table_id}}"><button type="button" class="btn btn-primary"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></button></a>  </td>
 
                         </tr>
                         @endforeach
