@@ -6,6 +6,7 @@ use App\Http\Controllers\billprintcontroller;
 use App\Models\Bill;
 use App\Models\Customer;
 use App\Models\Order;
+use App\Models\PaymentMethod;
 use App\Models\Table;
 use Livewire\Component;
 
@@ -20,7 +21,8 @@ class Pos extends Component
     public $table_order = [];
     public $customerlist =[];
     public $payment = 0;
-    public $customer = 0;
+    public $customer = 1;
+    public $paymentmethodlist = [];
 
     protected $listeners = ['changecalc'];
 
@@ -30,6 +32,7 @@ class Pos extends Component
         $this->tablelist = $this->table_list();
         $this->table_order = $this->table_order_data();
         $this->customerlist = $this->customer_list();
+        $this->paymentmethodlist = $this->payment_method_list();
     }
 
     public function updatedPayingamount()
@@ -54,17 +57,24 @@ class Pos extends Component
     public function checkout($table)
     {
         if ($this->grandprice == null) {
+            session()->flash('message', 'Table is Empty ');
 
         }
         else{
+            if ($this->payment == 0) {
 
+                session()->flash('message', 'Choose Payment Method');
+
+            }
+            else{
 
                 if ($this->payment == 1) {
                     $orderdata = [];
                     $bill = New Bill;
                     $bill->table_id = $this->table;
                     $bill->bill_total_amount = $this->grandprice;
-                    $bill->bill_payment_method = $this->payment;
+                    $bill->payment_method_id = $this->payment;
+                    $bill->customer_id = $this->customer;
                     $bill->save();
                 }
                 else{
@@ -72,10 +82,16 @@ class Pos extends Component
                     $bill = New Bill;
                     $bill->table_id = $this->table;
                     $bill->bill_total_amount = $this->grandprice;
-                    $bill->bill_payment_method = $this->payment;
+                    $bill->payment_method_id = $this->payment;
                     $bill->customer_id = $this->customer;
                     $bill->save();
                 }
+                return redirect()->route('bill.print', [
+                    $table,
+
+                    ]);
+
+            }
 
 
 
@@ -85,10 +101,7 @@ class Pos extends Component
 
             // $this->emit('refreshaftersell');
             // dd($table);
-            return redirect()->route('bill.print', [
-                $table,
 
-                ]);
         }
 
     }
@@ -136,6 +149,11 @@ class Pos extends Component
     {
         $customerlist = Customer::all();
         return $customerlist;
+    }
+    public function payment_method_list()
+    {
+        $paymentmethodlist = PaymentMethod::all();
+        return $paymentmethodlist;
     }
 
     public function render()

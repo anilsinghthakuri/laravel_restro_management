@@ -80,7 +80,7 @@
                                     <a href="/customer">Add Customer</a>
                                 </li>
                                 <li>
-                                    <a href="#">Total Sale</a>
+                                    <a href="/total-sale">Total Sale</a>
                                 </li>
                                 <li>
                                     <a href="#">Cash Sale</a>

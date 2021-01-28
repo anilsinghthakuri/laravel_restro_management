@@ -8,6 +8,7 @@ use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\ExpenseController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\productcontroller;
+use App\Http\Controllers\SaleReportController;
 use App\Http\Controllers\TableController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
@@ -104,6 +105,9 @@ Route::middleware(['auth'])->group(function () {
     Route::post('/customer-update',[CustomerController::class,'update_customer']);
     Route::get('/customer-delete/{id}',[CustomerController::class,'delete_customer']);
 
+
+    // route for report
+    Route::get('/total-sale',[SaleReportController::class,'index_total_sale']);
     // route for logout
     Route::get('/logout',[LoginController::class,'logout']);
 

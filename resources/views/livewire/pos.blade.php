@@ -68,11 +68,10 @@
 
                                         <label for="Payed__by" class="form-label">Payed  By *</label>
                                         <select class="form-select" wire:model = 'payment'  aria-label="Default select example">
-                                            <option >Choose the payment method</option>
-                                            <option selected value="1">Cash</option>
-                                            <option selected value="2">Credit</option>
-                                            {{-- <option value="2">Gift Card</option>
-                                            <option value="3">credit Card</option> --}}
+                                            <option selected >Choose the payment method</option>
+                                            @foreach ($paymentmethodlist as $item)
+                                            <option  value='{{$item->payment_method_id}}' >{{$item->payment_method_name}}</option>
+                                            @endforeach
                                         </select>
 
                                     </div>
@@ -87,6 +86,9 @@
                                             <select class="form-select" wire:model = 'customer' aria-label="Default select example">
                                                 <option >Choose Customer</option>
                                                 @foreach ($customerlist as $item)
+                                                @if ($item->customer_id == '1')
+                                                        @continue
+                                                @endif
                                                 <option selected value={{$item->customer_id}}>{{$item->customer_username}}</option>
                                                 @endforeach
 

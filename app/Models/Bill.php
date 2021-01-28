@@ -10,4 +10,9 @@ class Bill extends Model
     use HasFactory;
     protected $table = 'bills';
     protected $primaryKey = 'bill_id';
+
+    public function customer()
+    {
+        return $this->belongsTo(Customer::class,'customer_id','customer_id');
+    }
 }
