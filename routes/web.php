@@ -61,6 +61,9 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/expense-list', [ExpenseController::class,'index']);
     Route::get('/expense-category', [ExpenseController::class,'show_expense_category']);
     Route::post('/expense-category', [ExpenseController::class,'add_expense_category']);
+    Route::get('/expense-category/{id}',[ExpenseController::class,'edit_expense_category']);
+    Route::post('/expense-category-update',[ExpenseController::class,'update_expense_category']);
+    Route::get('/expense-category-delete/{id}',[ExpenseController::class,'delete_expense_category']);
     Route::get('/expense-add', [ExpenseController::class,'show_expense_add']);
     Route::post('/expense-add', [ExpenseController::class,'add_expense_list']);
 

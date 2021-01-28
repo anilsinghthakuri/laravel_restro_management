@@ -23,6 +23,7 @@
 
         <div class="col-md-12">
             <div class="add__table__list">
+                @if ($categories_expense == Null)
                 <form action="/expense-category" method="POST">
                     @csrf
                     <div class="input-group">
@@ -32,6 +33,18 @@
                         <button type="submit" class="btn btn-primary">Submit</button>
                     </div>
                 </form>
+                @else
+                <form action="/expense-category-update" method="POST">
+                    @csrf
+                    <div class="input-group">
+                        <input type="hidden" name="id" value="{{$categories_expense->expense_category_id}}">
+                        <span class="input-group-text" id="basic-addon1">Add</span>
+                        <input type="text" class="form-control" value="{{$categories_expense->expense_category_name}}" name="categoryname"
+                            aria-label="Username" aria-describedby="basic-addon1">
+                        <button type="submit" class="btn btn-primary">Update</button>
+                    </div>
+                </form>
+                @endif
             </div>
         </div>
     </div>
@@ -43,7 +56,7 @@
                         <tr>
                             <th scope="col">#</th>
                             <th scope="col">Categories Name</th>
-                            {{-- <th scope="col">Action</th> --}}
+                            <th scope="col">Action</th>
 
                         </tr>
                     </thead>
@@ -53,10 +66,12 @@
                         <tr>
                             <th scope="row">{{$loop->iteration }}</th>
                             <td>{{$item->expense_category_name}}</td>
-                            {{-- <td>
-                                <a href="#"><button type="button"
-                                        class="btn btn-danger"><i class="fa fa-trash-o"
-                                            aria-hidden="true"></i></button></a> </td> --}}
+                            <td>
+                                <a href="/expense-category/{{$item->expense_category_id}}"><button type="button" class="btn btn-primary"><i class="fa fa-trash-o"
+                                            aria-hidden="true"></i></button></a>
+                                <a href="/expense-category-delete/{{$item->expense_category_id}}"><button type="button" class="btn btn-danger"><i class="fa fa-trash-o"
+                                            aria-hidden="true"></i></button></a>
+                            </td>
                         </tr>
                         @endforeach
 

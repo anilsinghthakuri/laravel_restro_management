@@ -17,8 +17,8 @@
                         alt="User picture">
                 </div>
                 <div class="user-info">
-                    <span class="user-name">Bikash
-                        <strong>Bist</strong>
+                    <span class="user-name">{{Auth::user()->name}}
+                        {{-- <strong>Bist</strong> --}}
                     </span>
                     <span class="user-role">HOT plate resturant & cafe</span>
 

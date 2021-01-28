@@ -83,9 +83,11 @@ class ExpenseController extends Controller
 
     public function show_expense_category()
     {
+        $categories_expense = [];
         $expense_category = $this->pull_expense_category();
         return view('add__expense_category',[
             'expense_category'=>$expense_category,
+            'categories_expense'=>$categories_expense,
         ]);
     }
 
@@ -100,6 +102,36 @@ class ExpenseController extends Controller
 
         }
 
+    }
+
+    public function edit_expense_category($id)
+    {
+        // dd('anil');
+        $categories_expense = DB::table('categories_expense')->where('expense_category_id',$id)->first();
+        // dd($categories_expense);
+        $expense_category = $this->pull_expense_category();
+
+        return view('add__expense_category',[
+            'categories_expense'=>$categories_expense,
+            'expense_category'=>$expense_category,
+
+        ]);
+    }
+    public function update_expense_category(Request $request)
+    {
+        $id = $request->id;
+        DB::table('categories_expense')
+              ->where('expense_category_id',$id)
+              ->update(['expense_category_name' => $request->categoryname]);
+        return redirect('/expense-category')->with('message', 'Expense Category Updated');
+
+
+    }
+
+    public function delete_expense_category($id)
+    {
+        DB::table('categories_expense')->where('expense_category_id',$id)->delete();
+        return redirect('/expense-category')->with('message', 'Expense Category Deleted');
     }
 
     private function pull_expense_category(){
