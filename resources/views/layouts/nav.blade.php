@@ -83,10 +83,10 @@
                                     <a href="/total-sale">Total Sale</a>
                                 </li>
                                 <li>
-                                    <a href="#">Cash Sale</a>
+                                    <a href="/cash-sale">Cash Sale</a>
                                 </li>
                                 <li>
-                                    <a href="#">Credit Sale</a>
+                                    <a href="/credit-sale">Credit Sale</a>
                                 </li>
 
                                 <li>

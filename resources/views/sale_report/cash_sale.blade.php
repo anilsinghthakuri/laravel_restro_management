@@ -8,7 +8,7 @@
         <div class="col-md-12 pt-2">
             <div class="add__categories_bottom">
                 <!-- Button trigger modal -->
-                <h2>Total Sale</h2>
+                <h2>Cash Sale</h2>
 
 
             </div>
@@ -53,7 +53,7 @@
                     </thead>
 
                     <tbody>
-                        @foreach ($total_sale_report as $item)
+                        @foreach ($cash_sale_report as $item)
                         <tr>
                             <th scope="row">{{$loop->iteration }}</th>
                             <td>{{$item->created_at}}</td>

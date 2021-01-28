@@ -108,6 +108,8 @@ Route::middleware(['auth'])->group(function () {
 
     // route for report
     Route::get('/total-sale',[SaleReportController::class,'index_total_sale']);
+    Route::get('/cash-sale',[SaleReportController::class,'index_cash_sale']);
+
     // route for logout
     Route::get('/logout',[LoginController::class,'logout']);
 
