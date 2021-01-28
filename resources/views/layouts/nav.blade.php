@@ -1,98 +1,186 @@
-<nav class="side-menu" id="scrool-bar">
 
-    <h1 class="side-bar-title">
-        <ul>
-            <li class="d-flex-div">
-                <span>
-                    <ion-icon name="speedometer-outline"></ion-icon>
-                </span>
-                <a class="page-title" href='/dashboard'> Dashbord </a>
-                <span class="pos__div">
-                    <a class="page-title" href='/pos'> Pos</a>
-                </span>
-            </li>
+<div class="page-wrapper chiller-theme">
 
-        </ul>
-    </h1>
-    <ul>
+    <nav id="sidebar" class="sidebar-wrapper">
+        <div class="sidebar-content">
+            <div class="sidebar-brand">
+                <a class="user-name" href="/dashboard">Dashboard</a>
+                <div id="close-sidebar">
+                    <a class="pos__link" href="/pos">POS  <i class="fa fa-long-arrow-right" aria-hidden="true"></i></a>
 
-        <li class='sub-menu '> <a href='/dashboard'><span>
-                    <ion-icon name="briefcase-outline"></ion-icon>
-                </span>Dashboard</a></li>
-        <li class='sub-menu '> <a href='#'> <span>
-                    <ion-icon name="briefcase-outline"></ion-icon>
-                </span>Table<div class='fa fa-caret-down right'></div></a>
-            <ul class="hide">
-                <li><a href='/table'> <span><i class="fa fa-circle-o" aria-hidden="true"></i>
-                        </span> Add Table</a></li>
-            </ul>
-        </li>
-        <li class='sub-menu '> <a href='#'> <span>
-                    <ion-icon name="briefcase-outline"></ion-icon>
-                </span>Product<div class='fa fa-caret-down right'></div></a>
-            <ul class="hide">
-                <li><a href='/pos'> <span><i class="fa fa-circle-o" aria-hidden="true"></i>
-                        </span>POS</a></li>
-                <li><a href='/add-product'> <span><i class="fa fa-circle-o" aria-hidden="true"></i>
-                        </span>Add Product</a></li>
-                <li><a href='/product'> <span><i class="fa fa-circle-o" aria-hidden="true"></i>
-                        </span> Product List </a></li>
-                <li><a href='/categories'> <span><i class="fa fa-circle-o" aria-hidden="true"></i>
-                        </span> Add & show categories List </a></li>
-            </ul>
-        </li>
-        <li class='sub-menu '> <a href='#'> <span>
-                    <ion-icon name="briefcase-outline"></ion-icon>
-                </span>Expense<div class='fa fa-caret-down right'></div></a>
-            <ul class="hide">
-                <li><a href='/expense-category'> <span><i class="fa fa-circle-o" aria-hidden="true"></i>
-                </span>Expense Category</a></li>
-                <li><a href='/expense-add'> <span><i class="fa fa-circle-o" aria-hidden="true"></i>
-                        </span>Add Expense</a></li>
-                <li><a href='/expense-list'> <span><i class="fa fa-circle-o" aria-hidden="true"></i>
-                        </span>Expense List</a></li>
+                </div>
+            </div>
+            <div class="sidebar-header">
+                <div class="user-pic">
+                    <img class="img-responsive img-rounded"
+                        src="https://raw.githubusercontent.com/azouaoui-med/pro-sidebar-template/gh-pages/src/img/user.jpg"
+                        alt="User picture">
+                </div>
+                <div class="user-info">
+                    <span class="user-name">Bikash
+                        <strong>Bist</strong>
+                    </span>
+                    <span class="user-role">HOT plate resturant & cafe</span>
 
-            </ul>
-        </li>
-        <li class='sub-menu '> <a href='#'><span>
-                    <ion-icon name="briefcase-outline"></ion-icon>
-                </span>Reports<div class='fa fa-caret-down right'></div></a>
-            <ul>
-                <li><a href='#settings'> <span><i class="fa fa-circle-o" aria-hidden="true"></i>
-                        </span>Todays Sale</a></li>
-                <li><a href='#settings'> <span><i class="fa fa-circle-o" aria-hidden="true"></i>
-                        </span>Monthly Sale</a></li>
-                <li><a href='#settings'> <span><i class="fa fa-circle-o" aria-hidden="true"></i>
-                        </span>Total Sale</a></li>
-                <li><a href='#settings'> <span><i class="fa fa-circle-o" aria-hidden="true"></i>
-                        </span>Sales Analysis</a></li>
-            </ul>
-        </li>
-        <li class='sub-menu '> <a href='#message'><span>
-                    <ion-icon name="briefcase-outline"></ion-icon>
-                </span>User<div class='fa fa-caret-down right'></div></a>
-            <ul>
-                <li><a href='/userlist'> <span><i class="fa fa-circle-o" aria-hidden="true"></i>
-                        </span>User List</a></li>
-                <li><a href='/adduser'> <span><i class="fa fa-circle-o" aria-hidden="true"></i>
-                        </span>Add User</a></li>
-            </ul>
-        </li>
-        <li class='sub-menu '> <a href='#'><span>
-                    <ion-icon name="briefcase-outline"></ion-icon>
-                </span>General Setting<div class='fa fa-caret-down right'></div></a>
-            <ul>
-                <li><a href='/companyprofile'> <span><i class="fa fa-circle-o" aria-hidden="true"></i>
-                        </span>Company Profile</a></li>
-                <li><a href='#settings'> <span><i class="fa fa-circle-o" aria-hidden="true"></i>
-                        </span>Printer Setting</a></li>
-            </ul>
-        </li>
-        <li class='sub-menu '> <a href='#message'><span>
-                    <ion-icon name="briefcase-outline"></ion-icon>
-                </span> Update</a></li>
-        <li class='sub-menu '> <a href='/logout'><span>
-                    <ion-icon name="briefcase-outline"></ion-icon>
-                </span>Logout</a></li>
-    </ul>
-</nav>
+                </div>
+            </div>
+
+            <!-- sidebar-search  -->
+            <div class="sidebar-menu">
+                <ul>
+                    <li class="sidebar-dropdown">
+                        <a href="#">
+                            <i class="fa fa-shopping-cart"></i>
+                            <span>Product</span>
+
+                        </a>
+                        <div class="sidebar-submenu">
+                            <ul>
+                                <li>
+                                    <a href="/pos">POS
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="/add-product">Add Product</a>
+                                </li>
+                                <li>
+                                    <a href="/product">Product List</a>
+                                </li>
+                                <li>
+                                    <a href="/categories">Add & show categories List</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="sidebar-dropdown">
+                        <a href="#">
+                            <i class="fa fa-briefcase" aria-hidden="true"></i>
+                            <span>Expense</span>
+
+                        </a>
+                        <div class="sidebar-submenu">
+                            <ul>
+                                <li>
+                                    <a href="/expense-category">Expense Category
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="/expense-add">Add Expense</a>
+                                </li>
+
+                                <li>
+                                    <a href="/expense-list">Expense List</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+
+
+                    <li class="sidebar-dropdown">
+                        <a href="#">
+                            <i class="fa fa-file-audio-o" aria-hidden="true"></i>
+                            <span>Reports</span>
+
+                        </a>
+                        <div class="sidebar-submenu">
+                            <ul>
+                                <li>
+                                    <a href="#settings">Todays Sale
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#settings">Monthly Sale</a>
+                                </li>
+                                <li>
+                                    <a href="#settings">Total Sale</a>
+                                </li>
+                                <li>
+                                    <a href="#settings">Sales Analysis</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+
+                    <li class="sidebar-dropdown">
+                        <a href="#">
+                            <i class="fa fa-user" aria-hidden="true"></i>
+                            <span>User</span>
+
+                        </a>
+                        <div class="sidebar-submenu">
+                            <ul>
+
+                                <li>
+                                    <a href="/userlist">User List
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="/adduser">Add User</a>
+                                </li>
+
+                            </ul>
+                        </div>
+                    </li>
+
+                    <li class="sidebar-dropdown">
+                        <a href="#">
+                            <i class="fa fa-cog" aria-hidden="true"></i>
+                            <span>General Setting</span>
+
+                        </a>
+                        <div class="sidebar-submenu">
+                            <ul>
+                                <li>
+                                    <a href="#settings">Company Profile
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#settings">Printer Setting</a>
+                                </li>
+
+                            </ul>
+                        </div>
+                    </li>
+
+                    <li>
+                        <a href="#">
+                            <i class="fa fa-plus-square-o" aria-hidden="true"></i>
+                          <span>Update</span>
+                          <span class="badge badge-pill badge-primary"></span>
+                        </a>
+                      </li>
+                      <li>
+                        <a href="/logout">
+                            <i class="fa fa-user-circle-o" aria-hidden="true"></i>
+                          <span>Logout</span>
+                          <span class="badge badge-pill badge-primary"></span>
+                        </a>
+                      </li>
+
+
+                </ul>
+            </div>
+            <!-- sidebar-menu  -->
+        </div>
+        <!-- sidebar-content  -->
+        <div class="sidebar-footer">
+            <a href="#">
+                <i class="fa fa-bell"></i>
+                {{-- <span class="badge badge-pill badge-warning notification">3</span> --}}
+            </a>
+            <a href="#">
+                <i class="fa fa-envelope"></i>
+                {{-- <span class="badge badge-pill badge-success notification">7</span> --}}
+            </a>
+            <a href="#">
+                <i class="fa fa-cog"></i>
+                {{-- <span class="badge-sonar"></span> --}}
+            </a>
+            <a href="/logout">
+                <i class="fa fa-power-off"></i>
+            </a>
+        </div>
+    </nav>
+    <!-- sidebar-wrapper  -->
+
+</div>

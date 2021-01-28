@@ -159,7 +159,7 @@ select.form-select {
 }
 h2.add__table__title{
     font-size: 32px;
-    color: #7050b7;
+    color: #7c5cc4;
     font-weight: 600;
     text-transform: uppercase;
 }
@@ -288,8 +288,6 @@ img.card-img-top {
 }
 .table__list__part{
     background-color: #fff;
-    padding: 20px;
-
 }
 .add__table__list {
     width: 50%;
@@ -312,7 +310,7 @@ img.card-img-top {
 }
 i.fa-icon {
     font-size: 26px;
-    color: #7050b7;
+    color: #525965;
 }
 .nav-tabs .nav-link {
 
