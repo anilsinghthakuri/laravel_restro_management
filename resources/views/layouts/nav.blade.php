@@ -4,7 +4,7 @@
     <nav id="sidebar" class="sidebar-wrapper">
         <div class="sidebar-content">
             <div class="sidebar-brand">
-                <a href="/dashboard">Dashboard</a>
+                <a class="user-name" href="/dashboard">Dashboard</a>
                 <div id="close-sidebar">
                     <a class="pos__link" href="/pos">POS  <i class="fa fa-long-arrow-right" aria-hidden="true"></i></a>
 
