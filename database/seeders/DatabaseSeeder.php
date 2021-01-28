@@ -67,6 +67,8 @@ class DatabaseSeeder extends Seeder
         ]);
         DB::table('customers')->insert([
             'customer_username'=>'walkin',
+            'customer_phone'=>'0000000000',
+            'customer_address'=>'xxxxxxxx',
         ]);
     }
 }

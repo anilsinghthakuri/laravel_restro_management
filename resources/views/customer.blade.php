@@ -97,7 +97,8 @@
                         <td>{{$item->customer_phone}}</td>
                         <td>{{$item->customer_address}}</td>
                         @if ($item->customer_id == '1')
-                                 @continue
+                            <td>Non-deletable</td>
+                             @continue
                         @endif
                         <td>
                             <a href="/customer/{{$item->customer_id}}"><button type="button" class="btn btn-primary"><i
