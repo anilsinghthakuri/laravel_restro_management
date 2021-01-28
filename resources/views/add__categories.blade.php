@@ -8,6 +8,7 @@
     @livewire('addcategory')
 
 </section>
+
 </div>
 @endsection
 
