@@ -21,16 +21,21 @@
         <div class="col-md-12">
             <div class="add__credit--list">
 
-                <form method="POST" action="/credit-search" enctype="multipart/form-data">
-                    @csrf
-                    <div class="input-group mb-3">
-                        <span class="input-group-text" id="basic-addon1">Text</span>
-                        <input type="text" class="form-control" required placeholder="Customer Name" name="customername"
-                            aria-label="YourName" aria-describedby="basic-addon1">
-                    </div>
+                <div class="list-group">
 
-                    <button type="submit" value="Login" class="btn btn-primary">Search</button>
-                </form>
+
+                    <a href="#" class="list-group-item list-group-item-action list-group-item-primary">Name</a>
+                    <a href="#" class="list-group-item list-group-item-action list-group-item-secondary">Father Name</a>
+                    <a href="#" class="list-group-item list-group-item-action list-group-item-success">Mobile Number</a>
+
+                  </div>
+                  <div class="list-group">
+                    <a href="#" class="list-group-item list-group-item-action">Anil Singh</a>
+
+                    <a href="#" class="list-group-item list-group-item-action ">Anil lai tha xa</a>
+                    <a href="#" class="list-group-item list-group-item-action ">9812774720</a>
+
+                  </div>
 
 
             </div>
@@ -38,7 +43,7 @@
     </div>
     <div class="row mt-5">
         <div class="col-md-12">
-            {{-- <h4 class="add__table__title mb-4">Credit Collection</h4> --}}
+            <h4 class="add__table__title mb-4">Credit Collection</h4>
             <div class="table__list__part ">
                 <table class="table table-responsive">
                     <thead>
@@ -64,7 +69,7 @@
 
                             <td> <a href="#"><button type="button" class="btn btn-danger "
                                 data-bs-toggle="modal" data-bs-target="#add_toggle"><i class="far fa-plus-square"></i></button></a>
-                             <a href="/single-credits"><button type="button" class="btn btn-primary"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></button></a>  </td>
+                             <a href="#"><button type="button" class="btn btn-primary"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></button></a>  </td>
 
                         </tr>
 

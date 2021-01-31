@@ -91,7 +91,7 @@
                                 </li>
 
                                 <li>
-                                    <a href="#">Check & Remove Credit </a>
+                                    <a href="/credits">Check & Remove Credit </a>
                                 </li>
                             </ul>
                         </div>

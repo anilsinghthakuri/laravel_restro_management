@@ -5,6 +5,7 @@ use App\Http\Controllers\billprintcontroller;
 use App\Http\Controllers\categorycontroller;
 use App\Http\Controllers\companydatacontroller;
 use App\Http\Controllers\CustomerController;
+use App\Http\Controllers\CustomerCreditController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\ExpenseController;
 use App\Http\Controllers\LoginController;
@@ -113,7 +114,9 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/assets-delete/{id}', [AssetController::class,'delete_assets']);
 
     // route for credit
-    Route::view('/credits', 'credit');
+    Route::get('/credits',[CustomerCreditController::class,'index']);
+    Route::post('/credit-search',[CustomerCreditController::class,'search_customer']);
+    Route::get('/credits/{id}', [CustomerCreditController::class,'single_credit_show']);
 
     // route for logout
     Route::get('/logout',[LoginController::class,'logout']);
