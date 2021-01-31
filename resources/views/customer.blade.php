@@ -67,6 +67,8 @@
 
                     <button type="submit" value="Login" class="btn btn-primary">Update</button>
                 </form>
+                <a href="/customer"><button class="btn btn-danger">Cancel</button></a>
+
             @endif
 
         </div>
@@ -94,6 +96,10 @@
                         <td>{{$item->customer_username}}</td>
                         <td>{{$item->customer_phone}}</td>
                         <td>{{$item->customer_address}}</td>
+                        @if ($item->customer_id == '1')
+                            <td>Non-deletable</td>
+                             @continue
+                        @endif
                         <td>
                             <a href="/customer/{{$item->customer_id}}"><button type="button" class="btn btn-primary"><i
                                         class="fa fa-pencil-square-o" aria-hidden="true"></i></button></a>

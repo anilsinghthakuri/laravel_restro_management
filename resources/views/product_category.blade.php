@@ -53,6 +53,7 @@
                     </div>
                     <button type="submit" class="btn btn-primary">Update</button>
                 </form>
+                <a href="/product"><button class="btn btn-danger">Cancel</button></a>
                 @endif
 
             </div>
@@ -77,9 +78,13 @@
                         <tr>
                             <th scope="row">{{$loop->iteration}}</th>
                             <td>{{$item->category_name}}</td>
-                            <td><img src="/img/{{$item->category_image}}" alt="{{$item->category_image}}"></td>
-                            <td> <a href="/categories-delete/{{$item->category_id}}"><button type="button" class="btn btn-danger"><i class="fa fa-trash-o" aria-hidden="true"></i></button></a>
-                             <a href="/categories/{{$item->category_id}}"><button type="button" class="btn btn-primary"><i class="fa fa-trash-o" aria-hidden="true"></i></button></a>  </td>
+                            <td><img src="/img/{{$item->category_image}}" alt="{{$item->category_image}}" height="25px" width="250px"></td>
+                            <td>
+                                <a href="/categories/{{$item->category_id}}"><button type="button" class="btn btn-primary"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></button></a>
+
+                                <a href="/categories-delete/{{$item->category_id}}"><button type="button" class="btn btn-danger"><i class="fa fa-trash-o" aria-hidden="true"></i></button></a>
+
+                            </td>
 
                         </tr>
                         @endforeach

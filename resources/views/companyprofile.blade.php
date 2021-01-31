@@ -21,31 +21,35 @@
                         <div class="col-sm-6">
                             <div class="input-group mb-3">
                                 <span class="input-group-text" id="basic-addon1"><i class="fa fa-pencil" aria-hidden="true"></i></span>
-                                <input type="text" class="form-control" value="{{$companyinfo->company_name}}" name="companyname" id=""  aria-label="Username" aria-describedby="basic-addon1">
+                                <input type="text" class="form-control" required value="{{$companyinfo->company_name}}" name="companyname" id=""  aria-label="Username" aria-describedby="basic-addon1">
                             </div>
                         </div>
                         <div class="col-sm-6">
                             <div class="input-group mb-3">
                                 <span class="input-group-text" id="basic-addon1"><i class="fa fa-pencil" aria-hidden="true"></i></span>
-                                <input type="text" class="form-control" value="{{$companyinfo->company_address}}" name="companyaddress" id=""  aria-label="Username" aria-describedby="basic-addon1">
+                                <input type="text" class="form-control" required value="{{$companyinfo->company_address}}" name="companyaddress" id=""  aria-label="Username" aria-describedby="basic-addon1">
                             </div>
                         </div>
                         <div class="col-sm-6">
                             <div class="input-group mb-3">
                                 <span class="input-group-text" id="basic-addon1"><i class="fa fa-pencil" aria-hidden="true"></i></span>
-                                <input type="number" class="form-control" value="{{$companyinfo->company_number}}" name="companynumber" id="" aria-label="Username" aria-describedby="basic-addon1">
+                                <input type="number" class="form-control" required value="{{$companyinfo->company_number}}" name="companynumber" id="" aria-label="Username" aria-describedby="basic-addon1">
                             </div>
                         </div>
+
+                        <img src="/img/{{$companyinfo->company_logo}}" height="50" height="10" alt="">
+
                         <div class="col-sm-6">
+
                             <div class="input-group mb-3">
-                                <input type="file"  class="form-control" id="inputGroupFile02">
+                                <input type="file"  name="companyimage"  class="form-control" id="inputGroupFile02">
                                 <label class="input-group-text"  name="companyimage" id="" for="inputGroupFile02">Upload</label>
                               </div>
                         </div>
                         <div class="col-sm-6">
                             <div class="input-group mb-3">
                                 <span class="input-group-text" id="basic-addon1"><i class="fa fa-pencil" aria-hidden="true"></i></span>
-                                <input type="text" class="form-control" name="companycurrency" id="" value="{{$companyinfo->company_currency}}" aria-label="Username" aria-describedby="basic-addon1">
+                                <input type="text" class="form-control" required name="companycurrency" id="" value="{{$companyinfo->company_currency}}" aria-label="Username" aria-describedby="basic-addon1">
                               </div>
                         </div>
 

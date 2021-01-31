@@ -59,5 +59,16 @@ class DatabaseSeeder extends Seeder
             'company_logo'=>'logo.png',
             'company_currency'=>'RS'
         ]);
+        DB::table('payment_methods')->insert([
+            'payment_method_name'=>'cash',
+        ]);
+        DB::table('payment_methods')->insert([
+            'payment_method_name'=>'credit',
+        ]);
+        DB::table('customers')->insert([
+            'customer_username'=>'walkin',
+            'customer_phone'=>'0000000000',
+            'customer_address'=>'xxxxxxxx',
+        ]);
     }
 }

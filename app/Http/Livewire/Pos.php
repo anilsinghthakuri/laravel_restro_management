@@ -5,8 +5,11 @@ namespace App\Http\Livewire;
 use App\Http\Controllers\billprintcontroller;
 use App\Models\Bill;
 use App\Models\Customer;
+use App\Models\CustomerCredit;
 use App\Models\Order;
+use App\Models\PaymentMethod;
 use App\Models\Table;
+use Illuminate\Support\Facades\DB;
 use Livewire\Component;
 
 class Pos extends Component
@@ -20,7 +23,8 @@ class Pos extends Component
     public $table_order = [];
     public $customerlist =[];
     public $payment = 0;
-    public $customer = 0;
+    public $customer = 1;
+    public $paymentmethodlist = [];
 
     protected $listeners = ['changecalc'];
 
@@ -30,6 +34,7 @@ class Pos extends Component
         $this->tablelist = $this->table_list();
         $this->table_order = $this->table_order_data();
         $this->customerlist = $this->customer_list();
+        $this->paymentmethodlist = $this->payment_method_list();
     }
 
     public function updatedPayingamount()
@@ -54,28 +59,96 @@ class Pos extends Component
     public function checkout($table)
     {
         if ($this->grandprice == null) {
+            session()->flash('message', 'Table is Empty ');
 
         }
         else{
+            if ($this->payment == 0) {
 
+                session()->flash('message', 'Choose Payment Method');
+
+            }
+            else{
 
                 if ($this->payment == 1) {
                     $orderdata = [];
                     $bill = New Bill;
                     $bill->table_id = $this->table;
                     $bill->bill_total_amount = $this->grandprice;
-                    $bill->bill_payment_method = $this->payment;
-                    $bill->save();
-                }
-                else{
-                    $orderdata = [];
-                    $bill = New Bill;
-                    $bill->table_id = $this->table;
-                    $bill->bill_total_amount = $this->grandprice;
-                    $bill->bill_payment_method = $this->payment;
+                    $bill->payment_method_id = $this->payment;
                     $bill->customer_id = $this->customer;
                     $bill->save();
+
+                    return redirect()->route('bill.print', [
+                        $table,
+
+                        ]);
                 }
+                else{
+                    if ($this->customer == 1) {
+                        session()->flash('message', 'Choose Customer ');
+
+                    }
+                    else{
+
+                        $check = [];
+                        $checkcustomer = CustomerCredit::where('customer_id',$this->customer)->get();
+                        foreach ($checkcustomer as $key => $value) {
+                         $check[] = $checkcustomer[$key]['customer_id'];
+                             }
+                             if (in_array($this->customer,$check)) {
+                                //  dd('prsent');
+                                $amount = CustomerCredit::where('customer_id',$this->customer)->first();
+                                $total_amount_to_pay = $amount->total_amount_to_pay;
+                                // dd($total_amount_to_pay);
+                                $total_amount_to_pay  = $total_amount_to_pay + $this->grandprice;
+                                // $amount_total = array($total_amount_to_pay);
+                                // dd($total_amount_to_pay);
+
+                                DB::table('customer_credits')->where('customer_id',$this->customer)->update(['total_amount_to_pay'=>$total_amount_to_pay]);
+                                // $credit  = CustomerCredit::where('customer_id',$this->customer);
+                                // dd($credit);
+
+                                $bill = New Bill;
+                                $bill->table_id = $this->table;
+                                $bill->bill_total_amount = $this->grandprice;
+                                $bill->payment_method_id = $this->payment;
+                                $bill->customer_id = $this->customer;
+                                $bill->save();
+                                return redirect()->route('bill.print', [
+                                    $table,
+                                 ]);
+
+
+                             }
+                             else{
+                                $orderdata = [];
+
+                                $creditcustomer = new CustomerCredit;
+                                $creditcustomer->customer_id = $this->customer;
+                                $creditcustomer->total_amount_to_pay = $this->grandprice;
+                                $creditcustomer->save();
+
+                                $bill = New Bill;
+                                $bill->table_id = $this->table;
+                                $bill->bill_total_amount = $this->grandprice;
+                                $bill->payment_method_id = $this->payment;
+                                $bill->customer_id = $this->customer;
+                                $bill->save();
+                                return redirect()->route('bill.print', [
+                                    $table,
+                            ]);
+
+                             }
+
+
+
+                    }
+
+                }
+
+
+            }
 
 
 
@@ -85,10 +158,7 @@ class Pos extends Component
 
             // $this->emit('refreshaftersell');
             // dd($table);
-            return redirect()->route('bill.print', [
-                $table,
 
-                ]);
         }
 
     }
@@ -114,7 +184,7 @@ class Pos extends Component
             // dd($this->shifting_table);
             $check = [];
             $checktable = Order::where('table_id',$this->shifting_table)->where('bill_status',0)->get();
-            // dd($checktable);
+                    // dd($checktable);
             foreach ($checktable as $key => $value) {
                 $check[] = $checktable[$key]['table_id'];
             }
@@ -136,6 +206,15 @@ class Pos extends Component
     {
         $customerlist = Customer::all();
         return $customerlist;
+    }
+    public function payment_method_list()
+    {
+        $paymentmethodlist = PaymentMethod::all();
+        return $paymentmethodlist;
+    }
+
+    private function add_amount_customer($grandprice){
+
     }
 
     public function render()

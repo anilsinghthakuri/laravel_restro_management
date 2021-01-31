@@ -1,4 +1,3 @@
-
 <div class="page-wrapper chiller-theme">
 
     <nav id="sidebar" class="sidebar-wrapper">
@@ -6,7 +5,7 @@
             <div class="sidebar-brand">
                 <a class="user-name" href="/dashboard">Dashboard</a>
                 <div id="close-sidebar">
-                    <a class="pos__link" href="/pos">POS  <i class="fa fa-long-arrow-right" aria-hidden="true"></i></a>
+                    <a class="pos__link" href="/pos">POS <i class="fa fa-long-arrow-right" aria-hidden="true"></i></a>
 
                 </div>
             </div>
@@ -81,17 +80,17 @@
                                     <a href="/customer">Add Customer</a>
                                 </li>
                                 <li>
-                                    <a href="#">Total Sale</a>
+                                    <a href="/total-sale">Total Sale</a>
                                 </li>
                                 <li>
-                                    <a href="#">Cash Sale</a>
+                                    <a href="/cash-sale">Cash Sale</a>
                                 </li>
                                 <li>
-                                    <a href="#">Credit Sale</a>
+                                    <a href="/credit-sale">Credit Sale</a>
                                 </li>
 
                                 <li>
-                                    <a href="#">Check & Remove Credit </a>
+                                    <a href="/credits">Check & Remove Credit </a>
                                 </li>
                             </ul>
                         </div>
@@ -203,17 +202,17 @@
                     <li>
                         <a href="#">
                             <i class="fa fa-plus-square-o" aria-hidden="true"></i>
-                          <span>Update</span>
-                          <span class="badge badge-pill badge-primary"></span>
+                            <span>Update</span>
+                            <span class="badge badge-pill badge-primary"></span>
                         </a>
-                      </li>
-                      <li>
+                    </li>
+                    <li>
                         <a href="/logout">
                             <i class="fa fa-user-circle-o" aria-hidden="true"></i>
-                          <span>Logout</span>
-                          <span class="badge badge-pill badge-primary"></span>
+                            <span>Logout</span>
+                            <span class="badge badge-pill badge-primary"></span>
                         </a>
-                      </li>
+                    </li>
 
 
                 </ul>

@@ -5,11 +5,9 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Customer extends Model
+class PaymentMethod extends Model
 {
     use HasFactory;
-    protected $table = 'customers';
-    protected $primaryKey = 'customer_id';
-
-
+    protected $table = 'payment_methods';
+    protected $primaryKey  = 'payment_method_id';
 }
