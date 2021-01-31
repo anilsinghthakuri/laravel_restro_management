@@ -18,20 +18,38 @@ class CustomerCreditController extends Controller
         ]);
     }
 
-    public function update_credit(Request $request)
-    {
-        $id = $request->id;
 
-    }
 
     public function single_credit_show($id)
     {
+        $credit_info = $this->show_one_credit_list($id);
+        // dd($credit_info);
         $billlist = $this->show_bill_list($id);
         $customer_info = $this->customer_info($id);
         return view('single_credits',[
             'customer_info'=>$customer_info,
             'billlist'=>$billlist,
+            'credit_info'=>$credit_info,
             ]);
+    }
+
+    public function single_credit_update(Request $request)
+    {
+        $id = $request->id;
+        $creditlist = $this->show_one_credit_list($id);
+        $oldamount = $creditlist->total_amount_to_pay;
+
+        $newamount = $oldamount - $request->amount;
+
+        CustomerCredit::where('customer_id',$id)->update(['total_amount_to_pay'=>$newamount]);
+
+        return back()->with('message','Amount Updated');
+
+
+        // dd($oldamount);
+
+        // $credit  = CustomerCredit::where('cre')
+
     }
 
     private function show_bill_list($id)
@@ -59,7 +77,7 @@ class CustomerCreditController extends Controller
     }
 
     private function show_one_credit_list($id){
-        $creditlist = CustomerCredit::Find($id);
+        $creditlist = DB::table('customer_credits')->where('customer_id',$id)->first();
         return $creditlist;
     }
 

@@ -27,6 +27,8 @@
                     <a href="#" class="list-group-item list-group-item-action list-group-item-primary">Name</a>
                     <a href="#" class="list-group-item list-group-item-action list-group-item-secondary">Address</a>
                     <a href="#" class="list-group-item list-group-item-action list-group-item-success">Mobile Number</a>
+                    <a href="#" class="list-group-item list-group-item-action list-group-item-success">Remaining Amount</a>
+                    <a href="#" class="list-group-item list-group-item-action list-group-item-success">Pay</a>
 
                   </div>
                   <div class="list-group">
@@ -35,6 +37,8 @@
 
                     <a href="#" class="list-group-item list-group-item-action ">{{$customer_info->customer_address}}</a>
                     <a href="#" class="list-group-item list-group-item-action ">{{$customer_info->customer_phone}}</a>
+                    <a href="#" class="list-group-item list-group-item-action ">RS: {{$credit_info->total_amount_to_pay}}</a>
+                    <a href="#" class="list-group-item list-group-item-action "><button class=" btn btn-primary" data-bs-toggle="modal" data-bs-target="#add_toggle">Pay</button></a>
 
                   </div>
 
@@ -69,8 +73,9 @@
 
 
 
-                            <td> <a href="#"><button type="button" class="btn btn-danger "
-                                data-bs-toggle="modal" data-bs-target="#add_toggle"><i class="far fa-plus-square"></i></button></a>
+                            <td>
+                                {{-- <a href="#"><button type="button" class="btn btn-danger "
+                                data-bs-toggle="modal" data-bs-target="#add_toggle"><i class="far fa-plus-square"></i></button></a> --}}
                              <a href="#"><button type="button" class="btn btn-primary"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></button></a>  </td>
 
                         </tr>
@@ -108,20 +113,15 @@
 
          <div class="modal-body ">
              <div class="container-fluid">
-                 <form>
+                 <form method="POST" action="/credit-pay">
                      <div class="row">
+                         @csrf
                          <div class="col-md-12">
-                            <div class="mb-3">
-
-                                <label for="P__amount" class="form-label">Date*</label>
-                                <input type="date" class="form-control" >
-
-                            </div>
-
+                            <input type="hidden" name="id" value="{{$customer_info->customer_id}}">
                             <div class="mb-3">
 
                                 <label for="P__amount" class="form-label">Amount *</label>
-                                <input type="number" class="form-control" >
+                                <input type="number" name="amount" required class="form-control" >
 
                             </div>
                             <div class="row">
@@ -178,10 +178,6 @@
                         </div>
 
 
-
-
-
-
                     </div>
                      <div class="row">
                          <div class="col-md-12 ms-auto">
@@ -193,14 +189,14 @@
 
                      </div>
 
+                     <div class="modal-footer">
+                        <button type="submit" class="btn btn-primary">Add</button>
+                    </div>
+
                  </form>
              </div>
          </div>
              {{-- this is footer --}}
-
-         <div class="modal-footer">
-             <button type="submit" class="btn btn-primary">Add</button>
-         </div>
      </div>
  </div>
 </div>
