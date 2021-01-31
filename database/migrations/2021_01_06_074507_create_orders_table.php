@@ -20,7 +20,7 @@ class CreateOrdersTable extends Migration
             $table->boolean('bill_status')->default(0);
             $table->integer('order_quantity');
             $table->integer('order_subprice');
-            $table->unsignedBigInteger('bill_id');
+            $table->unsignedBigInteger('bill_id')->nullable();
 
             $table->foreign('product_id')->references('product_id')->on('products')->onDelete('cascade');
             $table->foreign('table_id')->references('table_id')->on('tables')->onDelete('cascade');
