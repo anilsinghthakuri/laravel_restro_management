@@ -69,9 +69,9 @@
     </div>
     <div class="all__product">
 
-        <div class="row row-cols-5" value="PLAY" onclick="play()">
+        <div class="row row-cols-5" value="PLAY" >
             @foreach ($product as $products)
-            <div class="col px-0" wire:click='addproduct({{$products->product_id}})'>
+            <div class="col px-0" onclick="play()" wire:click='addproduct({{$products->product_id}})'>
                 <div class="item__items item__height item__hover">
                     <div class="image__inner">
                         <img src="img/{{$products->product_image}}" class="card-img-top" alt="...">
