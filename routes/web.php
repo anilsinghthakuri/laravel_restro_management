@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AssetController;
 use App\Http\Controllers\billprintcontroller;
 use App\Http\Controllers\categorycontroller;
 use App\Http\Controllers\companydatacontroller;
@@ -103,6 +104,16 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/customer/{id}',[CustomerController::class,'edit_customer']);
     Route::post('/customer-update',[CustomerController::class,'update_customer']);
     Route::get('/customer-delete/{id}',[CustomerController::class,'delete_customer']);
+
+    //route for assets
+    Route::get('/assets', [AssetController::class,'index']);
+    Route::post('/assets', [AssetController::class,'add_assets']);
+    Route::get('/assets/{id}', [AssetController::class,'edit_assets']);
+    Route::post('/assets-update', [AssetController::class,'update_assets']);
+    Route::get('/assets-delete/{id}', [AssetController::class,'delete_assets']);
+
+    // route for credit
+    Route::view('/credits', 'credit');
 
     // route for logout
     Route::get('/logout',[LoginController::class,'logout']);

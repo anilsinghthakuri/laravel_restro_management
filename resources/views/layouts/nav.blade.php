@@ -78,7 +78,7 @@
                         <div class="sidebar-submenu">
                             <ul>
                                 <li>
-                                    <a href="#">Add Customer</a>
+                                    <a href="/customer">Add Customer</a>
                                 </li>
                                 <li>
                                     <a href="#">Total Sale</a>
@@ -118,7 +118,21 @@
                             </ul>
                         </div>
                     </li>
+                    <li class="sidebar-dropdown">
+                        <a href="#">
+                            <i class="fa fa-briefcase" aria-hidden="true"></i>
+                            <span>Assets</span>
 
+                        </a>
+                        <div class="sidebar-submenu">
+                            <ul>
+
+                                <li>
+                                    <a href="/assets">Assets</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
 
                     <li class="sidebar-dropdown">
                         <a href="#">
