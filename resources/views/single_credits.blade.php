@@ -25,15 +25,16 @@
 
 
                     <a href="#" class="list-group-item list-group-item-action list-group-item-primary">Name</a>
-                    <a href="#" class="list-group-item list-group-item-action list-group-item-secondary">Father Name</a>
+                    <a href="#" class="list-group-item list-group-item-action list-group-item-secondary">Address</a>
                     <a href="#" class="list-group-item list-group-item-action list-group-item-success">Mobile Number</a>
 
                   </div>
                   <div class="list-group">
-                    <a href="#" class="list-group-item list-group-item-action">Anil Singh</a>
 
-                    <a href="#" class="list-group-item list-group-item-action ">Anil lai tha xa</a>
-                    <a href="#" class="list-group-item list-group-item-action ">9812774720</a>
+                    <a href="#" class="list-group-item list-group-item-action">{{$customer_info->customer_username}}</a>
+
+                    <a href="#" class="list-group-item list-group-item-action ">{{$customer_info->customer_address}}</a>
+                    <a href="#" class="list-group-item list-group-item-action ">{{$customer_info->customer_phone}}</a>
 
                   </div>
 
@@ -43,27 +44,28 @@
     </div>
     <div class="row mt-5">
         <div class="col-md-12">
-            <h4 class="add__table__title mb-4">Credit Collection</h4>
+            <h4 class="add__table__title mb-4">Credit Bills</h4>
             <div class="table__list__part ">
                 <table class="table table-responsive">
                     <thead>
                         <tr>
-                            <th scope="col">#</th>
-                            <th scope="col">Table Name</th>
-                            <th scope="col">Table Name</th>
+                            <th scope="col">S.N</th>
+                            <th scope="col">Date</th>
+                            <th scope="col">Bill Number</th>
+                            <th scope="col">Total Bill Amount</th>
                             <th scope="col">Table Name</th>
                             <th scope="col">Action</th>
 
                         </tr>
                     </thead>
                     <tbody>
-
-
+                        @foreach ($billlist as $item)
                         <tr>
-                            <th scope="row">bikash</th>
-                            <td>bikash</td>
-                            <td>bikash</td>
-                            <td>bikash</td>
+                            <th scope="row">{{$loop->iteration}}</th>
+                            <td>{{$item->created_at}}</td>
+                            <td>{{$item->bill_id}}</td>
+                            <td>{{$item->bill_total_amount}}</td>
+                            <td>{{$item->table->table_name}}</td>
 
 
 
@@ -72,6 +74,9 @@
                              <a href="#"><button type="button" class="btn btn-primary"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></button></a>  </td>
 
                         </tr>
+                        @endforeach
+
+
 
 
 
