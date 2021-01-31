@@ -112,6 +112,9 @@ Route::middleware(['auth'])->group(function () {
     Route::post('/assets-update', [AssetController::class,'update_assets']);
     Route::get('/assets-delete/{id}', [AssetController::class,'delete_assets']);
 
+    // route for credit
+    Route::view('/credits', 'credit');
+
     // route for logout
     Route::get('/logout',[LoginController::class,'logout']);
 
