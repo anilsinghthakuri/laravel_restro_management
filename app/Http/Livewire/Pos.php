@@ -78,18 +78,26 @@ class Pos extends Component
                     $bill->save();
                 }
                 else{
-                    $orderdata = [];
-                    $bill = New Bill;
-                    $bill->table_id = $this->table;
-                    $bill->bill_total_amount = $this->grandprice;
-                    $bill->payment_method_id = $this->payment;
-                    $bill->customer_id = $this->customer;
-                    $bill->save();
-                }
-                return redirect()->route('bill.print', [
-                    $table,
+                    if ($this->customer == 1) {
+                        session()->flash('message', 'Choose Customer ');
 
-                    ]);
+                    }
+                    else{
+                        $orderdata = [];
+                        $bill = New Bill;
+                        $bill->table_id = $this->table;
+                        $bill->bill_total_amount = $this->grandprice;
+                        $bill->payment_method_id = $this->payment;
+                        $bill->customer_id = $this->customer;
+                        $bill->save();
+                        return redirect()->route('bill.print', [
+                            $table,
+
+                            ]);
+
+                    }
+
+                }
 
             }
 

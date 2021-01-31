@@ -1,9 +1,11 @@
 <?php
 
+use App\Http\Controllers\AssetController;
 use App\Http\Controllers\billprintcontroller;
 use App\Http\Controllers\categorycontroller;
 use App\Http\Controllers\companydatacontroller;
 use App\Http\Controllers\CustomerController;
+use App\Http\Controllers\CustomerCreditController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\ExpenseController;
 use App\Http\Controllers\LoginController;
@@ -110,6 +112,17 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/total-sale',[SaleReportController::class,'index_total_sale']);
     Route::get('/cash-sale',[SaleReportController::class,'index_cash_sale']);
     Route::get('/credit-sale',[SaleReportController::class,'index_credit_sale']);
+    //route for assets
+    Route::get('/assets', [AssetController::class,'index']);
+    Route::post('/assets', [AssetController::class,'add_assets']);
+    Route::get('/assets/{id}', [AssetController::class,'edit_assets']);
+    Route::post('/assets-update', [AssetController::class,'update_assets']);
+    Route::get('/assets-delete/{id}', [AssetController::class,'delete_assets']);
+
+    // route for credit
+    Route::get('/credits',[CustomerCreditController::class,'index']);
+    Route::post('/credit-search',[CustomerCreditController::class,'search_customer']);
+    Route::get('/credits/{id}', [CustomerCreditController::class,'single_credit_show']);
 
     // route for logout
     Route::get('/logout',[LoginController::class,'logout']);

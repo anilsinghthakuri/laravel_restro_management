@@ -90,7 +90,7 @@
                                 </li>
 
                                 <li>
-                                    <a href="#">Check & Remove Credit </a>
+                                    <a href="/credits">Check & Remove Credit </a>
                                 </li>
                             </ul>
                         </div>
@@ -117,7 +117,6 @@
                             </ul>
                         </div>
                     </li>
-
                     <li class="sidebar-dropdown">
                         <a href="#">
                             <i class="fa fa-briefcase" aria-hidden="true"></i>
@@ -126,12 +125,9 @@
                         </a>
                         <div class="sidebar-submenu">
                             <ul>
-                                <li>
-                                    <a href="/expense-add">Add Assets Type</a>
-                                </li>
 
                                 <li>
-                                    <a href="/expense-list">Assets List</a>
+                                    <a href="/assets">Assets</a>
                                 </li>
                             </ul>
                         </div>

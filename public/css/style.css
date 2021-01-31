@@ -341,7 +341,16 @@ div#nav-tabContent {
     height: 240px;
     padding: 15px;
 }
-
+.add__credit--list {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+.check__box {
+    display: flex;
+}
+.form-check--part {
+    margin-right: 30px;
+}
 /* The side navigation menu */
 .side__show {
     height: 545px; /* 100% Full-height */
