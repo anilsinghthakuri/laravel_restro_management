@@ -78,7 +78,7 @@
                         <div class="sidebar-submenu">
                             <ul>
                                 <li>
-                                    <a href="#">Add Customer</a>
+                                    <a href="/customer">Add Customer</a>
                                 </li>
                                 <li>
                                     <a href="#">Total Sale</a>
