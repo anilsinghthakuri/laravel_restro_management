@@ -101,8 +101,9 @@
 
         </div>
         <button type="submit" class="btn btn-primary">Update</button>
+        <a href="/product"><button class="btn btn-danger">Cancel</button></a>
     </form>
-    <a href="/product"><button class="btn btn-danger">Cancel</button></a>
+
 
 
 

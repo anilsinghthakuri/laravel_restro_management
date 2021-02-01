@@ -351,6 +351,22 @@ div#nav-tabContent {
 .form-check--part {
     margin-right: 30px;
 }
+img.profile-images {
+    width: 200px;
+    height: 200px;
+    object-fit: contain;
+    margin: 0 auto;
+}
+.class-profile-images {
+    width: 100%;
+    text-align: center;
+    margin-bottom: 15px;
+}
+img.table__images {
+    width: 35px;
+    height: 35px;
+    object-fit: fill;
+}
 /* The side navigation menu */
 .side__show {
     height: 545px; /* 100% Full-height */

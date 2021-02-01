@@ -81,7 +81,7 @@
                         @foreach ($category as $item)
                         <tr>
                             <th scope="row">{{$loop->iteration}}</th>
-                            <td class="image-categories"><img class="img__product"
+                            <td class="image-categories "><img class="img__product table__images"
                                 src="storage/{{$item->category_image }}" class="img-fluid" alt="..."></td>
 
                             <td>{{$item->category_name}}</td>
