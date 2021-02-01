@@ -39,9 +39,10 @@
                         <input type="text" class="form-control" required value="{{$table->table_name}}" name="tablename" aria-label="Username"
                             aria-describedby="basic-addon1">
                         <button type="submit" class="btn btn-primary">update</button>
+                        <a href="/table"><button class="btn btn-danger">Cancel</button></a>
                     </div>
                 </form>
-                <a href="/table"><button class="btn btn-danger">Cancel</button></a>
+
 
                 @endif
 

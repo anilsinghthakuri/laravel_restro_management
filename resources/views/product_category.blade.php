@@ -21,14 +21,14 @@
         <div class="col-md-12">
             <div class="add__table__list">
                 @if ($category == Null)
-                <form action="/categories" method="POST" enctype="multipart/form-data">
+                <form action="/categories" method="POST" enctype="multipart/form-data" class="mb-3">
                     @csrf
-                    <div class="input-group">
+                    <div class="input-group mb-3">
                         <span class="input-group-text" id="basic-addon1">Category Name</span>
                         <input type="text" class="form-control" required placeholder="Category Name" name="categoryname" aria-label="Username"
                             aria-describedby="basic-addon1">
                     </div>
-                    <div class="input-group">
+                    <div class="input-group  mb-3">
 
                         <input type="file" class="form-control" required  name="file" aria-label="Username"
                                 aria-describedby="basic-addon1">
@@ -36,24 +36,27 @@
                     </div>
                     <button type="submit" class="btn btn-primary">Submit</button>
                 </form>
+
                 @else
-                <form action="/categories-update" method="POST" enctype="multipart/form-data">
+
+                <form action="/categories-update" method="POST" enctype="multipart/form-data" >
                     @csrf
                     <input type="hidden" name="id" value="{{$category->category_id}}">
-                    <div class="input-group">
+                    <div class="input-group  mb-3">
                         <span class="input-group-text" id="basic-addon1">Category Name</span>
                         <input type="text" class="form-control" required value="{{$category->category_name}}" name="tablename" aria-label="Username"
                             aria-describedby="basic-addon1">
                     </div>
-                    <div class="input-group">
+                    <div class="input-group  mb-3">
 
                         <input type="file" class="form-control"  name="file" aria-label="Username"
                                 aria-describedby="basic-addon1">
 
                     </div>
                     <button type="submit" class="btn btn-primary">Update</button>
+                    <a href="/product"><button class="btn btn-danger">Cancel</button></a>
                 </form>
-                <a href="/product"><button class="btn btn-danger">Cancel</button></a>
+
                 @endif
 
             </div>
@@ -78,7 +81,7 @@
                         <tr>
                             <th scope="row">{{$loop->iteration}}</th>
                             <td>{{$item->category_name}}</td>
-                            <td><img src="/img/{{$item->category_image}}" alt="{{$item->category_image}}" height="25px" width="250px"></td>
+                            <td><img class="table__images" src="/img/{{$item->category_image}}" alt="{{$item->category_image}}" height="25px" width="250px"></td>
                             <td>
                                 <a href="/categories/{{$item->category_id}}"><button type="button" class="btn btn-primary"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></button></a>
 

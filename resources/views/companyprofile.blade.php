@@ -37,7 +37,13 @@
                             </div>
                         </div>
 
-                        <img src="/img/{{$companyinfo->company_logo}}" height="50" height="10" alt="">
+                        <div class="col-md-12">
+                            <div class="class-profile-images">
+                                <img class="profile-images" src="/img/{{$companyinfo->company_logo}}" height="50" height="10" alt="">
+                            </div>
+
+                        </div>
+
 
                         <div class="col-sm-6">
 
