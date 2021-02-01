@@ -9,11 +9,18 @@ use Illuminate\Http\Request;
 use Maatwebsite\Excel\Facades\Excel;
 use App\Exports\OrdersExport;
 use App\Models\Companydata;
+use App\Models\Expense;
 
 class DashboardController extends Controller
 {
     public function index()
     {
+
+        $profit = $this->profit_calc();
+
+
+        $total_expense  = $this->expense_calc();
+
         $today_order_list =$this->order_table_data_of_today();
         $week_order_list =$this->order_table_data_of_week();
         $total_order_list =$this->order_table_data_of_total();
@@ -30,6 +37,10 @@ class DashboardController extends Controller
             'today_order_list'=>$today_order_list,
             'week_order_list'=>$week_order_list,
             'total_order_list'=>$total_order_list,
+
+            'total_expense'=>$total_expense,
+
+            'profit'=>$profit,
         ]);
     }
 
@@ -131,4 +142,27 @@ class DashboardController extends Controller
     // {
     //     return (new OrdersExport)->download('invoices.pdf', \Maatwebsite\Excel\Excel::MPDF);
     // }
+
+    private function expense_calc(){
+        $total = [];
+        $total_expense = 0;
+        $expense = Expense::all();
+        foreach ($expense as $key => $value) {
+            $total[] = $expense[$key]['expense_price'];
+        }
+
+        $total_expense = array_sum($total);
+        return $total_expense;
+    }
+
+    private function profit_calc(){
+        $expense = $this->expense_calc();
+        $revenue = $this->totalrevenuecalc();
+
+        $profit = $revenue - $expense ;
+
+        return $profit;
+    }
+
+
 }

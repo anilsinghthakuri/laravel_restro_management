@@ -32,11 +32,11 @@
                       <i class="fa fa-recycle fa-icon" aria-hidden="true"></i>
                     </div>
                     <div class="card-body">
-                        <h5 class="card-title title--bill">Week Revenue</h5>
+                        <h5 class="card-title title--bill">Total Expenses</h5>
 
                     </div>
                     <div class="card-footer text-muted text-bill">
-                        RS: {{$week_revenue}}
+                        RS: {{$total_expense}}
                     </div>
                 </div>
             </div>
@@ -68,7 +68,7 @@
 
                     </div>
                     <div class="card-footer text-muted text-bill">
-                        RS: {{$total_revenue}}
+                        RS: {{$profit}}
                     </div>
                 </div>
             </div>
