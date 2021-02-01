@@ -37,7 +37,7 @@
 
                     <a href="#" class="list-group-item list-group-item-action ">{{$customer_info->customer_address}}</a>
                     <a href="#" class="list-group-item list-group-item-action ">{{$customer_info->customer_phone}}</a>
-                    <a href="#" class="list-group-item list-group-item-action ">RS: {{$credit_info->total_amount_to_pay}}</a>
+                    <a href="#" class="list-group-item list-group-item-action ">RS: {{$remaining}}</a>
                     <a href="#" class="list-group-item list-group-item-action "><button class=" btn btn-primary" data-bs-toggle="modal" data-bs-target="#add_toggle">Pay</button></a>
 
                   </div>

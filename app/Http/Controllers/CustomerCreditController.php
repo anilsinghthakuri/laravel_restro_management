@@ -24,12 +24,14 @@ class CustomerCreditController extends Controller
     {
         $credit_info = $this->show_one_credit_list($id);
         // dd($credit_info);
+        $remaining = $credit_info->total_amount_to_pay - $credit_info->amount_paid;
+        // dd($remaining);
         $billlist = $this->show_bill_list($id);
         $customer_info = $this->customer_info($id);
         return view('single_credits',[
             'customer_info'=>$customer_info,
             'billlist'=>$billlist,
-            'credit_info'=>$credit_info,
+            'remaining'=>$remaining,
             ]);
     }
 
@@ -37,11 +39,12 @@ class CustomerCreditController extends Controller
     {
         $id = $request->id;
         $creditlist = $this->show_one_credit_list($id);
-        $oldamount = $creditlist->total_amount_to_pay;
 
-        $newamount = $oldamount - $request->amount;
+        $oldamount_paid = $creditlist->amount_paid;
 
-        CustomerCredit::where('customer_id',$id)->update(['total_amount_to_pay'=>$newamount]);
+        $newamount = $oldamount_paid + $request->amount;
+
+        CustomerCredit::where('customer_id',$id)->update(['amount_paid'=>$newamount]);
 
         return back()->with('message','Amount Updated');
 
