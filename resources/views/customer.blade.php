@@ -66,8 +66,9 @@
                     </div>
 
                     <button type="submit" value="Login" class="btn btn-primary">Update</button>
+                    <a href="/customer"><button class="btn btn-danger">Cancel</button></a>
                 </form>
-                <a href="/customer"><button class="btn btn-danger">Cancel</button></a>
+
 
             @endif
 

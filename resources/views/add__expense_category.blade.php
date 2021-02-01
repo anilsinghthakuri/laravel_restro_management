@@ -42,7 +42,7 @@
                         <input type="text" class="form-control" value="{{$categories_expense->expense_category_name}}" name="categoryname"
                             aria-label="Username" aria-describedby="basic-addon1">
                         <button type="submit" class="btn btn-primary">Update</button>
-                        <a href="/expense-category"><button class="btn btn-danger">Cancel</button></a>
+                        <a href="/expense-category"><button class="btn btn-danger mx-1">Cancel</button></a>
                     </div>
                 </form>
 

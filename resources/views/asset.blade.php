@@ -45,9 +45,10 @@
                             <input type="text" class="form-control" required value="{{$asset->quantity}}" name="quantity" aria-label="Username"
                                 aria-describedby="basic-addon1">
                         <button type="submit" class="btn btn-primary">update</button>
+                        <a href="/assets"><button  class="btn btn-danger mx-1">cancel</button></a>
                     </div>
                 </form>
-                <a href="/assets"><button  class="btn btn-danger">cancel</button></a>
+
 
                 @endif
 
