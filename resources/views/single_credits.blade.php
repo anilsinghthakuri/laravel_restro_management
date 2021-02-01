@@ -42,6 +42,8 @@
 
                   </div>
 
+                  <a href="/credits"> <button class="btn btn-primary">GO Back</button></a>
+
 
             </div>
         </div>
