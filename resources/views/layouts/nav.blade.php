@@ -98,21 +98,21 @@
                     <li class="sidebar-dropdown">
                         <a href="#">
                             <i class="fa fa-briefcase" aria-hidden="true"></i>
-                            <span>Expense</span>
+                            <span>Expenses</span>
 
                         </a>
                         <div class="sidebar-submenu">
                             <ul>
                                 <li>
-                                    <a href="/expense-category">Expense Category
+                                    <a href="/expense-category">Expenses Category
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="/expense-add">Add Expense</a>
+                                    <a href="/expense-add">Add Expenses</a>
                                 </li>
 
                                 <li>
-                                    <a href="/expense-list">Expense List</a>
+                                    <a href="/expense-list">Expenses List</a>
                                 </li>
                             </ul>
                         </div>

@@ -15,7 +15,7 @@
             <div class="add__categories_bottom">
                 <!-- Button trigger modal -->
                 <a href="/expense-list"><button type="button" class="btn btn-primary">
-                       List Expencse
+                       List Expenses
                     </button></a>
 
 
@@ -31,7 +31,7 @@
 
             <div class="col-md-6">
 
-                <label for="exampleInputEmail1" class="form-label">Excpencse Category </label>
+                <label for="exampleInputEmail1" class="form-label">Expenses Category </label>
 
                 <div class="input-group mb-3">
                     <label class="input-group-text" for="inputGroupSelect01">type</label>

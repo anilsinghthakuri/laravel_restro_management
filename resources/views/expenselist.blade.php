@@ -8,14 +8,14 @@
         <div class="col-md-12 pt-2">
             <div class="add__categories_bottom">
                 <!-- Button trigger modal -->
-                <h2>Expanses List</h2>
+                <h2>Expenses List</h2>
 
 
             </div>
             <div class="add__categories_bottom">
                 <!-- Button trigger modal -->
                 <a href="/expense-add"><button type="button" class="btn btn-primary">
-                       Add Expense
+                       Add Expenses
                     </button></a>
 
 
