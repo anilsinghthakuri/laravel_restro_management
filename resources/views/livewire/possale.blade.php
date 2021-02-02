@@ -77,8 +77,8 @@
                                x
                             </button>
                             <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="#">Are you sure gonna delete</a></li>
-                                <li><a class="dropdown-item" href="#">Cancel</a></li>
+                                <li><a class="dropdown-item" href="#"><button class="btn btn-danger btn-sm">Conform delete</button></a></li>
+                                <li><a class="dropdown-item" href="#"><button class="btn btn-info btn-sm">Cancel</button></a></li>
 
                             </ul>
                         </td>

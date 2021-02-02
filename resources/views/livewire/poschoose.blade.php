@@ -67,6 +67,9 @@
         </div>
 
     </div>
+    <div class="scroll__class">
+
+
     <div class="all__product">
 
         <div class="row row-cols-5" value="PLAY" >
@@ -88,6 +91,7 @@
 
 
     </div>
+</div>
     {{-- <div class="row pagination__right">
         <div class="d-flex flex-row-reverse">
             <nav aria-label="Page ">
