@@ -99,13 +99,16 @@ class Pos extends Component
                              if (in_array($this->customer,$check)) {
                                 //  dd('prsent');
                                 $amount = CustomerCredit::where('customer_id',$this->customer)->first();
+                                $balance_amount = $amount->amount_paid;
                                 $total_amount_to_pay = $amount->total_amount_to_pay;
                                 // dd($total_amount_to_pay);
                                 $total_amount_to_pay  = $total_amount_to_pay + $this->grandprice;
+                                $balance_amount = $total_amount_to_pay - $balance_amount;
+
                                 // $amount_total = array($total_amount_to_pay);
                                 // dd($total_amount_to_pay);
 
-                                DB::table('customer_credits')->where('customer_id',$this->customer)->update(['total_amount_to_pay'=>$total_amount_to_pay]);
+                                DB::table('customer_credits')->where('customer_id',$this->customer)->update(['total_amount_to_pay'=>$total_amount_to_pay,'balance_amount'=>$balance_amount]);
                                 // $credit  = CustomerCredit::where('customer_id',$this->customer);
                                 // dd($credit);
 
@@ -127,6 +130,7 @@ class Pos extends Component
                                 $creditcustomer = new CustomerCredit;
                                 $creditcustomer->customer_id = $this->customer;
                                 $creditcustomer->total_amount_to_pay = $this->grandprice;
+                                $creditcustomer->balance_amount = $this->grandprice;
                                 $creditcustomer->save();
 
                                 $bill = New Bill;

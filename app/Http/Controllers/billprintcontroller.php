@@ -26,7 +26,10 @@ class billprintcontroller extends Controller
             Order::where('table_id',$table)->where('bill_status',0)->update(['bill_status' => 1,'bill_id'=>$bill_num]);
 
 
-        return view('billprint');
+        return view('billprint',[
+            'total_price'=>$total_price,
+            'orderdata'=>$orderdata,
+        ]);
     }
     }
     private function bill_number(){

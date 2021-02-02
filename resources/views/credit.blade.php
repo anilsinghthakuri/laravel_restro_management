@@ -47,6 +47,7 @@
                             <th scope="col">Customer Name</th>
                             <th scope="col">Total Amount </th>
                             <th scope="col">Paid Amount</th>
+                            <th scope="col">Balance </th>
                             <th scope="col">Action</th>
 
                         </tr>
@@ -59,6 +60,7 @@
                             <td>{{$item->customer->customer_username}}</td>
                             <td>RS: {{$item->total_amount_to_pay}}</td>
                             <td>RS: {{$item->amount_paid}}</td>
+                            <td>RS: {{$item->balance_amount}}</td>
                             <td>
                              <a href="/credits/{{$item->customer_id}}"><button type="button" class="btn btn-primary"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></button></a>  </td>
 

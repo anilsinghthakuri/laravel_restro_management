@@ -18,6 +18,7 @@ class CreateCustomerCreditsTable extends Migration
             $table->unsignedBigInteger('customer_id');
             $table->integer('total_amount_to_pay');
             $table->integer('amount_paid')->default(0);
+            $table->integer('balance_amount')->default(0);
 
             $table->foreign('customer_id')->references('customer_id')->on('customers')->onDelete('cascade');
             $table->timestamps();

@@ -12,6 +12,7 @@ class CustomerCreditController extends Controller
 {
     public function index()
     {
+
         $creditlist  = $this->show_credit_list();
         return view('credit',[
             'creditlist'=>$creditlist,
@@ -45,6 +46,11 @@ class CustomerCreditController extends Controller
         $newamount = $oldamount_paid + $request->amount;
 
         CustomerCredit::where('customer_id',$id)->update(['amount_paid'=>$newamount]);
+        $customer = CustomerCredit::where('customer_id',$id)->first();
+
+        $balance_amount = $customer->total_amount_to_pay - $customer->amount_paid;
+
+        CustomerCredit::where('customer_id',$id)->update(['amount_paid'=>$newamount,'balance_amount'=>$balance_amount]);
 
         return back()->with('message','Amount Updated');
 
@@ -75,7 +81,7 @@ class CustomerCreditController extends Controller
     }
 
     private function show_credit_list(){
-        $creditlist = CustomerCredit::all();
+        $creditlist = CustomerCredit::where('balance_amount', '!=' , 0)->get();
         return $creditlist;
     }
 

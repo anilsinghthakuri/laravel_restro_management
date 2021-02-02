@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
-    <link rel="stylesheet" href="css/bill.css">
+    <link rel="stylesheet" href="/css/bill.css">
     <title>Document</title>
 </head>
 <body>
@@ -32,72 +32,24 @@
                     <thead>
                       <tr>
 
-                        <th scope="col"></th>
-                        <th scope="col"></th>
+                        <th scope="col">S.N</th>
+                        <th scope="col">Name</th>
+                        <th scope="col">Quantity</th>
+                        <th scope="col">Sub Price</th>
 
                       </tr>
                     </thead>
                     <tbody>
-                      <tr>
-                        <td class="quantity">250</td>
-                        <td>Momo with hot tomato soup</td>
-                        <td>250</td>
+                        @foreach ($orderdata as $item)
+                        <tr>
+                            <td>{{$loop->iteration}}</td>
+                            <td>{{$item->product->product_name}}</td>
+                            <td>{{$item->order_quantity}}</td>
+                            <td class="quantity">{{$item->order_subprice}}</td>
+                          </tr>
+                        @endforeach
 
-                      </tr>
-                      <tr>
-                        <td class="quantity">250</td>
-                        <td>Momo</td>
-                        <td>250</td>
 
-                      </tr>
-                      <tr>
-                        <td class="quantity">250</td>
-                        <td>Momo with hot tomato soup</td>
-                        <td>250</td>
-
-                      </tr>
-                      <tr>
-                        <td class="quantity">250</td>
-                        <td>Momo with hot tomato soup</td>
-                        <td>250</td>
-
-                      </tr>
-                      <tr>
-                        <td class="quantity">250</td>
-                        <td>Momo with hot tomato soup</td>
-                        <td>250</td>
-
-                      </tr>
-                      <tr>
-                        <td class="quantity">250</td>
-                        <td>Momo with hot tomato soup</td>
-                        <td>250</td>
-
-                      </tr>
-
-                      <tr>
-                        <td class="quantity">250</td>
-                        <td>Momo with hot tomato soup</td>
-                        <td>250</td>
-
-                      </tr> <tr>
-                        <td class="quantity">250</td>
-                        <td>Momo with hot tomato soup</td>
-                        <td>250</td>
-
-                      </tr>
-                      <tr>
-                        <td class="quantity">250</td>
-                        <td>Momo with hot tomato soup</td>
-                        <td>250</td>
-
-                      </tr>
-                      <tr>
-                        <td class="quantity">250</td>
-                        <td>Momo with hot tomato soup</td>
-                        <td>250</td>
-
-                      </tr>
                     </tbody>
                 </table>
             </div>
@@ -109,7 +61,7 @@
                     <div class="p-2 bd-highlight "></div>
                     <div class="p-2 bd-highlight total__sum">Total</div>
                     <div class="p-2 bd-highlight "></div>
-                    <div class="p-2 bd-highlight total__sum">1011</div>
+                    <div class="p-2 bd-highlight total__sum">{{$total_price}}</div>
                 </div>
             </div>
             <div class="bill__title text-center mb-2"><span>Thank You</span></div>

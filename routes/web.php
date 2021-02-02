@@ -10,6 +10,7 @@ use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\ExpenseController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\productcontroller;
+use App\Http\Controllers\PurchaseController;
 use App\Http\Controllers\SaleReportController;
 use App\Http\Controllers\TableController;
 use App\Http\Controllers\UserController;
@@ -70,6 +71,16 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/expense-category-delete/{id}',[ExpenseController::class,'delete_expense_category']);
     Route::get('/expense-add', [ExpenseController::class,'show_expense_add']);
     Route::post('/expense-add', [ExpenseController::class,'add_expense_list']);
+
+    // route for purchase
+    Route::get('/purchase-list', [ExpenseController::class,'index']);
+    Route::get('/purchase-category', [PurchaseController::class,'show_purchase_category']);
+    Route::post('/purchase-category', [PurchaseController::class,'add_purchase_category']);
+    Route::get('/purchase-category/{id}',[PurchaseController::class,'edit_purchase_category']);
+    Route::post('/purchase-category-update',[ExpenseController::class,'update_expense_category']);
+    Route::get('/purchase-category-delete/{id}',[ExpenseController::class,'delete_expense_category']);
+    Route::get('/purchase-add', [ExpenseController::class,'show_expense_add']);
+    Route::post('/purchase-add', [ExpenseController::class,'add_expense_list']);
 
 
 

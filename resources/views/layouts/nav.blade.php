@@ -51,10 +51,7 @@
                         </a>
                         <div class="sidebar-submenu">
                             <ul>
-                                <li>
-                                    <a href="/pos">POS
-                                    </a>
-                                </li>
+
                                 <li>
                                     <a href="/add-product">Add Product</a>
                                 </li>
@@ -77,6 +74,10 @@
                         <div class="sidebar-submenu">
                             <ul>
                                 <li>
+                                    <a href="/pos">POS
+                                    </a>
+                                </li>
+                                <li>
                                     <a href="/customer">Add Customer</a>
                                 </li>
                                 <li>
@@ -90,7 +91,30 @@
                                 </li>
 
                                 <li>
-                                    <a href="/credits">Check & Remove Credit </a>
+                                    <a href="/credits">Credit Collection </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="sidebar-dropdown">
+                        <a href="#">
+                            <i class="fa fa-briefcase" aria-hidden="true"></i>
+                            <span>Purchase</span>
+
+                        </a>
+                        <div class="sidebar-submenu">
+                            <ul>
+
+                                <li>
+                                    <a href="#">Add Purchase</a>
+                                </li>
+
+                                <li>
+                                    <a href="#">Purchase List</a>
+                                </li>
+                                <li>
+                                    <a href="#">Purchase Category
+                                    </a>
                                 </li>
                             </ul>
                         </div>
@@ -103,16 +127,17 @@
                         </a>
                         <div class="sidebar-submenu">
                             <ul>
-                                <li>
-                                    <a href="/expense-category">Expense Category
-                                    </a>
-                                </li>
+
                                 <li>
                                     <a href="/expense-add">Add Expense</a>
                                 </li>
 
                                 <li>
                                     <a href="/expense-list">Expense List</a>
+                                </li>
+                                <li>
+                                    <a href="/expense-category">Expense Category
+                                    </a>
                                 </li>
                             </ul>
                         </div>
@@ -139,7 +164,7 @@
                             <span>Reports</span>
 
                         </a>
-                        <div class="sidebar-submenu">
+                        {{-- <div class="sidebar-submenu">
                             <ul>
                                 <li>
                                     <a href="#settings">Todays Sale
@@ -155,7 +180,7 @@
                                     <a href="#settings">Sales Analysis</a>
                                 </li>
                             </ul>
-                        </div>
+                        </div> --}}
                     </li>
 
                     <li class="sidebar-dropdown">
