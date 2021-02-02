@@ -69,16 +69,16 @@
                         <td class="total__price">{{$orders->order_subprice}}</td>
 
                         <td class="btn__cancel">
-                            <button class="cancel" value="PLAY" onclick="play()"
-                                wire:click='deleteorder({{$orders->order_id}})'>x</button>
+                            {{-- <button class="cancel" >x</button> --}}
 
                                 <button type="button" class="cancel" data-bs-toggle="dropdown"
                                 aria-expanded="false">
                                x
                             </button>
                             <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="#">Are you sure gonna delete</a></li>
-                                <li><a class="dropdown-item" href="#">Cancel</a></li>
+                                <li><a class="dropdown-item" href="#"><button class="btn btn-danger btn-sm" value="PLAY" onclick="play()"
+                                    wire:click='deleteorder({{$orders->order_id}})'>Conform delete</button></a></li>
+                                <li><a class="dropdown-item" href="#"><button class="btn btn-info btn-sm">Cancel</button></a></li>
 
                             </ul>
                         </td>

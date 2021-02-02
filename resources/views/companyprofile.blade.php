@@ -4,6 +4,7 @@
 
 
 <div class="col-md-9 mt-3">
+
     <div class="row">
         <div class="col-md-12">
             <h2 class="add__table__title mb-4 mt-4">Company Profile</h2>
