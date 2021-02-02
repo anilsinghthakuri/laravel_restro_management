@@ -67,8 +67,22 @@
                                     wire:click='inc({{$orders->order_id}})'>+</button></div>
                         </td>
                         <td class="total__price">{{$orders->order_subprice}}</td>
-                        <td class="btn__cancel"><button class="cancel" value="PLAY" onclick="play()"
-                                wire:click='deleteorder({{$orders->order_id}})'>x</button></td>
+
+                        <td class="btn__cancel">
+                            <button class="cancel" value="PLAY" onclick="play()"
+                                wire:click='deleteorder({{$orders->order_id}})'>x</button>
+
+                                <button type="button" class="cancel" data-bs-toggle="dropdown"
+                                aria-expanded="false">
+                               x
+                            </button>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="#">Are you sure gonna delete</a></li>
+                                <li><a class="dropdown-item" href="#">Cancel</a></li>
+
+                            </ul>
+                        </td>
+
                     </tr>
                     @endforeach
                 </tbody>
