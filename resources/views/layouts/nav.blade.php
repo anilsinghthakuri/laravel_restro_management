@@ -129,11 +129,11 @@
                             <ul>
 
                                 <li>
-                                    <a href="/expense-add">Add Expense</a>
+                                    <a href="/expense-add">Add Expenses</a>
                                 </li>
 
                                 <li>
-                                    <a href="/expense-list">Expense List</a>
+                                    <a href="/expense-list">Expenses List</a>
                                 </li>
                                 <li>
                                     <a href="/expense-category">Expense Category
