@@ -6,24 +6,27 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
     <link rel="stylesheet" href="/css/bill.css">
+    <meta http-equiv = "refresh" content = "3; url = /pos" />
     <title>Document</title>
 </head>
 <body>
+    <div>
+    </div>
     <div class="bill__section">
         <div class="bill__section__inner">
-            <div class="bill__title text-center mb-2"><span>Anil Store</span></div>
-            <div class="bill__title  text-center mb-2"><span>Dhangadhi -9 Kailali  </span></div>
-            <div class="bill__title  text-center mb-2"><span>Tel. 12334567</span></div>
+            <div class="bill__title text-center mb-2"><span>{{$companydata->company_name}}</span></div>
+            <div class="bill__title  text-center mb-2"><span>{{$companydata->company_address}} </span></div>
+            <div class="bill__title  text-center mb-2"><span>Tel. {{$companydata->company_number}}</span></div>
             <div class="bill__middle__contain">
                 <div class="d-flex justify-content-evenly">
-                    <div class="p-2 bd-highlight">tavalo</div>
-                    <div class="p-2 bd-highlight">22</div>
-                    <div class="p-2 bd-highlight">coporiti</div>
-                    <div class="p-2 bd-highlight">10</div>
+                    <div class="p-2 bd-highlight">Name:</div>
+                    <div class="p-2 bd-highlight">{{$customer}}</div>
+                    <div class="p-2 bd-highlight">Table:</div>
+                    <div class="p-2 bd-highlight">{{$table_name}}</div>
                   </div>
             </div>
             <div class="bill__middle__inner text-center">
-                <div class="p-2 bd-highlight"><span>MER 29 Gin 2016 21:00</span></div>
+                <div class="p-2 bd-highlight"><span>{{$datentime}}</span></div>
 
             </div>
 
@@ -70,4 +73,8 @@
 
     </div>
 </body>
+
+<script>
+    window.print();
+</script>
 </html>
