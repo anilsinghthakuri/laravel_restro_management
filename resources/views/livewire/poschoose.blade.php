@@ -88,7 +88,7 @@
 
 
     </div>
-    <div class="row pagination__right">
+    {{-- <div class="row pagination__right">
         <div class="d-flex flex-row-reverse">
             <nav aria-label="Page ">
                 <ul class="pagination">
@@ -102,7 +102,7 @@
             </nav>
         </div>
 
-    </div>
+    </div> --}}
 
     <!--sidebar show -->
     <div id="categories__part" class="side__show ">
