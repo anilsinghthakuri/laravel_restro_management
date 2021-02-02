@@ -78,7 +78,7 @@
                             <ul class="dropdown-menu">
                                 <li><a class="dropdown-item" href="#"><button class="btn btn-danger btn-sm" value="PLAY" onclick="play()"
                                     wire:click='deleteorder({{$orders->order_id}})'>Conform delete</button></a></li>
-                                <li><a class="dropdown-item" href="#"><button class="btn btn-info btn-sm">Cancel</button></a></li>
+                                {{-- <li><a class="dropdown-item" href="#"><button class="btn btn-info btn-sm">Cancel</button></a></li> --}}
 
                             </ul>
                         </td>
