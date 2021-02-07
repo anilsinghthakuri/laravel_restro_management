@@ -14,8 +14,8 @@
                     <!--<div class="p-2 bd-highlight help__part"><img src="img/help.svg" alt="menu">Help</div>-->
                     <div class="p-2 bd-highlight ">
                         <div class="btn-group">
-                            <button type="button" class="btn btn-primary dropdown-toggle font-btn-part" data-bs-toggle="dropdown"
-                                aria-expanded="false">
+                            <button type="button" class="btn btn-primary dropdown-toggle font-btn-part"
+                                data-bs-toggle="dropdown" aria-expanded="false">
                                 <img class="login__img" src="img/user.png" alt="menu"> {{Auth::user()->name}}
                             </button>
                             <ul class="dropdown-menu">
@@ -34,10 +34,13 @@
 
         <div class="col-sm-12">
             <div class="row row__margin">
-                <div class="col-sm-12"><form class="d-flex">
-                    <input class="form-control me-2" type="text" placeholder="Search food by name"  wire:model='search' aria-label="Search"  id="">
-                    <button class=" btn-search transition__btn" >Search</button>
-                  </form></div>
+                <div class="col-sm-12">
+                    <form class="d-flex">
+                        <input class="form-control me-2" type="text" placeholder="Search food by name"
+                            wire:model='search' aria-label="Search" id="">
+                        <button class=" btn-search transition__btn">Search</button>
+                    </form>
+                </div>
             </div>
 
             {{-- <div class="btn__full_width"><input type="text" placeholder="search food by name" wire:model='search' name="search" id=""></div> --}}
@@ -59,7 +62,8 @@
         </div>
         <div class="col-sm-4">
             <div class="btn__full_width"><button type="button" wire:click='alcohol'
-                    class="btn btn-info btn-md text-light"><span class="span__categories">Alcohol</span></button> </button></div>
+                    class="btn btn-info btn-md text-light"><span class="span__categories">Alcohol</span></button>
+                </button></div>
         </div>
         <div class="col-sm-4">
             <div class="btn__full_width"><button type="button" wire:click='allproduct'
@@ -70,28 +74,28 @@
     <div class="scroll__class">
 
 
-    <div class="all__product">
+        <div class="all__product">
 
-        <div class="row row-cols-5" value="PLAY" >
-            @foreach ($product as $products)
-            <div class="col px-0" onclick="play()" wire:click='addproduct({{$products->product_id}})'>
-                <div class="item__items item__height item__hover">
-                    <div class="image__inner">
-                        <img src="img/{{$products->product_image}}" class="card-img-top" alt="...">
-                    </div>
+            <div class="row row-cols-5" value="PLAY">
+                @foreach ($product as $products)
+                <div class="col px-0" onclick="play()" wire:click='addproduct({{$products->product_id}})'>
+                    <div class="item__items item__height item__hover">
+                        <div class="image__inner">
+                            <img src="img/{{$products->product_image}}" class="card-img-top" alt="...">
+                        </div>
 
-                    <div class="card-detail text-center">
-                        <h5 class="card-title"> {{$products->product_name}}</h5>
-                        <p class="card-text">RS:{{$products->product_price}}</p>
+                        <div class="card-detail text-center">
+                            <h5 class="card-title"> {{$products->product_name}}</h5>
+                            <p class="card-text">RS:{{$products->product_price}}</p>
+                        </div>
                     </div>
                 </div>
+                @endforeach
             </div>
-            @endforeach
+
+
         </div>
-
-
     </div>
-</div>
     {{-- <div class="row pagination__right">
         <div class="d-flex flex-row-reverse">
             <nav aria-label="Page ">
