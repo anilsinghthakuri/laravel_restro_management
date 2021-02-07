@@ -79,7 +79,10 @@ class Pos extends Component
                     $bill->customer_id = $this->customer;
                     $bill->save();
 
-                    return redirect()->route('bill.print');
+                    return redirect()->route('bill.print', [
+                        $table,
+
+                        ]);
                 }
                 else{
                     if ($this->customer == 1) {
@@ -115,7 +118,6 @@ class Pos extends Component
                                 $bill->payment_method_id = $this->payment;
                                 $bill->customer_id = $this->customer;
                                 $bill->save();
-                                dd($table);
                                 return redirect()->route('bill.print', [
                                     $table,
                                  ]);
@@ -139,7 +141,7 @@ class Pos extends Component
                                 $bill->save();
                                 return redirect()->route('bill.print', [
                                     $table,
-                                 ]);
+                            ]);
 
                              }
 
