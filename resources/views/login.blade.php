@@ -8,9 +8,9 @@
     <link rel="stylesheet" href="css/login.css">
     <title>add user</title>
 </head>
-<body>
+<body class="login__images">
 
-    <div class="container">
+
         <div class="login__section">
             <div class="login__contain">
                 <form method="POST" action="/login" enctype="multipart/form-data" >
@@ -43,6 +43,5 @@
         </div>
 
 
-    </div>
 </body>
 </html>
