@@ -115,6 +115,7 @@ class Pos extends Component
                                 $bill->payment_method_id = $this->payment;
                                 $bill->customer_id = $this->customer;
                                 $bill->save();
+                                dd($table);
                                 return redirect()->route('bill.print', [
                                     $table,
                                  ]);
