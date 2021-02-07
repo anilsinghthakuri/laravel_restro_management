@@ -2,7 +2,7 @@
     height: 100vh;
     align-items: center;
     position: relative;
-    background: #02020257;
+    background: #0202026e;
 }
 
 .login__contain {
@@ -13,7 +13,7 @@
     width: 30%;
     margin: 0 auto;
     border: 1px solid #ffffff;
-    padding: 30px;
+    padding: 50px;
     border-radius: 20px;
     box-shadow: 0px 5px 10px #ffffff;
 }
@@ -23,11 +23,12 @@ input.form-control.login__input {
 h2.login__title {
     width: 100%;
     font-weight: 700;
-    font-size: 26px;
+    font-size: 30px;
     color: #3d3c3e;
     margin: 0px;
     margin-bottom: 10px;
     text-transform: uppercase;
+    text-shadow: 1px 1px #e8e8e8;
 }
 
 img.logo__img {
