@@ -86,6 +86,7 @@ Route::middleware(['auth'])->group(function () {
 
     // route for show total biil and generate bill
     Route::get('billprint/{id}',[billprintcontroller::class,'index'])->name('bill.print');
+    Route::get('test',[billprintcontroller::class,'test']);
 
     // route for table
     Route::get('/table',[TableController::class,'index']);
