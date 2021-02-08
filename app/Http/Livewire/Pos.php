@@ -167,6 +167,19 @@ class Pos extends Component
 
     }
 
+    public function kot_bill_print($table)
+    {
+        if ($table == 0) {
+            dd('select table ');
+        }
+        else{
+            // dd($table);
+            return redirect()->route('kot.print',[
+                $table,
+            ]);
+        }
+    }
+
     public function table_list()
     {
         $tablelist = Table::all();

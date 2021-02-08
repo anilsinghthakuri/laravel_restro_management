@@ -2,6 +2,7 @@
 
 namespace App\Http\Livewire;
 
+use App\Models\Kot;
 use App\Models\Order;
 use App\Models\Product;
 use App\Models\Table;
@@ -39,6 +40,7 @@ class Possale extends Component
 
 
     }
+
     public function orderadd($id)
     {
 
@@ -73,6 +75,9 @@ class Possale extends Component
             $order->order_subprice = $price;
             $order->save();
 
+            //save product on kot table by calling kot_product_add function
+            $this->kot_product_add($id);
+
             $this->totalprice = $this->totalprice + $price;
             $this->grandprice = $this->grandpricecalc();
 
@@ -106,6 +111,8 @@ class Possale extends Component
         $order['order_subprice'] = $subprice;
         $order->save();
 
+        $this->kot_product_add($product_id);
+
         $this->totalprice = $this->totalamt();
         $this->grandprice = $this->grandpricecalc();
 
@@ -133,6 +140,7 @@ class Possale extends Component
             $order['order_quantity'] = $quant;
             $order['order_subprice'] = $subprice;
             $order->save();
+            $this->remove_kot_product($product_id);
 
             $this->totalprice = $this->totalamt();
             $this->grandprice = $this->grandpricecalc();
@@ -216,6 +224,24 @@ class Possale extends Component
     {
         $this->order  = Order::where('table_id',$this->table)->where('bill_status',0)->get();
     }
+
+    //for kot product add
+
+    public function kot_product_add($id)
+    {
+        $kotproduct = new Kot();
+        $kotproduct->product_id = $id;
+        $kotproduct->table_id = $this->table;
+        $kotproduct->save();
+    }
+
+    public function remove_kot_product($id)
+    {
+        Kot::where('product_id',$id)->delete();
+
+    }
+
+
 
     public function render()
     {
