@@ -24,11 +24,11 @@ h2.login__title {
     width: 100%;
     font-weight: 700;
     font-size: 30px;
-    color: #3d3c3e;
+    color: #e8f0fe;
     margin: 0px;
     margin-bottom: 10px;
     text-transform: uppercase;
-    text-shadow: 1px 1px #e8e8e8;
+    text-shadow: 1px 1px #f44336;
 }
 
 img.logo__img {
@@ -72,6 +72,6 @@ p.login__text {
     font-weight: 500;
 }
 .login__images{
-    background-image: url('../img/background.jpg');
+    background-image: url('../img/background1.jpg');
     background-size: cover;
 }
