@@ -376,15 +376,15 @@
     height: 0px;
   }
   ::-webkit-scrollbar-thumb {
-    background: #6b50aa;
+    background: #484c54;
     border: 0px none #ffffff;
     border-radius: 0px;
   }
   ::-webkit-scrollbar-thumb:hover {
-    background: #6b50aa;
+    background: #484c54;
   }
   ::-webkit-scrollbar-thumb:active {
-    background: #6b50aa;
+    background: #484c54;
   }
   ::-webkit-scrollbar-track {
     background: transparent;
@@ -405,13 +405,13 @@
   /*-----------------------------chiller-theme-------------------------------------------------*/
 
   .chiller-theme .sidebar-wrapper {
-    background: #6b50aa;
+    background: #484c54;
   }
 
   .chiller-theme .sidebar-wrapper .sidebar-header,
   .chiller-theme .sidebar-wrapper .sidebar-search,
   .chiller-theme .sidebar-wrapper .sidebar-menu {
-      border-top: 1px solid #694cac;
+      border-top: 1px solid #757575;
   }
 
   .chiller-theme .sidebar-wrapper .sidebar-search input.search-menu,
@@ -456,7 +456,7 @@
   .chiller-theme .sidebar-wrapper .sidebar-menu .sidebar-dropdown div,
   .chiller-theme .sidebar-wrapper .sidebar-search input.search-menu,
   .chiller-theme .sidebar-wrapper .sidebar-search .input-group-text {
-    background: #7c5cc4;
+    background: #525965;
   }
 
   .chiller-theme .sidebar-wrapper .sidebar-menu .header-menu span {
@@ -464,7 +464,7 @@
   }
 
   .chiller-theme .sidebar-footer {
-    background: #6b50aa;
+    background: #484c54;
       box-shadow: 0px -1px 5px #282c33;
       border-top: 1px solid #464a52;
   }
