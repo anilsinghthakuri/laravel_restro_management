@@ -9,6 +9,7 @@ use Mike42\Escpos\PrintConnectors\WindowsPrintConnector;
 
 use App\Models\Bill;
 use App\Models\Companydata;
+use App\Models\Kot;
 use App\Models\Order;
 use App\Models\Product;
 use Exception;
@@ -126,6 +127,14 @@ class billprintcontroller extends Controller
 
     }
 
+    public function kot_bill($id)
+    {
+        $kotdata = Kot::all();
+
+        dd($kotdata);
+
+    }
+
     public function test()
     {
         $item = [];
@@ -149,7 +158,10 @@ class billprintcontroller extends Controller
    }
 
 
+
 }
+
+
 
 class item
 {
