@@ -173,10 +173,20 @@ class Pos extends Component
             dd('select table ');
         }
         else{
-            // dd($table);
-            return redirect()->route('kot.print',[
-                $table,
-            ]);
+
+            if ($this->grandprice == null) {
+
+                dd('table is empty');
+            }
+            else{
+
+                return redirect()->route('kot.print',[
+                    $table,
+                ]);
+
+            }
+
+
         }
     }
 

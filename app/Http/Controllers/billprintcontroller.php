@@ -12,6 +12,7 @@ use App\Models\Companydata;
 use App\Models\Kot;
 use App\Models\Order;
 use App\Models\Product;
+use Carbon\Carbon;
 use Exception;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -127,11 +128,87 @@ class billprintcontroller extends Controller
 
     }
 
-    public function kot_bill($id)
+    public function kot_bill($table)
     {
-        $kotdata = Kot::all();
 
-        dd($kotdata);
+        $kot_bill = Kot::where('table_id',$table)->where('status',0)->get();
+
+
+
+        if (count($kot_bill) == 0) {
+
+            // dd($kot_bill);
+            session()->flash('message', 'Kot Done Already!');
+
+            return redirect()->back();
+
+        }
+        else{
+
+            try {
+
+                $connector = new WindowsPrintConnector("pos");
+
+                $printer = new Printer($connector);
+
+                 //test data
+                // ($orderdata);
+
+                $time = Carbon::now();
+                $title = array(new kit('Product Name','Place'));
+
+                 foreach ($kot_bill as $key => $value) {
+                   $product_id = $kot_bill[$key]['product_id'];
+                   $table_id = $kot_bill[$key]['table_id'];
+                     $productname = DB::table('products')->where('product_id',$product_id)->first();
+                     $tablename = DB::table('tables')->where('table_id',$table_id)->first();
+
+                     $items[] = new kit ($productname->product_name,$tablename->table_name) ;
+                 }
+
+                //Bill type
+                $printer->setJustification(Printer::JUSTIFY_CENTER);
+                $printer->setEmphasis(true);
+                $printer->text("KOT\n");
+                $printer->setEmphasis(false);
+                $printer->feed(2);
+
+                //time
+                $printer->setEmphasis(true);
+                $printer->text("Order Time:".$time."\n");
+                $printer->setEmphasis(false);
+                $printer->feed(2);
+
+                //title of bill
+                $printer->setJustification(Printer::JUSTIFY_LEFT);
+                $printer->setEmphasis(true);
+                foreach ($title as $item) {
+                    $printer->text($item->getAsString(32)); // for 58mm Font A
+                }
+                $printer->setEmphasis(false);
+                $printer->feed();
+                //bill body
+                $printer->setJustification(Printer::JUSTIFY_LEFT);
+                foreach ($items as $item) {
+                    $printer->text($item->getAsString(32)); // for 58mm Font A
+                }
+
+
+                //close and cut paper
+                $printer->cut();
+                $printer->pulse();
+
+                Kot::where('table_id',$table)->where('status',0)->update(['status' => 1]);
+
+            }
+            catch (Exception $e) {
+                echo $e->getMessage();
+            } finally {
+                $printer->close();
+            }
+
+            return redirect()->back();
+        }
 
     }
 
@@ -197,6 +274,40 @@ class item
         $sign = ($this->dollarSign ? '$ ' : '');
         $right = str_pad($sign . $this->price, $rightCols, ' ', STR_PAD_LEFT);
         return "$left$center$right\n";
+    }
+
+    public function __toString()
+    {
+        return $this->getAsString();
+    }
+
+}
+
+class kit
+{
+    private $name;
+    private $price;
+    private $dollarSign;
+
+    public function __construct($name = '', $price = '', $dollarSign = false)
+    {
+        $this->name = $name;
+        $this->price = $price;
+        $this->dollarSign = $dollarSign;
+    }
+
+    public function getAsString($width = 48)
+    {
+        $rightCols = 10;
+        $leftCols = $width - $rightCols;
+        if ($this->dollarSign) {
+            $leftCols = $leftCols / 2 - $rightCols / 2;
+        }
+        $left = str_pad($this->name, $leftCols);
+
+        $sign = ($this->dollarSign ? '$ ' : '');
+        $right = str_pad($sign . $this->price, $rightCols, ' ', STR_PAD_LEFT);
+        return "$left$right\n";
     }
 
     public function __toString()

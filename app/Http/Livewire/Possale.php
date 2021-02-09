@@ -168,9 +168,11 @@ class Possale extends Component
         // dd($order_id);
         $order = Order::Find($order_id);
         $subprice = $order['order_subprice'];
+        $product = $order['product_id'];
         $this->totalprice = $this->totalprice - $subprice;
         $this->grandprice = $this->grandpricecalc();
 
+        $this->remove_all_one_product_kot($product);
 
         Order::where('order_id',$order_id)->delete();
         $this->order  = Order::where('table_id',$this->table)->where('bill_status',0)->get();
@@ -237,8 +239,15 @@ class Possale extends Component
 
     public function remove_kot_product($id)
     {
-        Kot::where('product_id',$id)->delete();
+        // Kot::where('product_id',$id)->delete();
+        Kot::where('product_id',$id)->first()->delete();
+        // dd($data);
 
+    }
+
+    public function remove_all_one_product_kot($id)
+    {
+        Kot::where('product_id',$id)->delete();
     }
 
 
