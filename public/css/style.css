@@ -6,14 +6,14 @@ body{
 }
 button.btn.btn-primary.font-btn-part {
     font-size: 12px;
-    border-color: #17a2b8;
-    background: #17a2b8;
+    border-color: #4e73df;
+    background: #4e73df;
 }
 
 .btn-primary {
     color: #fff;
-    border-color: #607d8b;
-    background: #607d8b;
+    border-color: #525965;
+    background: #525965;
 }
 .btn-danger {
     border-color: #b33771;
@@ -88,7 +88,7 @@ section.section__billing {
 .transition__btn{
     display: inline-block;
     line-height: 1;
-    background-color: #f4511e;
+    background-color: #7c5cc4;
     padding: 0px 26px;
     color: #fff;
     fill: #fff;
@@ -160,8 +160,7 @@ select.form-select {
 h2.add__table__title{
     font-size: 32px;
     color: #484c54;
-    font-weight: 600;
-    text-transform: uppercase;
+
 }
 
 .table-part tbody{
@@ -200,7 +199,7 @@ th{
 thead {
     font-size: 14px;
     color: #fff;
-    background: #525965;
+    background: #4e73df;
 }
 .page-link {
     color: #17a2b8;
