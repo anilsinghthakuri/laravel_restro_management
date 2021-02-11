@@ -17,6 +17,7 @@ class CreateExpensesTable extends Migration
             $table->id('expense_id');
             $table->string('expense_bill')->nullable();
             $table->integer('expense_price');
+            $table->string('nepali_date');
             $table->string('expense_vendor')->nullable();
             $table->unsignedBigInteger('expense_category_id');
             $table->longText('expense_remark')->nullable();

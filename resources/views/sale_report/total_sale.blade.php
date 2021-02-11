@@ -56,7 +56,7 @@
                         @foreach ($total_sale_report as $item)
                         <tr>
                             <th scope="row">{{$loop->iteration }}</th>
-                            <td>{{$item->created_at}}</td>
+                            <td>{{$item->nepali_date}}</td>
                             <td>
                                 {{$item->bill_id}}
                             </td>

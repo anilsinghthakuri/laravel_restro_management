@@ -2,6 +2,10 @@
 
 namespace App\Http\Livewire;
 
+require_once __DIR__ . '../../../../vendor/autoload.php';
+
+use Nilambar\NepaliDate\NepaliDate;
+
 use App\Http\Controllers\billprintcontroller;
 use App\Models\Bill;
 use App\Models\Customer;
@@ -9,6 +13,7 @@ use App\Models\CustomerCredit;
 use App\Models\Order;
 use App\Models\PaymentMethod;
 use App\Models\Table;
+use Carbon\Carbon;
 use Illuminate\Support\Facades\DB;
 use Livewire\Component;
 
@@ -76,6 +81,7 @@ class Pos extends Component
                     $bill->table_id = $this->table;
                     $bill->bill_total_amount = $this->grandprice;
                     $bill->payment_method_id = $this->payment;
+                    $bill->nepali_date = $this->nepalidate();
                     $bill->customer_id = $this->customer;
                     $bill->save();
 
@@ -116,6 +122,7 @@ class Pos extends Component
                                 $bill->table_id = $this->table;
                                 $bill->bill_total_amount = $this->grandprice;
                                 $bill->payment_method_id = $this->payment;
+                                $bill->nepali_date = $this->nepalidate();
                                 $bill->customer_id = $this->customer;
                                 $bill->save();
                                 return redirect()->route('bill.print', [
@@ -137,6 +144,7 @@ class Pos extends Component
                                 $bill->table_id = $this->table;
                                 $bill->bill_total_amount = $this->grandprice;
                                 $bill->payment_method_id = $this->payment;
+                                $bill->nepali_date = $this->nepalidate();
                                 $bill->customer_id = $this->customer;
                                 $bill->save();
                                 return redirect()->route('bill.print', [
@@ -240,7 +248,24 @@ class Pos extends Component
         return $paymentmethodlist;
     }
 
-    private function add_amount_customer($grandprice){
+    public function nepalidate()
+    {
+        $endate = Carbon::now();
+        $year = $endate->year;
+        $month = $endate->month;
+        $day = $endate->day;
+
+        $obj = new NepaliDate();
+
+        $date = $obj->convertAdToBs($year, $month, $day);
+
+        $current_year = $date['year'];
+        $current_month = $date['month'];
+        $current_day = $date['day'];
+
+        $current_date = $current_year.'/'.$current_month.'/'.$current_day;
+
+        return $current_date;
 
     }
 

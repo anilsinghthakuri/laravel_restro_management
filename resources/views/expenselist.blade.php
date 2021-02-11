@@ -57,7 +57,7 @@
                         @foreach ($expense_list as $item)
                         <tr>
                             <th scope="row">{{$loop->iteration }}</th>
-                            <td>{{$item->created_at}}</td>
+                            <td>{{$item->nepali_date}}</td>
                             <td>
                                 {{$item->expense_bill}}
                             </td>
