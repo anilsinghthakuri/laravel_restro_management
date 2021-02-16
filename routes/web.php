@@ -9,6 +9,7 @@ use App\Http\Controllers\CustomerCreditController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\ExpenseController;
 use App\Http\Controllers\LoginController;
+use App\Http\Controllers\PosController;
 use App\Http\Controllers\productcontroller;
 use App\Http\Controllers\PurchaseController;
 use App\Http\Controllers\SaleReportController;
@@ -43,8 +44,8 @@ Route::post('/login',[LoginController::class,'authenticate']);
 
 Route::middleware(['auth'])->group(function () {
 
-    // route to sall product
-    Route::view('/pos', 'pos');
+    // route to sell product
+    Route::get('/pos/{id}', [PosController::class,'index']);
 
     // Route to add and delete category livewire done here
     Route::get('/categories',[categorycontroller::class,'index']);

@@ -31,7 +31,7 @@
 
                 <div class="table-inner ">
                     <div class="table-detail">
-                        <h2><a href="#">{{$item->table_name}}</a></h2>
+                        <h2><a href="/pos/{{$item->table_id}}">{{$item->table_name}}</a></h2>
                     </div>
                 </div>
 
@@ -43,7 +43,7 @@
 
                 <div class="table-inner ">
                     <div class="table-detail active-table">
-                        <h2><a href="#">{{$item->table_name}}</a></h2>
+                        <h2><a href="/pos/{{$item->table_id}}">{{$item->table_name}}</a></h2>
                         <h1>Rs: 2500</h1>
                         <br>
                     </div>
