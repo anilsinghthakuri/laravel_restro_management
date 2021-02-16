@@ -9,6 +9,17 @@
             </div>
 
         </div>
+
+            <div class="row row__margin mb-3">
+                <div class="col-sm-6">
+                    <form class="d-flex">
+                        <input class="form-control me-2" type="text" placeholder="Search Table"
+                            wire:model='search' aria-label="Search" id="">
+                        <button class=" btn-search transition__btn">Search</button>
+                    </form>
+                </div>
+            </div>
+
         <div class="row">
 
 
