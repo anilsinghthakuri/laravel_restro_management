@@ -12,6 +12,7 @@ use App\Models\Companydata;
 use App\Models\Kot;
 use App\Models\Order;
 use App\Models\Product;
+use App\Models\Table;
 use Carbon\Carbon;
 use Exception;
 use Illuminate\Http\Request;
@@ -44,8 +45,6 @@ class billprintcontroller extends Controller
         }
         else{
             $total_price = array_sum($total);
-            Order::where('table_id',$table)->where('bill_status',0)->update(['bill_status' => 1,'bill_id'=>$bill_num]);
-
 
         try {
 
@@ -116,6 +115,13 @@ class billprintcontroller extends Controller
             $printer->cut();
             $printer->pulse();
 
+            //for update bill status after bill print
+            Order::where('table_id',$table)->where('bill_status',0)->update(['bill_status' => 1,'bill_id'=>$bill_num]);
+
+            //for making tabel amount 0
+            $tableamount = Table::find($table);
+            $tableamount->table_total_amount = 0;
+            $tableamount->save();
 
         }
         catch (Exception $e) {

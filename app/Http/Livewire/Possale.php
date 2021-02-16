@@ -190,6 +190,7 @@ class Possale extends Component
     {
         $grandprice = $this->totalprice ;
         $this->emit('changecalc',$this->table,$grandprice);
+        $this->table_amount_update($grandprice);
         return $grandprice;
     }
 
@@ -249,6 +250,20 @@ class Possale extends Component
         Kot::where('product_id',$id)->delete();
     }
 
+
+    //for updating the table price
+    public function table_amount_update($grandprice)
+    {
+        if ($this->table == 0) {
+
+        }
+        else{
+            $table = Table::find($this->table);
+            $table->table_total_amount = $grandprice;
+            $table->save();
+        }
+
+    }
 
 
     public function render()

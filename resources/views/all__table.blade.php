@@ -25,7 +25,7 @@
 
             @foreach ($table as $item)
 
-            @if ($item->table_status == 0)
+            @if ($item->table_total_amount == 0)
 
             <div class="col-sm-2">
 
@@ -44,7 +44,7 @@
                 <div class="table-inner ">
                     <div class="table-detail active-table">
                         <h2><a href="/pos/{{$item->table_id}}">{{$item->table_name}}</a></h2>
-                        <h1>Rs: 2500</h1>
+                        <h1>RS: {{$item->table_total_amount}}</h1>
                         <br>
                     </div>
                 </div>

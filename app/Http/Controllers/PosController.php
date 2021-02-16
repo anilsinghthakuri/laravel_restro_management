@@ -14,7 +14,14 @@ class PosController extends Controller
             'table'=>$id
         ]);
     }
-
+    public function waiter_index()
+    {
+        // dd($id);
+        $id = 0;
+        return view('pos',[
+            'table'=>$id
+        ]);
+    }
 
 
 }

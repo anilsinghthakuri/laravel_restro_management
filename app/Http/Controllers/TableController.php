@@ -49,6 +49,7 @@ class TableController extends Controller
         return redirect('/table')->with('message', 'Table inserted');
     }
 
+    //for table select and process
     public function choosetable()
     {
         $table = $this->tablelist();
