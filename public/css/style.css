@@ -430,16 +430,58 @@ Not supports in Firefox and IE */
 body{background-color:#babac0}
 .scroll__class {
     height: 75vh;
-
     min-width: 480px;
     background: #fff;
-
     overflow-y: scroll;
     overflow-x: hidden;
 }
 .all__product{min-height: 100vh}
 
+.table-inner {
+    text-align: center;
 
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 5px;
+    overflow: hidden;
+    border: 2px solid #4e73df;
+    margin-bottom: 15px;
+}
+.table-inner:hover {
+    border: 2px solid #babac0;
+}
+.table-detail{
+    background: #4e73df;
+}
+
+.table-detail h2,h1{
+    margin: 0px;
+    padding: 0px;
+    color: #ffffff;
+
+}
+.table-detail h1{
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.table-detail h2 a{
+    color: #ffffff;
+    font-size: 20px;
+    margin-bottom: 0px;
+
+    text-decoration: none;
+    transition: 0.3s;
+    font-weight: 600;
+    padding: 20px 30px;
+    display: block;
+}
+.table-detail h2 a:hover{
+    color: #d4d4d4;
+}
+.active-table {
+    background: #b33771;
+}
 
 /* On smaller screens, where height is less than 450px, change the style of the side__show (less padding and a smaller font size) */
 @media screen and (max-height: 450px) {

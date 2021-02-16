@@ -139,6 +139,10 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/credits/{id}', [CustomerCreditController::class,'single_credit_show']);
     Route::post('/credit-pay', [CustomerCreditController::class,'single_credit_update']);
 
+    //for all table
+    Route::view('/all-table', 'all__table');
+
+
     // route for logout
     Route::get('/logout',[LoginController::class,'logout']);
 
