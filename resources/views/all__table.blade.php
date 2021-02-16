@@ -23,128 +23,38 @@
         <div class="row">
 
 
+            @foreach ($table as $item)
 
-                <div class="col-sm-2">
+            @if ($item->table_status == 0)
 
-                    <div class="table-inner ">
-                        <div class="table-detail">
-                            <h2><a href="#">Table 1 </a></h2>
-                        </div>
+            <div class="col-sm-2">
+
+                <div class="table-inner ">
+                    <div class="table-detail">
+                        <h2><a href="#">{{$item->table_name}}</a></h2>
                     </div>
-
                 </div>
-                <div class="col-sm-2">
 
-                    <div class="table-inner">
-                        <div class="table-detail">
-                            <h2><a href="#">Table 1 </a></h2>
-                        </div>
+            </div>
+
+            @else
+
+            <div class="col-sm-2">
+
+                <div class="table-inner ">
+                    <div class="table-detail active-table">
+                        <h2><a href="#">{{$item->table_name}}</a></h2>
+                        <h1>Rs: 2500</h1>
+                        <br>
                     </div>
-
                 </div>
-                <div class="col-sm-2">
 
-                    <div class="table-inner">
-                        <div class="table-detail">
-                            <h2><a href="#">Table 1 </a></h2>
-                        </div>
-                    </div>
+            </div>
 
-                </div>
-                <div class="col-sm-2">
+            @endif
 
-                    <div class="table-inner ">
-                        <div class="table-detail active-table">
-                            <h2><a href="#">Table 1 </a></h2>
-                            <h1>Rs: 2500</h1>
-                            <br>
-                        </div>
-                    </div>
+            @endforeach
 
-                </div>
-                <div class="col-sm-2">
-
-                    <div class="table-inner">
-                        <div class="table-detail">
-                            <h2><a href="#">Table 1 </a></h2>
-                        </div>
-                    </div>
-
-                </div>
-                <div class="col-sm-2">
-
-                    <div class="table-inner">
-                        <div class="table-detail">
-                            <h2><a href="#">Table 1 </a></h2>
-                        </div>
-                    </div>
-
-                </div>
-                <div class="col-sm-2">
-
-                    <div class="table-inner">
-                        <div class="table-detail">
-                            <h2><a href="#">Table 1 </a></h2>
-                        </div>
-                    </div>
-
-                </div>
-                <div class="col-sm-2">
-
-                    <div class="table-inner ">
-                        <div class="table-detail active-table">
-                            <h2><a href="#">Table 1 </a></h2>
-                            <h1>Rs: 2500</h1>
-                            <br>
-                        </div>
-                    </div>
-
-                </div>
-                <div class="col-sm-2">
-
-                    <div class="table-inner">
-                        <div class="table-detail">
-                            <h2><a href="#">Table 1 </a></h2>
-                        </div>
-                    </div>
-
-                </div>
-                <div class="col-sm-2">
-
-                    <div class="table-inner">
-                        <div class="table-detail">
-                            <h2><a href="#">Table 1 </a></h2>
-                        </div>
-                    </div>
-
-                </div>
-                <div class="col-sm-2">
-
-                    <div class="table-inner">
-                        <div class="table-detail">
-                            <h2><a href="#">Table 1 </a></h2>
-                        </div>
-                    </div>
-
-                </div>
-                <div class="col-sm-2">
-
-                    <div class="table-inner">
-                        <div class="table-detail">
-                            <h2><a href="#">Table 1 </a></h2>
-                        </div>
-                    </div>
-
-                </div>
-                <div class="col-sm-2">
-
-                    <div class="table-inner">
-                        <div class="table-detail">
-                            <h2><a href="#">Table 1 </a></h2>
-                        </div>
-                    </div>
-
-                </div>
 
         </div>
 

@@ -26,7 +26,7 @@
 
                     <div class="col-md-6">
                         <div class="item__right">
-                            @livewire('possale')
+                            @livewire('possale', ['table' => $table], key($table->id))
 
                             <section class="footer__part">
                                 @livewire('pos')

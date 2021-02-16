@@ -17,6 +17,8 @@ class TableController extends Controller
             ]);
     }
 
+
+
     public function table_edit($id)
     {
             $table = Table::Find($id);
@@ -45,6 +47,16 @@ class TableController extends Controller
         $table->table_name = $request->tablename;
         $table->save();
         return redirect('/table')->with('message', 'Table inserted');
+    }
+
+    public function choosetable()
+    {
+        $table = $this->tablelist();
+
+        // dd($table);
+        return view('all__table',[
+            'table'=>$table
+        ]);
     }
 
     protected function tablelist(){

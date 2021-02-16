@@ -140,7 +140,7 @@ Route::middleware(['auth'])->group(function () {
     Route::post('/credit-pay', [CustomerCreditController::class,'single_credit_update']);
 
     //for all table
-    Route::view('/all-table', 'all__table');
+    Route::get('/all-table', [TableController::class,'choosetable']);
 
 
     // route for logout
