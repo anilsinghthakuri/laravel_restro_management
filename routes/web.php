@@ -45,8 +45,10 @@ Route::post('/login',[LoginController::class,'authenticate']);
 Route::middleware(['auth'])->group(function () {
 
     // route to sell product
-    Route::get('/pos/{id}', [PosController::class,'index']);
-    Route::get('/pos', [PosController::class,'waiter_index']);
+    Route::view('/pos', 'pos');
+
+    Route::get('/cashier-pos/{id}', [PosController::class,'index']);
+    // Route::get('/pos', [PosController::class,'waiter_index']);
 
     // Route to add and delete category livewire done here
     Route::get('/categories',[categorycontroller::class,'index']);

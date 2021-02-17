@@ -25,25 +25,25 @@
                 <div class="row">
 
                     <div class="col-md-6">
+
+                        @livewire('cashierposchoose')
+
+
+                    </div>
+
+                    <div class="col-md-6">
                         <div class="item__right">
-                            {{-- @livewire('possale', ['table' => $table], key($table->id)) --}}
-                            @livewire('possale')
+                            @livewire('cashierpossale', ['table' => $table], key($table->id))
+                            {{-- @livewire('possale') --}}
 
                             <section class="footer__part">
-                                {{-- @livewire('pos',['table' => $table,'grandprice'=> $grandprice], key($table->id)) --}}
-                            @livewire('pos')
-
+                                @livewire('cashierposcheckout',['table' => $table,'grandprice'=> $grandprice], key($table->id))
                             </section>
                         </div>
 
                     </div>
 
-                    <div class="col-md-6">
 
-                        @livewire('poschoose')
-
-
-                    </div>
                 </div>
             </div>
         </div>
@@ -59,6 +59,7 @@
              var audio = document.getElementById("audio");
              audio.play();
         }
+
     </script>
 </body>
 </html>

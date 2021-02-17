@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Product;
+use App\Models\Table;
 use Illuminate\Http\Request;
 
 class PosController extends Controller
@@ -9,19 +11,16 @@ class PosController extends Controller
     public function index($id)
     {
         // dd($id);
+        $table_data  = Table::find($id);
+        $grandprice = $table_data->table_total_amount;
 
-        return view('pos',[
-            'table'=>$id
+        return view('cashierpos',[
+            'table'=>$id,
+            'grandprice'=>$grandprice,
         ]);
+
     }
-    public function waiter_index()
-    {
-        // dd($id);
-        $id = 0;
-        return view('pos',[
-            'table'=>$id
-        ]);
-    }
+
 
 
 }

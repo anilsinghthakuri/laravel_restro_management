@@ -1,14 +1,13 @@
 <?php
 
 namespace App\Http\Livewire;
-
 use App\Models\Kot;
 use App\Models\Order;
 use App\Models\Product;
 use App\Models\Table;
 use Livewire\Component;
 
-class Possale extends Component
+class Cashierpossale extends Component
 {
     public $order = [];
     public $table;
@@ -270,9 +269,9 @@ class Possale extends Component
 
     }
 
-
     public function render()
     {
-        return view('livewire.possale');
+        return view('livewire.cashierpossale');
     }
 }
+

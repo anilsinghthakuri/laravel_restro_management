@@ -17,7 +17,7 @@ use Carbon\Carbon;
 use Illuminate\Support\Facades\DB;
 use Livewire\Component;
 
-class Pos extends Component
+class Cashierposcheckout extends Component
 {
     public $table;
     public $tablelist = [];
@@ -272,6 +272,6 @@ class Pos extends Component
 
     public function render()
     {
-        return view('livewire.pos');
+        return view('livewire.cashierposcheckout');
     }
 }
