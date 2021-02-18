@@ -484,6 +484,20 @@ a.dashbord-button {
 .active-table {
     background: #b33771;
 }
+.label-padding {
+    padding-left: 30px;
+    font-weight: 700;
+}
+.stok-item {
+    background: white;
+    padding: 10px;
+}
+.label-part-bold {
+    font-weight: 700;
+}
+.row-click-text {
+    border-bottom: 1px solid white;
+}
 
 /* On smaller screens, where height is less than 450px, change the style of the side__show (less padding and a smaller font size) */
 @media screen and (max-height: 450px) {
