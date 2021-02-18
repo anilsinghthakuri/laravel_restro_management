@@ -43,10 +43,21 @@
                             <div class="col-12 form__group ">
 
                                   <div class="mb-3 row">
-                                    <label for="inputPassword" class="col-sm-4 col-form-label label-padding">Product Name</label>
+                                    <label for="inputPassword" wire:model = 'search' class="col-sm-4 col-form-label label-padding">Product Name</label>
                                     <div class="col-sm-8">
-                                      <input type="text" class="form-control" id="inputPassword">
+                                      <input type="text" wire:model = 'search' class="form-control" id="inputPassword">
+                                      <div class="absolute bg-gray-800 text-sm w-64 my-4">
+                                        <ul>
+
+                                            @foreach ($product as $item)
+                                            <li class="border-b border-gray-700" wire:click = 'product_detail_set({{$item->product_id}})'>{{$item->product_name}}</li>
+                                            @endforeach
+
+                                        </ul>
+
+                                     </div>
                                     </div>
+
                                   </div>
                                   <div class="mb-3 row">
                                     <label for="inputPassword" class="col-sm-4 col-form-label label-padding">Quantity</label>
@@ -55,7 +66,7 @@
                                     </div>
                                   </div>
                                   <div class="mb-3 row">
-                                    <label for="inputPassword" class="col-sm-4 col-form-label label-padding">Price</label>
+                                    <label for="inputPassword" class="col-sm-4 col-form-label label-padding" wire:model = 'price'>Price</label>
                                     <div class="col-sm-8">
                                       <input type="number" class="form-control" id="inputPassword">
                                       <button type="submit" class="btn btn-primary mt-3">Submit</button>

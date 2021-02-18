@@ -17,15 +17,19 @@ class Cashierposchoose extends Component
     public $category  = 0;
     public $search;
 
+    public $price = '';
+    public $quantity = '';
+    public $product_name = '';
+
     use WithPagination;
 
 
     public function mount()
     {
-        if ($this->category == 0) {
-            $this->product = Product::all();
-            $this->categorylist = $this->categoryshow();
-        }
+        // if ($this->category == 0) {
+        //     $this->product = Product::all();
+        //     $this->categorylist = $this->categoryshow();
+        // }
 
 
     }
@@ -53,8 +57,14 @@ class Cashierposchoose extends Component
     public function updatedSearch()
     {
         // dd($this->search);
-        $searchterm = "%".$this->search."%";
-        $this->product = Product::where('product_name','Like',$searchterm)->get();
+        if ($this->search == Null) {
+            $this->product = [];
+        }
+        else{
+            $searchterm = "%".$this->search."%";
+            $this->product = Product::where('product_name','Like',$searchterm)->get();
+        }
+
     }
     // public function search_product($name)
     // {
@@ -68,11 +78,13 @@ class Cashierposchoose extends Component
         $this->product = Product::all();
     }
 
-    public function alcohol()
-    {
 
-    }
-
+   //set product details
+   public function product_detail_set($id)
+   {
+        $product_detail = Product::find($id);
+        $this->price = $product_detail->product_price;
+   }
     public function render()
     {
         return view('livewire.cashierposchoose');
