@@ -2,7 +2,7 @@
 
 @section('components')
 
-<div class="col-md-9 mt-3">
+<div class="col-md-12 mt-3">
     <div class="row">
         <div class="col-md-12">
             <h2 class="add__table__title mb-4 mt-4">Add Assets</h2>
@@ -23,15 +23,18 @@
                 @if ($asset == Null)
                 <form action="/assets" method="POST">
                     @csrf
-                    <div class="input-group">
+                    <div class="input-group mb-3">
                         <span class="input-group-text" id="basic-addon1">Add</span>
                         <input type="text" class="form-control" required placeholder="Item Name" name="itemname" aria-label="Username"
                             aria-describedby="basic-addon1">
+                    </div>
+                    <div class="input-group mb-3">
                         <span class="input-group-text" id="basic-addon1">Quantity</span>
                         <input type="number" class="form-control" required placeholder="Item Quantity" name="quantity" aria-label="Username"
                             aria-describedby="basic-addon1">
-                        <button type="submit" class="btn btn-primary">Submit</button>
+
                     </div>
+                    <button type="submit" class="btn btn-primary">Submit</button>
                 </form>
                 @else
                 <form action="/assets-update" method="POST">
@@ -55,10 +58,10 @@
             </div>
         </div>
     </div>
-    <div class="row mt-5">
+    <div class="row mt-4">
         <div class="col-md-12">
             <div class="table__list__part ">
-                <table class="table table-responsive">
+                <table class="table table-bordered bg-light table-responsiv">
                     <thead>
                         <tr>
                             <th scope="col">S.N</th>

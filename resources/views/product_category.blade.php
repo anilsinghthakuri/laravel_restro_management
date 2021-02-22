@@ -2,7 +2,7 @@
 
 @section('components')
 
-<div class="col-md-9 mt-3">
+<div class="col-md-12 mt-3">
     <div class="row">
         <div class="col-md-12">
             <h2 class="add__table__title mb-4 mt-4">Add Category</h2>
@@ -65,7 +65,7 @@
     <div class="row mt-5">
         <div class="col-md-12">
             <div class="table__list__part ">
-                <table class="table table-responsive">
+                <table class="table table-bordered bg-light table-responsiv">
                     <thead>
                         <tr>
                             <th scope="col">S.N</th>
@@ -83,9 +83,9 @@
                             <td>{{$item->category_name}}</td>
                             <td><img class="table__images" src="/img/{{$item->category_image}}" alt="{{$item->category_image}}" height="25px" width="250px"></td>
                             <td>
-                                <a href="/categories/{{$item->category_id}}"><button type="button" class="btn btn-primary"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></button></a>
+                                <a href="/categories/{{$item->category_id}}"><button type="button" class="btn btn-primary"><i class="fas fa-edit"></i></button></a>
 
-                                <a href="/categories-delete/{{$item->category_id}}"><button type="button" class="btn btn-danger"><i class="fa fa-trash-o" aria-hidden="true"></i></button></a>
+                                <a href="/categories-delete/{{$item->category_id}}"><button type="button" class="btn btn-danger"><i class="far fa-trash-alt"></i></button></a>
 
                             </td>
 

@@ -37,7 +37,7 @@
     <div class="row">
         <div class="col-sm-12">
             <table class="table table-hover table-part table-responsiv">
-                <thead>
+                <thead class="table-head">
                     <tr>
                         <th class="head" scope="col">#</th>
                         <th scope="col">Product</th>

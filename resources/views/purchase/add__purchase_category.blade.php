@@ -54,7 +54,7 @@
     <div class="row mt-5">
         <div class="col-md-12">
             <div class="table__list__part ">
-                <table class="table table-responsive">
+                <table class="table table-bordered bg-light table-responsiv">
                     <thead>
                         <tr>
                             <th scope="col">S.N</th>

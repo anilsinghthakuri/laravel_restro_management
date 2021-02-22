@@ -1,7 +1,7 @@
 @extends('layouts.master')
 
 @section('components')
-<div class="col-md-9 mt-3 ">
+<div class="col-md-12 mt-3 ">
 
     <div class="row">
         <div class="col-md-12">
@@ -66,7 +66,7 @@
                 </div>-->
 
                 <div class="input-group mb-3">
-                    <span class="input-group-text"  for="name" id="basic-addon1"><i class="fa fa-pencil" aria-hidden="true"></i></span>
+                    <span class="input-group-text"  for="name" id="basic-addon1"><i class="fas fa-edit"></i></span>
                     <input type="text" class="form-control" name="productname" id="" placeholder="Name" aria-label="Username" aria-describedby="basic-addon1">
                 </div>
 
@@ -83,7 +83,7 @@
                 </div>-->
 
                 <div class="input-group mb-3">
-                    <span class="input-group-text"  for="productprice" id="basic-addon1"><i class="fa fa-pencil" aria-hidden="true"></i></span>
+                    <span class="input-group-text"  for="productprice" id="basic-addon1"><i class="fas fa-edit"></i></span>
                     <input type="number" class="form-control" name="productprice" id="" placeholder="Price" aria-label="Username" aria-describedby="basic-addon1">
                 </div>
 
@@ -102,7 +102,7 @@
         </div>
         <button type="submit" class="btn btn-primary">Submit</button>
     </form>
-    <div class="row pagination__right pagination__add_product">
+    {{-- <div class="row pagination__right pagination__add_product">
         <div class="d-flex flex-row-reverse">
             <nav aria-label="Page ">
                 <ul class="pagination">
@@ -115,7 +115,7 @@
             </nav>
         </div>
 
-    </div>
+    </div> --}}
 
 </div>
 @endsection

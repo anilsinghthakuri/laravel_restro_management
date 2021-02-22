@@ -1,10 +1,16 @@
-<div class="page-wrapper chiller-theme">
-
+<div class="page-wrapper chiller-theme toggled">
+    <a id="show-sidebar" class="btn btn-sm btn-dark" href="#">
+        <i class="fas fa-bars"></i>
+      </a>
     <nav id="sidebar" class="sidebar-wrapper">
         <div class="sidebar-content">
             <div class="sidebar-brand">
                 <a class="user-name" href="/dashboard">Dashboard</a>
                 <div id="close-sidebar">
+                    <i class="fas fa-times"></i>
+                  </div>
+                <div id="close-sidebar">
+
                     <a class="pos__link" href="/pos">POS <i class="fa fa-long-arrow-right" aria-hidden="true"></i></a>
 
                 </div>
@@ -164,23 +170,7 @@
                             <span>Reports</span>
 
                         </a>
-                        {{-- <div class="sidebar-submenu">
-                            <ul>
-                                <li>
-                                    <a href="#settings">Todays Sale
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#settings">Monthly Sale</a>
-                                </li>
-                                <li>
-                                    <a href="#settings">Total Sale</a>
-                                </li>
-                                <li>
-                                    <a href="#settings">Sales Analysis</a>
-                                </li>
-                            </ul>
-                        </div> --}}
+
                     </li>
 
                     <li class="sidebar-dropdown">

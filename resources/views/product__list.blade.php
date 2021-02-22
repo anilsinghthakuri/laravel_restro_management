@@ -1,7 +1,7 @@
 @extends('layouts.master')
 
 @section('components')
-<div class="col-md-9 mt-3 ">
+<div class="col-md-12 mt-3 ">
 
     <div class="row">
         <div class="col-md-12">
@@ -66,16 +66,15 @@
                             <td>{{$loop->iteration}}</td>
                             <td>{{$item->category_id}}</td>
                             <td>{{$item->product_price}}</td>
-                            <td class="action-table">
-                                <div class="d-flex">
+                            <td >
+
                                    <a href="/product-edit/{{$item->product_id}}">
 
-                                    <button type="button" class="btn btn-primary "><i class="fa fa-pencil-square-o" aria-hidden="true"></i></button></a>
+                                    <button type="button" class="btn btn-primary "><i class="fas fa-edit"></i></button></a>
 
                                     <a href="/product-delete/{{$item->product_id}}"></button>
-                                        <button type="button" class="btn btn-danger "><i class="fa fa-trash-o"
-                                                aria-hidden="true"></i></button></a>
-                                </div>
+                                        <button type="button" class="btn btn-danger "><i class="far fa-trash-alt"></i></button></a>
+
 
                             </td>
                         </tr>

@@ -1,7 +1,7 @@
 @extends('layouts.master')
 
 @section('components')
-<div class="col-md-9 mt-3 ">
+<div class="col-md-12 mt-3 ">
 
     <div class="row ">
         <div class="col-md-12 pt-2">
@@ -86,7 +86,7 @@
         </div>
         <button type="submit" class="btn btn-primary">Submit</button>
     </form>
-    <div class="row pagination__right pagination__add_product">
+    {{-- <div class="row pagination__right pagination__add_product">
         <div class="d-flex flex-row-reverse">
             <nav aria-label="Page ">
                 <ul class="pagination">
@@ -99,7 +99,7 @@
             </nav>
         </div>
 
-    </div>
+    </div> --}}
 
 </div>
 @endsection

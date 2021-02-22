@@ -2,7 +2,7 @@
 
 @section('components')
 
-<div class="col-md-9 mt-3">
+<div class="col-md-12 mt-3 ">
     <div class="row">
         <div class="col-md-12">
             <h2 class="add__table__title mb-4 mt-4">Dashboard</h2>
@@ -82,9 +82,9 @@
         <div class="col-sm-12">
             <nav class="mb-3">
                 <div class="nav nav-tabs" id="nav-tab" role="tablist">
-                    <a class="nav-link active" id="nav-home-tab" data-bs-toggle="tab" href="#nav-home" role="tab" aria-controls="nav-home" aria-selected="true">Today</a>
-                    <a class="nav-link" id="nav-profile-tab" data-bs-toggle="tab" href="#nav-profile" role="tab" aria-controls="nav-profile" aria-selected="false">Week</a>
-                    <a class="nav-link" id="nav-contact-tab" data-bs-toggle="tab" href="#nav-contact" role="tab" aria-controls="nav-contact" aria-selected="false">Total</a>
+                    <a class="nav-link  active" id="nav-home-tab " data-bs-toggle="tab" href="#nav-home" role="tab" aria-controls="nav-home" aria-selected="true">Today</a>
+                    <a class="nav-link " id="nav-profile-tab " data-bs-toggle="tab" href="#nav-profile" role="tab" aria-controls="nav-profile" aria-selected="false">Week</a>
+                    <a class="nav-link " id="nav-contact-tab" data-bs-toggle="tab" href="#nav-contact" role="tab" aria-controls="nav-contact" aria-selected="false">Total</a>
                     <a href="/export-orders"><button class="btn btn-primary mx-5 btn-sm">Excel report download</button></a>
                 </div>
             </nav>
@@ -92,7 +92,7 @@
 
             <div class="tab-content" id="nav-tabContent">
                 <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
-                    <table class="table ">
+                    <table class="table table-bordered bg-light table-responsiv">
                         <thead>
                           <tr>
                             <th scope="col">Order ID</th>
@@ -118,7 +118,7 @@
                     </table>
                 </div>
                 <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
-                    <table class="table ">
+                    <table class="table table-bordered bg-light table-responsiv ">
                         <thead>
                           <tr>
                             <th scope="col">Order ID</th>

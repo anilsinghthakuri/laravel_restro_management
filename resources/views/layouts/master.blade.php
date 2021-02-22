@@ -7,15 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Pos Billing System</title>
-    {{-- <link rel='stylesheet' href='https://use.fontawesome.com/releases/v5.0.13/css/all.css'> --}}
-    {{-- <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css'> --}}
-    {{-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous"> --}}
-        <link rel="stylesheet" href="{{asset('bootstrap/css/bootstrap.min.css')}}">
-        <link rel="stylesheet" href="{{asset('fontawesome/css/all.css')}}">
-
-    <link rel="stylesheet" href="/css/sidebar.css">
-
+    <link rel="stylesheet" href="{{asset('bootstrap/css/bootstrap.min.css')}}">
+    <link rel="stylesheet" href="{{asset('fontawesome/css/all.css')}}">
     <link rel="stylesheet" href="/css/categories.css">
     <link rel="stylesheet" href="/css/style.css">
     <link rel="stylesheet" href="/css/login.css">
@@ -27,16 +20,284 @@
 
 <body>
     <section class="add__categories">
-        <div class="container-fluid">
-            <div class="col-md-12">
+
+
+
+
+                    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+
+                            <a class="navbar-brand" href="/dashboard">Dashbord</a>
+                            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false"
+                                aria-label="Toggle navigation">
+                                <span class="navbar-toggler-icon"></span>
+                            </button>
+                            <div class="collapse navbar-collapse" id="navbarScroll">
+                                <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll">
+                                    <li class="nav-item">
+                                        <a class="nav-link  " aria-current="active" href="/pos"><i class="fa fa-credit-card"></i> pos</a>
+                                    </li>
+                                    <li class="nav-item dropdown">
+                                        <a class="nav-link dropdown-toggle" href="#" id="navbarScrollingDropdown"
+                                            role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                            Table
+                                        </a>
+                                        <ul class="dropdown-menu" aria-labelledby="navbarScrollingDropdown">
+                                            <li><a class="dropdown-item" href="/table"><i class="fa fa-credit-card"></i> Add Table</a></li>
+
+                                        </ul>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link  " aria-current="active" href="/pos"><i class="fa fa-archive"></i> Product</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link  " aria-current="active" href="/pos"> <i class="fa fa-hospital"></i> Store</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link  " aria-current="active" href="/pos"><i class="fa fa-users"></i> People</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link  " aria-current="active" href="/pos"><i class="fa fa-ticket-alt"></i> Sale</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link  " aria-current="active" href="/pos"><i class="fas fa-dollar-sign"></i> Expense</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link  " aria-current="active" href="/pos"><i class="far fa-bookmark"></i> Categories</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link  " aria-current="active" href="/pos"><i class="fa fa-cogs"></i> Setting</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link  " aria-current="active" href="/pos"><i class="fas fa-chart-line"></i> Report</a>
+                                    </li>
+
+{{--
+                                    <li class="nav-item dropdown">
+                                        <a class="nav-link dropdown-toggle" href="#" id="navbarScrollingDropdown"
+                                            role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                            Table
+                                        </a>
+                                        <ul class="dropdown-menu" aria-labelledby="navbarScrollingDropdown">
+                                            <li><a class="dropdown-item" href="/table"><i class="fa fa-credit-card"></i> Add Table</a></li>
+
+                                        </ul>
+                                    </li>
+
+                                    <li class="nav-item dropdown">
+                                        <a class="nav-link dropdown-toggle" href="#" id="productID"
+                                            role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                            Product
+                                        </a>
+                                        <ul class="dropdown-menu" aria-labelledby="productID">
+
+                                            <li>
+                                                <a class="dropdown-item" href="/add-product">Add Product</a>
+                                            </li>
+                                            <li>
+                                                <a class="dropdown-item" href="/product">Product List</a>
+                                            </li>
+                                            <li>
+                                                <a class="dropdown-item" href="/categories">Add & show categories List</a>
+                                            </li>
+
+                                        </ul>
+
+                                    </li>
+
+                                    <li class="nav-item dropdown">
+
+                                        <a class="nav-link dropdown-toggle" href="#" id="saleID"
+                                            role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                            Sale
+                                        </a>
+
+                                        <ul class="dropdown-menu" aria-labelledby="saleID">
+                                            <li>
+                                                <a class="dropdown-item" href="/pos">POS
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a class="dropdown-item" href="/customer">Add Customer</a>
+                                            </li>
+                                            <li>
+                                                <a class="dropdown-item" href="/total-sale">Total Sale</a>
+                                            </li>
+                                            <li>
+                                                <a class="dropdown-item" href="/cash-sale">Cash Sale</a>
+                                            </li>
+                                            <li>
+                                                <a class="dropdown-item" href="/credit-sale">Credit Sale</a>
+                                            </li>
+
+                                            <li>
+                                                <a class="dropdown-item" href="/credits">Credit Collection </a>
+                                            </li>
+                                        </ul>
+
+                                    </li>
+
+                                    <li class="nav-item dropdown">
+
+                                        <a class="nav-link dropdown-toggle" href="#" id="purchaseID"
+                                            role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                            Purchase
+                                        </a>
+
+                                        <ul class="dropdown-menu" aria-labelledby="purchaseID">
+
+                                            <li>
+                                                <a class="dropdown-item" href="#">Add Purchase</a>
+                                            </li>
+
+                                            <li>
+                                                <a class="dropdown-item" href="#">Purchase List</a>
+                                            </li>
+                                            <li>
+                                                <a class="dropdown-item" href="#">Purchase Category
+                                                </a>
+                                            </li>
+                                        </ul>
+
+                                    </li>
+                                    <li class="nav-item dropdown">
+
+                                        <a class="nav-link dropdown-toggle" href="#" id="expanseID"
+                                            role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                            Expense
+                                        </a>
+
+                                        <ul class="dropdown-menu" aria-labelledby="expanseID">
+
+                                            <li>
+                                                <a class="dropdown-item" href="/expense-add">Add Expenses</a>
+                                            </li>
+
+                                            <li>
+                                                <a class="dropdown-item" href="/expense-list">Expenses List</a>
+                                            </li>
+                                            <li>
+                                                <a class="dropdown-item" href="/expense-category">Expense Category
+                                                </a>
+                                            </li>
+                                        </ul>
+
+                                    </li>
+
+                                    <li class="nav-item dropdown">
+
+                                        <a class="nav-link dropdown-toggle" href="#" id="assetsId"
+                                            role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                            Assets
+                                        </a>
+
+                                        <ul class="dropdown-menu" aria-labelledby="assetsId">
+
+                                            <li>
+                                                <a class="dropdown-item" href="/assets">Assets</a>
+                                            </li>
+                                        </ul>
+
+                                    </li>
+
+                                    <li class="nav-item dropdown">
+
+                                        <a class="nav-link dropdown-toggle" href="#" id="reportsId"
+                                            role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                            Reports
+                                        </a>
+
+                                    </li>
+                                    <li class="nav-item dropdown">
+
+                                        <a class="nav-link dropdown-toggle" href="#" id="userID"
+                                            role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                            User
+                                        </a>
+                                        <ul class="dropdown-menu" aria-labelledby="userID">
+
+                                            <li>
+                                                <a class="dropdown-item" href="/userlist">User List
+                                                </a>
+                                            </li>
+
+                                            <li>
+                                                <a  class="dropdown-item" href="/adduser">Add User</a>
+                                            </li>
+                                        </ul>
+
+                                    </li>
+                                    <li class="nav-item dropdown">
+
+                                        <a class="nav-link dropdown-toggle" href="#" id="generalID"
+                                            role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                            General Setting
+                                        </a>
+                                        <ul class="dropdown-menu" aria-labelledby="generalID">
+
+                                            <li>
+                                                <a class="dropdown-item" href="/companyprofile">Company Profile
+                                                </a>
+                                            </li>
+
+                                            <li>
+                                                <a  class="dropdown-item" href="#settings">Printer Setting</a>
+                                            </li>
+                                        </ul>
+
+                                    </li>--}}
+
+
+                                </ul>
+                                <ul class="nav navbar-nav flex-row justify-content-between ml-auto">
+                                    <li class="nav-item">
+                                        <p class=" icon-height  "><img src="img/user1.png" alt=""> Bikash</p>
+
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class=" icon-height  " aria-current="active" href="/pos"><img src="img/nepal.png" alt=""> </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class=" icon-logout  " aria-current="active" href="/pos"><i class="fas fa-sign-out-alt"></i> </a>
+                                    </li>
+
+
+                                    {{-- <li class="nav-item dropdown">
+                                        <button type="button" id="dropdownlogin" data-bs-toggle="dropdown" aria-expanded="false" class="btn btn-outline-secondary dropdown-toggle">Logout <span class="caret"></span></button>
+
+
+                                        <ul class="dropdown-menu" aria-labelledby="dropdownlogin">
+
+                                            <li>
+                                                <a class="dropdown-item" href="/companyprofile">Confirm
+                                                </a>
+                                            </li>
+
+
+                                        </ul>
+
+                                    </li> --}}
+                                </ul>
+
+
+
+                            </div>
+
+                    </nav>
+
+
+
+
+        <div class="container">
+            <div class="col-md-12 body-class ">
 
                 <div class="row">
 
-                    <div class="col-md-3 sidebar__col__div px-0">
+                    {{-- <div class="col-md-3 sidebar__col__div px-0">
 
                         @include('layouts.nav')
 
-                    </div>
+                    </div> --}}
 
                     @yield('components')
                 </div>
@@ -46,19 +307,12 @@
     </section>
 
 
-    {{-- <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js'></script> --}}
     <script src="{{asset('js/jquery-3.5.1.min.js')}}"></script>
 
     <script src="/js/script.js"></script>
     @livewireScripts
 
-    {{-- <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"
-        integrity="sha384-q2kxQ16AaE6UbzuKqyBE9/u/KzioAlnx2maXQHiDX9d4/zp8Ok3f+M7DPm+Ib6IU" crossorigin="anonymous">
-    </script> --}}
 
-    {{-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.min.js"
-        integrity="sha384-pQQkAEnwaBkjpqZ8RU1fF1AKtTcHJwFl3pblpTlHXybJjHpMYo79HY3hIi4NKxyj" crossorigin="anonymous">
-    </script> --}}
     <script src="{{asset('bootstrap/js/bootstrap.min.js')}}"></script>
 
 </body>

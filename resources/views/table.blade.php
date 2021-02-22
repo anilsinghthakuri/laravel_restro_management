@@ -2,7 +2,7 @@
 
 @section('components')
 
-<div class="col-md-9 mt-3">
+<div class="col-md-12 mt-3">
     <div class="row">
         <div class="col-md-12">
             <h2 class="add__table__title mb-4 mt-4">Add Tables</h2>
@@ -39,7 +39,7 @@
                         <input type="text" class="form-control" required value="{{$table->table_name}}" name="tablename" aria-label="Username"
                             aria-describedby="basic-addon1">
                         <button type="submit" class="btn btn-primary">update</button>
-                        <a href="/table"><button class="btn btn-danger">Cancel</button></a>
+                        <a href="/table"><button class="btn btn-danger mx-3">Cancel</button></a>
                     </div>
                 </form>
 
@@ -52,7 +52,7 @@
     <div class="row mt-5">
         <div class="col-md-12">
             <div class="table__list__part ">
-                <table class="table table-responsive">
+                <table class="table table-bordered bg-light table-responsiv">
                     <thead>
                         <tr>
                             <th scope="col">S.N</th>
@@ -68,9 +68,9 @@
                             <th scope="row">{{$loop->iteration}}</th>
                             <td>{{$item->table_name}}</td>
                             <td>
-                                <a href="/table/{{$item->table_id}}"><button type="button" class="btn btn-primary"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></button></a>
+                                <a href="/table/{{$item->table_id}}"><button type="button" class="btn btn-primary"><i class="fas fa-edit"></i></button></a>
 
-                                <a href="/table-delete/{{$item->table_id}}"><button type="button" class="btn btn-danger"><i class="fa fa-trash-o" aria-hidden="true"></i></button></a>
+                                <a href="/table-delete/{{$item->table_id}}"><button type="button" class="btn btn-danger"><i class="far fa-trash-alt"></i></button></a>
                             </td>
 
                         </tr>

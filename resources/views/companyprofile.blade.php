@@ -3,7 +3,7 @@
 @section('components')
 
 
-<div class="col-md-9 mt-3">
+<div class="col-md-12 mt-3">
 
     <div class="row">
         <div class="col-md-12">

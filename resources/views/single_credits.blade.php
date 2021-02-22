@@ -2,7 +2,7 @@
 
 @section('components')
 
-<div class="col-md-9 mt-3">
+<div class="col-md-12 mt-3">
     <div class="row">
         <div class="col-md-12">
             <h2 class="add__table__title mb-4 mt-4">Credit Collection</h2>
@@ -52,7 +52,7 @@
         <div class="col-md-12">
             <h4 class="add__table__title mb-4">Credit Bills</h4>
             <div class="table__list__part ">
-                <table class="table table-responsive">
+                <table class="table table-bordered bg-light table-responsiv">
                     <thead>
                         <tr>
                             <th scope="col">S.N</th>
@@ -78,7 +78,7 @@
                             <td>
                                 {{-- <a href="#"><button type="button" class="btn btn-danger "
                                 data-bs-toggle="modal" data-bs-target="#add_toggle"><i class="far fa-plus-square"></i></button></a> --}}
-                             <a href="#"><button type="button" class="btn btn-primary"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></button></a>  </td>
+                             <a href="#"><button type="button" class="btn btn-primary"><i class="fas fa-edit"></i></button></a>  </td>
 
                         </tr>
                         @endforeach
