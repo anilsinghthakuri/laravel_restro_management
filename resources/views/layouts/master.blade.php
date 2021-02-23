@@ -33,7 +33,7 @@
                                 <span class="navbar-toggler-icon"></span>
                             </button>
                             <div class="collapse navbar-collapse" id="navbarScroll">
-                                <ul class="navbar-nav m-auto my-2  my-lg-0 navbar-nav-scroll">
+                                <ul class="navbar-nav  navbar-nav--flex m-auto my-2  my-lg-0 navbar-nav-scroll">
                                     <li class="nav-item padding-left">
                                         <a class="nav-link  " aria-current="active" href="/pos"><i class="fa fa-credit-card"></i> pos</a>
                                     </li>
@@ -66,7 +66,7 @@
                                     </li>
 
                                     <li class="nav-item">
-                                        <a class="nav-link  " aria-current="active" href="/pos"> <i class="fa fa-hospital"></i> Store</a>
+                                        <a class="nav-link  " aria-current="active" href="#"> <i class="fa fa-hospital"></i> Store</a>
                                     </li>
                                     <li class="nav-item dropdown">
                                         <a class="nav-link dropdown-toggle" href="#" id="productID"
@@ -149,7 +149,7 @@
                                     </li>
 
                                     <li class="nav-item">
-                                        <a class="nav-link  " aria-current="active" href="/pos"><i class="fa fa-cogs"></i> Setting</a>
+                                        <a class="nav-link  " aria-current="active" href="#"><i class="fa fa-cogs"></i> Setting</a>
                                     </li>
                                     <li class="nav-item dropdown">
 
@@ -354,16 +354,16 @@
 
 
                                 </ul>
-                                <ul class="nav navbar-nav flex-row justify-content-between ml-auto">
+                                <ul class="d-flex flex-row justify-content-between ml-auto">
                                     <li class="nav-item">
-                                        <p class=" icon-height  "><img src="img/user1.png" alt=""> Bikash</p>
+                                        <p class=" icon-height  "><img src="img/user1.png" alt=""> {{Auth::user()->name}}</p>
 
                                     </li>
                                     <li class="nav-item">
-                                        <a class=" icon-height  " aria-current="active" href="/pos"><img src="img/nepal.png" alt=""> </a>
+                                        <a class=" icon-height  " aria-current="active" href="#"><img src="img/nepal.png" alt=""> </a>
                                     </li>
                                     <li class="nav-item">
-                                        <a class=" icon-logout  " aria-current="active" href="/pos"><i class="fas fa-sign-out-alt"></i> </a>
+                                        <a class=" icon-logout  " aria-current="active" href="/logout"><i class="fas fa-sign-out-alt"></i> </a>
                                     </li>
 
 

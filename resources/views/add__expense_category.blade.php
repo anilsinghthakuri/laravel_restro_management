@@ -54,6 +54,7 @@
     <div class="row mt-5">
         <div class="col-md-12">
             <div class="table__list__part ">
+                <div class="table-responsive">
                 <table class="table table-bordered bg-light table-responsiv">
                     <thead>
                         <tr>
@@ -69,10 +70,10 @@
                         <tr>
                             <th scope="row">{{$loop->iteration }}</th>
                             <td>{{$item->expense_category_name}}</td>
-                            <td>
-                                <a href="/expense-category/{{$item->expense_category_id}}"><button type="button" class="btn btn-primary"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></button></a>
+                            <td class="d-flex">
+                                <a href="/expense-category/{{$item->expense_category_id}}"><button type="button" class="btn btn-primary action-btn"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></button></a>
 
-                                <a href="/expense-category-delete/{{$item->expense_category_id}}"><button type="button" class="btn btn-danger"><i class="fa fa-trash-o"
+                                <a href="/expense-category-delete/{{$item->expense_category_id}}"><button type="button" class="btn btn-danger action-btn"><i class="fa fa-trash-o"
                                             aria-hidden="true"></i></button></a>
                             </td>
                         </tr>
@@ -83,6 +84,8 @@
 
                     </tbody>
                 </table>
+
+                </div>
             </div>
         </div>
     </div>

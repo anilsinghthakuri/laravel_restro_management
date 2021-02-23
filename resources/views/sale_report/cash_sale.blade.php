@@ -35,8 +35,8 @@
                     </div>
                     @endif
                 </div>
-
-                <table class="table table-bordered bg-light table-responsiv">
+                <div class="table-responsive">
+                <table class="table table-bordered bg-light">
 
                     <thead>
                         <tr>
@@ -71,6 +71,7 @@
 
                     </tbody>
                 </table>
+                </div>
             </div>
         </div>
 

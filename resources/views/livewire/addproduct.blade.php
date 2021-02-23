@@ -136,7 +136,7 @@
                     </div>
                     <button type="submit" class="btn btn-primary" wire:click = 'addproduct'>Submit</button>
                 </form>
-                <div class="row pagination__right pagination__add_product">
+                {{-- <div class="row pagination__right pagination__add_product">
                     <div class="d-flex flex-row-reverse">
                         <nav aria-label="Page ">
                             <ul class="pagination">
@@ -149,7 +149,7 @@
                           </nav>
                     </div>
 
-                </div>
+                </div> --}}
 
             </div>
         </div>

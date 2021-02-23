@@ -65,8 +65,8 @@
     <div class="row  mt-3">
         <div class="col-md-12">
             <div class="categories-tables">
-
-                <table class="table table-bordered bg-light table-responsiv">
+                <div class="table-responsive">
+                <table class="table table-bordered bg-light ">
 
                     <thead>
                         <tr>
@@ -105,6 +105,7 @@
 
                     </tbody>
                 </table>
+                </div>
             </div>
         </div>
 

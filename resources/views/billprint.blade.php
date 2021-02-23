@@ -31,6 +31,7 @@
             </div>
 
             <div class="menu__item">
+                <div class="table-responsive">
                 <table class="table table-borderless table-responsive ">
                     <thead>
                       <tr>
@@ -55,6 +56,7 @@
 
                     </tbody>
                 </table>
+                </div>
             </div>
             <div class="bill__footer__contain mb-2">
 

@@ -22,7 +22,7 @@
     <audio id="audio" src="beep/beep-07.mp3" ></audio>
     <section class="section__billing">
         <div class="container-fluid">
-            <div class="col-md-12">
+
                 <div class="row">
 
                     <div class="col-md-6">
@@ -43,7 +43,7 @@
 
                     </div>
                 </div>
-            </div>
+
         </div>
     </section>
 

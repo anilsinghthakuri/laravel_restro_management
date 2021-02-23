@@ -3,7 +3,7 @@
 @section('components')
 <div class="col-md-12 mt-3 ">
 
-    <div class="row">
+    {{-- <div class="row">
         <div class="col-md-12">
             <div class="top-part">
                 <div class="d-flex bd-highlight">
@@ -15,7 +15,7 @@
             </div>
         </div>
 
-    </div>
+    </div> --}}
     <div class="row ">
         <div class="col-md-12 pt-2">
             <div class="add__categories_bottom">

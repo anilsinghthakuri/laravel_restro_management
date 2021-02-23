@@ -26,8 +26,8 @@
     <div class="row  mt-3">
         <div class="col-md-12">
             <div class="add__user__section">
-                <div class="login__contain">
-                    <h4 class="add__user__title mb-3">you can add user here</h4>
+                <div class="login__contain login__contain--user">
+                    <h4 class="add__user__title  my-3 mb-3">you can add user here</h4>
                     <form method="POST" action="/adduser" enctype="multipart/form-data">
                         @csrf
                         <div class="input-group mb-3">

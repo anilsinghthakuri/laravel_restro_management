@@ -36,6 +36,7 @@
 
     <div class="row">
         <div class="col-sm-12">
+            <div class="table-responsive">
             <table class="table table-hover table-part table-responsiv">
                 <thead class="table-head">
                     <tr>
@@ -87,6 +88,7 @@
                     @endforeach
                 </tbody>
             </table>
+            </div>
         </div>
     </div>
     <!--table row end  -->

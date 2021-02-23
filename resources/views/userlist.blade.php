@@ -15,6 +15,7 @@
     <div class="row">
         <div class="col-sm-12">
             <div class="table__list__part ">
+                <div class="table-responsive">
                 <table class="table table-bordered bg-light table-responsiv">
                     <thead>
                         <tr>
@@ -39,6 +40,7 @@
 
                     </tbody>
                 </table>
+                </div>
             </div>
         </div>
     </div>

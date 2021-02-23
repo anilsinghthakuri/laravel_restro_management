@@ -49,6 +49,8 @@ img.logo__img {
     border: 1px solid #CED4DA;
     background: white;
     height: 500px;
+    width: 400px;
+    margin: 0 auto;
 }
 button.btn.btn-primary.btn-primary-login {
     background-color: #1b142b;
@@ -60,6 +62,9 @@ button.btn.btn-primary.btn-primary-login {
     width: 100%;
     text-transform: uppercase;
 
+}
+.login__contain.login__contain--user {
+    padding: 0px;
 }
 button.btn.btn-primary.btn-primary-login:hover{
     background-color: #27204e;
@@ -74,4 +79,32 @@ p.login__text {
 .login__images{
     background-image: url('../img/background1.jpg');
     background-size: cover;
+}
+@media screen and (max-width: 1200px) {
+
+    .login__section {
+
+        width: 400px;
+        margin: 0 auto;
+        padding: 15px;
+    }
+    .login__contain {
+
+        width: 100%;
+        position: relative;
+
+    }
+    .login__contain.login__contain--user {
+        padding: 20px;
+    }
+
+}
+@media screen and (max-width: 992px) {
+
+    .add__user__section {
+       width: auto;
+       height: 350px;
+    }
+
+
 }

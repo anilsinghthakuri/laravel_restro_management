@@ -181,7 +181,10 @@ h2.add__table__title{
   width: 200px;
 }
 
-
+.action-btn {
+    display: table;
+    margin: 5px;
+}
 .table-part>tbody {
     border: 1px solid #e9ecef;
 }
@@ -399,6 +402,7 @@ img.table__images {
     background: #fff;
     padding: 0px 30px 20px;
     margin: 30px 0px;
+    position: relative;
 }
 
 
@@ -512,7 +516,53 @@ a.icon-logout:hover{
 .bg-dark {
     background-color: #4b4f55!important;
 }
+@media screen and (max-width: 1327px) {
+    li.nav-item {
 
+        font-size: 9px;
+
+    }
+  }
+  @media screen and (max-width: 1200px) {
+    ul.navbar-nav--flex {
+        flex-wrap: wrap;
+    }
+    a.nav-link {
+        padding-bottom: 15px;
+    }
+    p.icon-height {
+
+        display: flex;
+    }
+  }
+    @media screen and (max-width: 992px) {
+
+        ul.navbar-nav--flex {
+            flex-wrap: nowrap;
+            padding: 15px;
+        }
+        li.nav-item {
+
+            font-size: 11px;
+
+        }
+        .dropdown-toggle::after {
+            float: right;
+        }
+        .navbar-dark .navbar-nav .nav-link {
+            color: rgb(247 132 132 / 75%);
+            border-bottom: 1px solid;
+            margin-bottom: 15px;
+        }
+        .add__table__list {
+            width: 100%;
+        }
+        .login__contain {
+
+            width: 100%;
+
+        }
+    }
 /* On smaller screens, where height is less than 450px, change the style of the side__show (less padding and a smaller font size) */
 @media screen and (max-height: 450px) {
     .side__show {padding-top: 15px;}

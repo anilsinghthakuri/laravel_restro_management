@@ -65,7 +65,8 @@
     <div class="row mt-5">
         <div class="col-md-12">
             <div class="table__list__part ">
-                <table class="table table-bordered bg-light table-responsiv">
+                <div class="table-responsive">
+                <table class="table table-bordered bg-light">
                     <thead>
                         <tr>
                             <th scope="col">S.N</th>
@@ -82,10 +83,10 @@
                             <th scope="row">{{$loop->iteration}}</th>
                             <td>{{$item->category_name}}</td>
                             <td><img class="table__images" src="/img/{{$item->category_image}}" alt="{{$item->category_image}}" height="25px" width="250px"></td>
-                            <td>
-                                <a href="/categories/{{$item->category_id}}"><button type="button" class="btn btn-primary"><i class="fas fa-edit"></i></button></a>
+                            <td class="d-flex">
+                                <a href="/categories/{{$item->category_id}}"><button type="button" class="btn btn-primary action-btn"><i class="fas fa-edit"></i></button></a>
 
-                                <a href="/categories-delete/{{$item->category_id}}"><button type="button" class="btn btn-danger"><i class="far fa-trash-alt"></i></button></a>
+                                <a href="/categories-delete/{{$item->category_id}}"><button type="button" class="btn btn-danger action-btn"><i class="far fa-trash-alt"></i></button></a>
 
                             </td>
 
@@ -95,6 +96,7 @@
 
                     </tbody>
                 </table>
+                </div>
             </div>
         </div>
     </div>
