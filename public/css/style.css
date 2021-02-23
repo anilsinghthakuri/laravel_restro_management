@@ -196,6 +196,20 @@ th{
     line-height: 1.50rem;
 
 }
+a.dropdown-item {
+    font-size: 15px;
+}
+a#nav-home-tab\ {
+    padding: 5px 30px;
+}
+a#nav-profile-tab\ {
+    padding: 5px 20px;
+    color: #3d2529;
+}
+a#nav-contact-tab {
+    padding: 5px 20px;
+    color: #3d2529;
+}
 .nav-padding{
     padding: 5px 20px;
 }

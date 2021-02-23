@@ -144,7 +144,7 @@
                     </table>
                 </div>
                 <div class="tab-pane fade" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab">
-                    <table class="table ">
+                    <table class="table table-bordered bg-light table-responsiv ">
                         <thead>
                           <tr>
                             <th scope="col">Order ID</th>
