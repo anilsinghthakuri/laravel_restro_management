@@ -80,6 +80,7 @@ p.login__text {
     background-image: url('../img/background1.jpg');
     background-size: cover;
 }
+
 @media screen and (max-width: 1200px) {
 
     .login__section {
@@ -99,6 +100,7 @@ p.login__text {
     }
 
 }
+
 @media screen and (max-width: 992px) {
 
     .add__user__section {
