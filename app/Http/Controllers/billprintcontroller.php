@@ -67,14 +67,14 @@ class billprintcontroller extends Controller
             //header of bill
              $printer->setJustification(Printer::JUSTIFY_CENTER);
              $printer->selectPrintMode(Printer::MODE_DOUBLE_WIDTH);
-             $printer->text("Dotsoft Ltd.\n");
+            //  $printer->text("Dotsoft Ltd.\n");
              $printer->selectPrintMode();
-             $printer->text("Dhangadhi,Kailali.\n");
-             $printer->feed();
+            //  $printer->text("Dhangadhi,Kailali.\n");
+            //  $printer->feed();
 
             //Bill type
             $printer->setEmphasis(true);
-            $printer->text("SALES INVOICE\n");
+            $printer->text("Token\n");
             $printer->setEmphasis(false);
             $printer->feed(2);
 
@@ -106,10 +106,10 @@ class billprintcontroller extends Controller
             //footer
             $printer->feed(2);
              $printer->setJustification(Printer::JUSTIFY_CENTER);
-             $printer->text("Thank you for shopping\n");
-             $printer->text("at Dotsoft\n");
-             $printer->text("For trading hours,\n");
-             $printer->text("please visit\n");
+             $printer->text("Thank you for Your Visit\n");
+            //  $printer->text("at Dotsoft\n");
+            //  $printer->text("For trading hours,\n");
+            //  $printer->text("please visit\n");
              $printer->feed(2);
 
             //close and cut paper
