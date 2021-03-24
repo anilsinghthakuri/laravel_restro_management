@@ -184,7 +184,13 @@ h2.add__table__title{
 
 .action-btn {
     display: table;
-    margin: 5px;
+    margin-left: 5px;
+}
+button.btn.btn-primary.action-btn {
+    font-size: 10px;
+}
+button.btn.btn-danger.action-btn {
+    font-size: 10px;
 }
 .table-part>tbody {
     border: 1px solid #e9ecef;

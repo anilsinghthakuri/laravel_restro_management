@@ -2,7 +2,7 @@
     height: 100vh;
     align-items: center;
     position: relative;
-    background: #0202026e;
+    background: #8E1C1C;
 }
 
 .login__contain {
@@ -53,8 +53,8 @@ img.logo__img {
     margin: 0 auto;
 }
 button.btn.btn-primary.btn-primary-login {
-    background-color: #1b142b;
-    border-color: #17152c;
+    background-color: #4e73df;
+    border-color: #4e73df;
     height: 45px;
     height: 54px;
     padding-left: 30px;
@@ -76,37 +76,27 @@ p.login__text {
     font-size: 15px;
     font-weight: 500;
 }
-.login__images{
-    background-image: url('../img/background1.jpg');
-    background-size: cover;
-}
 
-@media screen and (max-width: 1200px) {
 
-    .login__section {
-
-        width: 400px;
-        margin: 0 auto;
-        padding: 15px;
-    }
+@media screen and (max-width: 768px) {
     .login__contain {
-
-        width: 100%;
-        position: relative;
-
+        width: 50%;
     }
-    .login__contain.login__contain--user {
-        padding: 20px;
-    }
-
 }
-
-@media screen and (max-width: 992px) {
-
-    .add__user__section {
-       width: auto;
-       height: 350px;
+@media screen and (max-width: 576px) {
+    .login__contain {
+        width: 70%;
     }
-
-
+}
+@media screen and (max-width: 480px) {
+    .login__contain {
+        width: 90%;
+        padding: 30px;
+    }
+    h2.login__title {
+        font-size: 24px;
+    }
+    p.login__text {
+        font-size: 14px;
+    }
 }

@@ -54,18 +54,18 @@
     </div>
     <div class="row">
 
-        <div class="col-sm-4">
+        <div class="col-sm-6">
 
             <div class="btn__full_width"><button onclick="openNav()" type="button" class="btn btn-success btn-md">
                     <span class="span__categories">Category</span></button></div>
 
         </div>
-        <div class="col-sm-4">
+        {{-- <div class="col-sm-4">
             <div class="btn__full_width"><button type="button" wire:click='alcohol'
                     class="btn btn-info btn-md text-light"><span class="span__categories">Alcohol</span></button>
                 </button></div>
-        </div>
-        <div class="col-sm-4">
+        </div> --}}
+        <div class="col-sm-6">
             <div class="btn__full_width"><button type="button" wire:click='allproduct'
                     class="btn btn-danger btn-md "><span class="span__categories">All Product</span></button></div>
         </div>

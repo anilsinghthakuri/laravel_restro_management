@@ -117,7 +117,12 @@
                             <li>
                                 <a class="dropdown-item" href="/pos">Pos</a>
                             </li>
-
+                            <li>
+                                <a class="dropdown-item" href="#" >Add Sale</a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item" href="">Sales Return</a>
+                            </li>
                             <li>
                                 <a class="dropdown-item" href="/total-sale">Total Sale</a>
                             </li>
