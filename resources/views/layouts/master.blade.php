@@ -68,7 +68,8 @@
                     </li>
 
                     <li class="nav-item">
-                        <a class="nav-link  " aria-current="active" href="/credits"> <i class="fa fa-hospital"></i> Collection</a>
+                        <a class="nav-link  " aria-current="active" href="/credits"> <i class="fa fa-hospital"></i>
+                            Collection</a>
                     </li>
 
                     {{-- <li class="nav-item dropdown">
@@ -120,7 +121,7 @@
                                 <a class="dropdown-item" href="/pos">Pos</a>
                             </li>
                             <li>
-                                <a class="dropdown-item" href="#" >Add Sale</a>
+                                <a class="dropdown-item" href="#">Add Sale</a>
                             </li>
                             <li>
                                 <a class="dropdown-item" href="">Sales Return</a>
@@ -191,11 +192,15 @@
                             <li>
                                 <a class="dropdown-item" href="/total-sale">Total Sale</a>
                             </li>
+
                             <li>
                                 <a class="dropdown-item" href="/cash-sale">Cash Sale</a>
                             </li>
                             <li>
                                 <a class="dropdown-item" href="/credit-sale">Credit Sale</a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item" href="/product-wise-sale">Product Wise Sale</a>
                             </li>
 
                         </ul>
@@ -203,181 +208,6 @@
                     </li>
 
 
-
-                    {{--
-                                    <li class="nav-item dropdown">
-                                        <a class="nav-link dropdown-toggle" href="#" id="navbarScrollingDropdown"
-                                            role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                            Table
-                                        </a>
-                                        <ul class="dropdown-menu" aria-labelledby="navbarScrollingDropdown">
-                                            <li><a class="dropdown-item" href="/table"><i class="fa fa-credit-card"></i> Add Table</a></li>
-
-                                        </ul>
-                                    </li>
-
-                                    <li class="nav-item dropdown">
-                                        <a class="nav-link dropdown-toggle" href="#" id="productID"
-                                            role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                            Product
-                                        </a>
-                                        <ul class="dropdown-menu" aria-labelledby="productID">
-
-                                            <li>
-                                                <a class="dropdown-item" href="/add-product">Add Product</a>
-                                            </li>
-                                            <li>
-                                                <a class="dropdown-item" href="/product">Product List</a>
-                                            </li>
-                                            <li>
-                                                <a class="dropdown-item" href="/categories">Add & show categories List</a>
-                                            </li>
-
-                                        </ul>
-
-                                    </li>
-
-                                    <li class="nav-item dropdown">
-
-                                        <a class="nav-link dropdown-toggle" href="#" id="saleID"
-                                            role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                            Sale
-                                        </a>
-
-                                        <ul class="dropdown-menu" aria-labelledby="saleID">
-                                            <li>
-                                                <a class="dropdown-item" href="/pos">POS
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <a class="dropdown-item" href="/customer">Add Customer</a>
-                                            </li>
-                                            <li>
-                                                <a class="dropdown-item" href="/total-sale">Total Sale</a>
-                                            </li>
-                                            <li>
-                                                <a class="dropdown-item" href="/cash-sale">Cash Sale</a>
-                                            </li>
-                                            <li>
-                                                <a class="dropdown-item" href="/credit-sale">Credit Sale</a>
-                                            </li>
-
-                                            <li>
-                                                <a class="dropdown-item" href="/credits">Credit Collection </a>
-                                            </li>
-                                        </ul>
-
-                                    </li>
-
-                                    <li class="nav-item dropdown">
-
-                                        <a class="nav-link dropdown-toggle" href="#" id="purchaseID"
-                                            role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                            Purchase
-                                        </a>
-
-                                        <ul class="dropdown-menu" aria-labelledby="purchaseID">
-
-                                            <li>
-                                                <a class="dropdown-item" href="#">Add Purchase</a>
-                                            </li>
-
-                                            <li>
-                                                <a class="dropdown-item" href="#">Purchase List</a>
-                                            </li>
-                                            <li>
-                                                <a class="dropdown-item" href="#">Purchase Category
-                                                </a>
-                                            </li>
-                                        </ul>
-
-                                    </li>
-                                    <li class="nav-item dropdown">
-
-                                        <a class="nav-link dropdown-toggle" href="#" id="expanseID"
-                                            role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                            Expense
-                                        </a>
-
-                                        <ul class="dropdown-menu" aria-labelledby="expanseID">
-
-                                            <li>
-                                                <a class="dropdown-item" href="/expense-add">Add Expenses</a>
-                                            </li>
-
-                                            <li>
-                                                <a class="dropdown-item" href="/expense-list">Expenses List</a>
-                                            </li>
-                                            <li>
-                                                <a class="dropdown-item" href="/expense-category">Expense Category
-                                                </a>
-                                            </li>
-                                        </ul>
-
-                                    </li>
-
-                                    <li class="nav-item dropdown">
-
-                                        <a class="nav-link dropdown-toggle" href="#" id="assetsId"
-                                            role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                            Assets
-                                        </a>
-
-                                        <ul class="dropdown-menu" aria-labelledby="assetsId">
-
-                                            <li>
-                                                <a class="dropdown-item" href="/assets">Assets</a>
-                                            </li>
-                                        </ul>
-
-                                    </li>
-
-                                    <li class="nav-item dropdown">
-
-                                        <a class="nav-link dropdown-toggle" href="#" id="reportsId"
-                                            role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                            Reports
-                                        </a>
-
-                                    </li>
-                                    <li class="nav-item dropdown">
-
-                                        <a class="nav-link dropdown-toggle" href="#" id="userID"
-                                            role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                            User
-                                        </a>
-                                        <ul class="dropdown-menu" aria-labelledby="userID">
-
-                                            <li>
-                                                <a class="dropdown-item" href="/userlist">User List
-                                                </a>
-                                            </li>
-
-                                            <li>
-                                                <a  class="dropdown-item" href="/adduser">Add User</a>
-                                            </li>
-                                        </ul>
-
-                                    </li>
-                                    <li class="nav-item dropdown">
-
-                                        <a class="nav-link dropdown-toggle" href="#" id="generalID"
-                                            role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                            General Setting
-                                        </a>
-                                        <ul class="dropdown-menu" aria-labelledby="generalID">
-
-                                            <li>
-                                                <a class="dropdown-item" href="/companyprofile">Company Profile
-                                                </a>
-                                            </li>
-
-                                            <li>
-                                                <a  class="dropdown-item" href="#settings">Printer Setting</a>
-                                            </li>
-                                        </ul>
-
-                                    </li>--}}
 
 
                 </ul>
@@ -394,32 +224,10 @@
                                 class="fas fa-sign-out-alt"></i> </a>
                     </li>
 
-
-                    {{-- <li class="nav-item dropdown">
-                                        <button type="button" id="dropdownlogin" data-bs-toggle="dropdown" aria-expanded="false" class="btn btn-outline-secondary dropdown-toggle">Logout <span class="caret"></span></button>
-
-
-                                        <ul class="dropdown-menu" aria-labelledby="dropdownlogin">
-
-                                            <li>
-                                                <a class="dropdown-item" href="/companyprofile">Confirm
-                                                </a>
-                                            </li>
-
-
-                                        </ul>
-
-                                    </li> --}}
                 </ul>
-
-
-
             </div>
 
         </nav>
-
-
-
 
         <div class="container">
             <div class="col-md-12 body-class ">
