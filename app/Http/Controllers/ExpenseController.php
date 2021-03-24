@@ -37,7 +37,8 @@ class ExpenseController extends Controller
             $expense->expense_category_id = $request->expense_category_id;
             $expense->expense_bill = $request->expensebill;
             $expense->expense_price = $request->expenseprice;
-            $expense->nepali_date = $this->nepalidate();
+            // $expense->nepali_date = $this->nepalidate();
+            $expense->nepali_date = $request->nepali_date;
             $expense->expense_vendor = $request->expensevendor;
             $expense->expense_remark = $request->expenseremark;
             $expense->save();
@@ -52,7 +53,8 @@ class ExpenseController extends Controller
             $expense->expense_category_id = $request->expense_category_id;
             $expense->expense_bill = $request->expensebill;
             $expense->expense_price = $request->expenseprice;
-            $expense->nepali_date = $this->nepalidate();
+            // $expense->nepali_date = $this->nepalidate();
+            $expense->nepali_date = $request->nepali_date;
             $expense->expense_vendor = $request->expensevendor;
             $expense->save();
 
@@ -64,7 +66,8 @@ class ExpenseController extends Controller
             $expense = new Expense;
             $expense->expense_category_id = $request->expense_category_id;
             $expense->expense_bill = $request->expensebill;
-            $expense->nepali_date = $this->nepalidate();
+            // $expense->nepali_date = $this->nepalidate();
+            $expense->nepali_date = $request->nepali_date;
             $expense->expense_price = $request->expenseprice;
             $expense->save();
 
@@ -75,7 +78,8 @@ class ExpenseController extends Controller
 
             $expense = new Expense;
             $expense->expense_category_id = $request->expense_category_id;
-            $expense->nepali_date = $this->nepalidate();
+           // $expense->nepali_date = $this->nepalidate();
+           $expense->nepali_date = $request->nepali_date;
             $expense->expense_price = $request->expenseprice;
             $expense->save();
 

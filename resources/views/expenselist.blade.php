@@ -62,7 +62,7 @@
                             <td>
                                 {{$item->expense_bill}}
                             </td>
-                            <td> {{$item->expense_category_id}}</td>
+                            <td> {{$item->expensescategroy->expense_category_name}}</td>
                             <td>{{$item->expense_vendor}}</td>
                             <td>{{$item->expense_price}}</td>
                             <td>{{$item->expense_remark}}</td>

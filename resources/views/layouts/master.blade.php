@@ -13,6 +13,8 @@
     <link rel="stylesheet" href="/css/style.css">
     <link rel="stylesheet" href="/css/login.css">
     <link rel="stylesheet" href="{{asset('font/fonts.css')}}">
+    <link rel="stylesheet" href="{{asset('nepali_date/nepali-date-picker.min.css')}}">
+
 
     @livewireStyles
 
@@ -436,9 +438,10 @@
         </div>
 
     </section>
-
-
     <script src="{{asset('js/jquery-3.5.1.min.js')}}"></script>
+
+    <script src="{{asset('nepali_date/script.js')}}"></script>
+    <script src="{{asset('nepali_date/nepali-date-picker.min.js')}}"></script>
 
     <script src="/js/script.js"></script>
     @livewireScripts

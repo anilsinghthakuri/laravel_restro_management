@@ -29,7 +29,7 @@
         <div class="row  mt-3">
             @csrf
 
-            <div class="col-md-6">
+            <div class="col-md-12">
 
                 <label for="exampleInputEmail1" class="form-label">Expenses Category </label>
 
@@ -69,6 +69,15 @@
                 <div class="input-group mb-3">
                     <span class="input-group-text"  for="expense_price" id="basic-addon1"><i class="fa fa-pencil" aria-hidden="true"></i></span>
                     <input type="text" class="form-control"  name="expensevendor" id="" placeholder="Vendor Name" aria-label="Username" aria-describedby="basic-addon1">
+                </div>
+
+            </div>
+            <div class="col-md-6">
+
+                <label for="expense_price" class="form-label">Date</label>
+                <div class="input-group mb-3">
+                    <span class="input-group-text"  for="expense_price" id="basic-addon1"><i class="fa fa-pencil" aria-hidden="true"></i></span>
+                    <input type="text" class="form-control date-picker"  data-single="true"  name="nepali_date"  placeholder="Date" required>
                 </div>
 
             </div>
