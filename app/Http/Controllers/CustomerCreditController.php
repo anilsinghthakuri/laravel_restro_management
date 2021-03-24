@@ -19,6 +19,15 @@ class CustomerCreditController extends Controller
         ]);
     }
 
+    public function credit_collection_report()
+    {
+
+        $creditlist  = $this->show_credit_list();
+        return view('sale_report.credit_collection',[
+            'creditlist'=>$creditlist,
+        ]);
+    }
+
 
 
     public function single_credit_show($id)
@@ -81,7 +90,8 @@ class CustomerCreditController extends Controller
     }
 
     private function show_credit_list(){
-        $creditlist = CustomerCredit::where('balance_amount', '!=' , 0)->get();
+        // $creditlist = CustomerCredit::where('balance_amount', '!=' , 0)->get();
+        $creditlist = CustomerCredit::all();
         return $creditlist;
     }
 

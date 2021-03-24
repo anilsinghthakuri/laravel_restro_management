@@ -5,7 +5,7 @@
 <div class="col-md-12 mt-3">
     <div class="row">
         <div class="col-md-12">
-            <h2 class="add__table__title mb-4 mt-4">Credit Collection</h2>
+            <h2 class="add__table__title mb-4 mt-4">Credit Collection Report</h2>
         </div>
 
        <div>
@@ -20,18 +20,6 @@
     <div class="row">
         <div class="col-md-12">
             <div class="add__credit--list">
-
-                {{-- <form method="POST" action="/credit-search" enctype="multipart/form-data">
-                    @csrf
-                    <div class="input-group mb-3">
-                        <span class="input-group-text" id="basic-addon1">Text</span>
-                        <input type="text" class="form-control" required placeholder="Customer Name" name="customername"
-                            aria-label="YourName" aria-describedby="basic-addon1">
-                    </div>
-
-                    <button type="submit" value="Login" class="btn btn-primary">Search</button>
-                </form> --}}
-
 
             </div>
         </div>
@@ -49,8 +37,6 @@
                             <th scope="col">Total Amount </th>
                             <th scope="col">Paid Amount</th>
                             <th scope="col">Balance </th>
-                            <th scope="col">Action</th>
-
                         </tr>
                     </thead>
                     <tbody>
@@ -62,20 +48,8 @@
                             <td>RS: {{$item->total_amount_to_pay}}</td>
                             <td>RS: {{$item->amount_paid}}</td>
                             <td>RS: {{$item->balance_amount}}</td>
-                            @if ($item->balance_amount != 0)
-                            <td>
-                                <a href="/credits/{{$item->customer_id}}"><button type="button" class="btn btn-primary"><i class="fas fa-edit"></i></button></a>
-                               </td>
-                            @endif
-
-
-
                         </tr>
                         @endforeach
-
-
-
-
                     </tbody>
                 </table>
                 </div>

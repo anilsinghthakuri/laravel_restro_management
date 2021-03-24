@@ -200,8 +200,12 @@
                                 <a class="dropdown-item" href="/credit-sale">Credit Sale</a>
                             </li>
                             <li>
+                                <a class="dropdown-item" href="/credit-collection-report">Credit Collection </a>
+                            </li>
+                            <li>
                                 <a class="dropdown-item" href="/product-wise-sale">Product Wise Sale</a>
                             </li>
+
 
                         </ul>
 
