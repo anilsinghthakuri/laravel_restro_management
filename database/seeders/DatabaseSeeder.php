@@ -4,7 +4,7 @@ namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
-
+use Illuminate\Support\Facades\Hash;
 
 class DatabaseSeeder extends Seeder
 {
@@ -49,8 +49,8 @@ class DatabaseSeeder extends Seeder
         ]);
         DB::table('users')->insert([
             'name'=>'anil',
-            'email' => 'anilsingh@dotsoftech.com',
-            'password' => '$2y$10$sWwb7nxxcYu/SeX1h.RMU.F1rX8jUdz5tlhMDqqR4.UAz.tCGj3.K',
+            'email' => 'admin@user.com',
+            'password' => Hash::make('anil'),
         ]);
         DB::table('companydatas')->insert([
             'company_name'=>'Dotsoftech',

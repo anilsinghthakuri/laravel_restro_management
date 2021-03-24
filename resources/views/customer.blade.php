@@ -24,19 +24,19 @@
                 <form method="POST" action="/customer" enctype="multipart/form-data">
                     @csrf
                     <div class="input-group mb-3">
-                        <span class="input-group-text" id="basic-addon1">Text</span>
+                        <span class="input-group-text" id="basic-addon1">Name</span>
                         <input type="text" class="form-control" required placeholder="Customer Name" name="customername"
                             aria-label="YourName" aria-describedby="basic-addon1">
                     </div>
                     <div class="input-group mb-3">
-                        <span class="input-group-text" id="basic-addon1">@</span>
+                        <span class="input-group-text" id="basic-addon1">Phone</span>
                         <input type="number" class="form-control" required placeholder="Customer Phone"
                             name="customerphone" aria-label="Username" aria-describedby="basic-addon1">
                     </div>
 
 
                     <div class="input-group mb-3">
-                        <span class="input-group-text" id="basic-addon1">**</span>
+                        <span class="input-group-text" id="basic-addon1">Address</span>
                         <input type="text" class="form-control" placeholder="Customer Address" name="customeraddress"
                             aria-describedby="basic-addon1">
                     </div>
