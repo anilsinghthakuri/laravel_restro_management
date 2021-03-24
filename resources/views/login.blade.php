@@ -16,7 +16,7 @@
                 <form method="POST" action="/login" enctype="multipart/form-data" >
                     @csrf
                     <div class="input-group mb-3">
-                        <h2 class="login__title">Sign In to POS</h2>
+                        <h2 class="login__title">Sign In to DOT</h2>
                         <p class="login__text">The work, the thought and the organization you put into this app is incredible.</p>
                     </div>
                     {{-- <div class="images mb-3">
