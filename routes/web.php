@@ -44,7 +44,8 @@ Route::post('/login',[LoginController::class,'authenticate']);
 Route::middleware(['auth'])->group(function () {
 
     // route to sall product
-    Route::view('/pos', 'pos');
+    // Route::view('/pos', 'pos');
+    Route::get('/pos/{id}', [TableController::class,'pos']);
 
     // Route to add and delete category livewire done here
     Route::get('/categories',[categorycontroller::class,'index']);
@@ -143,6 +144,9 @@ Route::middleware(['auth'])->group(function () {
 
     // route for logout
     Route::get('/logout',[LoginController::class,'logout']);
+
+    //table manage
+    Route::get('/table-manage',[TableController::class,'table_manage']);
 
 
 

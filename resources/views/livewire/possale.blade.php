@@ -13,19 +13,19 @@
             <option value="3">Three</option>
           </select></div> --}}
 
-        <div class="col-sm-12">
+        {{-- <div class="col-sm-12">
 
             <select wire:model='table' class="form-select form-select-lg mb-3" aria-label=".form-select-lg example">
-                <option selected>Choose Table</option>
+                <option selected>Choose Table</option> --}}
                 {{-- @foreach ($tableid as $table)
                 <option value="{{$table}}">{{$table->table_name}}</option>
                 @endforeach --}}
-                @foreach ($tableid as $item)
+                {{-- @foreach ($tableid as $item)
 
                 <option value="{{$item->table_id}}">{{$item->table_name}}</option>
                 @endforeach
             </select>
-        </div>
+        </div> --}}
     </div>
     {{-- <div class="row row__margin">
         <div class="col-sm-12"><form class="d-flex">

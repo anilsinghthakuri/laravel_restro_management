@@ -6,7 +6,12 @@
                     <div class="p-2 flex-grow-1 bd-highlight menu__part">
                         <a href="/dashboard">
                             <button type="button" class="btn btn-primary font-btn-part">
-                                <img src="img/menu.png" alt="menu"> Dashbord
+                                <img src="{{asset('img/menu.png')}}" alt="menu"> Dashbord
+                            </button>
+                        </a>
+                        <a href="/table-manage">
+                            <button type="button" class="btn btn-primary font-btn-part">
+                                <img src="{{asset('img/menu.png')}}" alt="menu"> Table Layout
                             </button>
                         </a>
 
@@ -16,7 +21,8 @@
                         <div class="btn-group">
                             <button type="button" class="btn btn-primary dropdown-toggle font-btn-part"
                                 data-bs-toggle="dropdown" aria-expanded="false">
-                                <img class="login__img" src="img/user.png" alt="menu"> {{Auth::user()->name}}
+                                <img class="login__img" src="{{asset('img/user.png')}}" alt="menu">
+                                {{Auth::user()->name}}
                             </button>
                             <ul class="dropdown-menu">
                                 <li><a class="dropdown-item" href="/adduser">Add User</a></li>
@@ -81,7 +87,7 @@
                 <div class="col px-0" onclick="play()" wire:click='addproduct({{$products->product_id}})'>
                     <div class="item__items item__height item__hover">
                         <div class="image__inner">
-                            <img src="img/{{$products->product_image}}" class="card-img-top" alt="...">
+                            <img src="{{asset('img/'.$products->product_image)}}" class="card-img-top" alt="...">
                         </div>
 
                         <div class="card-detail text-center">

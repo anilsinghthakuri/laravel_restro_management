@@ -22,10 +22,6 @@
 
 <body>
     <section class="add__categories">
-
-
-
-
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
 
             <a class="navbar-brand px-3" href="/dashboard">Dashbord</a>
@@ -35,8 +31,12 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarScroll">
                 <ul class="navbar-nav  navbar-nav--flex m-auto my-2  my-lg-0 navbar-nav-scroll">
-                    <li class="nav-item padding-left">
+                    {{-- <li class="nav-item padding-left">
                         <a class="nav-link  " aria-current="active" href="/pos"><i class="fa fa-credit-card"></i>
+                            pos</a>
+                    </li> --}}
+                     <li class="nav-item padding-left">
+                        <a class="nav-link  " aria-current="active" href="/table-manage"><i class="fa fa-credit-card"></i>
                             pos</a>
                     </li>
                     <li class="nav-item dropdown">
@@ -72,21 +72,6 @@
                             Collection</a>
                     </li>
 
-                    {{-- <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="productID" role="button"
-                            data-bs-toggle="dropdown" aria-expanded="false"><i class="fa fa-hospital"></i> Collection
-                        </a>
-                        <ul class="dropdown-menu" aria-labelledby="productID">
-
-
-                            <li>
-                                <a class="dropdown-item" href="/credits">Collection</a>
-                            </li>
-
-
-                        </ul>
-
-                    </li> --}}
 
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="productID" role="button"
@@ -217,7 +202,7 @@
                 </ul>
                 <ul class="d-flex flex-row justify-content-between ml-auto">
                     <li class="nav-item">
-                        <p class=" icon-height  "><img src="img/user1.png" alt=""> {{Auth::user()->name}}</p>
+                        <p class=" icon-height  "><img src="{{asset('img/user1.png')}}" alt=""> {{Auth::user()->name}}</p>
 
                     </li>
                     {{-- <li class="nav-item">

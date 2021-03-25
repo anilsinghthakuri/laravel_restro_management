@@ -25,7 +25,7 @@ class Possale extends Component
         $this->shipping = 0;
         $this->discount = 0;
         $this->tableid = $this->tablenameid();
-        $this->table = 0;
+
         $this->order  = Order::where('table_id',$this->table)->where('bill_status',0)->get();
         $this->totalprice = $this->totalamt();
         $this->grandprice = $this->grandpricecalc();
@@ -77,6 +77,8 @@ class Possale extends Component
 
             //save product on kot table by calling kot_product_add function
             $this->kot_product_add($id);
+            //table status
+            $this->table_status();
 
             $this->totalprice = $this->totalprice + $price;
             $this->grandprice = $this->grandpricecalc();
@@ -248,6 +250,12 @@ class Possale extends Component
     public function remove_all_one_product_kot($id)
     {
         Kot::where('product_id',$id)->delete();
+    }
+
+    //fun for make table status booked
+    private function table_status()
+    {
+        Table::where('table_id',$this->table)->update(['table_status'=>1]);
     }
 
 

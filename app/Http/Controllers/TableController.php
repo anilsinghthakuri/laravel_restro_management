@@ -56,4 +56,24 @@ class TableController extends Controller
         Table::where('table_id',$id)->delete();
         return redirect('/table')->with('message', 'Table deleted');
     }
+
+
+    //function for table manage
+
+    //fun for show pos by clicking on layout
+
+    public function pos($id)
+    {
+        return view('pos',[
+            'table'=>$id,
+        ]);
+    }
+
+    public function table_manage()
+    {
+        $tablename = $this->tablelist();
+        return view('table_manage.table_manage',[
+            'tablename'=>$tablename,
+        ]);
+    }
 }
