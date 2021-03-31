@@ -32,7 +32,7 @@
 
 
                             <section class="footer__part">
-                                @livewire('pos')
+                                @livewire('pos', ['table' => $table,'grandprice'=>$grandprice])
                             </section>
                         </div>
 

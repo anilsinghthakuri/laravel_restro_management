@@ -29,14 +29,16 @@
 
         <div class="col-md-2">
             <div class="card__design ">
-                <div class="card text-center bg-info">
-                    <div class="card-body ">
-                        <h5 class="card-title title--bill  text-light">{{$item->table_name}}</h5>
+                <a href="/pos/{{$item->table_id}}/{{$item->table_amount}}">
+                    <div class="card text-center bg-info">
+                        <div class="card-body ">
+                            <h5 class="card-title title--bill  text-light">{{$item->table_name}}</h5>
+                        </div>
+                        <div class="card-footer text-muted text-bill ">
+                            <h3 class="  text-light">{{$item->table_amount}}</h3>
+                        </div>
                     </div>
-                    <div class="card-footer text-muted text-bill ">
-                        <h3 class="  text-light">500</h3>
-                    </div>
-                </div>
+                </a>
             </div>
         </div>
 
@@ -44,14 +46,16 @@
 
         <div class="col-md-2">
             <div class="card__design ">
-                <div class="card text-center bg-warning">
-                    <div class="card-body ">
-                        <h5 class="card-title title--bill  text-light">{{$item->table_name}}</h5>
+                <a href="/pos/{{$item->table_id}}/{{$item->table_amount}}">
+                    <div class="card text-center bg-warning">
+                        <div class="card-body ">
+                            <h5 class="card-title title--bill  text-light">{{$item->table_name}}</h5>
+                        </div>
+                        <div class="card-footer text-muted text-bill ">
+                            <h3 class="  text-light">{{$item->table_amount}}</h3>
+                        </div>
                     </div>
-                    <div class="card-footer text-muted text-bill ">
-                        <h3 class="  text-light">500</h3>
-                    </div>
-                </div>
+                </a>
             </div>
         </div>
 
@@ -59,13 +63,13 @@
 
         <div class="col-md-2">
             <div class="card__design ">
-                <a href="#">
+                <a href="/pos/{{$item->table_id}}/{{$item->table_amount}}">
                     <div class="card text-center bg-danger">
                         <div class="card-body ">
                             <h5 class="card-title title--bill  text-light">{{$item->table_name}}</h5>
                         </div>
                         <div class="card-footer text-muted text-bill ">
-                            <h3 class="  text-light">500</h3>
+                            <h3 class="  text-light">{{$item->table_amount}}</h3>
                         </div>
                     </div>
                 </a>
@@ -88,13 +92,13 @@
 
         <div class="col-md-2">
             <div class="card__design ">
-                <a href="/pos/{{$item->table_id}}">
+                <a href="/pos/{{$item->table_id}}/{{$item->table_amount}}">
                     <div class="card text-center bg-success">
                         <div class="card-body ">
                             <h5 class="card-title title--bill  text-light">{{$item->table_name}}</h5>
                         </div>
                         <div class="card-footer text-muted text-bill ">
-                            <h3 class="  text-light">500</h3>
+                            <h3 class="  text-light">{{$item->table_amount}}</h3>
                         </div>
                     </div>
                 </a>

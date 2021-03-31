@@ -19,7 +19,7 @@ use Livewire\Component;
 
 class Pos extends Component
 {
-    public $table  = 0;
+    public $table;
     public $tablelist = [];
     public $changeamount = 0;
     public $grandprice;
@@ -40,6 +40,7 @@ class Pos extends Component
         $this->table_order = $this->table_order_data();
         $this->customerlist = $this->customer_list();
         $this->paymentmethodlist = $this->payment_method_list();
+
     }
 
     public function updatedPayingamount()
@@ -85,6 +86,7 @@ class Pos extends Component
                     $bill->customer_id = $this->customer;
                     $bill->save();
 
+
                     return redirect()->route('bill.print', [
                         $table,
 
@@ -125,6 +127,7 @@ class Pos extends Component
                                 $bill->nepali_date = $this->nepalidate();
                                 $bill->customer_id = $this->customer;
                                 $bill->save();
+
                                 return redirect()->route('bill.print', [
                                     $table,
                                  ]);
@@ -147,50 +150,40 @@ class Pos extends Component
                                 $bill->nepali_date = $this->nepalidate();
                                 $bill->customer_id = $this->customer;
                                 $bill->save();
+
                                 return redirect()->route('bill.print', [
                                     $table,
                             ]);
 
                              }
-
-
-
                     }
 
                 }
 
-
             }
-
-
-
-            // Order::where('table_id',$table)->where('bill_status',0)->update(['bill_status' => 1]);
-
-            // $this->emit('billdata',$orderdata);
-
-            // $this->emit('refreshaftersell');
-            // dd($table);
-
         }
 
     }
 
     public function kot_bill_print($table)
     {
-        if ($table == 0) {
+        if ($this->table == 0) {
             dd('select table ');
         }
         else{
 
-            if ($this->grandprice == null) {
+            if ($this->grandprice == 0) {
+
 
                 dd('table is empty');
             }
             else{
-
+                Table::where('table_id',$table)->update(['table_status'=>2]);
                 return redirect()->route('kot.print',[
                     $table,
                 ]);
+
+
 
             }
 
@@ -267,6 +260,26 @@ class Pos extends Component
 
         return $current_date;
 
+    }
+
+    //fun for make table bill not settle
+    private function bill_not_settle()
+    {
+        Table::where('table_id',$this->table)->update(['table_status'=>3]);
+    }
+
+    //fun for make bill settle
+    public function settle()
+    {
+        $bill_num  = $this->bill_number();
+        Table::where('table_id',$this->table)->update(['table_amount'=>0,'table_status'=>0]);
+        Order::where('table_id',$this->table)->where('bill_status',0)->update(['bill_status' => 1,'bill_id'=>$bill_num]);
+        return redirect()->route('table.manage');
+    }
+
+    private function bill_number(){
+        $bill_num = Bill::max('bill_id');
+       return $bill_num;
     }
 
     public function render()

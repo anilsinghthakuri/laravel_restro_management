@@ -29,6 +29,7 @@ class Possale extends Component
         $this->order  = Order::where('table_id',$this->table)->where('bill_status',0)->get();
         $this->totalprice = $this->totalamt();
         $this->grandprice = $this->grandpricecalc();
+        $this->emit('changecalc',$this->table,$this->grandprice);
 
     }
     public function updatedTable()
@@ -114,7 +115,7 @@ class Possale extends Component
         $order->save();
 
         $this->kot_product_add($product_id);
-
+        $this->table_status();
         $this->totalprice = $this->totalamt();
         $this->grandprice = $this->grandpricecalc();
 
@@ -149,7 +150,9 @@ class Possale extends Component
 
 
             $this->order  = Order::where('table_id',$this->table)->where('bill_status',0)->get();
+
         }
+
     }
 
     public function totalamt()
@@ -168,16 +171,25 @@ class Possale extends Component
     public function deleteorder($order_id)
     {
         // dd($order_id);
+
         $order = Order::Find($order_id);
-        $subprice = $order['order_subprice'];
-        $product = $order['product_id'];
-        $this->totalprice = $this->totalprice - $subprice;
-        $this->grandprice = $this->grandpricecalc();
+            $subprice = $order['order_subprice'];
+            $product = $order['product_id'];
+            $this->totalprice = $this->totalprice - $subprice;
+            $this->grandprice = $this->grandpricecalc();
 
-        $this->remove_all_one_product_kot($product);
+            $this->remove_all_one_product_kot($product);
 
-        Order::where('order_id',$order_id)->delete();
-        $this->order  = Order::where('table_id',$this->table)->where('bill_status',0)->get();
+            Order::where('order_id',$order_id)->delete();
+            $this->order  = Order::where('table_id',$this->table)->where('bill_status',0)->get();
+
+        $table_check = Order::where('table_id',$this->table)->where('bill_status',0)->get();
+
+        if ($table_check->isEmpty()) {
+           $this->table_free();
+        }
+
+
     }
     public function tablenameid()
     {
@@ -193,6 +205,7 @@ class Possale extends Component
     {
         $grandprice = $this->totalprice ;
         $this->emit('changecalc',$this->table,$grandprice);
+        Table::where('table_id',$this->table)->update(['table_amount'=>$grandprice]);
         return $grandprice;
     }
 
@@ -256,6 +269,12 @@ class Possale extends Component
     private function table_status()
     {
         Table::where('table_id',$this->table)->update(['table_status'=>1]);
+    }
+
+    //fun for table remove all product
+    private function table_free()
+    {
+        Table::where('table_id',$this->table)->update(['table_status'=>0]);
     }
 
 

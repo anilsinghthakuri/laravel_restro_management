@@ -16,42 +16,56 @@ class DatabaseSeeder extends Seeder
     public function run()
     {
         // \App\Models\User::factory(10)->create();
-        DB::table('categories')->insert([
-            'category_name'=>'momo',
-            'category_image'=>'food1.jpg',
 
-        ]);
 
-        DB::table('tables')->insert([
-            'table_name'=>'table1',
-
-        ]);
-        DB::table('tables')->insert([
-            'table_name'=>'table2',
-
-        ]);
-        DB::table('tables')->insert([
-            'table_name'=>'table3',
-
-        ]);
-
-        DB::table('products')->insert([
-            'product_name'=>'chickenMOMO',
-            'product_price' => 200,
-            'product_image' => 'food1.jpg',
-            'category_id' => 1,
-        ]);
-        DB::table('products')->insert([
-            'product_name'=>'steemMOMO',
-            'product_price' => 100,
-            'product_image' => 'food2.jpg',
-            'category_id' => 1,
-        ]);
         DB::table('users')->insert([
-            'name'=>'anil',
+            'name'=>'Admin',
             'email' => 'admin@user.com',
-            'password' => Hash::make('anil'),
+            'password' => Hash::make('1234'),
         ]);
+        DB::table('tables')->insert([
+
+            'table_name' => 'table 1',
+        ]);
+        DB::table('tables')->insert([
+
+            'table_name' => 'table 2',
+        ]);
+        DB::table('tables')->insert([
+
+            'table_name' => 'table 3',
+        ]);
+        DB::table('tables')->insert([
+
+            'table_name' => 'table 4',
+        ]);
+
+        DB::table('categories')->insert([
+
+            'category_name' => 'Momo',
+            'category_image' => 'food1.jpg',
+        ]);
+
+        DB::table('categories')->insert([
+
+            'category_name' => 'Roll',
+            'category_image' => 'food2.jpg',
+        ]);
+        DB::table('products')->insert([
+
+            'product_name' => 'Egg Roll',
+            'product_price' => '175',
+            'product_image' => 'food3.jpg',
+            'category_id' => '2',
+        ]);
+        DB::table('products')->insert([
+
+            'product_name' => 'Steem Momo',
+            'product_price' => '120',
+            'product_image' => 'food1.jpg',
+            'category_id' => '1',
+        ]);
+
         DB::table('companydatas')->insert([
             'company_name'=>'Dotsoftech',
             'company_address' => 'Dhangadhi kailali',

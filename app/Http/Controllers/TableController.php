@@ -62,10 +62,11 @@ class TableController extends Controller
 
     //fun for show pos by clicking on layout
 
-    public function pos($id)
+    public function pos($id,$grandprice)
     {
         return view('pos',[
             'table'=>$id,
+            'grandprice'=>$grandprice,
         ]);
     }
 

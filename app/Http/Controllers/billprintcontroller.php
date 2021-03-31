@@ -12,6 +12,7 @@ use App\Models\Companydata;
 use App\Models\Kot;
 use App\Models\Order;
 use App\Models\Product;
+use App\Models\Table;
 use Carbon\Carbon;
 use Exception;
 use Illuminate\Http\Request;
@@ -20,6 +21,7 @@ use mysqli;
 
 class billprintcontroller extends Controller
 {
+
 
     public function index($table)
     {
@@ -44,8 +46,8 @@ class billprintcontroller extends Controller
         }
         else{
             $total_price = array_sum($total);
-            Order::where('table_id',$table)->where('bill_status',0)->update(['bill_status' => 1,'bill_id'=>$bill_num]);
-
+            // Order::where('table_id',$table)->where('bill_status',0)->update(['bill_status' => 1,'bill_id'=>$bill_num]);
+            Table::where('table_id',$table)->update(['table_status'=>3]);
 
         try {
 
@@ -212,12 +214,6 @@ class billprintcontroller extends Controller
 
     }
 
-    public function test()
-    {
-        $item = [];
-        $orderdata = Order::where('table_id',1)->where('bill_status',0)->with('product')->get();
-        die($orderdata);
-    }
 
    private function pull_bill_data($id){
        $bill_data = Bill::find($id);
