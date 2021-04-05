@@ -3,19 +3,7 @@
 @section('components')
 <div class="col-md-12 mt-3 ">
 
-    <div class="row">
-        <div class="col-md-12">
-            <div class="top-part">
-                <div class="d-flex bd-highlight">
-                    <div class="p-2 flex-grow-1 bd-highlight menu__part"><img src="/img/menu.png" alt="menu"></div>
 
-                    <div class="p-2 bd-highlight login__part"><img class="login__img" src="/img/user.png"
-                            alt="menu">Login</div>
-                </div>
-            </div>
-        </div>
-
-    </div>
     <div class="row ">
         <div class="col-md-12 pt-2">
             <div class="add__categories_bottom">
@@ -59,12 +47,6 @@
 
                 <label for="exampleInputEmail1" class="form-label">Product Name</label>
 
-                <!--<div class="input-group mb-3">
-                    <label class="input-group-text" for="name">Name</label>
-                    <input type="text" name="productname">
-                    </select>
-                </div>-->
-
                 <div class="input-group mb-3">
                     <span class="input-group-text"  for="name" id="basic-addon1"><i class="fa fa-pencil" aria-hidden="true"></i></span>
                     <input type="text" class="form-control" name="productname" id="" value={{$product->product_name}} aria-label="Username" aria-describedby="basic-addon1">
@@ -75,27 +57,10 @@
 
                 <label for="exampleInputEmail1" class="form-label">Product Price</label>
 
-
-                <!--<div class="input-group mb-3">
-                    <label class="input-group-text" for="productprice">Price</label>
-                    <input type="number" name="productprice" id="">
-                    </select>
-                </div>-->
-
                 <div class="input-group mb-3">
                     <span class="input-group-text"  for="productprice" id="basic-addon1"><i class="fa fa-pencil" aria-hidden="true"></i></span>
                     <input type="number" class="form-control" name="productprice" id="" value="{{$product->product_price}}" aria-label="Username" aria-describedby="basic-addon1">
                 </div>
-
-            </div>
-            <div class="col-md-4">
-
-                <div class=" mb-3">
-                    <label for="formFile" class="form-label">Images</label>
-                    <input class="form-control" type="file" value="{{$product->product_image}}" name="file">
-                    </select>
-                </div>
-
 
             </div>
 

@@ -30,7 +30,7 @@ class categorycontroller extends Controller
         $file->move($destinationPath, $originalFile);
         $category  = new Category;
         $category->category_name = $request->categoryname;
-        $category->category_image = $originalFile;
+        // $category->category_image = $originalFile;
         $category->save();
         return redirect('/categories')->with('message', 'categories updated');
 
@@ -58,7 +58,7 @@ class categorycontroller extends Controller
             $file->move($destinationPath, $originalFile);
             $category  = Category::Find($id);
             $category->category_name = $request->categoryname;
-            $category->category_image = $originalFile;
+            // $category->category_image = $originalFile;
             $category->save();
 
         return redirect('/categories')->with('message', 'category updated');

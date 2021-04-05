@@ -43,26 +43,22 @@ class DatabaseSeeder extends Seeder
         DB::table('categories')->insert([
 
             'category_name' => 'Momo',
-            'category_image' => 'food1.jpg',
         ]);
 
         DB::table('categories')->insert([
 
             'category_name' => 'Roll',
-            'category_image' => 'food2.jpg',
         ]);
         DB::table('products')->insert([
 
             'product_name' => 'Egg Roll',
             'product_price' => '175',
-            'product_image' => 'food3.jpg',
             'category_id' => '2',
         ]);
         DB::table('products')->insert([
 
             'product_name' => 'Steem Momo',
             'product_price' => '120',
-            'product_image' => 'food1.jpg',
             'category_id' => '1',
         ]);
 

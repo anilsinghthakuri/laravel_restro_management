@@ -14,6 +14,7 @@
     <link rel="stylesheet" href="/css/login.css">
     <link rel="stylesheet" href="{{asset('font/fonts.css')}}">
     <link rel="stylesheet" href="{{asset('nepali_date/nepali-date-picker.min.css')}}">
+    <link rel="stylesheet" href="//cdn.datatables.net/1.10.24/css/jquery.dataTables.min.css">
 
 
     @livewireStyles
@@ -31,10 +32,7 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarScroll">
                 <ul class="navbar-nav  navbar-nav--flex m-auto my-2  my-lg-0 navbar-nav-scroll">
-                    {{-- <li class="nav-item padding-left">
-                        <a class="nav-link  " aria-current="active" href="/pos"><i class="fa fa-credit-card"></i>
-                            pos</a>
-                    </li> --}}
+
                      <li class="nav-item padding-left">
                         <a class="nav-link  " aria-current="active" href="/table-manage"><i class="fa fa-credit-card"></i>
                             pos</a>
@@ -101,24 +99,15 @@
 
                         <ul class="dropdown-menu" aria-labelledby="saleID">
 
-
-                            <li>
-                                <a class="dropdown-item" href="/pos">Pos</a>
-                            </li>
                             <li>
                                 <a class="dropdown-item" href="#">Add Sale</a>
                             </li>
                             <li>
-                                <a class="dropdown-item" href="">Sales Return</a>
+                                <a class="dropdown-item" href="#">Sales Return</a>
                             </li>
                             <li>
                                 <a class="dropdown-item" href="/total-sale">Total Sale</a>
                             </li>
-
-
-                            {{-- <li>
-                                <a class="dropdown-item" href="/credits">Credit Collection </a>
-                            </li> --}}
                         </ul>
 
                     </li>
@@ -223,13 +212,8 @@
 
                 <div class="row">
 
-                    {{-- <div class="col-md-3 sidebar__col__div px-0">
-
-                        @include('layouts.nav')
-
-                    </div> --}}
-
                     @yield('components')
+
                 </div>
             </div>
         </div>
@@ -243,7 +227,8 @@
     <script src="/js/script.js"></script>
     @livewireScripts
 
-
+    <script src="//cdn.datatables.net/1.10.24/js/jquery.dataTables.min.js"></script>
+    <script src="{{asset('js/datatable.js')}}"></script>
     <script src="{{asset('bootstrap/js/bootstrap.min.js')}}"></script>
 
 </body>

@@ -24,7 +24,7 @@
             <div class="tab-content" id="nav-tabContent">
                 <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
                     <div class="table-responsive">
-                    <table class="table table-bordered bg-light">
+                    <table class="table table-bordered bg-light" id="datatable">
                         <thead>
                           <tr>
                             <th scope="col">Order ID</th>
@@ -52,7 +52,7 @@
                 </div>
                 <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
                     <div class="table-responsive">
-                    <table class="table table-bordered bg-light table-responsiv ">
+                    <table class="table table-bordered bg-light table-responsiv " id="datatable">
                         <thead>
                           <tr>
                             <th scope="col">Order ID</th>
@@ -80,7 +80,7 @@
                 </div>
                 <div class="tab-pane fade" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab">
                     <div class="table-responsive">
-                    <table class="table table-bordered bg-light  ">
+                    <table class="table table-bordered bg-light  " id="datatable">
                         <thead>
                           <tr>
                             <th scope="col">Order ID</th>

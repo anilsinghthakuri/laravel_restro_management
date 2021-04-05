@@ -87,6 +87,7 @@ class Pos extends Component
                     $bill->save();
 
 
+
                     return redirect()->route('bill.print', [
                         $table,
 

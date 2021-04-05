@@ -53,7 +53,7 @@
         <div class="col-md-12">
             <div class="table__list__part ">
                 <div class="table-responsive">
-                <table class="table table-bordered bg-light table-responsiv">
+                <table class="table table-bordered bg-light table-responsiv" id="datatable">
                     <thead>
                         <tr>
                             <th scope="col">S.N</th>

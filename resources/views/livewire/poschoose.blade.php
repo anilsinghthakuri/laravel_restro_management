@@ -86,9 +86,9 @@
                 @foreach ($product as $products)
                 <div class="col px-0" onclick="play()" wire:click='addproduct({{$products->product_id}})'>
                     <div class="item__items item__height item__hover">
-                        <div class="image__inner">
+                        {{-- <div class="image__inner">
                             <img src="{{asset('img/'.$products->product_image)}}" class="card-img-top" alt="...">
-                        </div>
+                        </div> --}}
 
                         <div class="card-detail text-center">
                             <h5 class="card-title"> {{$products->product_name}}</h5>
@@ -130,9 +130,9 @@
                     @foreach ($categorylist as $item)
                     <div class="col px-0" wire:click='choosecategory({{$item->category_id}})'>
                         <div class="item__items item__height item__hover">
-                            <div class="image__inner">
+                            {{-- <div class="image__inner">
                                 <img src="/img/{{$item->category_image }}" class="card-img-top" alt="...">
-                            </div>
+                            </div> --}}
 
                             <div class="card-detail text-center">
                                 <h5 class="card-title"> {{$item->category_name}}</h5>

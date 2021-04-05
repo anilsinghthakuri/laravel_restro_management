@@ -37,7 +37,7 @@
                 </div>
                 <div class="table-responsive">
 
-                <table class="table table-bordered bg-light ">
+                <table class="table table-bordered bg-light " id="datatable">
 
                     <thead>
                         <tr>

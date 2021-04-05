@@ -29,7 +29,7 @@
             {{-- <h4 class="add__table__title mb-4">Credit Collection</h4> --}}
             <div class="table__list__part ">
                 <div class="table-responsive">
-                <table class="table table-bordered bg-light table-responsiv">
+                <table class="table table-bordered bg-light table-responsiv" id="datatable">
                     <thead>
                         <tr>
                             <th scope="col">S.N</th>

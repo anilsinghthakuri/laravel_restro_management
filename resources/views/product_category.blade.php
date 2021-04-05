@@ -28,12 +28,12 @@
                         <input type="text" class="form-control" required placeholder="Category Name" name="categoryname" aria-label="Username"
                             aria-describedby="basic-addon1">
                     </div>
-                    <div class="input-group  mb-3">
+                    {{-- <div class="input-group  mb-3">
 
                         <input type="file" class="form-control" required  name="file" aria-label="Username"
                                 aria-describedby="basic-addon1">
 
-                    </div>
+                    </div> --}}
                     <button type="submit" class="btn btn-primary">Submit</button>
                 </form>
 
@@ -47,12 +47,12 @@
                         <input type="text" class="form-control" required value="{{$category->category_name}}" name="tablename" aria-label="Username"
                             aria-describedby="basic-addon1">
                     </div>
-                    <div class="input-group  mb-3">
+                    {{-- <div class="input-group  mb-3">
 
                         <input type="file" class="form-control"  name="file" aria-label="Username"
                                 aria-describedby="basic-addon1">
 
-                    </div>
+                    </div> --}}
                     <button type="submit" class="btn btn-primary">Update</button>
                     <a href="/product"><button class="btn btn-danger">Cancel</button></a>
                 </form>
@@ -66,12 +66,12 @@
         <div class="col-md-12">
             <div class="table__list__part ">
                 <div class="table-responsive">
-                <table class="table table-bordered bg-light">
+                <table class="table table-bordered bg-light" id="datatable">
                     <thead>
                         <tr>
                             <th scope="col">S.N</th>
                             <th scope="col">Category Name</th>
-                            <th scope="col">Category image</th>
+                            {{-- <th scope="col">Category image</th> --}}
                             <th scope="col">Action</th>
 
                         </tr>
@@ -82,7 +82,7 @@
                         <tr>
                             <th scope="row">{{$loop->iteration}}</th>
                             <td>{{$item->category_name}}</td>
-                            <td><img class="table__images" src="/img/{{$item->category_image}}" alt="{{$item->category_image}}" height="25px" width="250px"></td>
+                            {{-- <td><img class="table__images" src="/img/{{$item->category_image}}" alt="{{$item->category_image}}" height="25px" width="250px"></td> --}}
                             <td class="d-flex">
                                 <a href="/categories/{{$item->category_id}}"><button type="button" class="btn btn-primary action-btn"><i class="fas fa-edit"></i></button></a>
 

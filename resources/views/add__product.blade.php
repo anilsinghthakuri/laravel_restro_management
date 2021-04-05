@@ -88,34 +88,10 @@
                 </div>
 
             </div>
-            <div class="col-md-4">
-
-                <div class=" mb-3">
-                    <label for="formFile" class="form-label">Images</label>
-                    <input class="form-control" type="file" name="file">
-                    </select>
-                </div>
-
-
-            </div>
 
         </div>
         <button type="submit" class="btn btn-primary">Submit</button>
     </form>
-    {{-- <div class="row pagination__right pagination__add_product">
-        <div class="d-flex flex-row-reverse">
-            <nav aria-label="Page ">
-                <ul class="pagination">
-                    <li class="page-item"><a class="page-link" href="#">Previous</a></li>
-                    <li class="page-item"><a class="page-link" href="#">1</a></li>
-                    <li class="page-item"><a class="page-link" href="#">2</a></li>
-                    <li class="page-item"><a class="page-link" href="#">3</a></li>
-                    <li class="page-item"><a class="page-link" href="#">Next</a></li>
-                </ul>
-            </nav>
-        </div>
-
-    </div> --}}
 
 </div>
 @endsection

@@ -36,7 +36,7 @@
                     @endif
                 </div>
                 <div class="table-responsive">
-                <table class="table table-bordered bg-light table-responsiv">
+                <table class="table table-bordered bg-light table-responsiv" id="datatable">
 
                     <thead>
                         <tr>

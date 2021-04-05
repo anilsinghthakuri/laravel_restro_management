@@ -41,12 +41,11 @@
                    </div>
                    <div class="table-responsive">
 
-                <table class="table table-bordered bg-light table-responsiv">
+                <table class="table table-bordered bg-light table-responsiv" id="datatable">
 
                     <thead>
                         <tr>
-                            <th scope="col">#</th>
-                            <th scope="col">Image</th>
+                            <th scope="col">S.N</th>
                             <th scope="col">Name</th>
                             <th scope="col">Code</th>
                             <th scope="col">Category Id</th>
@@ -59,12 +58,8 @@
                         @foreach ($productlist as $item)
                         <tr>
                             <th scope="row">{{$loop->iteration}}</th>
-                            <td class="image-categories"><img class="img__product" src="img/{{$item->product_image}}"
-                                    class="img-fluid" alt="...">
-                            </td>
-
                             <td>{{$item->product_name}}</td>
-                            <td>{{$loop->iteration}}</td>
+                            <td>{{$item->product_id}}</td>
                             <td>{{$item->category_id}}</td>
                             <td>{{$item->product_price}}</td>
                             <td >
