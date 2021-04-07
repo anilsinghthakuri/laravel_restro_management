@@ -27,9 +27,10 @@ class Pos extends Component
     public $shifting_table = 0;
     public $table_order = [];
     public $customerlist =[];
-    public $payment = 0;
+    public $payment = 1;
     public $customer = 1;
     public $paymentmethodlist = [];
+    public $check_bill_status = [];
 
     protected $listeners = ['changecalc'];
 
@@ -90,7 +91,6 @@ class Pos extends Component
 
                     return redirect()->route('bill.print', [
                         $table,
-
                         ]);
                 }
                 else{
@@ -129,6 +129,7 @@ class Pos extends Component
                                 $bill->customer_id = $this->customer;
                                 $bill->save();
 
+
                                 return redirect()->route('bill.print', [
                                     $table,
                                  ]);
@@ -151,6 +152,7 @@ class Pos extends Component
                                 $bill->nepali_date = $this->nepalidate();
                                 $bill->customer_id = $this->customer;
                                 $bill->save();
+
 
                                 return redirect()->route('bill.print', [
                                     $table,
@@ -272,10 +274,16 @@ class Pos extends Component
     //fun for make bill settle
     public function settle()
     {
-        $bill_num  = $this->bill_number();
         Table::where('table_id',$this->table)->update(['table_amount'=>0,'table_status'=>0]);
-        Order::where('table_id',$this->table)->where('bill_status',0)->update(['bill_status' => 1,'bill_id'=>$bill_num]);
+        $this->order_bill_status_update($this->table);
         return redirect()->route('table.manage');
+    }
+
+
+    //for disable the settel button
+    public function bill_check_status()
+    {
+        $this->check_bill_status = Order::where('table_id',$this->table)->where('bill_status',0)->get();
     }
 
     private function bill_number(){
@@ -283,8 +291,16 @@ class Pos extends Component
        return $bill_num;
     }
 
+   private function order_bill_status_update($table)
+   {
+       $bill_num  = $this->bill_number();
+       Order::where('table_id',$table)->where('bill_status',0)->update(['bill_status' => 1,'bill_id'=>$bill_num]);
+   }
+
+
     public function render()
     {
+        $this->bill_check_status();
         return view('livewire.pos');
     }
 }

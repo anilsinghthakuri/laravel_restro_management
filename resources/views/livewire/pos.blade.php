@@ -8,10 +8,16 @@
                     </div> --}}
                     <div class="btn__full_width "><button type="button" onclick="play()" wire:click = "kot_bill_print({{$table}})"  class="btn btn-warning btn-md px-4 mb-3 P-class-btn">KOT</button>
                     </div>
-                    <div class="btn__full_width mx-2"><button type="button" onclick="play()"  class="btn btn-info btn-md px-4 mb-3 P-class-btn"  data-bs-toggle="modal" data-bs-target="#table_shift_toggle">Table Shift</button>
+                    <div class="btn__full_width mx-2"><button type="button" onclick="play()"   class="btn btn-info btn-md px-4 mb-3 P-class-btn"  data-bs-toggle="modal" data-bs-target="#table_shift_toggle">Table Shift</button>
                     </div>
+                    @if ($check_bill_status == null)
                     <div class="btn__full_width mx-2"><button type="button" onclick="play()" wire:click = "settle()" class="btn btn-primary btn-md px-4 mb-3 P-class-btn" >Settle</button>
                     </div>
+                    @else
+                    <div class="btn__full_width mx-2"><button type="button" onclick="play()" wire:click = "settle()" class="btn btn-primary btn-md px-4 mb-3 P-class-btn" disabled >Settle</button>
+                    </div>
+                    @endif
+
                     <div class="btn__full_width"><button type="button" value="PLAY" onclick="play()" wire:click = "changecalc($table,$grandprice)" class="btn btn-danger btn-md px-4 mb-3 P-class-btn"
                             data-bs-toggle="modal" data-bs-target="#cash_toggle">Check Out</button></div>
                 </div>

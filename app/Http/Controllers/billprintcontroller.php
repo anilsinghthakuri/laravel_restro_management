@@ -25,7 +25,6 @@ class billprintcontroller extends Controller
 
     public function index($table)
     {
-        // dd($table);
 
         $companydata = $this->pull_company_data();
         $bill_num  = $this->bill_number();
@@ -36,17 +35,21 @@ class billprintcontroller extends Controller
 
         $total = [];
         $orderdata = Order::where('table_id',$table)->where('bill_status',0)->with('product')->get();
+
         foreach ($orderdata as $key => $value)
          {
          $total[] = $orderdata[$key]['order_subprice'];
          }
 
         if($total == null){
-
+            dd($total);
         }
         else{
+
+
             $total_price = array_sum($total);
-            // Order::where('table_id',$table)->where('bill_status',0)->update(['bill_status' => 1,'bill_id'=>$bill_num]);
+
+
             Table::where('table_id',$table)->update(['table_status'=>3]);
 
         try {
@@ -219,16 +222,15 @@ class billprintcontroller extends Controller
        $bill_data = Bill::find($id);
        return $bill_data;
    }
-   private function bill_number(){
-       $bill_num = Bill::max('bill_id');
-      return $bill_num;
-   }
+
 
    private function pull_company_data()
    {
        $companydata = DB::table('companydatas')->first();
        return $companydata;
    }
+
+
 
 
 

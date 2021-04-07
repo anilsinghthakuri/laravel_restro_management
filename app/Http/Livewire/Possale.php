@@ -17,6 +17,7 @@ class Possale extends Component
     public $shipping = 0;
     public $discount = 0;
     public $grandprice = 0;
+    public $kotdata= [];
     public $listeners = ['orderadd','refreshaftersell'];
 
 
@@ -27,6 +28,8 @@ class Possale extends Component
         $this->tableid = $this->tablenameid();
 
         $this->order  = Order::where('table_id',$this->table)->where('bill_status',0)->get();
+
+        $this->kotdata = $this->tablebooked_data();
         $this->totalprice = $this->totalamt();
         $this->grandprice = $this->grandpricecalc();
         $this->emit('changecalc',$this->table,$this->grandprice);
@@ -206,6 +209,7 @@ class Possale extends Component
         $grandprice = $this->totalprice ;
         $this->emit('changecalc',$this->table,$grandprice);
         Table::where('table_id',$this->table)->update(['table_amount'=>$grandprice]);
+        $this->kotdata = $this->tablebooked_data();
         return $grandprice;
     }
 
@@ -275,6 +279,14 @@ class Possale extends Component
     private function table_free()
     {
         Table::where('table_id',$this->table)->update(['table_status'=>0]);
+    }
+
+    //show the table booked data
+
+    public function tablebooked_data()
+    {
+        $kotdata  = Kot::all();
+        return $kotdata;
     }
 
 
