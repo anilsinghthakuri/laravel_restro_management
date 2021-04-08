@@ -42,7 +42,7 @@ class billprintcontroller extends Controller
          }
 
         if($total == null){
-            dd($total);
+            dd('bill already generated');
         }
         else{
 
@@ -51,6 +51,7 @@ class billprintcontroller extends Controller
 
 
             Table::where('table_id',$table)->update(['table_status'=>3]);
+
 
         try {
 
@@ -230,9 +231,16 @@ class billprintcontroller extends Controller
        return $companydata;
    }
 
+   private function bill_number(){
+    $bill_num = Bill::max('bill_id');
+    return $bill_num;
+    }
 
-
-
+    private function order_bill_status_update($table)
+    {
+        $bill_num  = $this->bill_number();
+        Order::where('table_id',$table)->where('bill_status',0)->update(['bill_status' => 1,'bill_id'=>$bill_num]);
+    }
 
 }
 

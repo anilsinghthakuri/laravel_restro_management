@@ -10,16 +10,10 @@
                     </div>
                     <div class="btn__full_width mx-2"><button type="button" onclick="play()"   class="btn btn-info btn-md px-4 mb-3 P-class-btn"  data-bs-toggle="modal" data-bs-target="#table_shift_toggle">Table Shift</button>
                     </div>
-                    @if ($check_bill_status == null)
-                    <div class="btn__full_width mx-2"><button type="button" onclick="play()" wire:click = "settle()" class="btn btn-primary btn-md px-4 mb-3 P-class-btn" >Settle</button>
+                    <div class="btn__full_width mx-2"><button type="button" onclick="play()" wire:click = 'checkout({{$table}})'class="btn btn-danger btn-md px-4 mb-3 P-class-btn"  >Draft</button>
                     </div>
-                    @else
-                    <div class="btn__full_width mx-2"><button type="button" onclick="play()" wire:click = "settle()" class="btn btn-primary btn-md px-4 mb-3 P-class-btn" disabled >Settle</button>
-                    </div>
-                    @endif
-
-                    <div class="btn__full_width"><button type="button" value="PLAY" onclick="play()" wire:click = "changecalc($table,$grandprice)" class="btn btn-danger btn-md px-4 mb-3 P-class-btn"
-                            data-bs-toggle="modal" data-bs-target="#cash_toggle">Check Out</button></div>
+                    <div class="btn__full_width"><button type="button" value="PLAY" onclick="play()" class="btn btn-success btn-md px-4 mb-3 P-class-btn" wire:click = "changecalc($table,$grandprice)"
+                            data-bs-toggle="modal" data-bs-target="#cash_toggle">Settle</button></div>
                 </div>
             </div>
         </div>
@@ -39,7 +33,7 @@
                     @endif
                 </div>
                 <div class="modal-header">
-                    <h5 class="modal-title" id="cash_toggleLabel">Billing Sale</h5>
+                    <h5 class="modal-title" id="cash_toggleLabel">Sale</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
 
@@ -110,7 +104,7 @@
                                 @endif
 
                             </div>
-                            <div class="row">
+                            {{-- <div class="row">
                                 <div class="col-md-12 ms-auto">
                                     <div class="mb-3">
                                         <label for="message-text" class="col-form-label">Payment Note:</label>
@@ -132,14 +126,15 @@
                                         <textarea class="form-control" id="message-text"></textarea>
                                       </div>
                                 </div>
-                            </div>
+                            </div> --}}
                         </form>
                     </div>
                 </div>
                     {{-- this is footer --}}
 
                 <div class="modal-footer">
-                    <button type="submit" wire:click = 'checkout({{$table}})' class="btn btn-primary">Check out Bill</button>
+                    <button type="submit" wire:click = 'settle()' class="btn btn-primary">Check Out
+                    </button>
                 </div>
             </div>
         </div>

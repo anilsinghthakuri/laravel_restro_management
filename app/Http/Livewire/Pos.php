@@ -177,7 +177,6 @@ class Pos extends Component
 
             if ($this->grandprice == 0) {
 
-
                 dd('table is empty');
             }
             else{
@@ -185,8 +184,6 @@ class Pos extends Component
                 return redirect()->route('kot.print',[
                     $table,
                 ]);
-
-
 
             }
 
@@ -203,6 +200,7 @@ class Pos extends Component
     public function table_order_data()
     {
         $table_order = Order::where('table_id',$this->table)->where('bill_status',0)->get();
+        $this->bill_check_status();
         return $table_order;
     }
 
@@ -283,7 +281,7 @@ class Pos extends Component
     //for disable the settel button
     public function bill_check_status()
     {
-        $this->check_bill_status = Order::where('table_id',$this->table)->where('bill_status',0)->get();
+        $this->check_bill_status = DB::table('orders')->where('table_id',$this->table)->where('bill_status',1)->get();
     }
 
     private function bill_number(){
@@ -300,7 +298,6 @@ class Pos extends Component
 
     public function render()
     {
-        $this->bill_check_status();
         return view('livewire.pos');
     }
 }
