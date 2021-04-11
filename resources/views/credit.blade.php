@@ -21,18 +21,6 @@
         <div class="col-md-12">
             <div class="add__credit--list">
 
-                {{-- <form method="POST" action="/credit-search" enctype="multipart/form-data">
-                    @csrf
-                    <div class="input-group mb-3">
-                        <span class="input-group-text" id="basic-addon1">Text</span>
-                        <input type="text" class="form-control" required placeholder="Customer Name" name="customername"
-                            aria-label="YourName" aria-describedby="basic-addon1">
-                    </div>
-
-                    <button type="submit" value="Login" class="btn btn-primary">Search</button>
-                </form> --}}
-
-
             </div>
         </div>
     </div>

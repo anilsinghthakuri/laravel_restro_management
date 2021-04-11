@@ -69,7 +69,7 @@
                         @foreach ($billlist as $item)
                         <tr>
                             <th scope="row">{{$loop->iteration}}</th>
-                            <td>{{$item->created_at}}</td>
+                            <td>{{$item->nepali_date}}</td>
                             <td>{{$item->bill_id}}</td>
                             <td>{{$item->bill_total_amount}}</td>
                             <td>{{$item->table->table_name}}</td>

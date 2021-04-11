@@ -18,7 +18,8 @@ class CreateBillsTable extends Migration
             $table->unsignedBigInteger('table_id');
             $table->integer('bill_total_amount');
             $table->string('nepali_date');
-            $table->unsignedBigInteger('payment_method_id');
+            $table->boolean('bill_settle')->default(0);
+            $table->unsignedBigInteger('payment_method_id')->nullable();
             $table->unsignedBigInteger('customer_id')->nullable();
 
             $table->foreign('table_id')->references('table_id')->on('tables')->onDelete('cascade');

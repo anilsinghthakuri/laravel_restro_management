@@ -104,29 +104,7 @@
                                 @endif
 
                             </div>
-                            {{-- <div class="row">
-                                <div class="col-md-12 ms-auto">
-                                    <div class="mb-3">
-                                        <label for="message-text" class="col-form-label">Payment Note:</label>
-                                        <textarea class="form-control" id="message-text"></textarea>
-                                      </div>
-                                </div>
 
-                            </div>
-                            <div class="row">
-                                <div class="col-md-6 ms-auto">
-                                    <div class="mb-3">
-                                        <label for="message-text" class="col-form-label">Sale Note:</label>
-                                        <textarea class="form-control" id="message-text"></textarea>
-                                      </div>
-                                </div>
-                                <div class="col-md-6 ms-auto">
-                                    <div class="mb-3">
-                                        <label for="message-text" class="col-form-label">staff Note:</label>
-                                        <textarea class="form-control" id="message-text"></textarea>
-                                      </div>
-                                </div>
-                            </div> --}}
                         </form>
                     </div>
                 </div>

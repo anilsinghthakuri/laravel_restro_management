@@ -50,7 +50,6 @@ class Pos extends Component
         }
         else{
             $this->changeamount = $this->payingamount - $this->grandprice;
-
         }
     }
 
@@ -60,114 +59,39 @@ class Pos extends Component
         $this->grandprice = $grandprice;
         $this->payingamount = 0;
         $this->changeamount = 0;
-
-
     }
+
     public function checkout($table)
     {
-        if ($this->grandprice == null) {
-            session()->flash('message', 'Table is Empty ');
 
+        $table_state = $this->check_table_status($table);
+
+        if ($this->grandprice == 0) {
+
+           dd('refresh page');
         }
         else{
-            if ($this->payment == 0) {
+            if ($table_state == 2) {
 
-                session()->flash('message', 'Choose Payment Method');
+                        $bill = New Bill;
+                        $bill->table_id = $this->table;
+                        $bill->bill_total_amount = $this->grandprice;
+                        $bill->nepali_date = $this->nepalidate();
+                        $bill->save();
 
+                        return redirect()->route('bill.print', [
+                            $table,
+                            ]);
+                    }
+            elseif($table_state == 3){
+                dd('bill already generated');
             }
             else{
-
-                if ($this->payment == 1) {
-                    $orderdata = [];
-                    $bill = New Bill;
-                    $bill->table_id = $this->table;
-                    $bill->bill_total_amount = $this->grandprice;
-                    $bill->payment_method_id = $this->payment;
-                    $bill->nepali_date = $this->nepalidate();
-                    $bill->customer_id = $this->customer;
-                    $bill->save();
-
-
-
-                    return redirect()->route('bill.print', [
-                        $table,
-                        ]);
-                }
-                else{
-                    if ($this->customer == 1) {
-                        session()->flash('message', 'Choose Customer ');
-
-                    }
-                    else{
-
-                        $check = [];
-                        $checkcustomer = CustomerCredit::where('customer_id',$this->customer)->get();
-                        foreach ($checkcustomer as $key => $value) {
-                         $check[] = $checkcustomer[$key]['customer_id'];
-                             }
-                             if (in_array($this->customer,$check)) {
-                                //  dd('prsent');
-                                $amount = CustomerCredit::where('customer_id',$this->customer)->first();
-                                $balance_amount = $amount->amount_paid;
-                                $total_amount_to_pay = $amount->total_amount_to_pay;
-                                // dd($total_amount_to_pay);
-                                $total_amount_to_pay  = $total_amount_to_pay + $this->grandprice;
-                                $balance_amount = $total_amount_to_pay - $balance_amount;
-
-                                // $amount_total = array($total_amount_to_pay);
-                                // dd($total_amount_to_pay);
-
-                                DB::table('customer_credits')->where('customer_id',$this->customer)->update(['total_amount_to_pay'=>$total_amount_to_pay,'balance_amount'=>$balance_amount]);
-                                // $credit  = CustomerCredit::where('customer_id',$this->customer);
-                                // dd($credit);
-
-                                $bill = New Bill;
-                                $bill->table_id = $this->table;
-                                $bill->bill_total_amount = $this->grandprice;
-                                $bill->payment_method_id = $this->payment;
-                                $bill->nepali_date = $this->nepalidate();
-                                $bill->customer_id = $this->customer;
-                                $bill->save();
-
-
-                                return redirect()->route('bill.print', [
-                                    $table,
-                                 ]);
-
-
-                             }
-                             else{
-                                $orderdata = [];
-
-                                $creditcustomer = new CustomerCredit;
-                                $creditcustomer->customer_id = $this->customer;
-                                $creditcustomer->total_amount_to_pay = $this->grandprice;
-                                $creditcustomer->balance_amount = $this->grandprice;
-                                $creditcustomer->save();
-
-                                $bill = New Bill;
-                                $bill->table_id = $this->table;
-                                $bill->bill_total_amount = $this->grandprice;
-                                $bill->payment_method_id = $this->payment;
-                                $bill->nepali_date = $this->nepalidate();
-                                $bill->customer_id = $this->customer;
-                                $bill->save();
-
-
-                                return redirect()->route('bill.print', [
-                                    $table,
-                            ]);
-
-                             }
-                    }
-
-                }
+                dd('kot is not done');
+            }
 
             }
-        }
-
     }
-
     public function kot_bill_print($table)
     {
         if ($this->table == 0) {
@@ -263,18 +187,79 @@ class Pos extends Component
 
     }
 
-    //fun for make table bill not settle
-    private function bill_not_settle()
-    {
-        Table::where('table_id',$this->table)->update(['table_status'=>3]);
-    }
 
     //fun for make bill settle
     public function settle()
     {
-        Table::where('table_id',$this->table)->update(['table_amount'=>0,'table_status'=>0]);
-        $this->order_bill_status_update($this->table);
-        return redirect()->route('table.manage');
+
+        $table_status  = $this->check_table_status($this->table);
+
+
+        if ($table_status == 3) {
+
+            $bill_num  = $this->bill_number($this->table);
+
+            if ($this->payment == 1) {
+                $bill_data = Bill::findorFail($bill_num);
+                $bill_data->payment_method_id = 1;
+                $bill_data->customer_id = 1;
+                $bill_data->save();
+
+                $this->order_bill_status_update($this->table);
+                Table::where('table_id',$this->table)->update(['table_amount'=>0,'table_status'=>0]);
+                return redirect()->route('table.manage');
+
+            }
+            else {
+
+                $check = [];
+                    $checkcustomer = CustomerCredit::where('customer_id',$this->customer)->get();
+                    foreach ($checkcustomer as $key => $value)
+                    {
+                    $check[] = $checkcustomer[$key]['customer_id'];
+                    }
+
+                    if (in_array($this->customer,$check)) {
+                        $amount = CustomerCredit::where('customer_id',$this->customer)->first();
+                        $balance_amount = $amount->amount_paid;
+                        $total_amount_to_pay = $amount->total_amount_to_pay;
+                        $total_amount_to_pay  = $total_amount_to_pay + $this->grandprice;
+                        $balance_amount = $total_amount_to_pay - $balance_amount;
+
+                        DB::table('customer_credits')->where('customer_id',$this->customer)->update(['total_amount_to_pay'=>$total_amount_to_pay,'balance_amount'=>$balance_amount]);
+
+                        $bill_data = Bill::findorFail($bill_num);
+                        $bill_data->payment_method_id = 2;
+                        $bill_data->customer_id = $this->customer;
+                        $bill_data->save();
+
+                        $this->order_bill_status_update($this->table);
+                        Table::where('table_id',$this->table)->update(['table_amount'=>0,'table_status'=>0]);
+                        return redirect()->route('table.manage');
+
+                     }
+
+                     else{
+
+                        $creditcustomer = new CustomerCredit;
+                        $creditcustomer->customer_id = $this->customer;
+                        $creditcustomer->total_amount_to_pay = $this->grandprice;
+                        $creditcustomer->balance_amount = $this->grandprice;
+                        $creditcustomer->save();
+
+                        $bill_data = Bill::findorFail($bill_num);
+                        $bill_data->payment_method_id = 2;
+                        $bill_data->customer_id = $this->customer;
+                        $bill_data->save();
+
+                     }
+            }
+        }
+        else {
+           dd('bill is not done');
+        }
+
+
     }
 
 
@@ -284,17 +269,30 @@ class Pos extends Component
         $this->check_bill_status = DB::table('orders')->where('table_id',$this->table)->where('bill_status',1)->get();
     }
 
-    private function bill_number(){
-        $bill_num = Bill::max('bill_id');
-       return $bill_num;
+
+   //check table status
+   private function check_table_status($table)
+    {
+        $check_table_state = DB::table('tables')->where('table_id',$table)->get();
+        $data  = $check_table_state[0]->table_status;
+        return $data;
     }
 
-   private function order_bill_status_update($table)
-   {
-       $bill_num  = $this->bill_number();
-       Order::where('table_id',$table)->where('bill_status',0)->update(['bill_status' => 1,'bill_id'=>$bill_num]);
-   }
+    //updata bill number to order
 
+
+    private function order_bill_status_update($table)
+    {
+        $bill_num  = $this->bill_number($table);
+        Order::where('table_id',$table)->where('bill_status',0)->update(['bill_status' => 1,'bill_id'=>$bill_num]);
+        Bill::where('bill_id',$bill_num)->update(['bill_settle' => 1]);
+    }
+
+    private function bill_number($table){
+        $data = DB::table('bills')->where('table_id',$table)->where('bill_settle',0)->get();
+        $bill_num = $data[0]->bill_id;
+        return $bill_num;
+    }
 
     public function render()
     {

@@ -30,7 +30,7 @@ class billprintcontroller extends Controller
         $bill_num  = $this->bill_number();
         $bill_data = $this->pull_bill_data($bill_num);
         $table_name = $bill_data->table->table_name;
-        $customer = $bill_data->customer->customer_username;
+        // $customer = $bill_data->customer->customer_username;
         $datentime = $bill_data->created_at;
 
         $total = [];
@@ -41,17 +41,16 @@ class billprintcontroller extends Controller
          $total[] = $orderdata[$key]['order_subprice'];
          }
 
-        if($total == null){
+         $table_status = $this->check_table_status($table);
+
+        if($table_status == 3){
             dd('bill already generated');
         }
         else{
 
-
             $total_price = array_sum($total);
 
-
             Table::where('table_id',$table)->update(['table_status'=>3]);
-
 
         try {
 
@@ -213,7 +212,7 @@ class billprintcontroller extends Controller
                 $printer->close();
             }
 
-            return redirect()->back();
+            return redirect()->route('table.manage');
         }
 
     }
@@ -240,6 +239,13 @@ class billprintcontroller extends Controller
     {
         $bill_num  = $this->bill_number();
         Order::where('table_id',$table)->where('bill_status',0)->update(['bill_status' => 1,'bill_id'=>$bill_num]);
+    }
+
+    private function check_table_status($table)
+    {
+        $check_table_state = DB::table('tables')->where('table_id',$table)->get();
+        $data  = $check_table_state[0]->table_status;
+        return $data;
     }
 
 }
